@@ -1,0 +1,17 @@
+# Netlify build settings — used when the site deploys from GitHub.
+# With this in the repo, every `git push` to main triggers a build + deploy;
+# no more zipping and dragging.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# React Router: serve index.html for any path so deep links (e.g. /sessions)
+# don't 404 on refresh. (Mirrors public/_redirects.)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
