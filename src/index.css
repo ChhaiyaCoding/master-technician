@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   Theme tokens — Light (default) and Dark (.dark on <html>)
+   Colors expressed as raw RGB channels for Tailwind alpha.
+   ============================================================ */
+:root {
+  --bg: 244 246 249; /* slate-50-ish */
+  --surface: 255 255 255;
+  --surface-2: 240 243 247;
+  --border: 214 221 230;
+  --text: 15 23 33;
+  --muted: 100 113 130;
+  --primary: 234 88 12; /* orange-600 — mechanic amber */
+  --primary-fg: 255 255 255;
+  --accent: 2 132 199; /* sky-600 — diagnostic blue */
+  --danger: 220 38 38;
+  --warning: 202 138 4;
+  --success: 22 163 74;
+}
+
+.dark {
+  --bg: 8 12 17; /* deep slate */
+  --surface: 17 24 33;
+  --surface-2: 24 33 45;
+  --border: 39 51 66;
+  --text: 232 238 245;
+  --muted: 148 163 184;
+  --primary: 249 115 22; /* orange-500 */
+  --primary-fg: 12 17 23;
+  --accent: 56 189 248; /* sky-400 */
+  --danger: 248 113 113;
+  --warning: 250 204 21;
+  --success: 74 222 128;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: rgb(var(--bg));
+  color: rgb(var(--text));
+  font-family: "Noto Sans Khmer", "Kantumruy Pro", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overscroll-behavior-y: none;
+}
+
+/* Remove tap highlight, keep controls comfy for one-hand use */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+/* Thin, unobtrusive scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--border));
+  border-radius: 999px;
+}
+
+/* Safe-area helpers for notched phones */
+.pt-safe {
+  padding-top: max(env(safe-area-inset-top), 0.5rem);
+}
+.pb-safe {
+  padding-bottom: max(env(safe-area-inset-bottom), 0.5rem);
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-border bg-surface shadow-card;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-active active:scale-[0.98] select-none;
+  }
+  .btn-lg {
+    @apply min-h-[56px] px-5 text-base;
+  }
+  .btn-primary {
+    @apply btn bg-primary text-primary-fg;
+  }
+  .btn-surface {
+    @apply btn bg-surface-2 text-text border border-border;
+  }
+
+  .input {
+    @apply w-full rounded-xl border border-border bg-surface px-4 py-3 text-base text-text
+      placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-border bg-surface-2 px-3 py-1.5 text-sm;
+  }
+
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-muted;
+  }
+}
+
+@layer utilities {
+  .transition-active {
+    transition:
+      transform 0.08s ease,
+      background-color 0.15s ease,
+      border-color 0.15s ease,
+      color 0.15s ease;
+  }
+}

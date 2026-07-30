@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(rm -f tsconfig.node.json)",
+      "Bash(npm test *)",
+      "Bash(npm audit *)",
+      "Bash(grep -cE 'explanation:|label:|`\\\\$\\\\{' src/reasoning/ruleBasedReasoningProvider.ts)",
+      "Bash(grep -nE 'placeholder=|\"[^\"]*[A-Za-z]{4,}[^\"]*\"' src/screens/DiagnosticSessionScreen.tsx)",
+      "Bash(grep -nE '\"[^\"]*[a-z]{4,}[^\"]*\"|`[^`]*[a-z]{4,}[^`]*`' src/screens/DiagnosticSessionScreen.tsx)",
+      "Bash(grep -iE '[a-z]{4,}')",
+      "Bash(npx vitest *)",
+      "Bash(ipconfig getifaddr *)",
+      "Bash(grep -roE \"sk-[A-Za-z0-9]{20,}|Bearer [A-Za-z0-9._-]{20,}|api[Kk]ey['\\\\\"]?\\\\s*[:=]\\\\s*['\\\\\"][^'\\\\\"]{15,}|AIza[A-Za-z0-9_-]{30,}\" .)",
+      "Bash(awk '{print \"ទំហំ: \"$5}')",
+      "Bash(open ~/Desktop)",
+      "Bash(open \"https://app.netlify.com/drop\")",
+      "Bash(cp ~/Desktop/master-technician-pwa.zip ~/Downloads/)",
+      "Bash(open -R ~/Desktop/master-technician-pwa.zip)",
+      "Read(//Users/apple/Desktop/**)",
+      "Bash(awk '{print \"  \"$9\" \\(\"$5\"\\)\"}')",
+      "Bash(rm -f ~/Desktop/master-technician-pwa.zip ~/Downloads/master-technician-pwa.zip)",
+      "Bash(zip -rq ~/Desktop/master-technician-pwa.zip . -x \".*\")",
+      "Bash(awk '{print \"✓ zip ថ្មី: \"$5}')",
+      "Bash(open -R ~/Downloads/master-technician-pwa.zip)",
+      "Bash(open \"https://app.netlify.com/projects/starlit-longma-1bdd06/deploys\")",
+      "Bash(awk '{print \"✓ zip ថ្មី: \"$5\" \\(\"$8\"\\)\"}')"
+    ]
+  }
+}
