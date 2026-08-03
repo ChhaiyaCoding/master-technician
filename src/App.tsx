@@ -12,7 +12,7 @@ import AskExpert from "@/screens/AskExpert";
 import PhotoDiagnosis from "@/screens/PhotoDiagnosis";
 import Settings from "@/screens/Settings";
 import DiagnosticSessionScreen from "@/screens/DiagnosticSessionScreen";
-import NewDiagnosis from "@/screens/NewDiagnosis";
+import AiDiagnose from "@/screens/AiDiagnose";
 import SessionList from "@/screens/SessionList";
 
 export default function App() {
@@ -40,8 +40,8 @@ export default function App() {
         <Route path="/expert" element={<AskExpert />} />
         <Route path="/settings" element={<Settings />} />
 
-        {/* Milestone 7 — New Diagnosis entry flow (creates a real session) */}
-        <Route path="/diagnose/new" element={<NewDiagnosis />} />
+        {/* Milestone 10 — AI Diagnose (instant answer, DTC optional) */}
+        <Route path="/diagnose/new" element={<AiDiagnose />} />
 
         {/* Milestone 9 — all sessions / resume previous work */}
         <Route path="/sessions" element={<SessionList />} />

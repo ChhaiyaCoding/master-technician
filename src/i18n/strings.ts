@@ -20,8 +20,8 @@ export const t = {
   home: {
     greeting: "សួស្តី ជាង",
     subtitle: "តើថ្ងៃនេះមានបញ្ហាអ្វី?",
-    diagnose: "វិនិច្ឆ័យបញ្ហា",
-    diagnoseSub: "Diagnose Problem",
+    diagnose: "AI វិនិច្ឆ័យបញ្ហា",
+    diagnoseSub: "AI Diagnose Problem",
     dtc: "ស្វែងរកកូដ DTC",
     dtcSub: "Search DTC Code",
     cases: "បណ្ណាល័យករណីជួសជុល",

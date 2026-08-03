@@ -12,7 +12,6 @@ import { Icon } from "@/components/Icon";
 import { t } from "@/i18n/strings";
 import { DTC_BY_CODE, DTC_CODES, POPULAR_DTC } from "@/data/dtc";
 import { SYSTEM_BY_ID } from "@/data/systems";
-import { useDiagnosis } from "@/context/DiagnosisContext";
 
 export default function DtcSearch() {
   const [params] = useSearchParams();
@@ -96,14 +95,11 @@ export default function DtcSearch() {
 /** Full detail card for a matched DTC — reused by search. */
 export function DtcDetail({ code }: { code: string }) {
   const navigate = useNavigate();
-  const { setInput, reset } = useDiagnosis();
   const d = DTC_BY_CODE[code.toUpperCase()];
   if (!d) return null;
 
   function useInDiagnosis() {
-    reset();
-    setInput({ dtcCodes: [d.code], system: d.systems[0] ?? null });
-    navigate("/diagnose/vehicle");
+    navigate("/diagnose/new", { state: { prefillDtc: d.code } });
   }
 
   return (

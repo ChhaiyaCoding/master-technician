@@ -26,7 +26,13 @@
       "Bash(awk '{print \"✓ zip ថ្មី: \"$5}')",
       "Bash(open -R ~/Downloads/master-technician-pwa.zip)",
       "Bash(open \"https://app.netlify.com/projects/starlit-longma-1bdd06/deploys\")",
-      "Bash(awk '{print \"✓ zip ថ្មី: \"$5\" \\(\"$8\"\\)\"}')"
+      "Bash(awk '{print \"✓ zip ថ្មី: \"$5\" \\(\"$8\"\\)\"}')",
+      "Bash(gh repo *)",
+      "Bash(git add *)",
+      "Bash(git commit -q -m ' *)",
+      "Bash(git push *)",
+      "Bash(open \"https://app.netlify.com/projects/starlit-longma-1bdd06/configuration/deploys#continuous-deployment\")",
+      "Bash(open \"https://app.netlify.com/projects/starlit-longma-1bdd06/configuration/deploys\")"
     ]
   }
 }
