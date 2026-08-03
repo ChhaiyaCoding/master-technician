@@ -55,6 +55,11 @@ export interface DtcCode {
   inspectionFlow: string[];
   commonMistakes: string[];
   severity: Severity;
+  /** Vehicle/engine types this code is most often actually seen on in the
+   * shop — NOT a claim of brand ownership. Generic OBD-II codes (P0/C0/B0/U0)
+   * are standardized to work identically across every make; this field is
+   * practical pattern-recognition ("commonly seen on..."), never "belongs to". */
+  commonOn?: string;
 }
 
 export type Severity = "low" | "medium" | "high" | "critical";

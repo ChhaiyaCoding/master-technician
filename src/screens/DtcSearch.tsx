@@ -122,6 +122,18 @@ export function DtcDetail({ code }: { code: string }) {
         </Card>
       </section>
 
+      {/* Commonly found on — practical pattern, never a brand-ownership claim */}
+      {d.commonOn && (
+        <section>
+          <SectionTitle icon={<Icon.Car size={18} className="text-accent" />}>
+            {t.dtc.commonOn}
+          </SectionTitle>
+          <Card className="bg-surface-2">
+            <p className="text-sm leading-relaxed">{d.commonOn}</p>
+          </Card>
+        </section>
+      )}
+
       {/* Related systems */}
       <section>
         <SectionTitle>{t.dtc.relatedSystems}</SectionTitle>

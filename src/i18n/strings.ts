@@ -89,6 +89,7 @@ export const t = {
     title: "ស្វែងរកកូដ DTC",
     placeholder: "វាយកូដ ឧ. P0300, C1201, B1318, U0100",
     meaning: "អត្ថន័យ",
+    commonOn: "ជាទូទៅជួបលើ",
     relatedSystems: "ប្រព័ន្ធពាក់ព័ន្ធ",
     possibleCauses: "មូលហេតុដែលអាចកើតមាន",
     inspectionFlow: "លំដាប់ត្រួតពិនិត្យ",
