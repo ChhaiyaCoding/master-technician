@@ -1032,6 +1032,28 @@ export const DTC_CODES: DtcCode[] = [
     commonMistakes: ["រំលងព្រោះ 'តូច' — តាមពេលវេលាអាចវិវត្តទៅ P0093"],
   },
   {
+    code: "P0002",
+    titleEn: "Fuel Volume Regulator Control Circuit Range/Performance",
+    titleKm: "សៀគ្វី Fuel Volume Regulator (FVR/SCV) ដំណើរការមិនប្រក្រតី",
+    systems: ["engine"],
+    severity: "medium",
+    descriptionKm:
+      "Valve FVR/SCV ត្រូវគ្រប់គ្រងបរិមាណ Fuel ចូល High Pressure Pump — ECU ចាប់ថាការឆ្លើយតបរបស់ Valve មិនត្រូវនឹងបញ្ជា។ ជាទូទៅជួបលើម៉ាស៊ីន Diesel Common Rail។",
+    possibleCauses: [
+      "FVR/SCV Valve ស្ទះកខ្វក់ ឬខូច",
+      "Wiring/Connector FVR រលុង",
+      "Fuel កខ្វក់មានកខ្សាយ",
+    ],
+    inspectionFlow: [
+      "ពិនិត្យ Activation FVR/SCV Live Data",
+      "សម្អាត/ពិនិត្យ Valve",
+      "ពិនិត្យគុណភាព Fuel",
+    ],
+    commonMistakes: [
+      "ច្រឡំ P0002 ជាមួយកូដ Fuel Rail Pressure (P0087-P0093) ទាំងដែលពាក់ព័ន្ធគ្នា ប៉ុន្តែជា Valve ខុសគ្នា",
+    ],
+  },
+  {
     code: "P0011",
     titleEn: "Camshaft Position Timing Over-Advanced (Bank 1)",
     titleKm: "VVT Timing លឿនពេក Bank 1",
