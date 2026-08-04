@@ -14,6 +14,7 @@ export const t = {
     dtc: "DTC",
     cases: "ករណី",
     expert: "អ្នកជំនាញ",
+    sessions: "សម័យ",
     settings: "ការកំណត់",
   },
 

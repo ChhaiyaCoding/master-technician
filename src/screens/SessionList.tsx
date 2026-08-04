@@ -115,7 +115,9 @@ export default function SessionList() {
 
   return (
     <>
-      <TopBar title="សម័យវិនិច្ឆ័យទាំងអស់" back />
+      {/* No back arrow: /sessions is a bottom-nav tab root now (P0-1), and a
+          back button on a tab root sends the mechanic somewhere unpredictable. */}
+      <TopBar title="សម័យវិនិច្ឆ័យទាំងអស់" />
       <Page>
         {sessions.length === 0 ? (
           <EmptyState

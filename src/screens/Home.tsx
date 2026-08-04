@@ -41,18 +41,14 @@ export default function Home() {
       icon: <Icon.Book size={26} />,
       onClick: () => navigate("/cases"),
     },
-    {
-      km: t.home.photo,
-      en: t.home.photoSub,
-      icon: <Icon.Camera size={26} />,
-      onClick: () => navigate("/photo"),
-    },
-    {
-      km: t.home.expert,
-      en: t.home.expertSub,
-      icon: <Icon.Chat size={26} />,
-      onClick: () => navigate("/expert"),
-    },
+    // UX Audit v1 / P0-1 — Photo Diagnosis and Ask Expert were here, sized
+    // exactly like DTC Search and the Case Library. But those two run on
+    // PlaceholderAiProvider: analyzePhotos() never looks at the image (it only
+    // receives the text note) and askExpert() returns a fixed template. Giving
+    // fake answers the same billing as the real 699-code knowledge base costs
+    // trust in the whole app the first time a mechanic acts on one. Both
+    // screens still exist at /photo and /expert and can come back the moment
+    // they are backed by a real model.
   ];
 
   return (
@@ -128,13 +124,9 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Milestone 9 — reach all sessions even when nothing is unfinished */}
-        <button
-          onClick={() => navigate("/sessions")}
-          className="mt-3 w-full text-center text-sm font-semibold text-primary"
-        >
-          មើលសម័យវិនិច្ឆ័យទាំងអស់ ›
-        </button>
+        {/* Milestone 9's "see all sessions" link used to sit here. P0-1 gave
+            /sessions a permanent bottom-nav tab, so the link is now a second
+            door to the same room. */}
 
         {/* Recent cases */}
         <div className="mt-7">

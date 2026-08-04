@@ -18,6 +18,7 @@ import { useNavigate } from "react-router-dom";
 import { TopBar, Page } from "@/components/Layout";
 import { Button, Card, SectionTitle, cx, LoadingDots } from "@/components/ui";
 import { Icon } from "@/components/Icon";
+import { scrollIntoViewReliably } from "@/utils/scroll";
 
 import {
   completeSession,
@@ -420,6 +421,16 @@ export default function DiagnosticSessionScreen() {
   const [linkingEvidenceId, setLinkingEvidenceId] = useState<string | null>(null);
   const recordRepairRef = useRef<HTMLDivElement | null>(null);
 
+  // UX Audit v1 / P0-2 — Sprint 1 asked for "Next Action always visible without
+  // scrolling", but the card was only moved to the top, not pinned: on a phone
+  // the page runs ~1500px against an 812px viewport, so reading Current Thinking
+  // or Evidence scrolls the OK / Not OK buttons off screen entirely. The card
+  // itself is too tall and too action-type-dependent to pin (duplicating the
+  // response controls would risk double submits), so we watch it instead and
+  // raise a one-tap recall bar the moment it leaves the viewport.
+  const actionRef = useRef<HTMLDivElement | null>(null);
+  const [actionOffscreen, setActionOffscreen] = useState(false);
+
   // Fix #8 — when the record-repair form opens, bring it into view so the
   // mechanic never misses the newly revealed fields below the fold.
   useEffect(() => {
@@ -455,6 +466,30 @@ export default function DiagnosticSessionScreen() {
     const next = selectNextAction(session, reasoningOutput);
     if (next !== session) setSession(next);
   }, [session, reasoningOutput, reasoningKey]);
+
+  // P0-2 — track whether the Next Action card is on screen. A plain scroll
+  // listener rather than an IntersectionObserver: IO callbacks are tied to the
+  // rendering lifecycle and go quiet whenever the page is not painting, which
+  // would leave the bar stuck in whatever state it was in. Measuring the rect
+  // on scroll always tells the truth, and it is one element.
+  useEffect(() => {
+    function measure() {
+      const el = actionRef.current;
+      // Off screen once its bottom edge passes above the top bar (h-14 = 56px).
+      setActionOffscreen(!!el && el.getBoundingClientRect().bottom < 64);
+    }
+    measure();
+    window.addEventListener("scroll", measure, { passive: true });
+    window.addEventListener("resize", measure);
+    return () => {
+      window.removeEventListener("scroll", measure);
+      window.removeEventListener("resize", measure);
+    };
+  }, [session.status, session.currentNextAction?.id]);
+
+  function scrollToAction() {
+    scrollIntoViewReliably(actionRef.current);
+  }
 
   function commit(next: DiagnosticSession) {
     setSession(next);
@@ -772,8 +807,10 @@ export default function DiagnosticSessionScreen() {
           </Card>
         )}
 
-        {/* Fix #3 — Current Next Action FIRST, so it is visible without scrolling */}
+        {/* Fix #3 — Current Next Action FIRST, so it is visible without scrolling.
+            P0-2 — plus actionRef, so the recall bar knows when it scrolls away. */}
         {!paused && (
+          <div ref={actionRef} className="scroll-mt-20">
           <Card className="mb-4 border-primary/30 bg-primary/5">
             <SectionTitle icon={<Icon.Alert size={18} className="text-primary" />}>
               សកម្មភាពបន្ទាប់ (Next Action)
@@ -950,6 +987,7 @@ export default function DiagnosticSessionScreen() {
               })()
             )}
           </Card>
+          </div>
         )}
 
         {/* Vehicle Information */}
@@ -1266,6 +1304,37 @@ export default function DiagnosticSessionScreen() {
           </Card>
         )}
       </Page>
+
+      {/* P0-2 — recall bar. Only appears once the Next Action card is off screen,
+          so it never competes with the card itself. It restates WHAT the step is
+          (a mechanic who scrolled away to check Current Thinking has usually
+          forgotten) and puts the way back one thumb-tap from the bottom edge. */}
+      {!paused && action && actionOffscreen && (
+        <button
+          onClick={scrollToAction}
+          // No entrance animation: this bar toggles on every scroll past the
+          // card, so a fade would flicker — and an interrupted fade can leave
+          // it stranded at opacity 0, hiding the very control it exists to offer.
+          className="pb-safe fixed inset-x-0 bottom-0 z-30 border-t border-primary/30 bg-bg/95 backdrop-blur-md active:bg-surface-2"
+        >
+          <div className="mx-auto flex max-w-md items-center gap-3 px-4 py-3 text-left">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/15 text-primary">
+              <Icon.Alert size={18} />
+            </span>
+            <span className="min-w-0 flex-1">
+              <span className="block text-[11px] font-semibold uppercase tracking-wide text-muted">
+                សកម្មភាពបន្ទាប់
+              </span>
+              <span className="block truncate text-sm font-bold">
+                {presentAction(action, session, reasoningOutput).title}
+              </span>
+            </span>
+            <span className="shrink-0 rounded-xl bg-primary px-3 py-2 text-sm font-bold text-primary-fg">
+              ↑ ឆ្លើយតប
+            </span>
+          </div>
+        </button>
+      )}
     </>
   );
 }

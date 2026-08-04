@@ -38,11 +38,16 @@ export function TopBar({
   );
 }
 
+// UX Audit v1 / P0-1 + P1-1 — the Ask Expert tab used to sit here, but it runs
+// on PlaceholderAiProvider (canned replies), so giving it a permanent tab sold
+// a feature the app does not actually have. The slot now goes to the session
+// list, which is real work the mechanic can lose track of otherwise. Every
+// entry below must also appear in `showOn` or tapping it hides the tab bar.
 const NAV = [
   { to: "/", label: t.nav.home, icon: Icon.Home, exact: true },
   { to: "/dtc", label: t.nav.dtc, icon: Icon.Scan },
   { to: "/cases", label: t.nav.cases, icon: Icon.Book },
-  { to: "/expert", label: t.nav.expert, icon: Icon.Chat },
+  { to: "/sessions", label: t.nav.sessions, icon: Icon.Wrench },
   { to: "/settings", label: t.nav.settings, icon: Icon.Settings },
 ];
 
@@ -52,7 +57,7 @@ export function BottomNav() {
   // Only show the tab bar on the top-level tab roots. Every other screen is
   // either a fullscreen chat or has its own sticky action bar that the fixed
   // nav would otherwise overlap.
-  const showOn = ["/", "/dtc", "/cases", "/settings"];
+  const showOn = NAV.map((n) => n.to);
   if (!showOn.includes(pathname)) return null;
 
   return (
