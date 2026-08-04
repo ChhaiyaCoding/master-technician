@@ -1,4 +1,5 @@
 import type { DtcCode } from "@/types";
+import { DTC_CODES_EXTENDED } from "@/data/dtcExtended";
 
 /**
  * Dummy DTC knowledge base. A real deployment would back this with a proper
@@ -6,7 +7,7 @@ import type { DtcCode } from "@/types";
  * to the UI. Codes chosen to cover P (powertrain), C (chassis), B (body),
  * U (network) prefixes across several systems.
  */
-export const DTC_CODES: DtcCode[] = [
+const DTC_CODES_CORE: DtcCode[] = [
   {
     code: "P0300",
     titleEn: "Random / Multiple Cylinder Misfire Detected",
@@ -1541,6 +1542,9 @@ export const DTC_CODES: DtcCode[] = [
     commonMistakes: ["មិនពិនិត្យ Timing Mark ផ្ទាល់ភ្នែក ស្មានតែ Sensor ខូច"],
   },
 ];
+
+/** Core + extended generic codes, merged into the single app-wide list. */
+export const DTC_CODES: DtcCode[] = [...DTC_CODES_CORE, ...DTC_CODES_EXTENDED];
 
 export const DTC_BY_CODE = Object.fromEntries(
   DTC_CODES.map((d) => [d.code.toUpperCase(), d]),
