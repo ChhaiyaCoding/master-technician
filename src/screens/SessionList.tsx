@@ -16,7 +16,7 @@ import { TopBar, Page } from "@/components/Layout";
 import { Card, EmptyState, cx } from "@/components/ui";
 import { Icon } from "@/components/Icon";
 import { sessionStore } from "@/services/store";
-import { CURRENT_SESSION_ID_KEY } from "@/screens/DiagnosticSessionScreen";
+import { CURRENT_SESSION_ID_KEY, isUnfinished } from "@/services/currentSession";
 import { SYSTEM_BY_ID } from "@/data/systems";
 import { relTime } from "@/utils/format";
 import type { DiagnosticSession, SessionStatus } from "@/types/session";
@@ -29,10 +29,6 @@ const STATUS_LABEL: Record<SessionStatus, { km: string; cls: string }> = {
   abandoned: { km: "បោះបង់", cls: "bg-muted/20 text-muted" },
 };
 
-/** Sessions the mechanic still has work to do on. */
-export function isUnfinished(s: DiagnosticSession): boolean {
-  return s.status === "active" || s.status === "paused";
-}
 
 export default function SessionList() {
   const navigate = useNavigate();

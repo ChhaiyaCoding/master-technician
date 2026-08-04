@@ -40,6 +40,7 @@ import {
 } from "@/engine/hypothesisEngine";
 import { canSaveAsCase, diagnosticSessionToRepairCase } from "@/diagnosis/sessionToCase";
 import { guessFailureDomain } from "@/diagnosis/bootstrapSession";
+import { CURRENT_SESSION_ID_KEY } from "@/services/currentSession";
 import { caseStore } from "@/services/store";
 import { buildReasoningInput } from "@/reasoning/reasoningProvider";
 import { ruleBasedReasoningProvider } from "@/reasoning/ruleBasedReasoningProvider";
@@ -68,10 +69,6 @@ import type { ReasoningOutput } from "@/types/reasoning";
  * not placeholder LOGIC.
  * ========================================================================= */
 
-/** localStorage key holding the id of the session the screen should load.
- * Exported so the New-diagnosis entry flow can point the screen at a
- * freshly-created real session (Milestone 7). */
-export const CURRENT_SESSION_ID_KEY = "mt.demoSessionId.v1";
 const DEMO_SESSION_ID_KEY = CURRENT_SESSION_ID_KEY;
 
 function seedHiaceP0093Session(): DiagnosticSession {

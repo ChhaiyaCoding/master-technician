@@ -4,7 +4,7 @@ import { Page, TopBar } from "@/components/Layout";
 import { Card } from "@/components/ui";
 import { t } from "@/i18n/strings";
 import { caseStore, sessionStore } from "@/services/store";
-import { isUnfinished } from "@/screens/SessionList";
+import { isUnfinished } from "@/services/currentSession";
 import { SYSTEM_BY_ID } from "@/data/systems";
 import { useTheme } from "@/context/ThemeContext";
 import { useDiagnosis } from "@/context/DiagnosisContext";

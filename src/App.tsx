@@ -1,56 +1,82 @@
+import { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
-import { BottomNav } from "@/components/Layout";
+import { BottomNav, Page } from "@/components/Layout";
+import { LoadingDots } from "@/components/ui";
 import Home from "@/screens/Home";
-import VehicleSelect from "@/screens/VehicleSelect";
-import SymptomInput from "@/screens/SymptomInput";
-import DiagnosisResult from "@/screens/DiagnosisResult";
-import DtcSearch from "@/screens/DtcSearch";
-import CaseLibrary from "@/screens/CaseLibrary";
-import CaseDetail from "@/screens/CaseDetail";
-import CaseForm from "@/screens/CaseForm";
-import AskExpert from "@/screens/AskExpert";
-import PhotoDiagnosis from "@/screens/PhotoDiagnosis";
-import Settings from "@/screens/Settings";
-import DiagnosticSessionScreen from "@/screens/DiagnosticSessionScreen";
-import AiDiagnose from "@/screens/AiDiagnose";
-import SessionList from "@/screens/SessionList";
+
+/**
+ * Route-level code splitting (Milestone 12).
+ *
+ * Home stays eagerly imported — it's the landing screen, and lazy-loading it
+ * would add a round trip before the mechanic sees anything. Every other screen
+ * is lazy, which matters most for the DTC knowledge base: dtc.ts +
+ * dtcExtended.ts are ~570 KB of source that only DtcSearch / AiDiagnose /
+ * ai.ts / the diagnosis modules touch. Splitting keeps that out of the initial
+ * download so the app opens fast in a workshop with a weak connection.
+ */
+const VehicleSelect = lazy(() => import("@/screens/VehicleSelect"));
+const SymptomInput = lazy(() => import("@/screens/SymptomInput"));
+const DiagnosisResult = lazy(() => import("@/screens/DiagnosisResult"));
+const DtcSearch = lazy(() => import("@/screens/DtcSearch"));
+const CaseLibrary = lazy(() => import("@/screens/CaseLibrary"));
+const CaseDetail = lazy(() => import("@/screens/CaseDetail"));
+const CaseForm = lazy(() => import("@/screens/CaseForm"));
+const AskExpert = lazy(() => import("@/screens/AskExpert"));
+const PhotoDiagnosis = lazy(() => import("@/screens/PhotoDiagnosis"));
+const Settings = lazy(() => import("@/screens/Settings"));
+const DiagnosticSessionScreen = lazy(() => import("@/screens/DiagnosticSessionScreen"));
+const AiDiagnose = lazy(() => import("@/screens/AiDiagnose"));
+const SessionList = lazy(() => import("@/screens/SessionList"));
+
+/** Shown for the brief moment a lazy screen's chunk is downloading. */
+function ScreenFallback() {
+  return (
+    <Page>
+      <div className="flex min-h-[50vh] items-center justify-center">
+        <LoadingDots label="កំពុងបើក..." />
+      </div>
+    </Page>
+  );
+}
 
 export default function App() {
   return (
     <div className="min-h-[100dvh] bg-bg text-text">
-      <Routes>
-        <Route path="/" element={<Home />} />
+      <Suspense fallback={<ScreenFallback />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
 
-        {/* Diagnosis workflow */}
-        <Route path="/diagnose/vehicle" element={<VehicleSelect />} />
-        <Route path="/diagnose/symptom" element={<SymptomInput />} />
-        <Route path="/diagnose/result" element={<DiagnosisResult />} />
+          {/* Diagnosis workflow */}
+          <Route path="/diagnose/vehicle" element={<VehicleSelect />} />
+          <Route path="/diagnose/symptom" element={<SymptomInput />} />
+          <Route path="/diagnose/result" element={<DiagnosisResult />} />
 
-        {/* DTC */}
-        <Route path="/dtc" element={<DtcSearch />} />
+          {/* DTC */}
+          <Route path="/dtc" element={<DtcSearch />} />
 
-        {/* Cases */}
-        <Route path="/cases" element={<CaseLibrary />} />
-        <Route path="/cases/new" element={<CaseForm />} />
-        <Route path="/cases/:id" element={<CaseDetail />} />
-        <Route path="/cases/:id/edit" element={<CaseForm />} />
+          {/* Cases */}
+          <Route path="/cases" element={<CaseLibrary />} />
+          <Route path="/cases/new" element={<CaseForm />} />
+          <Route path="/cases/:id" element={<CaseDetail />} />
+          <Route path="/cases/:id/edit" element={<CaseForm />} />
 
-        {/* Tools */}
-        <Route path="/photo" element={<PhotoDiagnosis />} />
-        <Route path="/expert" element={<AskExpert />} />
-        <Route path="/settings" element={<Settings />} />
+          {/* Tools */}
+          <Route path="/photo" element={<PhotoDiagnosis />} />
+          <Route path="/expert" element={<AskExpert />} />
+          <Route path="/settings" element={<Settings />} />
 
-        {/* Milestone 10 — AI Diagnose (instant answer, DTC optional) */}
-        <Route path="/diagnose/new" element={<AiDiagnose />} />
+          {/* Milestone 10 — AI Diagnose (instant answer, DTC optional) */}
+          <Route path="/diagnose/new" element={<AiDiagnose />} />
 
-        {/* Milestone 9 — all sessions / resume previous work */}
-        <Route path="/sessions" element={<SessionList />} />
+          {/* Milestone 9 — all sessions / resume previous work */}
+          <Route path="/sessions" element={<SessionList />} />
 
-        {/* Milestone 6 — interactive prototype connecting the diagnostic engines */}
-        <Route path="/diagnostic-session" element={<DiagnosticSessionScreen />} />
+          {/* Milestone 6 — interactive prototype connecting the diagnostic engines */}
+          <Route path="/diagnostic-session" element={<DiagnosticSessionScreen />} />
 
-        <Route path="*" element={<Home />} />
-      </Routes>
+          <Route path="*" element={<Home />} />
+        </Routes>
+      </Suspense>
 
       <BottomNav />
     </div>

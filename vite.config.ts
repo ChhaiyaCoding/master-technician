@@ -58,6 +58,26 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        // Milestone 12 — keep the two big, rarely-changing pieces in their own
+        // chunks. The DTC knowledge base is by far the largest asset and only
+        // the diagnosis/DTC screens need it, so splitting it out both keeps it
+        // off the initial download and lets it stay cached when app code ships.
+        manualChunks(id) {
+          if (id.includes("/src/data/dtc")) return "dtc-data";
+          if (
+            id.includes("node_modules/react-router") ||
+            id.includes("node_modules/react-dom") ||
+            id.includes("node_modules/react/")
+          ) {
+            return "vendor-react";
+          }
+        },
+      },
+    },
+  },
   server: {
     host: true,
     port: 5173,

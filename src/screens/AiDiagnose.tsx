@@ -24,7 +24,7 @@ import { DTC_BY_CODE } from "@/data/dtc";
 import { analyzeInstant } from "@/diagnosis/instantAnalysis";
 import { bootstrapSession } from "@/diagnosis/bootstrapSession";
 import { saveSession } from "@/engine/sessionEngine";
-import { CURRENT_SESSION_ID_KEY } from "@/screens/DiagnosticSessionScreen";
+import { CURRENT_SESSION_ID_KEY } from "@/services/currentSession";
 import type { SystemId, Vehicle } from "@/types";
 
 /** Standard OBD-II code shape: P/C/B/U + 4 hex-ish chars. */
