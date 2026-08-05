@@ -24,7 +24,8 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើ Diesel Common Rail (Toyota Hilux/Hiace, Ford Ranger, Isuzu D-Max)",
     descriptionKm: "សៀគ្វីខ្សែភ្លើងទៅ FVR/SCV Valve ដាច់ទាំងស្រុង — Valve លែងទទួលបញ្ជា ធ្វើឲ្យបញ្ឆេះមិនឆេះ ឬស្ថេររលត់។",
     possibleCauses: ["Connector FVR រលុង/ដាច់", "Coil ខាងក្នុង Valve ដាច់"],
-    inspectionFlow: ["វាស់ Resistance Coil FVR", "ពិនិត្យ Connector/Wiring"],
+    inspectionFlow: [
+      "⚠️ Common Rail មានសម្ពាធ 1,500–2,500 bar — បិទម៉ាស៊ីន រង់ចាំសម្ពាធធ្លាក់ មុនបើក joint។ កុំយកដៃទៅជិតកន្លែងលេចខណៈម៉ាស៊ីនដើរ — ដីសែលអាចទម្លុះស្បែកចូលសាច់","វាស់ Resistance Coil FVR", "ពិនិត្យ Connector/Wiring"],
     commonMistakes: ["ប្ដូរ FVR ថ្មីដោយមិនវាស់ Resistance ជាមុន"],
   },
   {
@@ -36,7 +37,8 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើ Diesel Common Rail",
     descriptionKm: "សញ្ញាចរន្តទៅ FVR ទាបជាងតម្រូវការ — អាចមកពី Wiring ឬ Valve ខូច។",
     possibleCauses: ["ខ្សែភ្លើង Short to Ground", "FVR Valve ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector FVR", "ពិនិត្យ Wiring រករក Short"],
+    inspectionFlow: [
+      "⚠️ Common Rail មានសម្ពាធ 1,500–2,500 bar — បិទម៉ាស៊ីន រង់ចាំសម្ពាធធ្លាក់ មុនបើក joint។ កុំយកដៃទៅជិតកន្លែងលេចខណៈម៉ាស៊ីនដើរ — ដីសែលអាចទម្លុះស្បែកចូលសាច់","វាស់ Voltage Connector FVR", "ពិនិត្យ Wiring រករក Short"],
     commonMistakes: ["មិនពិនិត្យ Wiring Short មុនប្ដូរ Valve"],
   },
   {
@@ -48,7 +50,8 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើ Diesel Common Rail",
     descriptionKm: "សញ្ញាចរន្តទៅ FVR ខ្ពស់ខុសពីធម្មតា — អាចធ្វើឲ្យសម្ពាធ Fuel មិនត្រឹមត្រូវ។",
     possibleCauses: ["ខ្សែភ្លើង Short to Power", "FVR Valve ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector", "ពិនិត្យ Wiring Short"],
+    inspectionFlow: [
+      "⚠️ Common Rail មានសម្ពាធ 1,500–2,500 bar — បិទម៉ាស៊ីន រង់ចាំសម្ពាធធ្លាក់ មុនបើក joint។ កុំយកដៃទៅជិតកន្លែងលេចខណៈម៉ាស៊ីនដើរ — ដីសែលអាចទម្លុះស្បែកចូលសាច់","វាស់ Voltage Connector", "ពិនិត្យ Wiring Short"],
     commonMistakes: ["ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring ជាមុន"],
   },
   {
@@ -357,36 +360,36 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
   },
   {
     code: "P0042",
-    titleEn: "Oxygen Sensor Heater Control Circuit (Bank 2 Sensor 1)",
-    titleKm: "សៀគ្វី Heater O2 Sensor Bank 2 Sensor 1 មានបញ្ហា",
+    titleEn: "Oxygen Sensor Heater Control Circuit (Bank 1 Sensor 3)",
+    titleKm: "សៀគ្វី Heater O2 Sensor Bank 1 Sensor 3 មានបញ្ហា",
     systems: ["engine"],
     severity: "medium",
-    commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V ឬ Boxer",
-    descriptionKm: "ដូច P0030 ប៉ុន្តែនៅ Bank 2។",
-    possibleCauses: ["Heater ខាងក្នុង Sensor ដាច់", "Fuse/Relay ខូច"],
-    inspectionFlow: ["វាស់ Resistance Heater", "ពិនិត្យ Fuse"],
+    commonOn: "ជួបលើរថយន្តដែលមាន O2 Sensor ៣ ក្នុងមួយ Bank (ក្រោយ Catalyst ទី ២)",
+    descriptionKm: "ដូច P0030 ប៉ុន្តែនៅ Sensor ទី ៣ នៃ Bank 1 — គឺ Sensor ក្រោយគេបំផុត នៅក្រោមរថយន្ត។",
+    possibleCauses: ["Heater ខាងក្នុង Sensor ដាច់", "ខ្សែភ្លើងក្រោមរថយន្តច្រេះ/ដាច់", "Fuse/Relay ខូច"],
+    inspectionFlow: ["វាស់ Resistance Heater", "ពិនិត្យខ្សែ និង Connector ក្រោមរថយន្ត", "ពិនិត្យ Fuse"],
     commonMistakes: ["ប្ដូរ ECU ដោយមិនវាស់ Resistance ជាមុន"],
   },
   {
     code: "P0043",
-    titleEn: "Oxygen Sensor Heater Control Circuit Low (Bank 2 Sensor 1)",
-    titleKm: "សៀគ្វី Heater Bank 2 Sensor 1 មានវ៉ុលទាប",
+    titleEn: "Oxygen Sensor Heater Control Circuit Low (Bank 1 Sensor 3)",
+    titleKm: "សៀគ្វី Heater Bank 1 Sensor 3 មានវ៉ុលទាប",
     systems: ["engine"],
     severity: "medium",
-    commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V ឬ Boxer",
-    descriptionKm: "ចរន្តទៅ Heater Bank 2 ទាបជាងតម្រូវការ។",
+    commonOn: "ជួបលើរថយន្តដែលមាន O2 Sensor ៣ ក្នុងមួយ Bank",
+    descriptionKm: "ចរន្តទៅ Heater នៃ Sensor ទី ៣ Bank 1 ទាបជាងតម្រូវការ។",
     possibleCauses: ["ខ្សែភ្លើង Short to Ground", "Heater ខូច"],
     inspectionFlow: ["វាស់ Voltage Connector", "ពិនិត្យ Wiring"],
     commonMistakes: ["មិនពិនិត្យ Wiring មុនប្ដូរ Sensor"],
   },
   {
     code: "P0044",
-    titleEn: "Oxygen Sensor Heater Control Circuit High (Bank 2 Sensor 1)",
-    titleKm: "សៀគ្វី Heater Bank 2 Sensor 1 មានវ៉ុលខ្ពស់",
+    titleEn: "Oxygen Sensor Heater Control Circuit High (Bank 1 Sensor 3)",
+    titleKm: "សៀគ្វី Heater Bank 1 Sensor 3 មានវ៉ុលខ្ពស់",
     systems: ["engine"],
     severity: "medium",
-    commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V ឬ Boxer",
-    descriptionKm: "ចរន្តទៅ Heater Bank 2 ខ្ពស់ជាងតម្រូវការ។",
+    commonOn: "ជួបលើរថយន្តដែលមាន O2 Sensor ៣ ក្នុងមួយ Bank",
+    descriptionKm: "ចរន្តទៅ Heater នៃ Sensor ទី ៣ Bank 1 ខ្ពស់ជាងតម្រូវការ។",
     possibleCauses: ["ខ្សែភ្លើង Short to Power", "Heater ខូច"],
     inspectionFlow: ["វាស់ Voltage Connector", "ពិនិត្យ Wiring Short"],
     commonMistakes: ["ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring"],
@@ -453,36 +456,36 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
   },
   {
     code: "P0050",
-    titleEn: "Oxygen Sensor Heater Control Circuit (Bank 2 Sensor 2)",
-    titleKm: "សៀគ្វី Heater O2 Sensor Bank 2 Sensor 2 មានបញ្ហា",
+    titleEn: "Oxygen Sensor Heater Control Circuit (Bank 2 Sensor 1)",
+    titleKm: "សៀគ្វី Heater O2 Sensor Bank 2 Sensor 1 មានបញ្ហា",
     systems: ["engine"],
     severity: "medium",
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V ឬ Boxer",
-    descriptionKm: "ដូច P0036 ប៉ុន្តែនៅ Bank 2។",
-    possibleCauses: ["Heater ខាងក្នុង Sensor ខូច", "ខ្សែភ្លើងក្រោមរថយន្តដាច់"],
-    inspectionFlow: ["ពិនិត្យខ្សែក្រោមរថយន្ត", "វាស់ Resistance Heater"],
-    commonMistakes: ["ទិញ Sensor ខុសកន្លែងមកប្ដូរ"],
+    descriptionKm: "ដូច P0030 ប៉ុន្តែនៅ Bank 2 — គឺ Sensor មុខ Catalytic Converter ជាប់នឹង Exhaust Manifold។",
+    possibleCauses: ["Heater ខាងក្នុង Sensor ខូច", "Connector រលាយដោយកំដៅ Manifold", "Fuse/Relay ខូច"],
+    inspectionFlow: ["វាស់ Resistance Heater", "ពិនិត្យ Connector រកដាននៃកំដៅ", "ពិនិត្យ Fuse"],
+    commonMistakes: ["ទិញ Sensor ខុសកន្លែងមកប្ដូរ — Sensor 1 នៅមុខ Catalytic មិនមែនក្រោយ"],
   },
   {
     code: "P0051",
-    titleEn: "Oxygen Sensor Heater Control Circuit Low (Bank 2 Sensor 2)",
-    titleKm: "សៀគ្វី Heater Bank 2 Sensor 2 មានវ៉ុលទាប",
+    titleEn: "Oxygen Sensor Heater Control Circuit Low (Bank 2 Sensor 1)",
+    titleKm: "សៀគ្វី Heater Bank 2 Sensor 1 មានវ៉ុលទាប",
     systems: ["engine"],
     severity: "medium",
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V ឬ Boxer",
-    descriptionKm: "ចរន្តទៅ Heater Bank 2 Sensor 2 ទាបជាងតម្រូវការ។",
-    possibleCauses: ["ខ្សែភ្លើងក្រោមរថយន្តដាច់/ច្រេះ", "Heater ខូច"],
-    inspectionFlow: ["ពិនិត្យខ្សែក្រោមរថយន្ត", "វាស់ Resistance"],
-    commonMistakes: ["មិនពិនិត្យខ្សែក្រោមរថយន្តជាមុន"],
+    descriptionKm: "ចរន្តទៅ Heater នៃ Sensor មុខ Catalytic Bank 2 ទាបជាងតម្រូវការ។",
+    possibleCauses: ["ខ្សែភ្លើង Short to Ground", "Connector រលាយដោយកំដៅ", "Heater ខូច"],
+    inspectionFlow: ["វាស់ Voltage Connector", "ពិនិត្យ Wiring ជិត Exhaust Manifold"],
+    commonMistakes: ["មិនពិនិត្យ Wiring មុនប្ដូរ Sensor"],
   },
   {
     code: "P0052",
-    titleEn: "Oxygen Sensor Heater Control Circuit High (Bank 2 Sensor 2)",
-    titleKm: "សៀគ្វី Heater Bank 2 Sensor 2 មានវ៉ុលខ្ពស់",
+    titleEn: "Oxygen Sensor Heater Control Circuit High (Bank 2 Sensor 1)",
+    titleKm: "សៀគ្វី Heater Bank 2 Sensor 1 មានវ៉ុលខ្ពស់",
     systems: ["engine"],
     severity: "medium",
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V ឬ Boxer",
-    descriptionKm: "ចរន្តទៅ Heater Bank 2 Sensor 2 ខ្ពស់ជាងតម្រូវការ។",
+    descriptionKm: "ចរន្តទៅ Heater នៃ Sensor មុខ Catalytic Bank 2 ខ្ពស់ជាងតម្រូវការ។",
     possibleCauses: ["ខ្សែភ្លើង Short to Power", "Heater ខូច"],
     inspectionFlow: ["វាស់ Voltage Connector", "ពិនិត្យ Wiring"],
     commonMistakes: ["ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring ជាមុន"],
@@ -774,7 +777,8 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើ Diesel Common Rail",
     descriptionKm: "សៀគ្វីខ្សែភ្លើងទៅ Regulator មានបញ្ហាដាច់ ឬឆ្លងភ្លើង។",
     possibleCauses: ["Connector Regulator រលុង", "Coil ដាច់ខាងក្នុង"],
-    inspectionFlow: ["វាស់ Resistance Regulator", "ពិនិត្យ Connector"],
+    inspectionFlow: [
+      "⚠️ Common Rail មានសម្ពាធ 1,500–2,500 bar — បិទម៉ាស៊ីន រង់ចាំសម្ពាធធ្លាក់ មុនបើក joint។ កុំយកដៃទៅជិតកន្លែងលេចខណៈម៉ាស៊ីនដើរ — ដីសែលអាចទម្លុះស្បែកចូលសាច់","វាស់ Resistance Regulator", "ពិនិត្យ Connector"],
     commonMistakes: ["ប្ដូរ Regulator ថ្មីដោយមិនវាស់ Resistance ជាមុន"],
   },
   {
@@ -786,7 +790,8 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើ Diesel Common Rail",
     descriptionKm: "សញ្ញាចរន្តខ្ពស់ជាងតម្រូវការ។",
     possibleCauses: ["ខ្សែភ្លើង Short to Power", "Regulator ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector", "ពិនិត្យ Wiring"],
+    inspectionFlow: [
+      "⚠️ Common Rail មានសម្ពាធ 1,500–2,500 bar — បិទម៉ាស៊ីន រង់ចាំសម្ពាធធ្លាក់ មុនបើក joint។ កុំយកដៃទៅជិតកន្លែងលេចខណៈម៉ាស៊ីនដើរ — ដីសែលអាចទម្លុះស្បែកចូលសាច់","វាស់ Voltage Connector", "ពិនិត្យ Wiring"],
     commonMistakes: ["ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring ជាមុន"],
   },
   {
@@ -4292,8 +4297,11 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonMistakes: ["ប្ដូរ ECU ភ្លាមដោយមិនពិនិត្យ Power/Ground ជាមុន"],
   },
   {
-    code: "PA100",
-    titleEn: "Hybrid Battery Pack Voltage High",
+    // Was "PA100" — not an OBD-II code at all (position 2 must be 0-3), so no
+    // scan tool ever reports it and the app's own DTC regex could not match it
+    // either: dead data. P0AFB is the real SAE code for this exact fault.
+    code: "P0AFB",
+    titleEn: "Hybrid/EV Battery System Voltage High",
     titleKm: "វ៉ុលសរុប HV Battery ឡើងខ្ពស់ហួសកម្រិត",
     systems: ["hybrid"],
     severity: "critical",
@@ -4456,7 +4464,8 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើរថយន្ត Hybrid (Toyota Prius/Camry Hybrid ជាដើម)",
     descriptionKm: "កង្ហារស្អំត្រជាក់ HV Battery មិនដើរ — ធ្វើឲ្យ Battery ក្ដៅ និងចាស់លឿន។",
     possibleCauses: ["Filter កង្ហារស្ទះធូលី", "Fan Motor ខូច", "Wiring/Connector"],
-    inspectionFlow: ["សម្អាត Filter កង្ហារ HV Battery (ជាទូទៅក្រោមកៅអីក្រោយ)", "ពិនិត្យ Fan ដំណើរការ"],
+    inspectionFlow: [
+      "⚠️ ការងារនេះនៅជាប់ប្រព័ន្ធ HV — ISOLATE ជាមុន ដក service plug ស្លៀក glove class 0","សម្អាត Filter កង្ហារ HV Battery (ជាទូទៅក្រោមកៅអីក្រោយ)", "ពិនិត្យ Fan ដំណើរការ"],
     commonMistakes: ["មិនសម្អាត Filter ធូលី — ជាមូលហេតុញឹកញាប់បំផុត"],
   },
   {
@@ -4468,7 +4477,8 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើរថយន្ត Hybrid (Toyota Prius/Camry Hybrid ជាដើម)",
     descriptionKm: "សញ្ញាចរន្តទៅកង្ហារ ទាបជាងតម្រូវការ។",
     possibleCauses: ["ខ្សែភ្លើង Short to Ground", "Fan Motor ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector Fan", "ពិនិត្យ Wiring"],
+    inspectionFlow: [
+      "⚠️ ការងារនេះនៅជាប់ប្រព័ន្ធ HV — ISOLATE ជាមុន ដក service plug ស្លៀក glove class 0","វាស់ Voltage Connector Fan", "ពិនិត្យ Wiring"],
     commonMistakes: ["មិនពិនិត្យ Wiring មុនប្ដូរ Fan"],
   },
   {
@@ -4480,7 +4490,8 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើរថយន្ត Hybrid (Toyota Prius/Camry Hybrid ជាដើម)",
     descriptionKm: "សញ្ញាចរន្តទៅកង្ហារ ខ្ពស់ជាងតម្រូវការ។",
     possibleCauses: ["ខ្សែភ្លើង Short to Power", "Fan Motor ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector Fan", "ពិនិត្យ Wiring"],
+    inspectionFlow: [
+      "⚠️ ការងារនេះនៅជាប់ប្រព័ន្ធ HV — ISOLATE ជាមុន ដក service plug ស្លៀក glove class 0","វាស់ Voltage Connector Fan", "ពិនិត្យ Wiring"],
     commonMistakes: ["មិនពិនិត្យ Wiring មុនប្ដូរ Fan"],
   },
   {
@@ -4492,7 +4503,8 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើរថយន្ត Hybrid (Toyota Prius/Camry Hybrid ជាដើម)",
     descriptionKm: "ប្រព័ន្ធទឹកស្អំ Inverter មិនគ្រប់គ្រាន់ — ជាទូទៅ Water Pump ខូច ឬខ្វះទឹក។",
     possibleCauses: ["Inverter Water Pump ខូច", "Coolant Inverter ខ្វះ", "Radiator Inverter ស្ទះ"],
-    inspectionFlow: ["ពិនិត្យកម្រិត Inverter Coolant (ធុងដាច់ដោយឡែក)", "ពិនិត្យ Water Pump ដំណើរការ"],
+    inspectionFlow: [
+      "⚠️ ការងារនេះនៅជាប់ប្រព័ន្ធ HV — ISOLATE ជាមុន ដក service plug ស្លៀក glove class 0","ពិនិត្យកម្រិត Inverter Coolant (ធុងដាច់ដោយឡែក)", "ពិនិត្យ Water Pump ដំណើរការ"],
     commonMistakes: ["ច្រឡំធុង Coolant Inverter ជាមួយធុងម៉ាស៊ីនធម្មតា — វាដាច់ដោយឡែក"],
   },
   {
@@ -4528,7 +4540,8 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើរថយន្ត Hybrid (Toyota Prius/Camry Hybrid ជាដើម)",
     descriptionKm: "HV ECU ស្នើឲ្យបង្ហាញភ្លើងព្រមាន — ត្រូវអានកូដ Hybrid លម្អិតដើម្បីដឹងមូលហេតុពិត។",
     possibleCauses: ["មានកូដ Hybrid ផ្សេងជាដើមហេតុ"],
-    inspectionFlow: ["អានកូដទាំងអស់ក្នុង HV ECU", "ដោះស្រាយកូដដើមហេតុជាមុន"],
+    inspectionFlow: [
+      "⚠️ ការងារនេះនៅជាប់ប្រព័ន្ធ HV — ISOLATE ជាមុន ដក service plug ស្លៀក glove class 0","អានកូដទាំងអស់ក្នុង HV ECU", "ដោះស្រាយកូដដើមហេតុជាមុន"],
     commonMistakes: ["ព្យាយាមជួសជុលកូដនេះផ្ទាល់ — វាគ្រាន់តែជាសញ្ញាបញ្ជូនប៉ុណ្ណោះ"],
   },
   {
@@ -5524,7 +5537,8 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក រថយន្តសម័យថ្មីដែលមាន CAN Bus",
     descriptionKm: "Module ផ្សេងបាត់ការទំនាក់ទំនងជាមួយ ប្រអប់បញ្ជា Hybrid (HV ECU) តាម CAN Bus។",
     possibleCauses: ["CAN Bus Wiring ដាច់/Short", "Power/Ground Module បាត់", "Module ខូច"],
-    inspectionFlow: ["ពិនិត្យ Power/Ground Module នោះ", "វាស់ CAN High/Low Resistance", "ស្កេនរក Module ណា offline"],
+    inspectionFlow: [
+      "⚠️ ការងារនេះនៅជាប់ប្រព័ន្ធ HV — ISOLATE ជាមុន ដក service plug ស្លៀក glove class 0","ពិនិត្យ Power/Ground Module នោះ", "វាស់ CAN High/Low Resistance", "ស្កេនរក Module ណា offline"],
     commonMistakes: ["ប្ដូរ Module មុនពិនិត្យ Power/Ground/Wiring"],
   },
   {
@@ -5848,7 +5862,8 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើ Diesel Common Rail និង GDI (Direct Injection)",
     descriptionKm: "Sensor វាស់សម្ពាធក្នុង Fuel Rail មានបញ្ហា — ប៉ះពាល់ការគ្រប់គ្រងសម្ពាធ Fuel ដោយផ្ទាល់។",
     possibleCauses: ["Rail Pressure Sensor ខូច", "Wiring/Connector", "សម្ពាធ Fuel ពិតខុសប្រក្រតី"],
-    inspectionFlow: ["វាស់ Fuel Pressure ផ្ទាល់ដោយ Gauge ធៀបនឹង Live Data", "ពិនិត្យ Connector"],
+    inspectionFlow: [
+      "⚠️ Common Rail មានសម្ពាធ 1,500–2,500 bar — បិទម៉ាស៊ីន រង់ចាំសម្ពាធធ្លាក់ មុនបើក joint។ កុំយកដៃទៅជិតកន្លែងលេចខណៈម៉ាស៊ីនដើរ — ដីសែលអាចទម្លុះស្បែកចូលសាច់","វាស់ Fuel Pressure ផ្ទាល់ដោយ Gauge ធៀបនឹង Live Data", "ពិនិត្យ Connector"],
     commonMistakes: ["ជឿ Live Data ដោយមិនវាស់សម្ពាធពិតដោយ Gauge"],
   },
   {
@@ -5860,7 +5875,8 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើ Diesel Common Rail និង GDI (Direct Injection)",
     descriptionKm: "Sensor វាស់សម្ពាធក្នុង Fuel Rail មានបញ្ហា — ប៉ះពាល់ការគ្រប់គ្រងសម្ពាធ Fuel ដោយផ្ទាល់។",
     possibleCauses: ["Rail Pressure Sensor ខូច", "Wiring/Connector", "សម្ពាធ Fuel ពិតខុសប្រក្រតី"],
-    inspectionFlow: ["វាស់ Fuel Pressure ផ្ទាល់ដោយ Gauge ធៀបនឹង Live Data", "ពិនិត្យ Connector"],
+    inspectionFlow: [
+      "⚠️ Common Rail មានសម្ពាធ 1,500–2,500 bar — បិទម៉ាស៊ីន រង់ចាំសម្ពាធធ្លាក់ មុនបើក joint។ កុំយកដៃទៅជិតកន្លែងលេចខណៈម៉ាស៊ីនដើរ — ដីសែលអាចទម្លុះស្បែកចូលសាច់","វាស់ Fuel Pressure ផ្ទាល់ដោយ Gauge ធៀបនឹង Live Data", "ពិនិត្យ Connector"],
     commonMistakes: ["ជឿ Live Data ដោយមិនវាស់សម្ពាធពិតដោយ Gauge"],
   },
   {
@@ -5872,7 +5888,8 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើ Diesel Common Rail និង GDI (Direct Injection)",
     descriptionKm: "Sensor វាស់សម្ពាធក្នុង Fuel Rail មានបញ្ហា — ប៉ះពាល់ការគ្រប់គ្រងសម្ពាធ Fuel ដោយផ្ទាល់។",
     possibleCauses: ["Rail Pressure Sensor ខូច", "Wiring/Connector", "សម្ពាធ Fuel ពិតខុសប្រក្រតី"],
-    inspectionFlow: ["វាស់ Fuel Pressure ផ្ទាល់ដោយ Gauge ធៀបនឹង Live Data", "ពិនិត្យ Connector"],
+    inspectionFlow: [
+      "⚠️ Common Rail មានសម្ពាធ 1,500–2,500 bar — បិទម៉ាស៊ីន រង់ចាំសម្ពាធធ្លាក់ មុនបើក joint។ កុំយកដៃទៅជិតកន្លែងលេចខណៈម៉ាស៊ីនដើរ — ដីសែលអាចទម្លុះស្បែកចូលសាច់","វាស់ Fuel Pressure ផ្ទាល់ដោយ Gauge ធៀបនឹង Live Data", "ពិនិត្យ Connector"],
     commonMistakes: ["ជឿ Live Data ដោយមិនវាស់សម្ពាធពិតដោយ Gauge"],
   },
   {
@@ -5884,7 +5901,8 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើ Diesel Common Rail និង GDI (Direct Injection)",
     descriptionKm: "Sensor វាស់សម្ពាធក្នុង Fuel Rail មានបញ្ហា — ប៉ះពាល់ការគ្រប់គ្រងសម្ពាធ Fuel ដោយផ្ទាល់។",
     possibleCauses: ["Rail Pressure Sensor ខូច", "Wiring/Connector", "សម្ពាធ Fuel ពិតខុសប្រក្រតី"],
-    inspectionFlow: ["វាស់ Fuel Pressure ផ្ទាល់ដោយ Gauge ធៀបនឹង Live Data", "ពិនិត្យ Connector"],
+    inspectionFlow: [
+      "⚠️ Common Rail មានសម្ពាធ 1,500–2,500 bar — បិទម៉ាស៊ីន រង់ចាំសម្ពាធធ្លាក់ មុនបើក joint។ កុំយកដៃទៅជិតកន្លែងលេចខណៈម៉ាស៊ីនដើរ — ដីសែលអាចទម្លុះស្បែកចូលសាច់","វាស់ Fuel Pressure ផ្ទាល់ដោយ Gauge ធៀបនឹង Live Data", "ពិនិត្យ Connector"],
     commonMistakes: ["ជឿ Live Data ដោយមិនវាស់សម្ពាធពិតដោយ Gauge"],
   },
   {
@@ -5896,7 +5914,8 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើ Diesel Common Rail និង GDI (Direct Injection)",
     descriptionKm: "Sensor វាស់សម្ពាធក្នុង Fuel Rail មានបញ្ហា — ប៉ះពាល់ការគ្រប់គ្រងសម្ពាធ Fuel ដោយផ្ទាល់។",
     possibleCauses: ["Rail Pressure Sensor ខូច", "Wiring/Connector", "សម្ពាធ Fuel ពិតខុសប្រក្រតី"],
-    inspectionFlow: ["វាស់ Fuel Pressure ផ្ទាល់ដោយ Gauge ធៀបនឹង Live Data", "ពិនិត្យ Connector"],
+    inspectionFlow: [
+      "⚠️ Common Rail មានសម្ពាធ 1,500–2,500 bar — បិទម៉ាស៊ីន រង់ចាំសម្ពាធធ្លាក់ មុនបើក joint។ កុំយកដៃទៅជិតកន្លែងលេចខណៈម៉ាស៊ីនដើរ — ដីសែលអាចទម្លុះស្បែកចូលសាច់","វាស់ Fuel Pressure ផ្ទាល់ដោយ Gauge ធៀបនឹង Live Data", "ពិនិត្យ Connector"],
     commonMistakes: ["ជឿ Live Data ដោយមិនវាស់សម្ពាធពិតដោយ Gauge"],
   },
   {

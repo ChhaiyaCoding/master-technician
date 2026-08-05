@@ -1046,7 +1046,8 @@ const DTC_CODES_CORE: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើ Diesel Common Rail (Toyota Hilux/Hiace/Fortuner, Ford Ranger, Isuzu D-Max, Mitsubishi Triton, Nissan Navara)",
     descriptionKm: "សម្ពាធក្នុង Fuel Rail ទាបជាងតម្រូវការ — ធ្វើឲ្យខ្សោយកម្លាំង ចាប់ផ្ដើមពិបាក ឬស្តុប។",
     possibleCauses: ["Fuel Pump (Low/High Pressure) ខ្សោយ", "Fuel Filter ស្ទះ", "Pressure Regulator/SCV ខូច", "Injector Return leak ច្រើន"],
-    inspectionFlow: ["វាស់ Fuel Pressure ផ្ទាល់ដោយ Gauge", "ពិនិត្យ Fuel Filter ស្ទះ", "ពិនិត្យ SCV (Suction Control Valve) Activation"],
+    inspectionFlow: [
+      "⚠️ Common Rail មានសម្ពាធ 1,500–2,500 bar — បិទម៉ាស៊ីន រង់ចាំសម្ពាធធ្លាក់ មុនបើក joint។ កុំយកដៃទៅជិតកន្លែងលេចខណៈម៉ាស៊ីនដើរ — ដីសែលអាចទម្លុះស្បែកចូលសាច់","វាស់ Fuel Pressure ផ្ទាល់ដោយ Gauge", "ពិនិត្យ Fuel Filter ស្ទះ", "ពិនិត្យ SCV (Suction Control Valve) Activation"],
     commonMistakes: ["ប្ដូរ High Pressure Pump ថ្លៃដោយមិនពិនិត្យ Filter/Low Pressure Side ជាមុន"],
   },
   {
@@ -1058,7 +1059,8 @@ const DTC_CODES_CORE: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើ Diesel Common Rail (Toyota Hilux/Hiace/Fortuner, Ford Ranger, Isuzu D-Max, Mitsubishi Triton, Nissan Navara)",
     descriptionKm: "សម្ពាធក្នុង Fuel Rail ខ្ពស់ជាងតម្រូវការ — អាចធ្វើឲ្យ Injector ខូច ឬម៉ាស៊ីនញ័រខ្លាំង។",
     possibleCauses: ["Pressure Regulator/SCV ជាប់បិទ", "Return Line ស្ទះ", "Wiring SCV Short"],
-    inspectionFlow: ["វាស់ Fuel Pressure ផ្ទាល់", "ពិនិត្យ Return Line ស្ទះ", "ពិនិត្យ Resistance SCV"],
+    inspectionFlow: [
+      "⚠️ Common Rail មានសម្ពាធ 1,500–2,500 bar — បិទម៉ាស៊ីន រង់ចាំសម្ពាធធ្លាក់ មុនបើក joint។ កុំយកដៃទៅជិតកន្លែងលេចខណៈម៉ាស៊ីនដើរ — ដីសែលអាចទម្លុះស្បែកចូលសាច់","វាស់ Fuel Pressure ផ្ទាល់", "ពិនិត្យ Return Line ស្ទះ", "ពិនិត្យ Resistance SCV"],
     commonMistakes: ["មិនពិនិត្យ Return Line ស្ទះ ស្មានតែ Regulator ខូច"],
   },
   {
@@ -1070,7 +1072,8 @@ const DTC_CODES_CORE: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើ Diesel Common Rail (Toyota Hilux/Hiace/Fortuner, Ford Ranger, Isuzu D-Max, Mitsubishi Triton, Nissan Navara)",
     descriptionKm: "Regulator/SCV មិនគ្រប់គ្រងសម្ពាធបានទាន់ពេលតាមតម្រូវការ ECU។",
     possibleCauses: ["SCV ខូច/ស្ទះកខ្វក់", "Wiring/Connector SCV", "Fuel កខ្វក់មានកខ្សាយ"],
-    inspectionFlow: ["ពិនិត្យ Activation SCV Live Data", "ពិនិត្យគុណភាព Fuel"],
+    inspectionFlow: [
+      "⚠️ Common Rail មានសម្ពាធ 1,500–2,500 bar — បិទម៉ាស៊ីន រង់ចាំសម្ពាធធ្លាក់ មុនបើក joint។ កុំយកដៃទៅជិតកន្លែងលេចខណៈម៉ាស៊ីនដើរ — ដីសែលអាចទម្លុះស្បែកចូលសាច់","ពិនិត្យ Activation SCV Live Data", "ពិនិត្យគុណភាព Fuel"],
     commonMistakes: ["មិនពិនិត្យគុណភាព Fuel (ទឹកកខ្វក់) ជាហេតុលាក់កំបាំង"],
   },
   {
@@ -1082,7 +1085,8 @@ const DTC_CODES_CORE: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើ Diesel Common Rail (Toyota Hilux/Hiace/Fortuner, Ford Ranger, Isuzu D-Max, Mitsubishi Triton, Nissan Navara)",
     descriptionKm: "សញ្ញាទៅ SCV/Regulator ទាបខុសពីធម្មតា — ជាទូទៅ Wiring ឬ Driver ខូច។",
     possibleCauses: ["SCV Coil ដាច់", "Connector/Wiring រលុង", "ECU Driver ខូច"],
-    inspectionFlow: ["វាស់ Resistance SCV Coil", "ពិនិត្យ Connector/Wiring"],
+    inspectionFlow: [
+      "⚠️ Common Rail មានសម្ពាធ 1,500–2,500 bar — បិទម៉ាស៊ីន រង់ចាំសម្ពាធធ្លាក់ មុនបើក joint។ កុំយកដៃទៅជិតកន្លែងលេចខណៈម៉ាស៊ីនដើរ — ដីសែលអាចទម្លុះស្បែកចូលសាច់","វាស់ Resistance SCV Coil", "ពិនិត្យ Connector/Wiring"],
     commonMistakes: ["មិនវាស់ Resistance មុនប្ដូរ SCV"],
   },
   {
@@ -1094,7 +1098,8 @@ const DTC_CODES_CORE: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើ Diesel Common Rail (Toyota Hilux/Hiace/Fortuner, Ford Ranger, Isuzu D-Max, Mitsubishi Triton, Nissan Navara)",
     descriptionKm: "ECU រកឃើញការធ្លាក់សម្ពាធលឿនខុសពីធម្មតា — បង្ហាញថាមានការលេចប្រេងធំក្នុងប្រព័ន្ធ High ឬ Low Pressure។ ជាទូទៅត្រូវនឹងទម្រង់ ដើររួចស្តុប ក្រោយសម្រាកដើរឡើងវិញ។",
     possibleCauses: ["Injector Return leak ច្រើន (Internal back-leak)", "High Pressure Pipe/Joint លេច", "Low-pressure supply starvation (Filter/Air leak)", "Common Rail Pressure Sensor ខូច"],
-    inspectionFlow: ["អាន Freeze Frame — កត់ RPM/Load ពេលកើត Fault", "ធ្វើ Return-Volume Test លើ Injector នីមួយៗ រកស៊ីឡាំងលេចខ្លាំង", "ពិនិត្យ High Pressure Pipe/Joint រក Visual leak", "ពិនិត្យ Low-pressure side (Filter, Suction leak)"],
+    inspectionFlow: [
+      "⚠️ Common Rail មានសម្ពាធ 1,500–2,500 bar — បិទម៉ាស៊ីន រង់ចាំសម្ពាធធ្លាក់ មុនបើក joint។ កុំយកដៃទៅជិតកន្លែងលេចខណៈម៉ាស៊ីនដើរ — ដីសែលអាចទម្លុះស្បែកចូលសាច់","អាន Freeze Frame — កត់ RPM/Load ពេលកើត Fault", "ធ្វើ Return-Volume Test លើ Injector នីមួយៗ រកស៊ីឡាំងលេចខ្លាំង", "ពិនិត្យ High Pressure Pipe/Joint រក Visual leak", "ពិនិត្យ Low-pressure side (Filter, Suction leak)"],
     commonMistakes: ["ប្ដូរ Injector ទាំងអស់ដោយមិនធ្វើ Return-Volume Test ដើម្បីញែក Injector ណាលេច", "មិនពិនិត្យ Low-pressure side ព្រោះស្មានតែ High Pressure"],
   },
   {
@@ -1106,7 +1111,8 @@ const DTC_CODES_CORE: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើ Diesel Common Rail (Toyota Hilux/Hiace/Fortuner, Ford Ranger, Isuzu D-Max, Mitsubishi Triton, Nissan Navara)",
     descriptionKm: "ដូច P0093 ប៉ុន្តែកម្រិតតូចជាង — ការធ្លាក់សម្ពាធយឺតជាង។",
     possibleCauses: ["Injector Return leak តិចៗ", "Joint/Connection ស្តើងលេច"],
-    inspectionFlow: ["ធ្វើ Return-Volume Test លើ Injector នីមួយៗ", "ពិនិត្យ Joint/Connection ទាំងអស់"],
+    inspectionFlow: [
+      "⚠️ Common Rail មានសម្ពាធ 1,500–2,500 bar — បិទម៉ាស៊ីន រង់ចាំសម្ពាធធ្លាក់ មុនបើក joint។ កុំយកដៃទៅជិតកន្លែងលេចខណៈម៉ាស៊ីនដើរ — ដីសែលអាចទម្លុះស្បែកចូលសាច់","ធ្វើ Return-Volume Test លើ Injector នីមួយៗ", "ពិនិត្យ Joint/Connection ទាំងអស់"],
     commonMistakes: ["រំលងព្រោះ 'តូច' — តាមពេលវេលាអាចវិវត្តទៅ P0093"],
   },
   {
@@ -1124,6 +1130,7 @@ const DTC_CODES_CORE: DtcCode[] = [
       "Fuel កខ្វក់មានកខ្សាយ",
     ],
     inspectionFlow: [
+      "⚠️ Common Rail មានសម្ពាធ 1,500–2,500 bar — បិទម៉ាស៊ីន រង់ចាំសម្ពាធធ្លាក់ មុនបើក joint។ កុំយកដៃទៅជិតកន្លែងលេចខណៈម៉ាស៊ីនដើរ — ដីសែលអាចទម្លុះស្បែកចូលសាច់",
       "ពិនិត្យ Activation FVR/SCV Live Data",
       "សម្អាត/ពិនិត្យ Valve",
       "ពិនិត្យគុណភាព Fuel",
