@@ -28,9 +28,17 @@ export interface InstantAnalysisInput {
   system: SystemId | null;
 }
 
+/** One line of the inspection flow. `dtc` is set when the step came from a
+ * specific code's flow, so the UI can badge it instead of the old "[P0301] ..."
+ * string prefix — which read like a log line to a mechanic (UX Audit v1 P1-2). */
+export interface InspectionStep {
+  text: string;
+  dtc?: string;
+}
+
 export interface InstantAnalysisResult {
   causes: PossibleCause[];
-  inspectionSteps: string[];
+  inspectionSteps: InspectionStep[];
   toolsNeeded: string[];
   safetyNotes: string[];
   /** True if at least one DTC or symptom pattern actually matched (as
@@ -126,23 +134,25 @@ export function analyzeInstant(input: InstantAnalysisInput): InstantAnalysisResu
   };
 }
 
-function buildInspectionSteps(matchedDtc: DtcCode[], hasSignal: boolean): string[] {
-  const steps: string[] = [];
+function buildInspectionSteps(matchedDtc: DtcCode[], hasSignal: boolean): InspectionStep[] {
+  const steps: InspectionStep[] = [];
   if (matchedDtc.length > 0) {
-    steps.push("អាន DTC ទាំងអស់ និង freeze frame ដោយ scan tool");
-    matchedDtc.forEach((d) => d.inspectionFlow.forEach((s) => steps.push(`[${d.code}] ${s}`)));
+    steps.push({ text: "អាន DTC ទាំងអស់ និង freeze frame ដោយ scan tool" });
+    matchedDtc.forEach((d) =>
+      d.inspectionFlow.forEach((s) => steps.push({ text: s, dtc: d.code })),
+    );
   } else if (hasSignal) {
     steps.push(
-      "ពិនិត្យ live data ពាក់ព័ន្ធ (RPM, temp, fuel trim, voltage)",
-      "ពិនិត្យ visual: ខ្សែ រលុង លេច ច្រេះ ខូច",
+      { text: "ពិនិត្យ live data ពាក់ព័ន្ធ (RPM, temp, fuel trim, voltage)" },
+      { text: "ពិនិត្យ visual: ខ្សែ រលុង លេច ច្រេះ ខូច" },
     );
   } else {
     steps.push(
-      "ស្កេនរក DTC ជាមុនសិន បើមាន scan tool",
-      "ពិនិត្យ visual ទូទៅ៖ ខ្សែ រលុង លេច ច្រេះ ខូច",
+      { text: "ស្កេនរក DTC ជាមុនសិន បើមាន scan tool" },
+      { text: "ពិនិត្យ visual ទូទៅ៖ ខ្សែ រលុង លេច ច្រេះ ខូច" },
     );
   }
-  steps.push("បញ្ជាក់មូលហេតុដោយការវាស់ មុនប្ដូរគ្រឿង");
+  steps.push({ text: "បញ្ជាក់មូលហេតុដោយការវាស់ មុនប្ដូរគ្រឿង" });
   return steps;
 }
 

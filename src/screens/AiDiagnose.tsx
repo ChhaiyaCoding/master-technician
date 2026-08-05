@@ -322,7 +322,17 @@ export default function AiDiagnose() {
                       <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/15 text-[11px] font-bold text-accent">
                         {i + 1}
                       </span>
-                      <span className="pt-0.5 leading-snug">{s}</span>
+                      <span className="pt-0.5 leading-snug">
+                        {/* P1-2 — the code used to be a "[P0301] " string prefix,
+                            which read like a log line. As a chip it says the same
+                            thing without looking like debug output. */}
+                        {s.dtc && (
+                          <span className="mr-1.5 rounded-md bg-surface-2 px-1.5 py-0.5 text-[11px] font-semibold text-primary">
+                            {s.dtc}
+                          </span>
+                        )}
+                        {s.text}
+                      </span>
                     </li>
                   ))}
                 </ol>

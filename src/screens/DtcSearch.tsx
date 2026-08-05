@@ -11,23 +11,48 @@ import {
 import { Icon } from "@/components/Icon";
 import { t } from "@/i18n/strings";
 import { DTC_BY_CODE, DTC_CODES, POPULAR_DTC } from "@/data/dtc";
-import { SYSTEM_BY_ID } from "@/data/systems";
+import { SYSTEMS, SYSTEM_BY_ID } from "@/data/systems";
+import type { SystemId } from "@/types";
+
+/** UX Audit v1 / P1-5 — searching "P0" used to render all 566 hits at once:
+ * a 54,000px page that stutters on an older phone and tells the mechanic
+ * nothing about how many there were. Show a first page and a count instead. */
+const PAGE_SIZE = 50;
 
 export default function DtcSearch() {
   const [params] = useSearchParams();
   const [query, setQuery] = useState(params.get("code") ?? "");
+  const [system, setSystem] = useState<SystemId | null>(null);
+  const [shown, setShown] = useState(PAGE_SIZE);
   const q = query.trim().toUpperCase();
 
   const exact = q ? DTC_BY_CODE[q] : undefined;
   const matches = useMemo(() => {
-    if (!q) return [];
-    return DTC_CODES.filter(
-      (d) =>
+    if (!q && !system) return [];
+    return DTC_CODES.filter((d) => {
+      if (system && !d.systems.includes(system)) return false;
+      if (!q) return true;
+      return (
         d.code.includes(q) ||
         d.titleEn.toUpperCase().includes(q) ||
-        d.titleKm.includes(query.trim()),
-    );
-  }, [q, query]);
+        d.titleKm.includes(query.trim())
+      );
+    });
+  }, [q, query, system]);
+
+  // A new search starts at page one again.
+  function search(next: string) {
+    setQuery(next);
+    setShown(PAGE_SIZE);
+  }
+
+  function browseSystem(id: SystemId) {
+    setSystem(system === id ? null : id);
+    setShown(PAGE_SIZE);
+  }
+
+  const browsing = !q && !!system;
+  const showList = (q || system) && !exact && matches.length > 0;
 
   return (
     <>
@@ -43,19 +68,35 @@ export default function DtcSearch() {
             className="input pl-11 uppercase"
             placeholder={t.dtc.placeholder}
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(e) => search(e.target.value)}
           />
         </div>
 
-        {!q && (
+        {/* The size banner and the popular chips are a landing page, so they go
+            away the moment the mechanic is actually browsing a system —
+            otherwise the results they just asked for start a screen and a half
+            down. The system grid stays, to switch systems and to show which one
+            is selected. */}
+        {!q && !system && (
           <>
+            {/* P1-5 — the empty state used to be six chips over a blank screen,
+                so the app's single biggest asset was invisible: a mechanic could
+                reasonably conclude it knew six codes. Say the size out loud, and
+                give a way in for someone who has a system but not a code. */}
+            <div className="mb-4 rounded-2xl border border-border bg-surface-2 px-4 py-3 text-center">
+              <p className="text-sm font-bold">
+                ទិន្នន័យ {DTC_CODES.length} កូដ
+              </p>
+              <p className="text-xs text-muted">ដំណើរការ offline — មិនត្រូវការអ៊ីនធឺណិត</p>
+            </div>
+
             <SectionTitle>{t.dtc.popular}</SectionTitle>
-            <div className="flex flex-wrap gap-2">
+            <div className="mb-5 flex flex-wrap gap-2">
               {POPULAR_DTC.map((code) => (
                 <button
                   key={code}
-                  onClick={() => setQuery(code)}
-                  className="chip font-semibold transition-active active:scale-95"
+                  onClick={() => search(code)}
+                  className="chip min-h-[44px] px-4 font-semibold transition-active active:scale-95"
                 >
                   {code}
                 </button>
@@ -64,12 +105,53 @@ export default function DtcSearch() {
           </>
         )}
 
+        {!q && (
+          <>
+            <SectionTitle>រកតាមប្រព័ន្ធ</SectionTitle>
+            <div className="mb-5 grid grid-cols-3 gap-2">
+              {SYSTEMS.map((s) => {
+                const n = DTC_CODES.filter((d) => d.systems.includes(s.id)).length;
+                if (n === 0) return null;
+                return (
+                  <button
+                    key={s.id}
+                    onClick={() => browseSystem(s.id)}
+                    className={cx(
+                      "flex min-h-[64px] flex-col items-center justify-center gap-0.5 rounded-xl border border-border bg-surface px-1 py-2 transition-active active:scale-95",
+                      system === s.id && "border-primary bg-primary/12",
+                    )}
+                  >
+                    <span className="text-lg">{s.icon}</span>
+                    <span className="text-[10px] font-semibold leading-tight">{s.en}</span>
+                    <span className="text-[10px] text-muted">{n}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </>
+        )}
+
         {exact && <DtcDetail code={exact.code} />}
 
-        {q && !exact && matches.length > 0 && (
+        {showList && (
           <div className="space-y-2.5">
-            {matches.map((d) => (
-              <Card key={d.code} onClick={() => setQuery(d.code)}>
+            <div className="flex items-center justify-between gap-2 px-1">
+              <p className="text-sm font-semibold text-muted">
+                រកឃើញ {matches.length} កូដ
+                {matches.length > shown && ` — បង្ហាញ ${shown} ដំបូង`}
+              </p>
+              {browsing && (
+                <button
+                  onClick={() => setSystem(null)}
+                  className="shrink-0 text-sm font-semibold text-primary"
+                >
+                  ✕ សម្អាត
+                </button>
+              )}
+            </div>
+
+            {matches.slice(0, shown).map((d) => (
+              <Card key={d.code} onClick={() => search(d.code)}>
                 <div className="flex items-center justify-between gap-2">
                   <span className="font-bold text-primary">{d.code}</span>
                   <SeverityBadge severity={d.severity} />
@@ -77,10 +159,19 @@ export default function DtcSearch() {
                 <p className="mt-1 text-sm text-muted">{d.titleKm}</p>
               </Card>
             ))}
+
+            {matches.length > shown && (
+              <button
+                onClick={() => setShown((n) => n + PAGE_SIZE)}
+                className="btn min-h-[48px] w-full rounded-xl border border-border font-semibold text-primary active:bg-surface-2"
+              >
+                មើលបន្ថែម ({matches.length - shown} នៅសល់)
+              </button>
+            )}
           </div>
         )}
 
-        {q && !exact && matches.length === 0 && (
+        {(q || system) && !exact && matches.length === 0 && (
           <EmptyState
             icon={<Icon.Search size={40} />}
             title={t.dtc.notFound}

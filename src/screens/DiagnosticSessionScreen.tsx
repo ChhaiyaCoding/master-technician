@@ -782,7 +782,7 @@ export default function DiagnosticSessionScreen() {
             onClick={handleSave}
             className="btn h-10 rounded-xl px-3 text-sm font-semibold text-primary active:bg-surface-2"
           >
-            {savedFlash ? "✓ បានរក្សាទុក" : "Save"}
+            {savedFlash ? "✓ បានរក្សាទុក" : "រក្សាទុក"}
           </button>
         }
       />
@@ -798,10 +798,10 @@ export default function DiagnosticSessionScreen() {
             <div className="flex items-center justify-between gap-3">
               <div className="flex items-center gap-2">
                 <Icon.Alert size={20} className="text-warning" />
-                <p className="text-sm font-semibold">សម័យនេះកំពុងផ្អាក (Paused)</p>
+                <p className="text-sm font-semibold">សម័យនេះកំពុងផ្អាក</p>
               </div>
               <Button variant="surface" onClick={handleResume} className="!min-h-0 !px-4 !py-2 text-sm">
-                ▶ បន្ត (Resume)
+                ▶ បន្តការងារ
               </Button>
             </div>
           </Card>
@@ -850,7 +850,7 @@ export default function DiagnosticSessionScreen() {
 
                     {present.showReason && action.reason !== present.instruction && (
                       <div className="rounded-xl bg-surface-2 p-3 text-sm">
-                        <span className="font-semibold text-muted">ហេតុអ្វី (Why): </span>
+                        <span className="font-semibold text-muted">ហេតុអ្វី: </span>
                         {action.reason}
                       </div>
                     )}
@@ -935,7 +935,7 @@ export default function DiagnosticSessionScreen() {
 
                 {pending === "skip" && (
                   <InlineForm
-                    label="ហេតុអ្វីបានជារំលង? (required)"
+                    label="ហេតុអ្វីបានជារំលង? (ត្រូវបំពេញ)"
                     value={textInput}
                     onChange={setTextInput}
                     onSubmit={submitSkip}
@@ -946,7 +946,7 @@ export default function DiagnosticSessionScreen() {
                 )}
                 {pending === "cannotPerform" && (
                   <InlineForm
-                    label="ហេតុអ្វីមិនអាចធ្វើបាន? (optional)"
+                    label="ហេតុអ្វីមិនអាចធ្វើបាន? (ស្រេចចិត្ត)"
                     value={textInput}
                     onChange={setTextInput}
                     onSubmit={submitCannotPerform}
@@ -958,13 +958,13 @@ export default function DiagnosticSessionScreen() {
                   <div className="space-y-2 rounded-xl border border-border p-3">
                     <input
                       className="input"
-                      placeholder="តើអ្នកនឹងធ្វើអ្វីជំនួស? (chosen direction)"
+                      placeholder="តើអ្នកនឹងធ្វើអ្វីជំនួស?"
                       value={directionInput}
                       onChange={(e) => setDirectionInput(e.target.value)}
                     />
                     <input
                       className="input"
-                      placeholder="តើភស្តុតាងអ្វីធ្វើឲ្យអ្នកជ្រើសរើសបែបនេះ? (required evidence)"
+                      placeholder="តើភស្តុតាងអ្វីធ្វើឲ្យអ្នកជ្រើសរើសបែបនេះ?"
                       value={textInput}
                       onChange={(e) => setTextInput(e.target.value)}
                     />
@@ -1032,7 +1032,7 @@ export default function DiagnosticSessionScreen() {
         {/* Current Thinking — Fix #2: shorter, easier to scan */}
         <Card className="mb-4">
           <SectionTitle icon={<Icon.Wrench size={18} className="text-primary" />}>
-            ការគិតបច្ចុប្បន្ន (Current Thinking)
+            ការគិតបច្ចុប្បន្ន
           </SectionTitle>
 
           {!reasoningOutput ? (
@@ -1074,8 +1074,13 @@ export default function DiagnosticSessionScreen() {
 
                   {alternatives.length > 0 && (
                     <div>
-                      <p className="mb-1 text-[11px] font-semibold uppercase text-muted">
-                        ទ្រឹស្ដីជំនួស (Alternatives)
+                      {/* No `uppercase` here: Khmer has no case, so the class
+                          only shouted the English half — "(ALTERNATIVES)" — which
+                          read like an error code. The English is gone too; the
+                          language standard keeps component names in English, not
+                          the engine's own vocabulary. */}
+                      <p className="mb-1 text-[11px] font-semibold text-muted">
+                        ទ្រឹស្ដីជំនួស
                       </p>
                       <div className="flex flex-wrap gap-1.5">
                         {alternatives.map((h) => (
@@ -1089,8 +1094,8 @@ export default function DiagnosticSessionScreen() {
 
                   {missing.length > 0 && (
                     <div>
-                      <p className="mb-1 text-[11px] font-semibold uppercase text-muted">
-                        ភស្តុតាងខ្វះខាត (Missing)
+                      <p className="mb-1 text-[11px] font-semibold text-muted">
+                        ភស្តុតាងដែលនៅខ្វះ
                       </p>
                       <ul className="space-y-0.5">
                         {missing.slice(0, 2).map((m) => (
@@ -1113,20 +1118,22 @@ export default function DiagnosticSessionScreen() {
 
         {/* Session Controls */}
         <Card>
-          <SectionTitle>ការគ្រប់គ្រងសម័យ (Session Controls)</SectionTitle>
-          <div className="grid grid-cols-2 gap-2">
+          <SectionTitle>ការគ្រប់គ្រងសម័យ</SectionTitle>
+          {/* P2-1 — Save lived both here and in the top bar. Once the top-bar
+              label stopped being the English "Save" (P1-2) the two read
+              identically, so only the top-bar one is kept: it is on screen at
+              every scroll position, while this card is at the very bottom.
+              Nothing is lost either way — every response already autosaves. */}
+          <div>
             {!paused ? (
-              <Button variant="surface" onClick={handlePause} className="!min-h-0 !py-3 text-sm">
-                ⏸ ផ្អាក (Pause)
+              <Button variant="surface" full onClick={handlePause} className="!min-h-0 !py-3 text-sm">
+                ⏸ ផ្អាកទុកសិន
               </Button>
             ) : (
-              <Button variant="surface" onClick={handleResume} className="!min-h-0 !py-3 text-sm">
-                ▶ បន្ត (Resume)
+              <Button variant="surface" full onClick={handleResume} className="!min-h-0 !py-3 text-sm">
+                ▶ បន្តការងារ
               </Button>
             )}
-            <Button variant="surface" onClick={handleSave} className="!min-h-0 !py-3 text-sm">
-              💾 រក្សាទុក (Save)
-            </Button>
           </div>
           {/* Fix #8 — hide Finish while the record-repair form is open, so the
               mechanic can't tap it twice or miss the revealed fields. */}
@@ -1138,7 +1145,7 @@ export default function DiagnosticSessionScreen() {
                 full
                 className="!min-h-0 !py-3 text-sm"
               >
-                🏁 បញ្ចប់ (Finish)
+                🏁 បញ្ចប់ការងារ
               </Button>
             </div>
           )}
@@ -1201,7 +1208,7 @@ export default function DiagnosticSessionScreen() {
                 onClick={() => setShowEvidence((v) => !v)}
                 className="flex w-full items-center justify-between text-base font-bold"
               >
-                <span>ភស្តុតាង (Evidence) · {evidence.length}</span>
+                <span>ភស្តុតាងដែលប្រមូលបាន · {evidence.length}</span>
                 <span className="text-muted">{showEvidence ? "▾" : "▸"}</span>
               </button>
               {showEvidence && (
@@ -1270,7 +1277,7 @@ export default function DiagnosticSessionScreen() {
               onClick={() => setShowHistory((v) => !v)}
               className="flex w-full items-center justify-between text-base font-bold"
             >
-              <span>ប្រវត្តិ (History) · {session.actionHistory.length}</span>
+              <span>ប្រវត្តិការងារ · {session.actionHistory.length}</span>
               <span className="text-muted">{showHistory ? "▾" : "▸"}</span>
             </button>
             {showHistory && (
