@@ -51,6 +51,16 @@ function ensureSeeded(): void {
   }
 }
 
+/**
+ * UX Audit v1 / P2-6 — the three seeded demo cases are indistinguishable from
+ * the mechanic's own work, so a new user reads them as records they made. The
+ * ids are the only marker, and they are stable, so key off them rather than
+ * adding a field to every stored case.
+ */
+export function isDemoCase(c: RepairCase): boolean {
+  return c.id.startsWith("seed-");
+}
+
 export const caseStore = {
   list(): RepairCase[] {
     ensureSeeded();
@@ -84,6 +94,27 @@ export const caseStore = {
   clearAll(): void {
     write(KEYS.cases, []);
     write(KEYS.seeded, true); // don't re-seed after an explicit clear
+  },
+
+  /** P2-6 — drop only the demo cases, keeping everything the mechanic wrote. */
+  removeDemoCases(): void {
+    write(KEYS.cases, this.list().filter((c) => !isDemoCase(c)));
+    write(KEYS.seeded, true);
+  },
+
+  countDemoCases(): number {
+    return this.list().filter(isDemoCase).length;
+  },
+
+  /**
+   * Write records exactly as given, keeping their own `updatedAt`.
+   * `save()` deliberately stamps the current time — correct for an edit, wrong
+   * for a restore, where rewriting every timestamp to "now" would destroy the
+   * history the backup exists to protect (P2-8).
+   */
+  replaceAll(cases: RepairCase[]): void {
+    write(KEYS.cases, cases);
+    write(KEYS.seeded, true);
   },
 
   /** Full-text-ish search across the meaningful fields. */
@@ -185,6 +216,11 @@ export const sessionStore = {
       KEYS.sessions,
       this.list().filter((s) => s.id !== id),
     );
+  },
+
+  /** Restore-safe write — see caseStore.replaceAll (P2-8). */
+  replaceAll(sessions: DiagnosticSession[]): void {
+    write(KEYS.sessions, sessions);
   },
 };
 

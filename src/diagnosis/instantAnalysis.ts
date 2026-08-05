@@ -76,7 +76,15 @@ export function analyzeInstant(input: InstantAnalysisInput): InstantAnalysisResu
         title,
         confidence,
         likelihood: likelihoodFromConfidence(confidence),
-        reasoning: `ភ្ជាប់នឹងកូដ ${dtc.code} (${dtc.titleKm})`,
+        // UX Audit v1 / P2-3 — every cause used to carry the identical line
+        // "ភ្ជាប់នឹងកូដ P0301 (…)", repeated five times down the screen: useful
+        // once, noise after that, and it answered nothing about why THIS cause
+        // sits at THIS rank. possibleCauses is ordered by how often each one
+        // actually turns out to be the culprit, so say that instead.
+        reasoning:
+          ci === 0
+            ? `មូលហេតុដែលជួបញឹកញាប់បំផុតសម្រាប់កូដ ${dtc.code}`
+            : `មូលហេតុទី ${ci + 1} ដែលជួបញឹកញាប់សម្រាប់កូដ ${dtc.code}`,
       });
     });
   });

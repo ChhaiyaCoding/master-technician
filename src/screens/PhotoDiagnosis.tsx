@@ -1,6 +1,5 @@
 import { useRef, useState } from "react";
 import { Page, TopBar } from "@/components/Layout";
-import { StickyBar } from "@/screens/VehicleSelect";
 import {
   Button,
   Card,
@@ -8,6 +7,7 @@ import {
   EmptyState,
   LikelihoodBadge,
   SectionTitle,
+  StickyBar,
 } from "@/components/ui";
 import { Icon } from "@/components/Icon";
 import { t } from "@/i18n/strings";
@@ -47,8 +47,9 @@ export default function PhotoDiagnosis() {
     <>
       <TopBar title={t.photo.title} back />
       <Page>
-        <p className="mb-4 text-sm text-muted">{t.photo.intro}</p>
-
+        {/* P2-4 — t.photo.intro used to print here AND inside the empty-state
+            dropzone below, the same sentence twice on one screen. The dropzone
+            is where a mechanic is actually looking, so the intro line goes. */}
         <input
           ref={fileRef}
           type="file"

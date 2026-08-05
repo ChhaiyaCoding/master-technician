@@ -29,9 +29,15 @@ export function Button({
     <button
       className={cx(
         "btn btn-lg",
-        variants[variant],
+        // UX Audit v1 / P1-4 — a disabled primary button used to keep its full
+        // orange and just drop to opacity 50, which still reads as "live" on a
+        // phone in daylight; mechanics tapped it repeatedly and nothing
+        // happened. Disabled now means grey, so the state is legible at a
+        // glance rather than inferred from a shade.
+        rest.disabled
+          ? "border border-border bg-surface-2 text-muted pointer-events-none"
+          : variants[variant],
         full && "w-full",
-        rest.disabled && "opacity-50 pointer-events-none",
         className,
       )}
       {...rest}
@@ -201,6 +207,21 @@ export function LoadingDots({ label }: { label?: string }) {
         ))}
       </span>
       {label && <span className="text-sm">{label}</span>}
+    </div>
+  );
+}
+
+/**
+ * Fixed bar pinned to the bottom of the viewport for a screen's primary action.
+ *
+ * Lived in VehicleSelect until UX Audit v1 / P2-2 retired that screen; it was
+ * always shared UI, and importing it from a dead route was the only thing
+ * keeping ~590 lines of the pre-Milestone-10 wizard in the bundle.
+ */
+export function StickyBar({ children }: { children: ReactNode }) {
+  return (
+    <div className="pb-safe fixed inset-x-0 bottom-0 z-20 border-t border-border bg-bg/90 backdrop-blur-md">
+      <div className="mx-auto max-w-md px-4 py-3">{children}</div>
     </div>
   );
 }

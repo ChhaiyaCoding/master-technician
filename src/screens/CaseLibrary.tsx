@@ -4,7 +4,7 @@ import { Page, TopBar } from "@/components/Layout";
 import { Card, EmptyState } from "@/components/ui";
 import { Icon } from "@/components/Icon";
 import { t } from "@/i18n/strings";
-import { caseStore } from "@/services/store";
+import { caseStore, isDemoCase } from "@/services/store";
 import { SYSTEM_BY_ID } from "@/data/systems";
 import { relTime } from "@/utils/format";
 
@@ -77,6 +77,13 @@ export default function CaseLibrary() {
                         {sys?.en} · {relTime(c.updatedAt)}
                       </p>
                     </div>
+                    {/* P2-6 — say which cases shipped with the app, so a new
+                        user doesn't mistake demo data for their own records. */}
+                    {isDemoCase(c) && (
+                      <span className="shrink-0 rounded-full bg-surface-2 px-2 py-0.5 text-[10px] font-semibold text-muted">
+                        គំរូ
+                      </span>
+                    )}
                     {c.dtcCodes.length > 0 && (
                       <span className="chip shrink-0 font-semibold text-primary">
                         {c.dtcCodes[0]}

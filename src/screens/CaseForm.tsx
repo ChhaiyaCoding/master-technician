@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { Page, TopBar } from "@/components/Layout";
-import { StickyBar } from "@/screens/VehicleSelect";
-import { Button, Field, cx } from "@/components/ui";
+import { Button, Field, StickyBar, cx } from "@/components/ui";
 import { Icon } from "@/components/Icon";
 import { t } from "@/i18n/strings";
 import { caseStore, uid } from "@/services/store";
@@ -80,9 +79,16 @@ export default function CaseForm() {
     navigate(`/cases/${draft.id}`, { replace: true });
   }
 
-  const canSave =
-    draft.vehicle.brand.trim().length > 0 &&
-    (draft.symptomText.trim().length > 0 || draft.rootCause.trim().length > 0);
+  // P2-5 — this gate always existed, but nothing on screen said so: required
+  // fields were unmarked and the disabled Save button gave no reason. Name what
+  // is missing instead of leaving the mechanic to guess which of 11 fields it is.
+  const needsBrand = draft.vehicle.brand.trim().length === 0;
+  const needsProblem =
+    draft.symptomText.trim().length === 0 && draft.rootCause.trim().length === 0;
+  const canSave = !needsBrand && !needsProblem;
+  const missingHint = needsBrand
+    ? "ត្រូវបំពេញ៖ ម៉ាករថយន្ត"
+    : "ត្រូវបំពេញ៖ ពិពណ៌នាបញ្ហា ឬ មូលហេតុ";
 
   return (
     <>
@@ -90,7 +96,7 @@ export default function CaseForm() {
       <Page>
         {/* Vehicle */}
         <div className="grid grid-cols-2 gap-3">
-          <Field label={t.vehicle.brand}>
+          <Field label={`${t.vehicle.brand} *`}>
             <input
               className="input"
               value={draft.vehicle.brand}
@@ -204,7 +210,11 @@ export default function CaseForm() {
           </Field>
         </div>
 
-        {/* Text fields */}
+        {/* Text fields. No star on either of the next two: the rule is "at
+            least one of them", which a star per field would misstate. */}
+        <p className="mb-1 mt-2 text-xs text-muted">
+          * បំពេញយ៉ាងហោចណាស់មួយក្នុងចំណោមពីរខាងក្រោម
+        </p>
         <TextArea
           label={t.symptom.describe}
           value={draft.symptomText}
@@ -284,6 +294,9 @@ export default function CaseForm() {
           <Icon.Check size={20} />
           {t.common.save}
         </Button>
+        {!canSave && (
+          <p className="mt-1.5 text-center text-xs text-muted">{missingHint}</p>
+        )}
       </StickyBar>
     </>
   );

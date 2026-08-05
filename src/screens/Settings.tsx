@@ -1,13 +1,40 @@
+import { useRef, useState } from "react";
 import { Page, TopBar } from "@/components/Layout";
 import { Card, SectionTitle, cx } from "@/components/ui";
 import { Icon } from "@/components/Icon";
 import { t } from "@/i18n/strings";
 import { useTheme } from "@/context/ThemeContext";
-import { caseStore } from "@/services/store";
+import { caseStore, sessionStore } from "@/services/store";
+import { downloadBackup, parseBackup, restoreBackup } from "@/services/backup";
 import type { ThemeMode } from "@/types";
 
 export default function Settings() {
   const { mode, setMode } = useTheme();
+  const fileRef = useRef<HTMLInputElement>(null);
+  const [note, setNote] = useState<{ text: string; bad?: boolean } | null>(null);
+  const [demoCount, setDemoCount] = useState(() => caseStore.countDemoCases());
+
+  async function onRestoreFile(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (fileRef.current) fileRef.current.value = "";
+    if (!file) return;
+    try {
+      const r = restoreBackup(parseBackup(await file.text()));
+      setNote({
+        text: `បញ្ចូលរួច — ករណីថ្មី ${r.casesAdded}, កែ ${r.casesUpdated} · សម័យថ្មី ${r.sessionsAdded}, កែ ${r.sessionsUpdated}`,
+      });
+      setDemoCount(caseStore.countDemoCases());
+    } catch (err) {
+      setNote({ text: err instanceof Error ? err.message : String(err), bad: true });
+    }
+  }
+
+  function removeDemo() {
+    if (!confirm(`លុបករណីគំរូ ${demoCount} មែនទេ? ករណីរបស់អ្នកនៅដដែល។`)) return;
+    caseStore.removeDemoCases();
+    setDemoCount(0);
+    setNote({ text: "លុបករណីគំរូរួចរាល់" });
+  }
 
   const options: { value: ThemeMode; label: string; icon: JSX.Element }[] = [
     { value: "light", label: t.settings.light, icon: <Icon.Sun size={20} /> },
@@ -20,9 +47,17 @@ export default function Settings() {
   ];
 
   function clearCases() {
-    if (confirm(t.settings.clearCases + " ?")) {
+    // P2-8 — the old prompt was just the button label with a "?". Say what
+    // actually goes, and how many, before a one-tap wipe of unrecoverable work.
+    const n = caseStore.list().length;
+    if (
+      confirm(
+        `លុបករណីទាំងអស់ ${n} ជាអចិន្ត្រៃយ៍មែនទេ?\n\nសម័យវិនិច្ឆ័យនៅដដែល។ ការលុបនេះមិនអាចត្រឡប់វិញបានទេ — សូម Export ទុកជាមុនបើមិនទាន់។`,
+      )
+    ) {
       caseStore.clearAll();
-      alert(t.result.saved);
+      setDemoCount(0);
+      setNote({ text: `លុបករណី ${n} រួចរាល់` });
     }
   }
 
@@ -51,6 +86,63 @@ export default function Settings() {
 
         {/* Data management */}
         <SectionTitle>{t.settings.dataMgmt}</SectionTitle>
+
+        {/* P2-8 — everything lives in localStorage and nowhere else, so
+            clearing browser data or changing phones loses it all silently.
+            A JSON file the mechanic keeps is the backup that fits an app with
+            no server and no account. */}
+        <p className="mb-2 text-xs text-muted">
+          ទិន្នន័យរក្សាទុកក្នុងទូរស័ព្ទតែប៉ុណ្ណោះ — សូម Export ទុកជាប្រចាំ។
+        </p>
+
+        <div className="mb-3 grid grid-cols-2 gap-2">
+          <button
+            onClick={downloadBackup}
+            className="btn min-h-[52px] rounded-xl border border-border bg-surface text-sm font-semibold active:bg-surface-2"
+          >
+            <Icon.Book size={18} /> Export
+          </button>
+          <button
+            onClick={() => fileRef.current?.click()}
+            className="btn min-h-[52px] rounded-xl border border-border bg-surface text-sm font-semibold active:bg-surface-2"
+          >
+            <Icon.Wrench size={18} /> Import
+          </button>
+        </div>
+        <input
+          ref={fileRef}
+          type="file"
+          accept="application/json,.json"
+          hidden
+          onChange={onRestoreFile}
+        />
+
+        {note && (
+          <p
+            className={cx(
+              "mb-3 rounded-xl border p-2.5 text-sm",
+              note.bad
+                ? "border-danger/30 bg-danger/8 text-danger"
+                : "border-success/30 bg-success/8 text-success",
+            )}
+          >
+            {note.text}
+          </p>
+        )}
+
+        <p className="mb-3 text-xs text-muted">
+          ករណី {caseStore.list().length} · សម័យវិនិច្ឆ័យ {sessionStore.list().length}
+        </p>
+
+        {demoCount > 0 && (
+          <Card onClick={removeDemo} className="mb-3 flex items-center gap-3">
+            <Icon.Trash size={20} className="text-muted" />
+            <span className="text-sm font-semibold">
+              លុបករណីគំរូ ({demoCount})
+            </span>
+          </Card>
+        )}
+
         <Card
           onClick={clearCases}
           className="mb-6 flex items-center gap-3 text-danger"

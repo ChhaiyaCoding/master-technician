@@ -10,7 +10,11 @@ export default defineConfig({
     // PWA — installable on a phone, and offline-capable, which matters for a
     // workshop with poor connectivity (mvp-scope.md "Offline" direction).
     VitePWA({
-      registerType: "autoUpdate",
+      // "prompt", not "autoUpdate": autoUpdate lets a new service worker take
+      // over and reload the page whenever it lands, which could interrupt a
+      // mechanic mid-diagnosis. AppStatus surfaces the waiting update and lets
+      // them choose the moment (UX Audit v1 / P2-9).
+      registerType: "prompt",
       includeAssets: ["apple-touch-icon.png", "icon.svg"],
       manifest: {
         name: "Master Technician",

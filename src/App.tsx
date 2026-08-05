@@ -1,5 +1,6 @@
 import { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
+import { AppStatus } from "@/components/AppStatus";
 import { BottomNav, Page } from "@/components/Layout";
 import { LoadingDots } from "@/components/ui";
 import Home from "@/screens/Home";
@@ -14,9 +15,6 @@ import Home from "@/screens/Home";
  * ai.ts / the diagnosis modules touch. Splitting keeps that out of the initial
  * download so the app opens fast in a workshop with a weak connection.
  */
-const VehicleSelect = lazy(() => import("@/screens/VehicleSelect"));
-const SymptomInput = lazy(() => import("@/screens/SymptomInput"));
-const DiagnosisResult = lazy(() => import("@/screens/DiagnosisResult"));
 const DtcSearch = lazy(() => import("@/screens/DtcSearch"));
 const CaseLibrary = lazy(() => import("@/screens/CaseLibrary"));
 const CaseDetail = lazy(() => import("@/screens/CaseDetail"));
@@ -42,14 +40,15 @@ function ScreenFallback() {
 export default function App() {
   return (
     <div className="min-h-[100dvh] bg-bg text-text">
+      <AppStatus />
       <Suspense fallback={<ScreenFallback />}>
         <Routes>
           <Route path="/" element={<Home />} />
 
-          {/* Diagnosis workflow */}
-          <Route path="/diagnose/vehicle" element={<VehicleSelect />} />
-          <Route path="/diagnose/symptom" element={<SymptomInput />} />
-          <Route path="/diagnose/result" element={<DiagnosisResult />} />
+          {/* The pre-Milestone-10 wizard (/diagnose/vehicle → /diagnose/symptom
+              → /diagnose/result) was removed in UX Audit v1 / P2-2. Nothing had
+              linked into it since AiDiagnose took over, but it still compiled
+              and shipped. `path="*"` sends any old bookmark to Home. */}
 
           {/* DTC */}
           <Route path="/dtc" element={<DtcSearch />} />

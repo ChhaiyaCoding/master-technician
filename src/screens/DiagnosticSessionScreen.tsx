@@ -408,6 +408,8 @@ export default function DiagnosticSessionScreen() {
   const [savedFlash, setSavedFlash] = useState(false);
 
   const [pending, setPending] = useState<PendingResponse>(null);
+  // P2-10 — Skip / Cannot Perform / Override live behind this disclosure.
+  const [moreOptions, setMoreOptions] = useState(false);
   const [notice, setNotice] = useState<string | null>(null);
   const [textInput, setTextInput] = useState("");
   const [directionInput, setDirectionInput] = useState("");
@@ -496,6 +498,7 @@ export default function DiagnosticSessionScreen() {
     saveSession(next);
     setError(null);
     setPending(null);
+    setMoreOptions(false);
     setNotice(null);
     setTextInput("");
     setDirectionInput("");
@@ -619,13 +622,13 @@ export default function DiagnosticSessionScreen() {
       for (const bId of c.contradictingHypothesisIds) {
         next =
           kind === "rules_out"
-            ? eliminateHypothesis(next, bId, "mechanic", "ភស្តុតាងកាត់ទ្រឹស្ដីនេះចេញ (contradiction review)។")
+            ? eliminateHypothesis(next, bId, "mechanic", "ភស្តុតាងកាត់ទ្រឹស្ដីនេះចេញ។")
             : unlinkEvidence(
                 next,
                 bId,
                 c.evidenceId,
                 "mechanic",
-                "ភស្តុតាងតាមពិតមិនផ្ទុយនឹងទ្រឹស្ដីនេះទេ (contradiction review)។",
+                "ភស្តុតាងតាមពិតមិនផ្ទុយនឹងទ្រឹស្ដីនេះទេ។",
               );
       }
       return next;
@@ -708,7 +711,7 @@ export default function DiagnosticSessionScreen() {
   function handleFinish() {
     if (session.status === "verified" || session.status === "abandoned") return;
     if (!confirmedHypothesis) {
-      setError("សូមបញ្ជាក់មូលហេតុ (root cause) មុននឹងបញ្ចប់សម័យវិនិច្ឆ័យ។");
+      setError("សូមបញ្ជាក់មូលហេតុមុននឹងបញ្ចប់សម័យវិនិច្ឆ័យ។");
       return;
     }
     if (!session.repairDecision) {
@@ -756,7 +759,7 @@ export default function DiagnosticSessionScreen() {
    */
   function saveAsRepairCase() {
     if (!canSaveAsCase(session)) {
-      setError("ត្រូវផ្ទៀងផ្ទាត់ (Verify) សម័យនេះជាមុនសិន មុននឹងរក្សាទុកជា Repair Case។");
+      setError("ត្រូវផ្ទៀងផ្ទាត់សម័យនេះជាមុនសិន មុននឹងរក្សាទុកជាករណីជួសជុល។");
       return;
     }
     try {
@@ -813,7 +816,7 @@ export default function DiagnosticSessionScreen() {
           <div ref={actionRef} className="scroll-mt-20">
           <Card className="mb-4 border-primary/30 bg-primary/5">
             <SectionTitle icon={<Icon.Alert size={18} className="text-primary" />}>
-              សកម្មភាពបន្ទាប់ (Next Action)
+              សកម្មភាពបន្ទាប់
             </SectionTitle>
 
             {/* Fix #5 — a visible acknowledgment banner (e.g. after Skip). */}
@@ -898,10 +901,26 @@ export default function DiagnosticSessionScreen() {
                     />
 
                     {/* Fix #1 — Skip / Cannot Perform / Override are NOT offered on
-                        safety steps (nor on terminal/verification steps). */}
+                        safety steps (nor on terminal/verification steps).
+                        P2-10 — and they now sit behind a disclosure. Answering the
+                        step (OK / Not OK) is ~90% of what happens here; putting
+                        five equal-weight choices in front of a mechanic with oily
+                        hands made the common path compete with the rare ones. */}
                     {!isSafety &&
                       action.type !== "session_complete" &&
                       action.type !== "repair_verification" && (
+                        <>
+                        <button
+                          onClick={() => {
+                            setMoreOptions((v) => !v);
+                            if (moreOptions) setPending(null);
+                          }}
+                          className="w-full pt-1 text-left text-sm font-semibold text-muted active:text-text"
+                        >
+                          {moreOptions ? "▾" : "▸"} ជម្រើសផ្សេង
+                        </button>
+
+                        {moreOptions && (
                         <div className="grid grid-cols-3 gap-2 pt-1">
                           <button
                             onClick={() => setPending(pending === "skip" ? null : "skip")}
@@ -931,6 +950,8 @@ export default function DiagnosticSessionScreen() {
                             ✍ បដិសេធ/ជ្រើសផ្សេង
                           </button>
                         </div>
+                        )}
+                        </>
                       )}
 
                 {pending === "skip" && (
@@ -1190,7 +1211,7 @@ export default function DiagnosticSessionScreen() {
                 <Icon.Book size={18} /> រក្សាទុកជា Repair Case
               </Button>
               <p className="text-center text-xs text-muted">
-                ករណីនេះនឹងជួយការវិនិច្ឆ័យលើកក្រោយ (Case Library)។
+                ករណីនេះនឹងជួយការវិនិច្ឆ័យលើកក្រោយ។
               </p>
             </div>
           )}
@@ -1512,7 +1533,7 @@ function ResponseArea({
           onChange={(e) => setTextInput(e.target.value)}
         />
         <Button onClick={() => onAccept(textInput)} full className="!min-h-0 !py-3 text-sm">
-          ✅ បញ្ជាក់ជាមូលហេតុ (Confirm root cause)
+          ✅ បញ្ជាក់ជាមូលហេតុ
         </Button>
       </div>
     );
@@ -1592,7 +1613,7 @@ function ResponseArea({
   // safety_instruction, review_contradiction — a simple acknowledge.
   return (
     <Button onClick={() => onAccept(textInput || undefined)} full className="!min-h-0 !py-3 text-sm">
-      ✓ បានធ្វើរួច (Completed)
+      ✓ បានធ្វើរួច
     </Button>
   );
 }
