@@ -1,0 +1,63 @@
+# Build and publish to GitHub Pages on every push to main.
+#
+# Replaces the Netlify deploy. Same command Netlify ran (`npm run build`), same
+# Node version, so nothing about the build changes — only where the output goes.
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  # Lets you re-run a deploy from the Actions tab without an empty commit.
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never let two deploys race. A queued run waits rather than cancelling, so a
+# push that lands mid-build still ends up published.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - run: npm ci
+
+      # The build already runs `tsc --noEmit`, but the tests do not — and this
+      # project's tests cover things a type check cannot: DTC bank/sensor
+      # positions, safety warnings on hazardous codes, ELM327 byte decoding.
+      # A red test should stop a deploy.
+      - run: npm test
+
+      - run: npm run build
+
+      # GitHub Pages has no redirect rules, so a deep link like
+      # /master-technician/sessions would 404 on refresh. Pages serves 404.html
+      # for any unmatched path, and because it is the app itself, React Router
+      # picks up the URL and renders the right screen.
+      - run: cp dist/index.html dist/404.html
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

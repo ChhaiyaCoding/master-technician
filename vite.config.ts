@@ -3,8 +3,23 @@ import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 import { fileURLToPath, URL } from "node:url";
 
+/**
+ * GitHub Pages serves a project site from a sub-path — /master-technician/ —
+ * not from the domain root the way Netlify did. Every absolute URL the build
+ * emits has to carry that prefix, and so do the PWA manifest's scope and
+ * start_url, or the installed app opens a 404.
+ *
+ * `vite preview` serves the built output, so it needs the same base — but its
+ * `command` is "serve", not "build". Checking only the command left preview
+ * hosting at the root while index.html asked for /master-technician/..., and
+ * every asset silently fell through to the SPA fallback: a blank page with no
+ * console error. Only the dev server runs at "/".
+ */
+const BASE = "/master-technician/";
+
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(({ command, isPreview }) => ({
+  base: command === "build" || isPreview ? BASE : "/",
   plugins: [
     react(),
     // PWA — installable on a phone, and offline-capable, which matters for a
@@ -25,8 +40,10 @@ export default defineConfig({
         background_color: "#0b0f14",
         display: "standalone",
         orientation: "portrait",
-        start_url: "/",
-        scope: "/",
+        // Must match `base`. An installed PWA whose start_url points at the
+        // domain root would open GitHub's 404 page, not the app.
+        start_url: BASE,
+        scope: BASE,
         icons: [
           { src: "icon-192.png", sizes: "192x192", type: "image/png" },
           { src: "icon-512.png", sizes: "512x512", type: "image/png" },
@@ -92,4 +109,4 @@ export default defineConfig({
   test: {
     environment: "jsdom",
   },
-});
+}));
