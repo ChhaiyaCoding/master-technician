@@ -84,7 +84,10 @@ export default defineConfig({
   },
   server: {
     host: true,
-    port: 5173,
+    // Take the port from the environment when one is assigned, so several
+    // sessions can preview the app at once instead of colliding on 5173.
+    // Falls back to Vite's own default when PORT is unset.
+    port: process.env.PORT ? Number(process.env.PORT) : undefined,
   },
   test: {
     environment: "jsdom",

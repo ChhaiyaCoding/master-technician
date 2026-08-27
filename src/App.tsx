@@ -25,6 +25,7 @@ const Settings = lazy(() => import("@/screens/Settings"));
 const DiagnosticSessionScreen = lazy(() => import("@/screens/DiagnosticSessionScreen"));
 const AiDiagnose = lazy(() => import("@/screens/AiDiagnose"));
 const SessionList = lazy(() => import("@/screens/SessionList"));
+const ObdScan = lazy(() => import("@/screens/ObdScan"));
 
 /** Shown for the brief moment a lazy screen's chunk is downloading. */
 function ScreenFallback() {
@@ -66,6 +67,9 @@ export default function App() {
 
           {/* Milestone 10 — AI Diagnose (instant answer, DTC optional) */}
           <Route path="/diagnose/new" element={<AiDiagnose />} />
+
+          {/* OBD-II — read codes off the car over a BLE adapter */}
+          <Route path="/scan" element={<ObdScan />} />
 
           {/* Milestone 9 — all sessions / resume previous work */}
           <Route path="/sessions" element={<SessionList />} />

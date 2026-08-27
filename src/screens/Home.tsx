@@ -41,6 +41,12 @@ export default function Home() {
       icon: <Icon.Book size={26} />,
       onClick: () => navigate("/cases"),
     },
+    {
+      km: "ស្កេនរថយន្ត",
+      en: "OBD-II Scan",
+      icon: <Icon.Car size={26} />,
+      onClick: () => navigate("/scan"),
+    },
     // UX Audit v1 / P0-1 — Photo Diagnosis and Ask Expert were here, sized
     // exactly like DTC Search and the Case Library. But those two run on
     // PlaceholderAiProvider: analyzePhotos() never looks at the image (it only
