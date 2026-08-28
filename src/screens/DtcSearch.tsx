@@ -183,6 +183,19 @@ export default function DtcSearch() {
   );
 }
 
+/**
+ * UX/content audit P2-4 — "ជួបលើគ្រប់ម៉ាក" appears on 144 codes. It is true and
+ * it is useless: a whole labelled section that tells the mechanic nothing they
+ * did not already assume. The field is worth showing only when it narrows
+ * something down, so the generic value is filtered out here rather than
+ * stripped from the data, which stays accurate.
+ */
+function isUsefulCommonOn(value: string | undefined): value is string {
+  if (!value) return false;
+  const v = value.trim();
+  return v.length > 0 && !/^ជួបលើគ្រប់ម៉ាក$/.test(v);
+}
+
 /** Full detail card for a matched DTC — reused by search. */
 export function DtcDetail({ code }: { code: string }) {
   const navigate = useNavigate();
@@ -214,7 +227,7 @@ export function DtcDetail({ code }: { code: string }) {
       </section>
 
       {/* Commonly found on — practical pattern, never a brand-ownership claim */}
-      {d.commonOn && (
+      {isUsefulCommonOn(d.commonOn) && (
         <section>
           <SectionTitle icon={<Icon.Car size={18} className="text-accent" />}>
             {t.dtc.commonOn}

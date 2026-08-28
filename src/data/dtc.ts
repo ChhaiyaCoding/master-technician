@@ -924,11 +924,16 @@ const DTC_CODES_CORE: DtcCode[] = [
     titleEn: "ABS/TCS Brake Switch Circuit Malfunction",
     titleKm: "សៀគ្វី Brake Switch ភ្ជាប់ ABS/TCS មានបញ្ហា",
     systems: ["abs", "brake"],
-    severity: "low",
+    severity: "medium",
     commonOn: "ជួបលើគ្រប់ម៉ាក រថយន្តដែលមាន ABS",
-    descriptionKm: "Brake Light Switch ផ្ញើសញ្ញាមិនត្រឹមត្រូវទៅ ABS Module។",
-    possibleCauses: ["Brake Switch ខូច/តម្រឹមខុស", "Wiring/Connector"],
-    inspectionFlow: ["ពិនិត្យតម្រឹម Brake Switch", "វាស់ Continuity Switch"],
+    descriptionKm:
+      "Brake Light Switch ផ្ញើសញ្ញាមិនត្រឹមត្រូវទៅ ABS Module។ ABS Module ពឹងលើសញ្ញានេះដើម្បីដឹងថាអ្នកបើកបរកំពុងចាប់ហ្វ្រាំង — ជាទូទៅវាបិទ ABS និង Stability Control ចោល។ ហ្វ្រាំងធម្មតានៅដំណើរការ តែជំនួយពេលហ្វ្រាំងភ្លាមៗលែងមាន។",
+    possibleCauses: ["Brake Switch ខូច/តម្រឹមខុស", "Wiring/Connector", "Brake Pedal Bumper បាក់ ធ្វើឲ្យ Switch មិនត្រឡប់"],
+    inspectionFlow: [
+      "ពិនិត្យតម្រឹម Brake Switch និងចន្លោះ Free Play នៃ Pedal",
+      "វាស់ Continuity Switch ទាំងពេលចុច និងលែង",
+      "ពិនិត្យថាភ្លើងហ្វ្រាំងភ្លឺ និងរលត់ត្រូវតាមការចុច",
+    ],
     commonMistakes: ["មិនតម្រឹម Switch ឡើងវិញក្រោយប្ដូរ"],
   },
 
@@ -1268,7 +1273,7 @@ const DTC_CODES_CORE: DtcCode[] = [
     systems: ["engine"],
     severity: "medium",
     commonOn: "ជួបលើគ្រប់ម៉ាក",
-    descriptionKm: "សៀគ្វី ECT ដាច់ — ECU មិនដឹងសីតុណ្ហភាពម៉ាស៊ីន ធ្វើឲ្យកង្ហារដើរខ្លាំងជានិច្ច ការពារម៉ាស៊ីន។",
+    descriptionKm: "សៀគ្វី ECT ដាច់ — ECU មិនដឹងសីតុណ្ហភាពម៉ាស៊ីន ធ្វើឲ្យ Cooling Fan ដើរខ្លាំងជានិច្ច ការពារម៉ាស៊ីន។",
     possibleCauses: ["ECT Sensor ខូច", "Connector ច្រេះដោយ Coolant leak"],
     inspectionFlow: ["ពិនិត្យ Connector ជិត Sensor", "វាស់ 5V ទៅកាន់ Sensor"],
     commonMistakes: ["ប្ដូរ Fan Motor/Relay ដោយមិនពិនិត្យ ECT Sensor ជាមុន"],
@@ -1282,7 +1287,7 @@ const DTC_CODES_CORE: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "វ៉ុលទាបខ្លាំង — ECU គិតថាម៉ាស៊ីនក្ដៅខ្លាំង អាចកាត់ A/C Compressor ដើម្បីកាត់បន្ថយបន្ទុក។",
     possibleCauses: ["ម៉ាស៊ីនកំពុង Overheat ពិត", "ខ្សែភ្លើងសញ្ញា Short to Ground", "ECT Sensor ខូច"],
-    inspectionFlow: ["ពិនិត្យកម្រិត Coolant ជាមុន (ប្រយ័ត្នកុំបើកគម្របពេលក្ដៅ)", "ពិនិត្យកង្ហារដំណើរការ"],
+    inspectionFlow: ["ពិនិត្យកម្រិត Coolant ជាមុន (ប្រយ័ត្នកុំបើកគម្របពេលក្ដៅ)", "ពិនិត្យថា Fan ដំណើរការ"],
     commonMistakes: ["កែតែ Wiring ដោយមិនផ្ទៀងផ្ទាត់ថាម៉ាស៊ីនកំពុង Overheat ពិត"],
   },
   {
