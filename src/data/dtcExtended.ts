@@ -525,8 +525,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "កម្រជួប",
     descriptionKm: "សញ្ញាចរន្តទាបជាងតម្រូវការ។",
     possibleCauses: ["ខ្សែភ្លើង Short to Ground", "Valve ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["មិនពិនិត្យ Wiring ជាមុនប្ដូរ Valve"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Air Assist Injector Control Circuit or នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ដក Connector របស់ Air Assist Injector Control Circuit or ចេញ រួចអានកូដឡើងវិញ — បើកូដប្ដូរទៅ Circuit High នោះ Wiring ល្អ ហើយ Air Assist Injector Control Circuit or ខូច។ បើកូដនៅ Low ដដែល នោះខ្សែ Short to Ground",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness (ជាទូទៅ 5V)",
+      "វាស់ Continuity ខ្សែ Ground ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "មិនពិនិត្យ Wiring ជាមុនប្ដូរ Valve",
+      "សន្និដ្ឋានថា Air Assist Injector Control Circuit or ខូចដោយមិនធ្វើតេស្តដក Connector — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0067",
@@ -537,8 +546,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "កម្រជួប",
     descriptionKm: "សញ្ញាចរន្តខ្ពស់ជាងតម្រូវការ។",
     possibleCauses: ["ខ្សែភ្លើង Short to Power", "Valve ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring ជាមុន"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Air Assist Injector Control នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ភ្ជាប់ Jumper រវាង Signal និង Ground នៅ Connector ខាង Harness — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Air Assist Injector Control ដាច់ខាងក្នុង។ បើកូដនៅ High ដដែល នោះខ្សែ Signal ដាច់ ឬ Ground បាត់",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring ជាមុន",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0068",
@@ -597,8 +615,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "សញ្ញាទាបខ្លាំង — Wiring ឬ Sensor ខូច។",
     possibleCauses: ["ខ្សែភ្លើង Short to Ground", "Sensor ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["មិនពិនិត្យ Wiring មុនប្ដូរ Sensor"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Ambient Air Temperature Sensor នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ដក Connector របស់ Ambient Air Temperature Sensor ចេញ រួចអានកូដឡើងវិញ — បើកូដប្ដូរទៅ Circuit High នោះ Wiring ល្អ ហើយ Ambient Air Temperature Sensor ខូច។ បើកូដនៅ Low ដដែល នោះខ្សែ Short to Ground",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness (ជាទូទៅ 5V)",
+      "វាស់ Continuity ខ្សែ Ground ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "មិនពិនិត្យ Wiring មុនប្ដូរ Sensor",
+      "សន្និដ្ឋានថា Ambient Air Temperature Sensor ខូចដោយមិនធ្វើតេស្តដក Connector — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0073",
@@ -609,8 +636,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "សញ្ញាខ្ពស់ខ្លាំង — ខ្សែភ្លើងដាច់ ឬ Sensor ខូច។",
     possibleCauses: ["ខ្សែភ្លើងដាច់", "Sensor ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Ambient Air Temperature Sensor នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ភ្ជាប់ Jumper រវាង Signal និង Ground នៅ Connector ខាង Harness — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Ambient Air Temperature Sensor ដាច់ខាងក្នុង។ បើកូដនៅ High ដដែល នោះខ្សែ Signal ដាច់ ឬ Ground បាត់",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0074",
@@ -645,8 +681,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនមាន Variable Valve Lift",
     descriptionKm: "សញ្ញាចរន្តទាបជាងតម្រូវការ។",
     possibleCauses: ["ខ្សែភ្លើង Short to Ground", "Solenoid ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["មិនពិនិត្យ Wiring មុនប្ដូរ Solenoid"],
+    inspectionFlow: [
+      "វាស់ Resistance របស់ Intake Valve Control Solenoid (Bank 1) ធៀបនឹងតម្លៃស្តង់ដារ — Short ខាងក្នុងឬអត់",
+      "ដក Connector របស់ Intake Valve Control Solenoid (Bank 1) ចេញ រួចអានកូដឡើងវិញ — បើកូដប្ដូរទៅ Circuit High/Open នោះ Intake Valve Control Solenoid (Bank 1) Short ខាងក្នុង។ បើកូដនៅ Low ដដែល នោះខ្សែ Short to Ground",
+      "ពិនិត្យ Power Feed មកដល់ Intake Valve Control Solenoid (Bank 1) — Fuse និង Relay",
+      "សាកបញ្ជា Intake Valve Control Solenoid (Bank 1) ដោយ Scan Tool ហើយស្ដាប់សំឡេង ឬស្ទាបការរំញ័រ",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "មិនពិនិត្យ Wiring មុនប្ដូរ Solenoid",
+      "ប្ដូរ Intake Valve Control Solenoid (Bank 1) ដោយមិនវាស់ Resistance និងមិនពិនិត្យ Power Feed ជាមុន",
+    ],
   },
   {
     code: "P0077",
@@ -657,8 +702,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនមាន Variable Valve Lift",
     descriptionKm: "សញ្ញាចរន្តខ្ពស់ជាងតម្រូវការ។",
     possibleCauses: ["ខ្សែភ្លើង Short to Power", "Solenoid ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring"],
+    inspectionFlow: [
+      "វាស់ Resistance របស់ Intake Valve Control Solenoid (Bank 1) ធៀបនឹងតម្លៃស្តង់ដារ — ដាច់ខាងក្នុងឬអត់",
+      "ភ្ជាប់ Jumper ខ្សែ Control ទៅ Ground នៅ Connector — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Intake Valve Control Solenoid (Bank 1) ដាច់ខាងក្នុង",
+      "ពិនិត្យ Power Feed មកដល់ Intake Valve Control Solenoid (Bank 1) — Fuse និង Relay",
+      "សាកបញ្ជា Intake Valve Control Solenoid (Bank 1) ដោយ Scan Tool ហើយស្ដាប់សំឡេង ឬស្ទាបការរំញ័រ",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring",
+      "ប្ដូរ Intake Valve Control Solenoid (Bank 1) ដោយមិនវាស់ Resistance និងមិនពិនិត្យ Power Feed ជាមុន",
+    ],
   },
   {
     code: "P0078",
@@ -681,8 +735,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនមាន Variable Valve Lift",
     descriptionKm: "សញ្ញាចរន្តទាបជាងតម្រូវការ។",
     possibleCauses: ["ខ្សែភ្លើង Short to Ground", "Solenoid ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["មិនពិនិត្យ Wiring ជាមុន"],
+    inspectionFlow: [
+      "វាស់ Resistance របស់ Exhaust Valve Control Solenoid (Bank 1) ធៀបនឹងតម្លៃស្តង់ដារ — Short ខាងក្នុងឬអត់",
+      "ដក Connector របស់ Exhaust Valve Control Solenoid (Bank 1) ចេញ រួចអានកូដឡើងវិញ — បើកូដប្ដូរទៅ Circuit High/Open នោះ Exhaust Valve Control Solenoid (Bank 1) Short ខាងក្នុង។ បើកូដនៅ Low ដដែល នោះខ្សែ Short to Ground",
+      "ពិនិត្យ Power Feed មកដល់ Exhaust Valve Control Solenoid (Bank 1) — Fuse និង Relay",
+      "សាកបញ្ជា Exhaust Valve Control Solenoid (Bank 1) ដោយ Scan Tool ហើយស្ដាប់សំឡេង ឬស្ទាបការរំញ័រ",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "មិនពិនិត្យ Wiring ជាមុន",
+      "ប្ដូរ Exhaust Valve Control Solenoid (Bank 1) ដោយមិនវាស់ Resistance និងមិនពិនិត្យ Power Feed ជាមុន",
+    ],
   },
   {
     code: "P0080",
@@ -693,8 +756,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនមាន Variable Valve Lift",
     descriptionKm: "សញ្ញាចរន្តខ្ពស់ជាងតម្រូវការ។",
     possibleCauses: ["ខ្សែភ្លើង Short to Power", "Solenoid ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring"],
+    inspectionFlow: [
+      "វាស់ Resistance របស់ Exhaust Valve Control Solenoid (Bank 1) ធៀបនឹងតម្លៃស្តង់ដារ — ដាច់ខាងក្នុងឬអត់",
+      "ភ្ជាប់ Jumper ខ្សែ Control ទៅ Ground នៅ Connector — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Exhaust Valve Control Solenoid (Bank 1) ដាច់ខាងក្នុង",
+      "ពិនិត្យ Power Feed មកដល់ Exhaust Valve Control Solenoid (Bank 1) — Fuse និង Relay",
+      "សាកបញ្ជា Exhaust Valve Control Solenoid (Bank 1) ដោយ Scan Tool ហើយស្ដាប់សំឡេង ឬស្ទាបការរំញ័រ",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring",
+      "ប្ដូរ Exhaust Valve Control Solenoid (Bank 1) ដោយមិនវាស់ Resistance និងមិនពិនិត្យ Power Feed ជាមុន",
+    ],
   },
   {
     code: "P0081",
@@ -717,8 +789,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V",
     descriptionKm: "សញ្ញាចរន្តទាបជាងតម្រូវការ Bank 2។",
     possibleCauses: ["ខ្សែភ្លើង Short to Ground", "Solenoid ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["មិនពិនិត្យ Wiring មុន"],
+    inspectionFlow: [
+      "វាស់ Resistance របស់ Intake Valve Control Solenoid (Bank 2) ធៀបនឹងតម្លៃស្តង់ដារ — Short ខាងក្នុងឬអត់",
+      "ដក Connector របស់ Intake Valve Control Solenoid (Bank 2) ចេញ រួចអានកូដឡើងវិញ — បើកូដប្ដូរទៅ Circuit High/Open នោះ Intake Valve Control Solenoid (Bank 2) Short ខាងក្នុង។ បើកូដនៅ Low ដដែល នោះខ្សែ Short to Ground",
+      "ពិនិត្យ Power Feed មកដល់ Intake Valve Control Solenoid (Bank 2) — Fuse និង Relay",
+      "សាកបញ្ជា Intake Valve Control Solenoid (Bank 2) ដោយ Scan Tool ហើយស្ដាប់សំឡេង ឬស្ទាបការរំញ័រ",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "មិនពិនិត្យ Wiring មុន",
+      "ប្ដូរ Intake Valve Control Solenoid (Bank 2) ដោយមិនវាស់ Resistance និងមិនពិនិត្យ Power Feed ជាមុន",
+    ],
   },
   {
     code: "P0083",
@@ -729,8 +810,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V",
     descriptionKm: "សញ្ញាចរន្តខ្ពស់ជាងតម្រូវការ Bank 2។",
     possibleCauses: ["ខ្សែភ្លើង Short to Power", "Solenoid ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring"],
+    inspectionFlow: [
+      "វាស់ Resistance របស់ Intake Valve Control Solenoid (Bank 2) ធៀបនឹងតម្លៃស្តង់ដារ — ដាច់ខាងក្នុងឬអត់",
+      "ភ្ជាប់ Jumper ខ្សែ Control ទៅ Ground នៅ Connector — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Intake Valve Control Solenoid (Bank 2) ដាច់ខាងក្នុង",
+      "ពិនិត្យ Power Feed មកដល់ Intake Valve Control Solenoid (Bank 2) — Fuse និង Relay",
+      "សាកបញ្ជា Intake Valve Control Solenoid (Bank 2) ដោយ Scan Tool ហើយស្ដាប់សំឡេង ឬស្ទាបការរំញ័រ",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring",
+      "ប្ដូរ Intake Valve Control Solenoid (Bank 2) ដោយមិនវាស់ Resistance និងមិនពិនិត្យ Power Feed ជាមុន",
+    ],
   },
   {
     code: "P0084",
@@ -753,8 +843,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V",
     descriptionKm: "សញ្ញាចរន្តទាបជាងតម្រូវការ Bank 2។",
     possibleCauses: ["ខ្សែភ្លើង Short to Ground", "Solenoid ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["មិនពិនិត្យ Wiring មុន"],
+    inspectionFlow: [
+      "វាស់ Resistance របស់ Exhaust Valve Control Solenoid (Bank 2) ធៀបនឹងតម្លៃស្តង់ដារ — Short ខាងក្នុងឬអត់",
+      "ដក Connector របស់ Exhaust Valve Control Solenoid (Bank 2) ចេញ រួចអានកូដឡើងវិញ — បើកូដប្ដូរទៅ Circuit High/Open នោះ Exhaust Valve Control Solenoid (Bank 2) Short ខាងក្នុង។ បើកូដនៅ Low ដដែល នោះខ្សែ Short to Ground",
+      "ពិនិត្យ Power Feed មកដល់ Exhaust Valve Control Solenoid (Bank 2) — Fuse និង Relay",
+      "សាកបញ្ជា Exhaust Valve Control Solenoid (Bank 2) ដោយ Scan Tool ហើយស្ដាប់សំឡេង ឬស្ទាបការរំញ័រ",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "មិនពិនិត្យ Wiring មុន",
+      "ប្ដូរ Exhaust Valve Control Solenoid (Bank 2) ដោយមិនវាស់ Resistance និងមិនពិនិត្យ Power Feed ជាមុន",
+    ],
   },
   {
     code: "P0086",
@@ -765,8 +864,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V",
     descriptionKm: "សញ្ញាចរន្តខ្ពស់ជាងតម្រូវការ Bank 2។",
     possibleCauses: ["ខ្សែភ្លើង Short to Power", "Solenoid ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring"],
+    inspectionFlow: [
+      "វាស់ Resistance របស់ Exhaust Valve Control Solenoid (Bank 2) ធៀបនឹងតម្លៃស្តង់ដារ — ដាច់ខាងក្នុងឬអត់",
+      "ភ្ជាប់ Jumper ខ្សែ Control ទៅ Ground នៅ Connector — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Exhaust Valve Control Solenoid (Bank 2) ដាច់ខាងក្នុង",
+      "ពិនិត្យ Power Feed មកដល់ Exhaust Valve Control Solenoid (Bank 2) — Fuse និង Relay",
+      "សាកបញ្ជា Exhaust Valve Control Solenoid (Bank 2) ដោយ Scan Tool ហើយស្ដាប់សំឡេង ឬស្ទាបការរំញ័រ",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring",
+      "ប្ដូរ Exhaust Valve Control Solenoid (Bank 2) ដោយមិនវាស់ Resistance និងមិនពិនិត្យ Power Feed ជាមុន",
+    ],
   },
   {
     code: "P0090",
@@ -827,8 +935,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនមាន Intercooler",
     descriptionKm: "សញ្ញាទាបខ្លាំង — Wiring ឬ Sensor ខូច។",
     possibleCauses: ["ខ្សែភ្លើង Short to Ground", "Sensor ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["មិនពិនិត្យ Wiring មុនប្ដូរ Sensor"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Intake Air Temperature Sensor 2 នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ដក Connector របស់ Intake Air Temperature Sensor 2 ចេញ រួចអានកូដឡើងវិញ — បើកូដប្ដូរទៅ Circuit High នោះ Wiring ល្អ ហើយ Intake Air Temperature Sensor 2 ខូច។ បើកូដនៅ Low ដដែល នោះខ្សែ Short to Ground",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness (ជាទូទៅ 5V)",
+      "វាស់ Continuity ខ្សែ Ground ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "មិនពិនិត្យ Wiring មុនប្ដូរ Sensor",
+      "សន្និដ្ឋានថា Intake Air Temperature Sensor 2 ខូចដោយមិនធ្វើតេស្តដក Connector — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0098",
@@ -839,8 +956,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនមាន Intercooler",
     descriptionKm: "សញ្ញាខ្ពស់ខ្លាំង — Wiring ដាច់ ឬ Sensor ខូច។",
     possibleCauses: ["ខ្សែភ្លើងដាច់", "Sensor ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Intake Air Temperature Sensor 2 នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ភ្ជាប់ Jumper រវាង Signal និង Ground នៅ Connector ខាង Harness — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Intake Air Temperature Sensor 2 ដាច់ខាងក្នុង។ បើកូដនៅ High ដដែល នោះខ្សែ Signal ដាច់ ឬ Ground បាត់",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0099",
@@ -901,8 +1027,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V ឬ Boxer",
     descriptionKm: "ចរន្តទាបជាងតម្រូវការ។",
     possibleCauses: ["ខ្សែភ្លើង Short to Ground", "Heater ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["មិនពិនិត្យ Wiring ជាមុន"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Oxygen Sensor Heater Control (Bank 2 Sensor 2) នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ដក Connector របស់ Oxygen Sensor Heater Control (Bank 2 Sensor 2) ចេញ រួចអានកូដឡើងវិញ — បើកូដប្ដូរទៅ Circuit High នោះ Wiring ល្អ ហើយ Oxygen Sensor Heater Control (Bank 2 Sensor 2) ខូច។ បើកូដនៅ Low ដដែល នោះខ្សែ Short to Ground",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness (ជាទូទៅ 5V)",
+      "វាស់ Continuity ខ្សែ Ground ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "មិនពិនិត្យ Wiring ជាមុន",
+      "សន្និដ្ឋានថា Oxygen Sensor Heater Control (Bank 2 Sensor 2) ខូចដោយមិនធ្វើតេស្តដក Connector — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0058",
@@ -913,8 +1048,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V ឬ Boxer",
     descriptionKm: "ចរន្តខ្ពស់ជាងតម្រូវការ។",
     possibleCauses: ["ខ្សែភ្លើង Short to Power", "Heater ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Oxygen Sensor Heater Control (Bank 2 Sensor 2) នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ភ្ជាប់ Jumper រវាង Signal និង Ground នៅ Connector ខាង Harness — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Oxygen Sensor Heater Control (Bank 2 Sensor 2) ដាច់ខាងក្នុង។ បើកូដនៅ High ដដែល នោះខ្សែ Signal ដាច់ ឬ Ground បាត់",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0059",
@@ -973,8 +1117,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "សញ្ញាខ្ពស់ខ្លាំង — ECU គិតថាសម្ពាធខ្យល់ខ្ពស់ខុសពីធម្មតា។",
     possibleCauses: ["ខ្សែភ្លើងសញ្ញាដាច់", "MAP Sensor ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Manifold Absolute Pressure/Barometric Pressure នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ភ្ជាប់ Jumper រវាង Signal និង Ground នៅ Connector ខាង Harness — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Manifold Absolute Pressure/Barometric Pressure ដាច់ខាងក្នុង។ បើកូដនៅ High ដដែល នោះខ្សែ Signal ដាច់ ឬ Ground បាត់",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0109",
@@ -1069,8 +1222,18 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក ជាពិសេសតំបន់ខ្ពស់",
     descriptionKm: "តម្លៃសម្ពាធបរិយាកាសទាបខុសពីតំបន់ជាក់ស្តែង — អាចជា Sensor ខូច។",
     possibleCauses: ["MAP/Baro Sensor ខូច", "Vacuum Line លេច"],
-    inspectionFlow: ["ប្រៀបធៀបជាមួយសម្ពាធបរិយាកាសពិត"],
-    commonMistakes: ["ព្រួយបារម្ភហួសហេតុ បើនៅតំបន់ខ្ពស់ជាធម្មតា"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Barometric Pressure Too នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ដក Connector របស់ Barometric Pressure Too ចេញ រួចអានកូដឡើងវិញ — បើកូដប្ដូរទៅ Circuit High នោះ Wiring ល្អ ហើយ Barometric Pressure Too ខូច។ បើកូដនៅ Low ដដែល នោះខ្សែ Short to Ground",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness (ជាទូទៅ 5V)",
+      "វាស់ Continuity ខ្សែ Ground ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+      "ប្រៀបធៀបជាមួយសម្ពាធបរិយាកាសពិត",
+    ],
+    commonMistakes: [
+      "ព្រួយបារម្ភហួសហេតុ បើនៅតំបន់ខ្ពស់ជាធម្មតា",
+      "សន្និដ្ឋានថា Barometric Pressure Too ខូចដោយមិនធ្វើតេស្តដក Connector — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0139",
@@ -1105,8 +1268,18 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនធំដែលមាន Sensor ច្រើន",
     descriptionKm: "វ៉ុលទាបខ្លាំង — Exhaust leak ឬ Sensor ខូច។",
     possibleCauses: ["Exhaust leak", "Sensor ខូច"],
-    inspectionFlow: ["ពិនិត្យ Exhaust leak"],
-    commonMistakes: ["ប្ដូរ Sensor ដោយមិនរក Exhaust leak ជាមុន"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Oxygen Sensor (Bank 1 Sensor 3) នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ដក Connector របស់ Oxygen Sensor (Bank 1 Sensor 3) ចេញ រួចអានកូដឡើងវិញ — បើកូដប្ដូរទៅ Circuit High នោះ Wiring ល្អ ហើយ Oxygen Sensor (Bank 1 Sensor 3) ខូច។ បើកូដនៅ Low ដដែល នោះខ្សែ Short to Ground",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness (ជាទូទៅ 5V)",
+      "វាស់ Continuity ខ្សែ Ground ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+      "ពិនិត្យ Exhaust leak",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Sensor ដោយមិនរក Exhaust leak ជាមុន",
+      "សន្និដ្ឋានថា Oxygen Sensor (Bank 1 Sensor 3) ខូចដោយមិនធ្វើតេស្តដក Connector — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0144",
@@ -1117,8 +1290,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនធំដែលមាន Sensor ច្រើន",
     descriptionKm: "វ៉ុលខ្ពស់ខ្លាំង — Sensor ខូចខាងក្នុង។",
     possibleCauses: ["Sensor ខូច", "ខ្សែភ្លើងឆ្លងសៀគ្វី"],
-    inspectionFlow: ["ដោះ Connector វាស់ Base Voltage"],
-    commonMistakes: ["មិនផ្ទៀងផ្ទាត់ Rich ពិតមុនប្ដូរ Sensor"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Oxygen Sensor (Bank 1 Sensor 3) នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ដោះ Connector វាស់ Base Voltage",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "មិនផ្ទៀងផ្ទាត់ Rich ពិតមុនប្ដូរ Sensor",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0145",
@@ -1177,8 +1359,18 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V ឬ Boxer",
     descriptionKm: "វ៉ុលទាបជាប់ — ល្បាយ Lean ខ្លាំង ឬ Sensor ខូច។",
     possibleCauses: ["Vacuum leak Bank 2", "Sensor ខូច"],
-    inspectionFlow: ["ធ្វើតេស្ត Rich Bank 2"],
-    commonMistakes: ["មិនធ្វើតេស្ត Rich មុនប្ដូរ Sensor"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Oxygen Sensor (Bank 2 Sensor 1) នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ដក Connector របស់ Oxygen Sensor (Bank 2 Sensor 1) ចេញ រួចអានកូដឡើងវិញ — បើកូដប្ដូរទៅ Circuit High នោះ Wiring ល្អ ហើយ Oxygen Sensor (Bank 2 Sensor 1) ខូច។ បើកូដនៅ Low ដដែល នោះខ្សែ Short to Ground",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness (ជាទូទៅ 5V)",
+      "វាស់ Continuity ខ្សែ Ground ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+      "ធ្វើតេស្ត Rich Bank 2",
+    ],
+    commonMistakes: [
+      "មិនធ្វើតេស្ត Rich មុនប្ដូរ Sensor",
+      "សន្និដ្ឋានថា Oxygen Sensor (Bank 2 Sensor 1) ខូចដោយមិនធ្វើតេស្តដក Connector — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0152",
@@ -1189,8 +1381,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V ឬ Boxer",
     descriptionKm: "វ៉ុលខ្ពស់ជាប់ — Sensor ខូចខាងក្នុង ឬ Rich ខ្លាំង Bank 2។",
     possibleCauses: ["Sensor ខូច", "Injector Bank 2 លេច"],
-    inspectionFlow: ["ដោះ Connector វាស់ Base Voltage"],
-    commonMistakes: ["ស្មានតែ Rich ពិត ដោះលាង Injector ដោយមិនចាំបាច់"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Oxygen Sensor (Bank 2 Sensor 1) នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ដោះ Connector វាស់ Base Voltage",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ស្មានតែ Rich ពិត ដោះលាង Injector ដោយមិនចាំបាច់",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0153",
@@ -1261,8 +1462,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើ Diesel Common Rail",
     descriptionKm: "សញ្ញាទាបខ្លាំង — Wiring ឬ Sensor ខូច។",
     possibleCauses: ["ខ្សែភ្លើង Short to Ground", "Sensor ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["មិនពិនិត្យ Wiring មុនប្ដូរ Sensor"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Fuel Temperature Sensor A នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ដក Connector របស់ Fuel Temperature Sensor A ចេញ រួចអានកូដឡើងវិញ — បើកូដប្ដូរទៅ Circuit High នោះ Wiring ល្អ ហើយ Fuel Temperature Sensor A ខូច។ បើកូដនៅ Low ដដែល នោះខ្សែ Short to Ground",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness (ជាទូទៅ 5V)",
+      "វាស់ Continuity ខ្សែ Ground ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "មិនពិនិត្យ Wiring មុនប្ដូរ Sensor",
+      "សន្និដ្ឋានថា Fuel Temperature Sensor A ខូចដោយមិនធ្វើតេស្តដក Connector — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0183",
@@ -1273,8 +1483,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើ Diesel Common Rail",
     descriptionKm: "សញ្ញាខ្ពស់ខ្លាំង — Wiring ដាច់ ឬ Sensor ខូច។",
     possibleCauses: ["ខ្សែភ្លើងដាច់", "Sensor ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Fuel Temperature Sensor A នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ភ្ជាប់ Jumper រវាង Signal និង Ground នៅ Connector ខាង Harness — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Fuel Temperature Sensor A ដាច់ខាងក្នុង។ បើកូដនៅ High ដដែល នោះខ្សែ Signal ដាច់ ឬ Ground បាត់",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
 
   /* ---------------------- P02xx — Injector Cylinders 2-8, Cold Start ---------------------- */
@@ -1469,8 +1688,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "កម្រជួប",
     descriptionKm: "សញ្ញាទាបខ្លាំង — Wiring ឬ Sensor ខូច។",
     possibleCauses: ["ខ្សែភ្លើង Short to Ground", "TPS ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["មិនពិនិត្យ Wiring ជាមុន"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Throttle/Pedal Position Sensor/Switch C នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ដក Connector របស់ Throttle/Pedal Position Sensor/Switch C ចេញ រួចអានកូដឡើងវិញ — បើកូដប្ដូរទៅ Circuit High នោះ Wiring ល្អ ហើយ Throttle/Pedal Position Sensor/Switch C ខូច។ បើកូដនៅ Low ដដែល នោះខ្សែ Short to Ground",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness (ជាទូទៅ 5V)",
+      "វាស់ Continuity ខ្សែ Ground ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "មិនពិនិត្យ Wiring ជាមុន",
+      "សន្និដ្ឋានថា Throttle/Pedal Position Sensor/Switch C ខូចដោយមិនធ្វើតេស្តដក Connector — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0228",
@@ -1481,8 +1709,18 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "កម្រជួប",
     descriptionKm: "សញ្ញាខ្ពស់ខ្លាំង — Wiring ដាច់ ឬ Sensor ខូច។",
     possibleCauses: ["ខ្សែភ្លើងឆ្លងទៅ Power", "Ground TPS ដាច់"],
-    inspectionFlow: ["ពិនិត្យ Ground TPS"],
-    commonMistakes: ["ច្រឡំគិតថាខូចជើងហ្គែរ"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Throttle/Pedal Position Sensor/Switch C នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ភ្ជាប់ Jumper រវាង Signal និង Ground នៅ Connector ខាង Harness — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Throttle/Pedal Position Sensor/Switch C ដាច់ខាងក្នុង។ បើកូដនៅ High ដដែល នោះខ្សែ Signal ដាច់ ឬ Ground បាត់",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+      "ពិនិត្យ Ground TPS",
+    ],
+    commonMistakes: [
+      "ច្រឡំគិតថាខូចជើងហ្គែរ",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0232",
@@ -1493,8 +1731,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "សញ្ញាចរន្តខ្ពស់ជាងតម្រូវការនៅសៀគ្វីទី ២ របស់ Fuel Pump។",
     possibleCauses: ["ខ្សែភ្លើង Short to Power", "Pump Driver ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["ប្ដូរ Pump ដោយមិនពិនិត្យ Wiring ជាមុន"],
+    inspectionFlow: [
+      "វាស់ Resistance របស់ Fuel Pump Secondary ធៀបនឹងតម្លៃស្តង់ដារ — ដាច់ខាងក្នុងឬអត់",
+      "ភ្ជាប់ Jumper ខ្សែ Control ទៅ Ground នៅ Connector — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Fuel Pump Secondary ដាច់ខាងក្នុង",
+      "ពិនិត្យ Power Feed មកដល់ Fuel Pump Secondary — Fuse និង Relay",
+      "សាកបញ្ជា Fuel Pump Secondary ដោយ Scan Tool ហើយស្ដាប់សំឡេង ឬស្ទាបការរំញ័រ",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Pump ដោយមិនពិនិត្យ Wiring ជាមុន",
+      "ប្ដូរ Fuel Pump Secondary ដោយមិនវាស់ Resistance និងមិនពិនិត្យ Power Feed ជាមុន",
+    ],
   },
   {
     code: "P0233",
@@ -1541,8 +1788,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនមាន Turbo",
     descriptionKm: "សញ្ញាទាបខ្លាំង — Wiring ឬ Sensor ខូច។",
     possibleCauses: ["ខ្សែភ្លើង Short to Ground", "Sensor ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["មិនពិនិត្យ Wiring មុន"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Turbocharger Boost Sensor 'A' នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ដក Connector របស់ Turbocharger Boost Sensor 'A' ចេញ រួចអានកូដឡើងវិញ — បើកូដប្ដូរទៅ Circuit High នោះ Wiring ល្អ ហើយ Turbocharger Boost Sensor 'A' ខូច។ បើកូដនៅ Low ដដែល នោះខ្សែ Short to Ground",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness (ជាទូទៅ 5V)",
+      "វាស់ Continuity ខ្សែ Ground ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "មិនពិនិត្យ Wiring មុន",
+      "សន្និដ្ឋានថា Turbocharger Boost Sensor 'A' ខូចដោយមិនធ្វើតេស្តដក Connector — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0238",
@@ -1553,8 +1809,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនមាន Turbo",
     descriptionKm: "សញ្ញាខ្ពស់ខ្លាំង — Wiring ដាច់ ឬ Sensor ខូច។",
     possibleCauses: ["ខ្សែភ្លើងដាច់", "Sensor ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Turbocharger Boost Sensor 'A' នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ភ្ជាប់ Jumper រវាង Signal និង Ground នៅ Connector ខាង Harness — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Turbocharger Boost Sensor 'A' ដាច់ខាងក្នុង។ បើកូដនៅ High ដដែល នោះខ្សែ Signal ដាច់ ឬ Ground បាត់",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0240",
@@ -1594,8 +1859,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនមាន Twin-Turbo",
     descriptionKm: "សញ្ញាខ្ពស់ខ្លាំង។",
     possibleCauses: ["ខ្សែភ្លើងដាច់", "Sensor ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Turbocharger Boost Sensor 'B' នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ភ្ជាប់ Jumper រវាង Signal និង Ground នៅ Connector ខាង Harness — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Turbocharger Boost Sensor 'B' ដាច់ខាងក្នុង។ បើកូដនៅ High ដដែល នោះខ្សែ Signal ដាច់ ឬ Ground បាត់",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0243",
@@ -1630,8 +1904,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនមាន Turbo",
     descriptionKm: "សញ្ញាចរន្តទាបជាងតម្រូវការ។",
     possibleCauses: ["ខ្សែភ្លើង Short to Ground", "Solenoid ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["មិនពិនិត្យ Wiring មុន"],
+    inspectionFlow: [
+      "វាស់ Resistance របស់ Turbocharger Wastegate Solenoid 'A' ធៀបនឹងតម្លៃស្តង់ដារ — Short ខាងក្នុងឬអត់",
+      "ដក Connector របស់ Turbocharger Wastegate Solenoid 'A' ចេញ រួចអានកូដឡើងវិញ — បើកូដប្ដូរទៅ Circuit High/Open នោះ Turbocharger Wastegate Solenoid 'A' Short ខាងក្នុង។ បើកូដនៅ Low ដដែល នោះខ្សែ Short to Ground",
+      "ពិនិត្យ Power Feed មកដល់ Turbocharger Wastegate Solenoid 'A' — Fuse និង Relay",
+      "សាកបញ្ជា Turbocharger Wastegate Solenoid 'A' ដោយ Scan Tool ហើយស្ដាប់សំឡេង ឬស្ទាបការរំញ័រ",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "មិនពិនិត្យ Wiring មុន",
+      "ប្ដូរ Turbocharger Wastegate Solenoid 'A' ដោយមិនវាស់ Resistance និងមិនពិនិត្យ Power Feed ជាមុន",
+    ],
   },
   {
     code: "P0246",
@@ -1642,8 +1925,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនមាន Turbo",
     descriptionKm: "សញ្ញាចរន្តខ្ពស់ជាងតម្រូវការ។",
     possibleCauses: ["ខ្សែភ្លើង Short to Power", "Solenoid ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring ជាមុន"],
+    inspectionFlow: [
+      "វាស់ Resistance របស់ Turbocharger Wastegate Solenoid 'A' ធៀបនឹងតម្លៃស្តង់ដារ — ដាច់ខាងក្នុងឬអត់",
+      "ភ្ជាប់ Jumper ខ្សែ Control ទៅ Ground នៅ Connector — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Turbocharger Wastegate Solenoid 'A' ដាច់ខាងក្នុង",
+      "ពិនិត្យ Power Feed មកដល់ Turbocharger Wastegate Solenoid 'A' — Fuse និង Relay",
+      "សាកបញ្ជា Turbocharger Wastegate Solenoid 'A' ដោយ Scan Tool ហើយស្ដាប់សំឡេង ឬស្ទាបការរំញ័រ",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring ជាមុន",
+      "ប្ដូរ Turbocharger Wastegate Solenoid 'A' ដោយមិនវាស់ Resistance និងមិនពិនិត្យ Power Feed ជាមុន",
+    ],
   },
 
   /* ---------------------- P025x-P027x — Injection Pump Metering, Injector Circuit Low/High ---------------------- */
@@ -1668,8 +1960,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើ Diesel ចាស់",
     descriptionKm: "សញ្ញាចរន្តទាបជាងតម្រូវការ។",
     possibleCauses: ["ខ្សែភ្លើង Short to Ground", "Valve ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["មិនពិនិត្យ Wiring ជាមុន"],
+    inspectionFlow: [
+      "វាស់ Resistance របស់ Injection Pump Fuel Metering Control 'A' ធៀបនឹងតម្លៃស្តង់ដារ — Short ខាងក្នុងឬអត់",
+      "ដក Connector របស់ Injection Pump Fuel Metering Control 'A' ចេញ រួចអានកូដឡើងវិញ — បើកូដប្ដូរទៅ Circuit High/Open នោះ Injection Pump Fuel Metering Control 'A' Short ខាងក្នុង។ បើកូដនៅ Low ដដែល នោះខ្សែ Short to Ground",
+      "ពិនិត្យ Power Feed មកដល់ Injection Pump Fuel Metering Control 'A' — Fuse និង Relay",
+      "សាកបញ្ជា Injection Pump Fuel Metering Control 'A' ដោយ Scan Tool ហើយស្ដាប់សំឡេង ឬស្ទាបការរំញ័រ",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "មិនពិនិត្យ Wiring ជាមុន",
+      "ប្ដូរ Injection Pump Fuel Metering Control 'A' ដោយមិនវាស់ Resistance និងមិនពិនិត្យ Power Feed ជាមុន",
+    ],
   },
   {
     code: "P0254",
@@ -1680,8 +1981,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើ Diesel ចាស់",
     descriptionKm: "សញ្ញាចរន្តខ្ពស់ជាងតម្រូវការ។",
     possibleCauses: ["ខ្សែភ្លើង Short to Power", "Valve ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring"],
+    inspectionFlow: [
+      "វាស់ Resistance របស់ Injection Pump Fuel Metering Control 'A' ធៀបនឹងតម្លៃស្តង់ដារ — ដាច់ខាងក្នុងឬអត់",
+      "ភ្ជាប់ Jumper ខ្សែ Control ទៅ Ground នៅ Connector — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Injection Pump Fuel Metering Control 'A' ដាច់ខាងក្នុង",
+      "ពិនិត្យ Power Feed មកដល់ Injection Pump Fuel Metering Control 'A' — Fuse និង Relay",
+      "សាកបញ្ជា Injection Pump Fuel Metering Control 'A' ដោយ Scan Tool ហើយស្ដាប់សំឡេង ឬស្ទាបការរំញ័រ",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring",
+      "ប្ដូរ Injection Pump Fuel Metering Control 'A' ដោយមិនវាស់ Resistance និងមិនពិនិត្យ Power Feed ជាមុន",
+    ],
   },
   {
     code: "P0256",
@@ -1716,8 +2026,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "សញ្ញាចរន្តទៅ Injector ស៊ីឡាំង ១ ខ្ពស់ជាងតម្រូវការ។",
     possibleCauses: ["ខ្សែភ្លើង Short to Power", "Injector ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring ជាមុន"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Cylinder 1 Injector នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ភ្ជាប់ Jumper រវាង Signal និង Ground នៅ Connector ខាង Harness — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Cylinder 1 Injector ដាច់ខាងក្នុង។ បើកូដនៅ High ដដែល នោះខ្សែ Signal ដាច់ ឬ Ground បាត់",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring ជាមុន",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0264",
@@ -1728,8 +2047,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "ដូច P0261 ប៉ុន្តែនៅស៊ីឡាំង ២។",
     possibleCauses: ["ខ្សែភ្លើង Short to Ground", "Injector ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["មិនពិនិត្យ Wiring មុនប្ដូរ Injector"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Cylinder 2 Injector នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ដក Connector របស់ Cylinder 2 Injector ចេញ រួចអានកូដឡើងវិញ — បើកូដប្ដូរទៅ Circuit High នោះ Wiring ល្អ ហើយ Cylinder 2 Injector ខូច។ បើកូដនៅ Low ដដែល នោះខ្សែ Short to Ground",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness (ជាទូទៅ 5V)",
+      "វាស់ Continuity ខ្សែ Ground ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "មិនពិនិត្យ Wiring មុនប្ដូរ Injector",
+      "សន្និដ្ឋានថា Cylinder 2 Injector ខូចដោយមិនធ្វើតេស្តដក Connector — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0265",
@@ -1740,8 +2068,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "ដូច P0262 ប៉ុន្តែនៅស៊ីឡាំង ២។",
     possibleCauses: ["ខ្សែភ្លើង Short to Power", "Injector ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Cylinder 2 Injector នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ភ្ជាប់ Jumper រវាង Signal និង Ground នៅ Connector ខាង Harness — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Cylinder 2 Injector ដាច់ខាងក្នុង។ បើកូដនៅ High ដដែល នោះខ្សែ Signal ដាច់ ឬ Ground បាត់",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0267",
@@ -1752,8 +2089,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "ដូច P0261 ប៉ុន្តែនៅស៊ីឡាំង ៣។",
     possibleCauses: ["ខ្សែភ្លើង Short to Ground", "Injector ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["មិនពិនិត្យ Wiring មុនប្ដូរ Injector"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Cylinder 3 Injector នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ដក Connector របស់ Cylinder 3 Injector ចេញ រួចអានកូដឡើងវិញ — បើកូដប្ដូរទៅ Circuit High នោះ Wiring ល្អ ហើយ Cylinder 3 Injector ខូច។ បើកូដនៅ Low ដដែល នោះខ្សែ Short to Ground",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness (ជាទូទៅ 5V)",
+      "វាស់ Continuity ខ្សែ Ground ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "មិនពិនិត្យ Wiring មុនប្ដូរ Injector",
+      "សន្និដ្ឋានថា Cylinder 3 Injector ខូចដោយមិនធ្វើតេស្តដក Connector — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0268",
@@ -1764,8 +2110,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "ដូច P0262 ប៉ុន្តែនៅស៊ីឡាំង ៣។",
     possibleCauses: ["ខ្សែភ្លើង Short to Power", "Injector ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Cylinder 3 Injector នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ភ្ជាប់ Jumper រវាង Signal និង Ground នៅ Connector ខាង Harness — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Cylinder 3 Injector ដាច់ខាងក្នុង។ បើកូដនៅ High ដដែល នោះខ្សែ Signal ដាច់ ឬ Ground បាត់",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0270",
@@ -1776,8 +2131,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "ដូច P0261 ប៉ុន្តែនៅស៊ីឡាំង ៤។",
     possibleCauses: ["ខ្សែភ្លើង Short to Ground", "Injector ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["មិនពិនិត្យ Wiring មុនប្ដូរ Injector"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Cylinder 4 Injector នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ដក Connector របស់ Cylinder 4 Injector ចេញ រួចអានកូដឡើងវិញ — បើកូដប្ដូរទៅ Circuit High នោះ Wiring ល្អ ហើយ Cylinder 4 Injector ខូច។ បើកូដនៅ Low ដដែល នោះខ្សែ Short to Ground",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness (ជាទូទៅ 5V)",
+      "វាស់ Continuity ខ្សែ Ground ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "មិនពិនិត្យ Wiring មុនប្ដូរ Injector",
+      "សន្និដ្ឋានថា Cylinder 4 Injector ខូចដោយមិនធ្វើតេស្តដក Connector — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0271",
@@ -1788,8 +2152,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "ដូច P0262 ប៉ុន្តែនៅស៊ីឡាំង ៤។",
     possibleCauses: ["ខ្សែភ្លើង Short to Power", "Injector ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Cylinder 4 Injector នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ភ្ជាប់ Jumper រវាង Signal និង Ground នៅ Connector ខាង Harness — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Cylinder 4 Injector ដាច់ខាងក្នុង។ បើកូដនៅ High ដដែល នោះខ្សែ Signal ដាច់ ឬ Ground បាត់",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0273",
@@ -1800,8 +2173,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនធំ ៦-៨ ស៊ីឡាំង",
     descriptionKm: "ដូច P0261 ប៉ុន្តែនៅស៊ីឡាំង ៥។",
     possibleCauses: ["ខ្សែភ្លើង Short to Ground", "Injector ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["មិនពិនិត្យ Wiring មុនប្ដូរ Injector"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Cylinder 5 Injector នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ដក Connector របស់ Cylinder 5 Injector ចេញ រួចអានកូដឡើងវិញ — បើកូដប្ដូរទៅ Circuit High នោះ Wiring ល្អ ហើយ Cylinder 5 Injector ខូច។ បើកូដនៅ Low ដដែល នោះខ្សែ Short to Ground",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness (ជាទូទៅ 5V)",
+      "វាស់ Continuity ខ្សែ Ground ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "មិនពិនិត្យ Wiring មុនប្ដូរ Injector",
+      "សន្និដ្ឋានថា Cylinder 5 Injector ខូចដោយមិនធ្វើតេស្តដក Connector — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0274",
@@ -1812,8 +2194,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនធំ ៦-៨ ស៊ីឡាំង",
     descriptionKm: "ដូច P0262 ប៉ុន្តែនៅស៊ីឡាំង ៥។",
     possibleCauses: ["ខ្សែភ្លើង Short to Power", "Injector ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Cylinder 5 Injector នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ភ្ជាប់ Jumper រវាង Signal និង Ground នៅ Connector ខាង Harness — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Cylinder 5 Injector ដាច់ខាងក្នុង។ បើកូដនៅ High ដដែល នោះខ្សែ Signal ដាច់ ឬ Ground បាត់",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0276",
@@ -1824,8 +2215,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនធំ ៦-៨ ស៊ីឡាំង",
     descriptionKm: "ដូច P0261 ប៉ុន្តែនៅស៊ីឡាំង ៦។",
     possibleCauses: ["ខ្សែភ្លើង Short to Ground", "Injector ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["មិនពិនិត្យ Wiring មុនប្ដូរ Injector"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Cylinder 6 Injector នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ដក Connector របស់ Cylinder 6 Injector ចេញ រួចអានកូដឡើងវិញ — បើកូដប្ដូរទៅ Circuit High នោះ Wiring ល្អ ហើយ Cylinder 6 Injector ខូច។ បើកូដនៅ Low ដដែល នោះខ្សែ Short to Ground",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness (ជាទូទៅ 5V)",
+      "វាស់ Continuity ខ្សែ Ground ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "មិនពិនិត្យ Wiring មុនប្ដូរ Injector",
+      "សន្និដ្ឋានថា Cylinder 6 Injector ខូចដោយមិនធ្វើតេស្តដក Connector — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0277",
@@ -1836,8 +2236,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនធំ ៦-៨ ស៊ីឡាំង",
     descriptionKm: "ដូច P0262 ប៉ុន្តែនៅស៊ីឡាំង ៦។",
     possibleCauses: ["ខ្សែភ្លើង Short to Power", "Injector ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Cylinder 6 Injector នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ភ្ជាប់ Jumper រវាង Signal និង Ground នៅ Connector ខាង Harness — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Cylinder 6 Injector ដាច់ខាងក្នុង។ បើកូដនៅ High ដដែល នោះខ្សែ Signal ដាច់ ឬ Ground បាត់",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
 
   /* ---------------------- P029x-P032x — Overspeed, Misfire Cyl 7-12, Ignition/Distributor, Knock Bank 2 ---------------------- */
@@ -2042,8 +2451,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V ឬ Boxer",
     descriptionKm: "សញ្ញាទាបខ្លាំង — Wiring ឬ Sensor ខូច។",
     possibleCauses: ["ខ្សែភ្លើង Short to Ground", "Sensor ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["មិនពិនិត្យ Wiring មុន"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Knock Sensor 2 (Bank 2) នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ដក Connector របស់ Knock Sensor 2 (Bank 2) ចេញ រួចអានកូដឡើងវិញ — បើកូដប្ដូរទៅ Circuit High នោះ Wiring ល្អ ហើយ Knock Sensor 2 (Bank 2) ខូច។ បើកូដនៅ Low ដដែល នោះខ្សែ Short to Ground",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness (ជាទូទៅ 5V)",
+      "វាស់ Continuity ខ្សែ Ground ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "មិនពិនិត្យ Wiring មុន",
+      "សន្និដ្ឋានថា Knock Sensor 2 (Bank 2) ខូចដោយមិនធ្វើតេស្តដក Connector — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0333",
@@ -2054,8 +2472,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V ឬ Boxer",
     descriptionKm: "សញ្ញាខ្ពស់ខ្លាំង — Wiring ដាច់ ឬ Sensor ខូច។",
     possibleCauses: ["ខ្សែភ្លើងដាច់", "Sensor ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Knock Sensor 2 (Bank 2) នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ភ្ជាប់ Jumper រវាង Signal និង Ground នៅ Connector ខាង Harness — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Knock Sensor 2 (Bank 2) ដាច់ខាងក្នុង។ បើកូដនៅ High ដដែល នោះខ្សែ Signal ដាច់ ឬ Ground បាត់",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0334",
@@ -2080,8 +2507,18 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "សញ្ញាទាបខ្លាំង — Wiring ឬ Sensor ខូច — អាចធ្វើឲ្យស្តុប។",
     possibleCauses: ["ខ្សែភ្លើង Short to Ground", "Sensor ខូច"],
-    inspectionFlow: ["វាស់ Signal Sensor ដោយ Scope"],
-    commonMistakes: ["មិនពិនិត្យ Wiring មុនប្ដូរ Sensor"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Crankshaft Position Sensor 'A' នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ដក Connector របស់ Crankshaft Position Sensor 'A' ចេញ រួចអានកូដឡើងវិញ — បើកូដប្ដូរទៅ Circuit High នោះ Wiring ល្អ ហើយ Crankshaft Position Sensor 'A' ខូច។ បើកូដនៅ Low ដដែល នោះខ្សែ Short to Ground",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness (ជាទូទៅ 5V)",
+      "វាស់ Continuity ខ្សែ Ground ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+      "វាស់ Signal Sensor ដោយ Scope",
+    ],
+    commonMistakes: [
+      "មិនពិនិត្យ Wiring មុនប្ដូរ Sensor",
+      "សន្និដ្ឋានថា Crankshaft Position Sensor 'A' ខូចដោយមិនធ្វើតេស្តដក Connector — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0338",
@@ -2092,8 +2529,18 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "សញ្ញាខ្ពស់ខ្លាំង — Wiring ដាច់ ឬ Sensor ខូច។",
     possibleCauses: ["ខ្សែភ្លើងដាច់", "Sensor ខូច"],
-    inspectionFlow: ["វាស់ Signal Sensor"],
-    commonMistakes: ["ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Crankshaft Position Sensor 'A' នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ភ្ជាប់ Jumper រវាង Signal និង Ground នៅ Connector ខាង Harness — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Crankshaft Position Sensor 'A' ដាច់ខាងក្នុង។ បើកូដនៅ High ដដែល នោះខ្សែ Signal ដាច់ ឬ Ground បាត់",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+      "វាស់ Signal Sensor",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0339",
@@ -2169,8 +2616,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V ឬ Boxer",
     descriptionKm: "សញ្ញាខ្ពស់ខ្លាំង។",
     possibleCauses: ["ខ្សែភ្លើងដាច់", "Sensor ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Camshaft Position Sensor 'A' (Bank 2) នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ភ្ជាប់ Jumper រវាង Signal និង Ground នៅ Connector ខាង Harness — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Camshaft Position Sensor 'A' (Bank 2) ដាច់ខាងក្នុង។ បើកូដនៅ High ដដែល នោះខ្សែ Signal ដាច់ ឬ Ground បាត់",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0349",
@@ -2282,8 +2738,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនមាន Dual VVT",
     descriptionKm: "សញ្ញាខ្ពស់ខ្លាំង។",
     possibleCauses: ["ខ្សែភ្លើងដាច់", "Sensor ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Camshaft Position Sensor 'B' (Bank 1) នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ភ្ជាប់ Jumper រវាង Signal និង Ground នៅ Connector ខាង Harness — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Camshaft Position Sensor 'B' (Bank 1) ដាច់ខាងក្នុង។ បើកូដនៅ High ដដែល នោះខ្សែ Signal ដាច់ ឬ Ground បាត់",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0369",
@@ -2383,8 +2848,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនធំមាន Sensor ២",
     descriptionKm: "សញ្ញាខ្ពស់ខ្លាំង។",
     possibleCauses: ["ខ្សែភ្លើងដាច់", "Sensor ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Crankshaft Position Sensor 'B' នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ភ្ជាប់ Jumper រវាង Signal និង Ground នៅ Connector ខាង Harness — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Crankshaft Position Sensor 'B' ដាច់ខាងក្នុង។ បើកូដនៅ High ដដែល នោះខ្សែ Signal ដាច់ ឬ Ground បាត់",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0389",
@@ -2421,8 +2895,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "សញ្ញាទាបខ្លាំង — Wiring ឬ Sensor ខូច។",
     possibleCauses: ["ខ្សែភ្លើង Short to Ground", "Sensor ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["មិនពិនិត្យ Wiring មុនប្ដូរ Sensor"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Exhaust Gas Recirculation (EGR) Sensor 'A' នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ដក Connector របស់ Exhaust Gas Recirculation (EGR) Sensor 'A' ចេញ រួចអានកូដឡើងវិញ — បើកូដប្ដូរទៅ Circuit High នោះ Wiring ល្អ ហើយ Exhaust Gas Recirculation (EGR) Sensor 'A' ខូច។ បើកូដនៅ Low ដដែល នោះខ្សែ Short to Ground",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness (ជាទូទៅ 5V)",
+      "វាស់ Continuity ខ្សែ Ground ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "មិនពិនិត្យ Wiring មុនប្ដូរ Sensor",
+      "សន្និដ្ឋានថា Exhaust Gas Recirculation (EGR) Sensor 'A' ខូចដោយមិនធ្វើតេស្តដក Connector — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0406",
@@ -2433,8 +2916,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "សញ្ញាខ្ពស់ខ្លាំង — Wiring ដាច់ ឬ Sensor ខូច។",
     possibleCauses: ["ខ្សែភ្លើងដាច់", "Sensor ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Exhaust Gas Recirculation (EGR) Sensor 'A' នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ភ្ជាប់ Jumper រវាង Signal និង Ground នៅ Connector ខាង Harness — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Exhaust Gas Recirculation (EGR) Sensor 'A' ដាច់ខាងក្នុង។ បើកូដនៅ High ដដែល នោះខ្សែ Signal ដាច់ ឬ Ground បាត់",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0407",
@@ -2445,8 +2937,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនមាន EGR Sensor ២",
     descriptionKm: "ដូច P0405 ប៉ុន្តែនៅ Sensor B។",
     possibleCauses: ["ខ្សែភ្លើង Short to Ground", "Sensor ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["មិនពិនិត្យ Wiring មុន"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Exhaust Gas Recirculation (EGR) Sensor 'B' នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ដក Connector របស់ Exhaust Gas Recirculation (EGR) Sensor 'B' ចេញ រួចអានកូដឡើងវិញ — បើកូដប្ដូរទៅ Circuit High នោះ Wiring ល្អ ហើយ Exhaust Gas Recirculation (EGR) Sensor 'B' ខូច។ បើកូដនៅ Low ដដែល នោះខ្សែ Short to Ground",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness (ជាទូទៅ 5V)",
+      "វាស់ Continuity ខ្សែ Ground ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "មិនពិនិត្យ Wiring មុន",
+      "សន្និដ្ឋានថា Exhaust Gas Recirculation (EGR) Sensor 'B' ខូចដោយមិនធ្វើតេស្តដក Connector — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0408",
@@ -2457,8 +2958,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនមាន EGR Sensor ២",
     descriptionKm: "ដូច P0406 ប៉ុន្តែនៅ Sensor B។",
     possibleCauses: ["ខ្សែភ្លើងដាច់", "Sensor ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Exhaust Gas Recirculation (EGR) Sensor 'B' នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ភ្ជាប់ Jumper រវាង Signal និង Ground នៅ Connector ខាង Harness — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Exhaust Gas Recirculation (EGR) Sensor 'B' ដាច់ខាងក្នុង។ បើកូដនៅ High ដដែល នោះខ្សែ Signal ដាច់ ឬ Ground បាត់",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
 
   /* ---------------------- P041x-P043x — Secondary Air, Catalyst variants ---------------------- */
@@ -2483,8 +2993,18 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីន Gasoline មាន Secondary Air Injection",
     descriptionKm: "សៀគ្វី Valve ដាច់ទាំងស្រុង។",
     possibleCauses: ["Coil Valve ដាច់", "Wiring ដាច់"],
-    inspectionFlow: ["វាស់ Resistance Valve"],
-    commonMistakes: ["ប្ដូរ Valve ដោយមិនវាស់ Resistance ជាមុន"],
+    inspectionFlow: [
+      "វាស់ Resistance របស់ Secondary Air Injection System Switching Valve 'A' ធៀបនឹងតម្លៃស្តង់ដារ — ដាច់ខាងក្នុងឬអត់",
+      "ភ្ជាប់ Jumper ខ្សែ Control ទៅ Ground នៅ Connector — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Secondary Air Injection System Switching Valve 'A' ដាច់ខាងក្នុង",
+      "ពិនិត្យ Power Feed មកដល់ Secondary Air Injection System Switching Valve 'A' — Fuse និង Relay",
+      "សាកបញ្ជា Secondary Air Injection System Switching Valve 'A' ដោយ Scan Tool ហើយស្ដាប់សំឡេង ឬស្ទាបការរំញ័រ",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+      "វាស់ Resistance Valve",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Valve ដោយមិនវាស់ Resistance ជាមុន",
+      "ប្ដូរ Secondary Air Injection System Switching Valve 'A' ដោយមិនវាស់ Resistance និងមិនពិនិត្យ Power Feed ជាមុន",
+    ],
   },
   {
     code: "P0414",
@@ -2507,8 +3027,18 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីន Gasoline មាន Secondary Air Injection",
     descriptionKm: "ដូច P0413 ប៉ុន្តែនៅ Valve B។",
     possibleCauses: ["Coil Valve B ដាច់", "Wiring ដាច់"],
-    inspectionFlow: ["វាស់ Resistance Valve B"],
-    commonMistakes: ["ប្ដូរ Valve ដោយមិនវាស់ Resistance"],
+    inspectionFlow: [
+      "វាស់ Resistance របស់ Secondary Air Injection System Switching Valve 'B' ធៀបនឹងតម្លៃស្តង់ដារ — ដាច់ខាងក្នុងឬអត់",
+      "ភ្ជាប់ Jumper ខ្សែ Control ទៅ Ground នៅ Connector — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Secondary Air Injection System Switching Valve 'B' ដាច់ខាងក្នុង",
+      "ពិនិត្យ Power Feed មកដល់ Secondary Air Injection System Switching Valve 'B' — Fuse និង Relay",
+      "សាកបញ្ជា Secondary Air Injection System Switching Valve 'B' ដោយ Scan Tool ហើយស្ដាប់សំឡេង ឬស្ទាបការរំញ័រ",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+      "វាស់ Resistance Valve B",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Valve ដោយមិនវាស់ Resistance",
+      "ប្ដូរ Secondary Air Injection System Switching Valve 'B' ដោយមិនវាស់ Resistance និងមិនពិនិត្យ Power Feed ជាមុន",
+    ],
   },
   {
     code: "P0417",
@@ -2646,8 +3176,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីន Gasoline",
     descriptionKm: "សញ្ញាខ្ពស់ខ្លាំង។",
     possibleCauses: ["ខ្សែភ្លើងដាច់", "Sensor ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ EVAP System Pressure Sensor នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ភ្ជាប់ Jumper រវាង Signal និង Ground នៅ Connector ខាង Harness — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ EVAP System Pressure Sensor ដាច់ខាងក្នុង។ បើកូដនៅ High ដដែល នោះខ្សែ Signal ដាច់ ឬ Ground បាត់",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0454",
@@ -2670,8 +3209,18 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីន Gasoline",
     descriptionKm: "សញ្ញាចរន្តទាបជាងតម្រូវការ។",
     possibleCauses: ["ខ្សែភ្លើង Short to Ground", "Purge Valve ខូច"],
-    inspectionFlow: ["វាស់ Resistance Purge Valve"],
-    commonMistakes: ["មិនពិនិត្យ Wiring មុនប្ដូរ Valve"],
+    inspectionFlow: [
+      "វាស់ Resistance របស់ EVAP System Purge Control Valve ធៀបនឹងតម្លៃស្តង់ដារ — Short ខាងក្នុងឬអត់",
+      "ដក Connector របស់ EVAP System Purge Control Valve ចេញ រួចអានកូដឡើងវិញ — បើកូដប្ដូរទៅ Circuit High/Open នោះ EVAP System Purge Control Valve Short ខាងក្នុង។ បើកូដនៅ Low ដដែល នោះខ្សែ Short to Ground",
+      "ពិនិត្យ Power Feed មកដល់ EVAP System Purge Control Valve — Fuse និង Relay",
+      "សាកបញ្ជា EVAP System Purge Control Valve ដោយ Scan Tool ហើយស្ដាប់សំឡេង ឬស្ទាបការរំញ័រ",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+      "វាស់ Resistance Purge Valve",
+    ],
+    commonMistakes: [
+      "មិនពិនិត្យ Wiring មុនប្ដូរ Valve",
+      "ប្ដូរ EVAP System Purge Control Valve ដោយមិនវាស់ Resistance និងមិនពិនិត្យ Power Feed ជាមុន",
+    ],
   },
   {
     code: "P0459",
@@ -2682,8 +3231,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីន Gasoline",
     descriptionKm: "សញ្ញាចរន្តខ្ពស់ជាងតម្រូវការ។",
     possibleCauses: ["ខ្សែភ្លើង Short to Power", "Purge Valve ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring"],
+    inspectionFlow: [
+      "វាស់ Resistance របស់ EVAP System Purge Control Valve ធៀបនឹងតម្លៃស្តង់ដារ — ដាច់ខាងក្នុងឬអត់",
+      "ភ្ជាប់ Jumper ខ្សែ Control ទៅ Ground នៅ Connector — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ EVAP System Purge Control Valve ដាច់ខាងក្នុង",
+      "ពិនិត្យ Power Feed មកដល់ EVAP System Purge Control Valve — Fuse និង Relay",
+      "សាកបញ្ជា EVAP System Purge Control Valve ដោយ Scan Tool ហើយស្ដាប់សំឡេង ឬស្ទាបការរំញ័រ",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring",
+      "ប្ដូរ EVAP System Purge Control Valve ដោយមិនវាស់ Resistance និងមិនពិនិត្យ Power Feed ជាមុន",
+    ],
   },
   {
     code: "P0461",
@@ -2706,8 +3264,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "សញ្ញាទាបខ្លាំង។",
     possibleCauses: ["ខ្សែភ្លើង Short to Ground", "Sender Unit ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["មិនពិនិត្យ Wiring មុន"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Fuel Level Sensor 'A' នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ដក Connector របស់ Fuel Level Sensor 'A' ចេញ រួចអានកូដឡើងវិញ — បើកូដប្ដូរទៅ Circuit High នោះ Wiring ល្អ ហើយ Fuel Level Sensor 'A' ខូច។ បើកូដនៅ Low ដដែល នោះខ្សែ Short to Ground",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness (ជាទូទៅ 5V)",
+      "វាស់ Continuity ខ្សែ Ground ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "មិនពិនិត្យ Wiring មុន",
+      "សន្និដ្ឋានថា Fuel Level Sensor 'A' ខូចដោយមិនធ្វើតេស្តដក Connector — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0464",
@@ -2857,8 +3424,18 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "សញ្ញាចរន្តទៅប្រព័ន្ធ Idle Control ទាបជាងតម្រូវការ។",
     possibleCauses: ["ខ្សែភ្លើង Short to Ground", "IAC Valve ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector IAC"],
-    commonMistakes: ["មិនពិនិត្យ Wiring មុនប្ដូរ IAC"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Idle Control System នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ដក Connector របស់ Idle Control System ចេញ រួចអានកូដឡើងវិញ — បើកូដប្ដូរទៅ Circuit High នោះ Wiring ល្អ ហើយ Idle Control System ខូច។ បើកូដនៅ Low ដដែល នោះខ្សែ Short to Ground",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness (ជាទូទៅ 5V)",
+      "វាស់ Continuity ខ្សែ Ground ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+      "វាស់ Voltage Connector IAC",
+    ],
+    commonMistakes: [
+      "មិនពិនិត្យ Wiring មុនប្ដូរ IAC",
+      "សន្និដ្ឋានថា Idle Control System ខូចដោយមិនធ្វើតេស្តដក Connector — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0509",
@@ -2869,8 +3446,18 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "សញ្ញាចរន្តខ្ពស់ជាងតម្រូវការ។",
     possibleCauses: ["ខ្សែភ្លើង Short to Power", "IAC Valve ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector IAC"],
-    commonMistakes: ["ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Idle Control System នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ភ្ជាប់ Jumper រវាង Signal និង Ground នៅ Connector ខាង Harness — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Idle Control System ដាច់ខាងក្នុង។ បើកូដនៅ High ដដែល នោះខ្សែ Signal ដាច់ ឬ Ground បាត់",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+      "វាស់ Voltage Connector IAC",
+    ],
+    commonMistakes: [
+      "ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0512",
@@ -3059,8 +3646,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើរថយន្តមាន Hydraulic Power Steering",
     descriptionKm: "សញ្ញាខ្ពស់ខ្លាំង។",
     possibleCauses: ["ខ្សែភ្លើងដាច់", "Sensor ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Power Steering Pressure Sensor នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ភ្ជាប់ Jumper រវាង Signal និង Ground នៅ Connector ខាង Harness — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Power Steering Pressure Sensor ដាច់ខាងក្នុង។ បើកូដនៅ High ដដែល នោះខ្សែ Signal ដាច់ ឬ Ground បាត់",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
 
   /* ---------------------- P056x-P057x — Cruise Control, Brake Switch ---------------------- */
@@ -3145,8 +3741,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "សញ្ញាទាបខ្លាំង។",
     possibleCauses: ["ខ្សែភ្លើង Short to Ground", "Switch ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["មិនតម្រឹម Switch ក្រោយប្ដូរ"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Brake Switch 'A' នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ដក Connector របស់ Brake Switch 'A' ចេញ រួចអានកូដឡើងវិញ — បើកូដប្ដូរទៅ Circuit High នោះ Wiring ល្អ ហើយ Brake Switch 'A' ខូច។ បើកូដនៅ Low ដដែល នោះខ្សែ Short to Ground",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness (ជាទូទៅ 5V)",
+      "វាស់ Continuity ខ្សែ Ground ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "មិនតម្រឹម Switch ក្រោយប្ដូរ",
+      "សន្និដ្ឋានថា Brake Switch 'A' ខូចដោយមិនធ្វើតេស្តដក Connector — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0573",
@@ -3157,8 +3762,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "សញ្ញាខ្ពស់ខ្លាំង។",
     possibleCauses: ["ខ្សែភ្លើងដាច់", "Switch ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["ប្ដូរ Switch ដោយមិនពិនិត្យ Wiring"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Brake Switch 'A' នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ភ្ជាប់ Jumper រវាង Signal និង Ground នៅ Connector ខាង Harness — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Brake Switch 'A' ដាច់ខាងក្នុង។ បើកូដនៅ High ដដែល នោះខ្សែ Signal ដាច់ ឬ Ground បាត់",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Switch ដោយមិនពិនិត្យ Wiring",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
 
   /* ---------------------- P060x-P065x — Control Module, Starter Relay, Generator, Reference Voltage ---------------------- */
@@ -3231,8 +3845,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "សញ្ញាទាបខ្លាំង។",
     possibleCauses: ["ខ្សែភ្លើង Short to Ground", "Relay ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["មិនពិនិត្យ Wiring មុនប្ដូរ Relay"],
+    inspectionFlow: [
+      "វាស់ Resistance របស់ Starter Relay ធៀបនឹងតម្លៃស្តង់ដារ — Short ខាងក្នុងឬអត់",
+      "ដក Connector របស់ Starter Relay ចេញ រួចអានកូដឡើងវិញ — បើកូដប្ដូរទៅ Circuit High/Open នោះ Starter Relay Short ខាងក្នុង។ បើកូដនៅ Low ដដែល នោះខ្សែ Short to Ground",
+      "ពិនិត្យ Power Feed មកដល់ Starter Relay — Fuse និង Relay",
+      "សាកបញ្ជា Starter Relay ដោយ Scan Tool ហើយស្ដាប់សំឡេង ឬស្ទាបការរំញ័រ",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "មិនពិនិត្យ Wiring មុនប្ដូរ Relay",
+      "ប្ដូរ Starter Relay ដោយមិនវាស់ Resistance និងមិនពិនិត្យ Power Feed ជាមុន",
+    ],
   },
   {
     code: "P0617",
@@ -3243,8 +3866,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "សញ្ញាខ្ពស់ខ្លាំង។",
     possibleCauses: ["ខ្សែភ្លើង Short to Power", "Relay ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring"],
+    inspectionFlow: [
+      "វាស់ Resistance របស់ Starter Relay ធៀបនឹងតម្លៃស្តង់ដារ — ដាច់ខាងក្នុងឬអត់",
+      "ភ្ជាប់ Jumper ខ្សែ Control ទៅ Ground នៅ Connector — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Starter Relay ដាច់ខាងក្នុង",
+      "ពិនិត្យ Power Feed មកដល់ Starter Relay — Fuse និង Relay",
+      "សាកបញ្ជា Starter Relay ដោយ Scan Tool ហើយស្ដាប់សំឡេង ឬស្ទាបការរំញ័រ",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring",
+      "ប្ដូរ Starter Relay ដោយមិនវាស់ Resistance និងមិនពិនិត្យ Power Feed ជាមុន",
+    ],
   },
   {
     code: "P0620",
@@ -3291,8 +3923,18 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "សញ្ញាទាបខ្លាំង។",
     possibleCauses: ["ខ្សែភ្លើង Short to Ground", "Alternator ខូច"],
-    inspectionFlow: ["វាស់ Voltage Terminal F"],
-    commonMistakes: ["មិនពិនិត្យ Wiring មុនប្ដូរ Alternator"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Generator Field/F Terminal នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ដក Connector របស់ Generator Field/F Terminal ចេញ រួចអានកូដឡើងវិញ — បើកូដប្ដូរទៅ Circuit High នោះ Wiring ល្អ ហើយ Generator Field/F Terminal ខូច។ បើកូដនៅ Low ដដែល នោះខ្សែ Short to Ground",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness (ជាទូទៅ 5V)",
+      "វាស់ Continuity ខ្សែ Ground ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+      "វាស់ Voltage Terminal F",
+    ],
+    commonMistakes: [
+      "មិនពិនិត្យ Wiring មុនប្ដូរ Alternator",
+      "សន្និដ្ឋានថា Generator Field/F Terminal ខូចដោយមិនធ្វើតេស្តដក Connector — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0626",
@@ -3303,8 +3945,18 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "សញ្ញាខ្ពស់ខ្លាំង។",
     possibleCauses: ["ខ្សែភ្លើង Short to Power", "Alternator ខូច"],
-    inspectionFlow: ["វាស់ Voltage Terminal F"],
-    commonMistakes: ["ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Generator Field/F Terminal នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ភ្ជាប់ Jumper រវាង Signal និង Ground នៅ Connector ខាង Harness — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Generator Field/F Terminal ដាច់ខាងក្នុង។ បើកូដនៅ High ដដែល នោះខ្សែ Signal ដាច់ ឬ Ground បាត់",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+      "វាស់ Voltage Terminal F",
+    ],
+    commonMistakes: [
+      "ប្ដូរ ECU ដោយមិនពិនិត្យ Wiring",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0630",
@@ -3351,7 +4003,13 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "ភ្លើង 5V ដែល ECU ផ្គត់ផ្គង់ឲ្យ Sensor ដាច់ — ធ្វើឲ្យ Sensor ច្រើនលោតកូដព្រមគ្នា។",
     possibleCauses: ["Sensor ណាមួយ Short ធ្វើឲ្យ 5V ធ្លាក់", "Wiring Short", "ECU ខូច"],
-    inspectionFlow: ["ដោះ Connector Sensor ម្ដងមួយៗ រកមើលថា 5V ត្រឡប់មកវិញទេ"],
+    inspectionFlow: [
+      "អានកូដទាំងអស់ជាមុន — Reference Voltage ធ្លាក់ធ្វើឲ្យ Sensor ច្រើនឡើងកូដព្រមគ្នា ដែលជាតម្រុយសំខាន់បំផុត",
+      "វាស់វ៉ុល 5V នៅ Connector របស់ Sensor នីមួយៗដែលចែក Reference ដដែល",
+      "ដោះ Connector Sensor ម្ដងមួយៗ រកមើលថា 5V ត្រឡប់មកវិញទេ",
+      "បើ 5V មិនត្រឡប់សូម្បីដក Sensor ទាំងអស់ — ពិនិត្យខ្សែរក Short to Ground មុនសង្ស័យ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
     commonMistakes: ["ប្ដូរ ECU ខណៈ Sensor តែមួយ Short ធ្វើឲ្យ 5V ធ្លាក់"],
   },
   {
@@ -3363,7 +4021,13 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "5V ធ្លាក់ចុះទាប — ជាទូទៅ Sensor ណាមួយ Short to Ground។",
     possibleCauses: ["Sensor Short to Ground", "Wiring Short"],
-    inspectionFlow: ["ដោះ Connector Sensor ម្ដងមួយៗរក Short"],
+    inspectionFlow: [
+      "អានកូដទាំងអស់ជាមុន — Reference Voltage ធ្លាក់ធ្វើឲ្យ Sensor ច្រើនឡើងកូដព្រមគ្នា ដែលជាតម្រុយសំខាន់បំផុត",
+      "វាស់វ៉ុល 5V នៅ Connector របស់ Sensor នីមួយៗដែលចែក Reference ដដែល",
+      "ដោះ Connector Sensor ម្ដងមួយៗរក Short",
+      "បើ 5V មិនត្រឡប់សូម្បីដក Sensor ទាំងអស់ — ពិនិត្យខ្សែរក Short to Ground មុនសង្ស័យ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
     commonMistakes: ["ប្ដូរ ECU ដោយមិនញែក Sensor ណា Short"],
   },
   {
@@ -3375,7 +4039,14 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "5V ឡើងខ្ពស់ — ជាទូទៅ Short to Power (12V)។",
     possibleCauses: ["Wiring Short to Power", "ECU ខូច"],
-    inspectionFlow: ["ពិនិត្យ Wiring រករក Short to 12V"],
+    inspectionFlow: [
+      "អានកូដទាំងអស់ជាមុន — Reference Voltage ធ្លាក់ធ្វើឲ្យ Sensor ច្រើនឡើងកូដព្រមគ្នា ដែលជាតម្រុយសំខាន់បំផុត",
+      "វាស់វ៉ុល 5V នៅ Connector របស់ Sensor នីមួយៗដែលចែក Reference ដដែល",
+      "ដក Connector Sensor ចេញម្ដងមួយៗ — ពេលដក Sensor ណាហើយ 5V ត្រឡប់មកវិញ នោះ Sensor នោះ Short",
+      "បើ 5V មិនត្រឡប់សូម្បីដក Sensor ទាំងអស់ — ពិនិត្យខ្សែរក Short to Ground មុនសង្ស័យ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+      "ពិនិត្យ Wiring រករក Short to 12V",
+    ],
     commonMistakes: ["ប្ដូរ Sensor ដោយមិនរក Short ក្នុង Wiring"],
   },
   {
@@ -3387,7 +4058,13 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "ដូច P0641 ប៉ុន្តែនៅសៀគ្វី B។",
     possibleCauses: ["Sensor Short", "Wiring ដាច់", "ECU ខូច"],
-    inspectionFlow: ["ដោះ Connector Sensor ម្ដងមួយៗ"],
+    inspectionFlow: [
+      "អានកូដទាំងអស់ជាមុន — Reference Voltage ធ្លាក់ធ្វើឲ្យ Sensor ច្រើនឡើងកូដព្រមគ្នា ដែលជាតម្រុយសំខាន់បំផុត",
+      "វាស់វ៉ុល 5V នៅ Connector របស់ Sensor នីមួយៗដែលចែក Reference ដដែល",
+      "ដោះ Connector Sensor ម្ដងមួយៗ",
+      "បើ 5V មិនត្រឡប់សូម្បីដក Sensor ទាំងអស់ — ពិនិត្យខ្សែរក Short to Ground មុនសង្ស័យ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
     commonMistakes: ["ប្ដូរ ECU ខណៈ Sensor តែមួយ Short"],
   },
   {
@@ -3399,7 +4076,13 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "ដូច P0642 ប៉ុន្តែនៅសៀគ្វី B។",
     possibleCauses: ["Sensor Short to Ground", "Wiring Short"],
-    inspectionFlow: ["ដោះ Connector Sensor ម្ដងមួយៗរក Short"],
+    inspectionFlow: [
+      "អានកូដទាំងអស់ជាមុន — Reference Voltage ធ្លាក់ធ្វើឲ្យ Sensor ច្រើនឡើងកូដព្រមគ្នា ដែលជាតម្រុយសំខាន់បំផុត",
+      "វាស់វ៉ុល 5V នៅ Connector របស់ Sensor នីមួយៗដែលចែក Reference ដដែល",
+      "ដោះ Connector Sensor ម្ដងមួយៗរក Short",
+      "បើ 5V មិនត្រឡប់សូម្បីដក Sensor ទាំងអស់ — ពិនិត្យខ្សែរក Short to Ground មុនសង្ស័យ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
     commonMistakes: ["ប្ដូរ ECU ដោយមិនញែក Sensor ណា Short"],
   },
   {
@@ -3411,7 +4094,14 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "ដូច P0643 ប៉ុន្តែនៅសៀគ្វី B។",
     possibleCauses: ["Wiring Short to Power", "ECU ខូច"],
-    inspectionFlow: ["ពិនិត្យ Wiring រករក Short to 12V"],
+    inspectionFlow: [
+      "អានកូដទាំងអស់ជាមុន — Reference Voltage ធ្លាក់ធ្វើឲ្យ Sensor ច្រើនឡើងកូដព្រមគ្នា ដែលជាតម្រុយសំខាន់បំផុត",
+      "វាស់វ៉ុល 5V នៅ Connector របស់ Sensor នីមួយៗដែលចែក Reference ដដែល",
+      "ដក Connector Sensor ចេញម្ដងមួយៗ — ពេលដក Sensor ណាហើយ 5V ត្រឡប់មកវិញ នោះ Sensor នោះ Short",
+      "បើ 5V មិនត្រឡប់សូម្បីដក Sensor ទាំងអស់ — ពិនិត្យខ្សែរក Short to Ground មុនសង្ស័យ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+      "ពិនិត្យ Wiring រករក Short to 12V",
+    ],
     commonMistakes: ["ប្ដូរ Sensor ដោយមិនរក Short ក្នុង Wiring"],
   },
 
@@ -3485,8 +4175,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើរថយន្តអូតូម៉ាទិក",
     descriptionKm: "សញ្ញាទាបខ្លាំង — ECU គិតថា ATF ក្ដៅខ្លាំង។",
     possibleCauses: ["ខ្សែភ្លើង Short to Ground", "Sensor ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["មិនពិនិត្យ Wiring មុនប្ដូរ Sensor"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Transmission Fluid Temperature Sensor 'A' នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ដក Connector របស់ Transmission Fluid Temperature Sensor 'A' ចេញ រួចអានកូដឡើងវិញ — បើកូដប្ដូរទៅ Circuit High នោះ Wiring ល្អ ហើយ Transmission Fluid Temperature Sensor 'A' ខូច។ បើកូដនៅ Low ដដែល នោះខ្សែ Short to Ground",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness (ជាទូទៅ 5V)",
+      "វាស់ Continuity ខ្សែ Ground ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "មិនពិនិត្យ Wiring មុនប្ដូរ Sensor",
+      "សន្និដ្ឋានថា Transmission Fluid Temperature Sensor 'A' ខូចដោយមិនធ្វើតេស្តដក Connector — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0713",
@@ -3497,8 +4196,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើរថយន្តអូតូម៉ាទិក",
     descriptionKm: "សញ្ញាខ្ពស់ខ្លាំង — ECU គិតថា ATF ត្រជាក់ខ្លាំង។",
     possibleCauses: ["ខ្សែភ្លើងដាច់", "Sensor ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Transmission Fluid Temperature Sensor 'A' នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ភ្ជាប់ Jumper រវាង Signal និង Ground នៅ Connector ខាង Harness — បើកូដប្ដូរទៅ Circuit Low នោះ Wiring ល្អ ហើយ Transmission Fluid Temperature Sensor 'A' ដាច់ខាងក្នុង។ បើកូដនៅ High ដដែល នោះខ្សែ Signal ដាច់ ឬ Ground បាត់",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Sensor ដោយមិនពិនិត្យ Wiring",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0714",
@@ -4117,8 +4825,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "សញ្ញាចរន្តទៅ IMRC Actuator ទាបជាងតម្រូវការ។",
     possibleCauses: ["ខ្សែភ្លើង Short to Ground", "Actuator ខូច"],
-    inspectionFlow: ["វាស់ Voltage Connector"],
-    commonMistakes: ["មិនពិនិត្យ Wiring មុន"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Intake Manifold Runner Control (Bank 1) នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ដក Connector របស់ Intake Manifold Runner Control (Bank 1) ចេញ រួចអានកូដឡើងវិញ — បើកូដប្ដូរទៅ Circuit High នោះ Wiring ល្អ ហើយ Intake Manifold Runner Control (Bank 1) ខូច។ បើកូដនៅ Low ដដែល នោះខ្សែ Short to Ground",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness (ជាទូទៅ 5V)",
+      "វាស់ Continuity ខ្សែ Ground ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "មិនពិនិត្យ Wiring មុន",
+      "សន្និដ្ឋានថា Intake Manifold Runner Control (Bank 1) ខូចដោយមិនធ្វើតេស្តដក Connector — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P2015",
@@ -5683,8 +6400,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V ឬ Boxer",
     descriptionKm: "O2 Sensor Bank 2 Sensor 2 ខ្ពស់ពេក។",
     possibleCauses: ["Sensor ខូចខាងក្នុង", "ល្បាយ Rich", "ខ្សែឆ្លងសៀគ្វី"],
-    inspectionFlow: ["ដោះ Connector វាស់ Base Voltage (~0.45V)"],
-    commonMistakes: ["ស្មានតែ Rich ពិត ដោះលាង Injector ដោយមិនចាំបាច់"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Oxygen Sensor (Bank 2 Sensor 2) នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ដោះ Connector វាស់ Base Voltage (~0.45V)",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ស្មានតែ Rich ពិត ដោះលាង Injector ដោយមិនចាំបាច់",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0159",
@@ -5743,8 +6469,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនធំដែលមាន Sensor ច្រើន",
     descriptionKm: "O2 Sensor Bank 2 Sensor 3 ខ្ពស់ពេក។",
     possibleCauses: ["Sensor ខូចខាងក្នុង", "ល្បាយ Rich", "ខ្សែឆ្លងសៀគ្វី"],
-    inspectionFlow: ["ដោះ Connector វាស់ Base Voltage (~0.45V)"],
-    commonMistakes: ["ស្មានតែ Rich ពិត ដោះលាង Injector ដោយមិនចាំបាច់"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Oxygen Sensor (Bank 2 Sensor 3) នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ដោះ Connector វាស់ Base Voltage (~0.45V)",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ស្មានតែ Rich ពិត ដោះលាង Injector ដោយមិនចាំបាច់",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0165",

@@ -1251,7 +1251,13 @@ const DTC_CODES_CORE: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "សញ្ញា IAT ទាបខ្លាំង — ECU គិតថាខ្យល់ក្ដៅខ្លាំង (Fail-safe) ធ្វើឲ្យជាន់មិនស្ទុះ។",
     possibleCauses: ["ខ្សែភ្លើងសញ្ញា Short to Ground", "IAT Sensor ខូច"],
-    inspectionFlow: ["ដោះ Connector — បើ Live Data ប្ដូរទៅ -40°C បញ្ជាក់ Sensor ខូច បើនៅដដែល ជា Wiring Short"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Intake Air Temperature Sensor 1 នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ដោះ Connector — បើ Live Data ប្ដូរទៅ -40°C បញ្ជាក់ Sensor ខូច បើនៅដដែល ជា Wiring Short",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness (ជាទូទៅ 5V)",
+      "វាស់ Continuity ខ្សែ Ground ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
     commonMistakes: ["មិនធ្វើ Disconnect Test មុនសន្និដ្ឋាន"],
   },
   {
@@ -1263,8 +1269,17 @@ const DTC_CODES_CORE: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "សញ្ញា IAT ខ្ពស់ខ្លាំង — ECU គិតថាខ្យល់ត្រជាក់ខ្លាំង ធ្វើឲ្យចាក់ Fuel ក្រាស់ ស៊ីប្រេងច្រើន។",
     possibleCauses: ["ខ្សែភ្លើងសញ្ញាដាច់ (Open Circuit)", "Ground Sensor ដាច់", "IAT Sensor ខូច"],
-    inspectionFlow: ["ភ្ជាប់ Jumper រវាង Signal/Ground — បើ Live Data ប្ដូរតម្លៃ Wiring ល្អ Sensor ខូច"],
-    commonMistakes: ["ប្ដូរ Sensor ដោយមិនពិនិត្យខ្សែភ្លើងកណ្ដុរខាំ"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Intake Air Temperature Sensor 1 នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ភ្ជាប់ Jumper រវាង Signal/Ground — បើ Live Data ប្ដូរតម្លៃ Wiring ល្អ Sensor ខូច",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Sensor ដោយមិនពិនិត្យខ្សែភ្លើងកណ្ដុរខាំ",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0115",
@@ -1299,8 +1314,17 @@ const DTC_CODES_CORE: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "វ៉ុលខ្ពស់ខ្លាំង — ECU គិតថា Coolant ត្រជាក់ខ្លាំង (-40°C) ធ្វើឲ្យចាក់ Fuel ក្រាស់ ពិបាកឆេះពេលក្ដៅ។",
     possibleCauses: ["ខ្សែភ្លើងសញ្ញាដាច់/Connector ច្រេះ", "ECT Sensor ខូច"],
-    inspectionFlow: ["ដោះ Connector — Jumper Signal/Ground ដើម្បីញែក Sensor/Wiring"],
-    commonMistakes: ["មិនពិនិត្យ Connector ដែល Coolant leak ចូលធ្វើឲ្យច្រេះ"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Engine Coolant Temperature នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ដោះ Connector — Jumper Signal/Ground ដើម្បីញែក Sensor/Wiring",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "មិនពិនិត្យ Connector ដែល Coolant leak ចូលធ្វើឲ្យច្រេះ",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0121",
@@ -1359,8 +1383,17 @@ const DTC_CODES_CORE: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "វ៉ុលគាំងខ្ពស់ជាប់ — ECU យល់ច្រឡំថា Rich ខ្លាំង ហើយកាត់ Fuel រហូតម៉ាស៊ីនញ័រ/ស្តុប។",
     possibleCauses: ["ខ្សែភ្លើងសញ្ញាឆ្លងជាមួយ Heater 12V ខាងក្នុង Sensor", "Fuel Pressure ខ្ពស់ខុសប្រក្រតី"],
-    inspectionFlow: ["ដោះ Connector — បើវ៉ុលធ្លាក់មកតម្លៃធម្មតា (~0.45V) Sensor ខូចខាងក្នុង"],
-    commonMistakes: ["ស្មានតែ Rich ពិត ដោះលាង Injector ដោយមិនចាំបាច់"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ O2 Sensor (Bank 1 Sensor 1) នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ដោះ Connector — បើវ៉ុលធ្លាក់មកតម្លៃធម្មតា (~0.45V) Sensor ខូចខាងក្នុង",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ស្មានតែ Rich ពិត ដោះលាង Injector ដោយមិនចាំបាច់",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0134",
@@ -1395,8 +1428,18 @@ const DTC_CODES_CORE: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "វ៉ុលទាបជាប់ — អាចជា Exhaust leak ចន្លោះ Catalyst និង Sensor ឬខ្សែភ្លើងដាច់។",
     possibleCauses: ["Exhaust leak ចន្លោះ Catalyst និង Sensor ទី ២", "Sensor ទី ២ ខូច"],
-    inspectionFlow: ["ពិនិត្យ Exhaust Pipe ផ្នែកខាងក្រោមរកកន្លែងធ្លាយ/ប្រេះ"],
-    commonMistakes: ["ប្ដូរ Sensor ដោយមិនរក Exhaust leak តូចៗជាមុន"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ O2 Sensor (Bank 1 Sensor 2) នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ដក Connector របស់ O2 Sensor (Bank 1 Sensor 2) ចេញ រួចអានកូដឡើងវិញ — បើកូដប្ដូរទៅ Circuit High នោះ Wiring ល្អ ហើយ O2 Sensor (Bank 1 Sensor 2) ខូច។ បើកូដនៅ Low ដដែល នោះខ្សែ Short to Ground",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness (ជាទូទៅ 5V)",
+      "វាស់ Continuity ខ្សែ Ground ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+      "ពិនិត្យ Exhaust Pipe ផ្នែកខាងក្រោមរកកន្លែងធ្លាយ/ប្រេះ",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Sensor ដោយមិនរក Exhaust leak តូចៗជាមុន",
+      "សន្និដ្ឋានថា O2 Sensor (Bank 1 Sensor 2) ខូចដោយមិនធ្វើតេស្តដក Connector — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0138",
@@ -1407,8 +1450,17 @@ const DTC_CODES_CORE: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "វ៉ុលខ្ពស់គាំង — បញ្ជាក់ពី Heater Circuit ឆ្លងចូលខ្សែសញ្ញា ក្នុង Sensor ខាងក្នុង។",
     possibleCauses: ["ខ្សែភ្លើងឆ្លងសៀគ្វីខាងក្នុង Sensor", "Rich ខ្លាំងហូរដល់ក្រោយ Catalyst"],
-    inspectionFlow: ["ដោះ Connector វាស់ Base Voltage (~0.45V ធម្មតា)"],
-    commonMistakes: ["មិនពិនិត្យស្ថានភាព Fuel Trim ជាមុនសន្និដ្ឋាន"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ O2 Sensor (Bank 1 Sensor 2) នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ដោះ Connector វាស់ Base Voltage (~0.45V ធម្មតា)",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness",
+      "វាស់ Continuity ខ្សែ Signal ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "មិនពិនិត្យស្ថានភាព Fuel Trim ជាមុនសន្និដ្ឋាន",
+      "សន្និដ្ឋានថាខ្សែដាច់ដោយមិនធ្វើតេស្ត Jumper — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0140",
@@ -1515,8 +1567,18 @@ const DTC_CODES_CORE: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីន Gasoline ដែលមាន Electronic Throttle",
     descriptionKm: "វ៉ុលទាបខ្លាំង — រថយន្តលែងទទួលបញ្ជាហ្គែរពីជើងចុច (Throttle គាំង)។",
     possibleCauses: ["ខ្សែភ្លើងសញ្ញាឆ្លងទៅ Ground", "TPS Sensor B ខូច"],
-    inspectionFlow: ["ពិនិត្យ Connector Throttle Body"],
-    commonMistakes: ["បញ្ជូនរថយន្តឲ្យភ្ញៀវដោយមិនដោះស្រាយ — គ្រោះថ្នាក់ថ្នាក់ហ្គែរគាំង"],
+    inspectionFlow: [
+      "អាន Live Data — ធៀបតម្លៃ Throttle/Pedal Position Sensor B នឹងតម្លៃរំពឹងទុកតាមស្ថានភាពម៉ាស៊ីន",
+      "ដក Connector របស់ Throttle/Pedal Position Sensor B ចេញ រួចអានកូដឡើងវិញ — បើកូដប្ដូរទៅ Circuit High នោះ Wiring ល្អ ហើយ Throttle/Pedal Position Sensor B ខូច។ បើកូដនៅ Low ដដែល នោះខ្សែ Short to Ground",
+      "វាស់វ៉ុល Reference នៅ Connector ខាង Harness (ជាទូទៅ 5V)",
+      "វាស់ Continuity ខ្សែ Ground ពី Connector ទៅ ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+      "ពិនិត្យ Connector Throttle Body",
+    ],
+    commonMistakes: [
+      "បញ្ជូនរថយន្តឲ្យភ្ញៀវដោយមិនដោះស្រាយ — គ្រោះថ្នាក់ថ្នាក់ហ្គែរគាំង",
+      "សន្និដ្ឋានថា Throttle/Pedal Position Sensor B ខូចដោយមិនធ្វើតេស្តដក Connector — តេស្តនោះញែក Sensor ចេញពី Wiring ក្នុងជំហានតែមួយ",
+    ],
   },
   {
     code: "P0230",
