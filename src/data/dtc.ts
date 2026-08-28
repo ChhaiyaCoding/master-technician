@@ -1,5 +1,6 @@
 import type { DtcCode } from "@/types";
 import { DTC_CODES_EXTENDED } from "@/data/dtcExtended";
+import { DTC_CODES_DIESEL } from "@/data/dtcDiesel";
 
 /**
  * Dummy DTC knowledge base. A real deployment would back this with a proper
@@ -1550,8 +1551,12 @@ const DTC_CODES_CORE: DtcCode[] = [
   },
 ];
 
-/** Core + extended generic codes, merged into the single app-wide list. */
-export const DTC_CODES: DtcCode[] = [...DTC_CODES_CORE, ...DTC_CODES_EXTENDED];
+/** Core + extended + modern-diesel codes, merged into the single app-wide list. */
+export const DTC_CODES: DtcCode[] = [
+  ...DTC_CODES_CORE,
+  ...DTC_CODES_EXTENDED,
+  ...DTC_CODES_DIESEL,
+];
 
 export const DTC_BY_CODE = Object.fromEntries(
   DTC_CODES.map((d) => [d.code.toUpperCase(), d]),
