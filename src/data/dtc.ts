@@ -1404,8 +1404,17 @@ const DTC_CODES_CORE: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "វ៉ុលគាំងនៅ ~0.45V មិនប្រែប្រួល ទោះជាន់ ឬដកហ្គែរក៏ដោយ — Sensor ឬខ្សែភ្លើងដាច់។",
     possibleCauses: ["Sensor ខូចដាច់ខាងក្នុង", "ខ្សែភ្លើងសញ្ញាដាច់ទាំងស្រុង"],
-    inspectionFlow: ["វាស់ខ្សែសញ្ញាពី Connector ទៅ ECU"],
-    commonMistakes: ["ប្ដូរ Sensor ដោយមិនវាស់ខ្សែភ្លើងជាមុន"],
+    inspectionFlow: [
+      "កម្ដៅម៉ាស៊ីនឲ្យឡើងពេញ រួចមើលវ៉ុល Sensor (Bank 1 Sensor 1) ក្នុង Live Data នៅ 2500 rpm — Sensor មុខ Catalytic ត្រូវលោតឡើងចុះរវាង 0.1–0.9V ច្រើនដងក្នុងមួយវិនាទី",
+      "ពិនិត្យ Heater ជាមុន — Sensor ដែលមិនក្ដៅមិនដែលចាប់ផ្ដើមធ្វើការ។ វាស់ Resistance Heater (ជាទូទៅ 5–15 Ω ត្រជាក់) និងពិនិត្យ Fuse",
+      "បង្កើតល្បាយក្រាស់/ស្តើងដោយចេតនា (ដក Vacuum Hose ឬបន្ថែមឥន្ធនៈ) — មើលថាវ៉ុលឆ្លើយតបទាល់តែសោះឬអត់",
+      "ពិនិត្យ Exhaust Leak មុខ Sensor — ខ្យល់ស្អាតចូលធ្វើឲ្យវ៉ុលជាប់ទាបជានិច្ច ហើយមើលទៅដូច Sensor ខូច",
+      "វាស់ Continuity ខ្សែ Signal និង Ground ពី Connector ទៅ ECU",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Sensor ដោយមិនវាស់ខ្សែភ្លើងជាមុន",
+      "ប្ដូរ Sensor ខណៈ Fuse ឬ Heater ខូច — Sensor ដែលមិនក្ដៅមិនផ្ដល់សញ្ញា ហើយឡើងកូដដដែលនេះ",
+    ],
   },
   {
     code: "P0136",
@@ -1416,8 +1425,18 @@ const DTC_CODES_CORE: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "សៀគ្វី Sensor ទី ២ មានបញ្ហា — ECU មិនអាចវាយតម្លៃប្រសិទ្ធភាព Catalyst បាន។",
     possibleCauses: ["Sensor ទី ២ ខូច", "Connector ក្រោមរថយន្តរលុង/ចូលទឹក"],
-    inspectionFlow: ["ពិនិត្យ Connector ក្រោមរថយន្តរកស្នាមទឹកចូល/ច្រេះ"],
-    commonMistakes: ["គិតថា Sensor ទី ២ បញ្ជា Fuel ខណៈវាគ្រាន់តែឃ្លាំមើល Catalyst"],
+    inspectionFlow: [
+      "កម្ដៅម៉ាស៊ីនឲ្យឡើងពេញ រួចមើលវ៉ុល Sensor (Bank 1 Sensor 2) ក្នុង Live Data — Sensor ក្រោយ Catalytic ត្រូវនៅថេរប្រហែល 0.6–0.7V ⚠️ វាមិនត្រូវលោតដូច Sensor មុខទេ បើវាលោត នោះ Catalytic អស់",
+      "ពិនិត្យ Heater ជាមុន — Sensor ដែលមិនក្ដៅមិនដែលចាប់ផ្ដើមធ្វើការ។ វាស់ Resistance Heater (ជាទូទៅ 5–15 Ω ត្រជាក់) និងពិនិត្យ Fuse",
+      "វាស់ Continuity ខ្សែ Signal និង Ground ពី Connector ទៅ ECU",
+      "ពិនិត្យ Exhaust Leak មុខ Sensor — ខ្យល់ស្អាតចូលធ្វើឲ្យវ៉ុលជាប់ទាបជានិច្ច ហើយមើលទៅដូច Sensor ខូច",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+      "ពិនិត្យ Connector ក្រោមរថយន្តរកស្នាមទឹកចូល/ច្រេះ",
+    ],
+    commonMistakes: [
+      "គិតថា Sensor ទី ២ បញ្ជា Fuel ខណៈវាគ្រាន់តែឃ្លាំមើល Catalyst",
+      "មិនពិនិត្យ Exhaust Leak មុខ Sensor — ខ្យល់ស្អាតធ្វើឲ្យ Sensor ល្អមើលទៅដូចខូច",
+    ],
   },
   {
     code: "P0137",
@@ -1471,8 +1490,17 @@ const DTC_CODES_CORE: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "Sensor ទី ២ គ្មានការប្រែប្រួលវ៉ុលទាល់តែសោះ — ECU មិនអាចដឹងស្ថានភាព Catalyst។",
     possibleCauses: ["Sensor ខូចដាច់ខាងក្នុង", "ខ្សែភ្លើងសញ្ញាដាច់"],
-    inspectionFlow: ["វាស់ខ្សែសញ្ញា Connector"],
-    commonMistakes: ["ទុកចោលមិនជួសជុល ធ្វើឲ្យមិនដឹងពេល Catalyst ស្ទះ"],
+    inspectionFlow: [
+      "កម្ដៅម៉ាស៊ីនឲ្យឡើងពេញ រួចមើលវ៉ុល Sensor (Bank 1 Sensor 2) ក្នុង Live Data — Sensor ក្រោយ Catalytic ត្រូវនៅថេរប្រហែល 0.6–0.7V ⚠️ វាមិនត្រូវលោតដូច Sensor មុខទេ បើវាលោត នោះ Catalytic អស់",
+      "ពិនិត្យ Heater ជាមុន — Sensor ដែលមិនក្ដៅមិនដែលចាប់ផ្ដើមធ្វើការ។ វាស់ Resistance Heater (ជាទូទៅ 5–15 Ω ត្រជាក់) និងពិនិត្យ Fuse",
+      "បង្កើតល្បាយក្រាស់/ស្តើងដោយចេតនា (ដក Vacuum Hose ឬបន្ថែមឥន្ធនៈ) — មើលថាវ៉ុលឆ្លើយតបទាល់តែសោះឬអត់",
+      "ពិនិត្យ Exhaust Leak មុខ Sensor — ខ្យល់ស្អាតចូលធ្វើឲ្យវ៉ុលជាប់ទាបជានិច្ច ហើយមើលទៅដូច Sensor ខូច",
+      "វាស់ Continuity ខ្សែ Signal និង Ground ពី Connector ទៅ ECU",
+    ],
+    commonMistakes: [
+      "ទុកចោលមិនជួសជុល ធ្វើឲ្យមិនដឹងពេល Catalyst ស្ទះ",
+      "ប្ដូរ Sensor ខណៈ Fuse ឬ Heater ខូច — Sensor ដែលមិនក្ដៅមិនផ្ដល់សញ្ញា ហើយឡើងកូដដដែលនេះ",
+    ],
   },
   {
     code: "P0141",
@@ -1483,8 +1511,17 @@ const DTC_CODES_CORE: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "ខ្សែរុំ Heater ក្រោយ Catalyst ដាច់ — Sensor ឡើងកម្តៅយឺត ប៉ះពាល់ Emission Control។",
     possibleCauses: ["Heater ក្នុង Sensor ទី ២ ដាច់", "ខ្សែភ្លើងក្រោមរថយន្តដាច់"],
-    inspectionFlow: ["វាស់ Resistance Heater Sensor ទី ២ (ជាទូទៅ ៥-១៥ Ω)"],
-    commonMistakes: ["ទិញ Sensor ខុសប្រភេទ ធ្វើឲ្យ Resistance មិនត្រូវ"],
+    inspectionFlow: [
+      "វាស់ Resistance រវាង Pin Heater ទាំងពីររបស់ Sensor (Bank 1 Sensor 2) ធៀបនឹងស្តង់ដារ (ជាទូទៅ 5–15 Ω ត្រជាក់)",
+      "ពិនិត្យ Fuse និង Relay របស់ Heater — មុនសង្ស័យ Sensor",
+      "វាស់វ៉ុលចិញ្ចឹមមកដល់ Connector ពេលបើកកូនសោ",
+      "ពិនិត្យ Ground និង Driver ខាង ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ទិញ Sensor ខុសប្រភេទ ធ្វើឲ្យ Resistance មិនត្រូវ",
+      "ប្ដូរ Sensor ខណៈ Fuse របស់ Heater ដាច់",
+    ],
   },
   {
     code: "P0173",

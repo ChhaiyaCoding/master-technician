@@ -343,8 +343,16 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V ក្រោយពេលជាងជួសជុល/ប្ដូរ Sensor",
     descriptionKm: "កូដនេះកើតឡើងស្ទើរតែជានិច្ចក្រោយពេលជាងជួសជុលហើយដោត Connector ខុសកន្លែង។",
     possibleCauses: ["ដោត Connector Sensor ខុសកន្លែងក្រោយជួសជុល"],
-    inspectionFlow: ["ពិនិត្យតម្រឹម Connector តាម Wiring Diagram ឡើងវិញ"],
-    commonMistakes: ["ជួសជុលឥតឈប់ឈរដោយមិនត្រួតពិនិត្យ Connector ត្រឹមត្រូវ"],
+    inspectionFlow: [
+      "ពិនិត្យថា Connector ដោតត្រូវ Bank តាម Wiring Diagram — កូដនេះកើតឡើងភាគច្រើនក្រោយការជួសជុលថ្មីៗ",
+      "បញ្ជាក់ដោយ Live Data — បង្កើតការប្រែប្រួលលើ Bank មួយ រួចមើលថា Sensor ណាឆ្លើយតប",
+      "ពិនិត្យការជួសជុលខ្សែពីមុន ឬ Harness ដែលបានប្ដូរ",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ជួសជុលឥតឈប់ឈរដោយមិនត្រួតពិនិត្យ Connector ត្រឹមត្រូវ",
+      "ដេញតាម Sensor ខណៈ Connector គ្រាន់តែដោតច្រឡំ Bank ក្រោយការជួសជុល",
+    ],
   },
   {
     code: "P0041",
@@ -355,8 +363,16 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V ក្រោយពេលជាងជួសជុល/ប្ដូរ Sensor",
     descriptionKm: "ដូច P0040 ប៉ុន្តែនៅ Sensor ក្រោយ Catalyst (ទី ២)។",
     possibleCauses: ["ដោត Connector ខុសកន្លែងក្រោយជួសជុល"],
-    inspectionFlow: ["ពិនិត្យតម្រឹម Connector តាម Wiring Diagram"],
-    commonMistakes: ["មិនតម្រឹម Connector ត្រឹមត្រូវក្រោយប្ដូរ Sensor"],
+    inspectionFlow: [
+      "ពិនិត្យថា Connector ដោតត្រូវ Bank តាម Wiring Diagram — កូដនេះកើតឡើងភាគច្រើនក្រោយការជួសជុលថ្មីៗ",
+      "បញ្ជាក់ដោយ Live Data — បង្កើតការប្រែប្រួលលើ Bank មួយ រួចមើលថា Sensor ណាឆ្លើយតប",
+      "ពិនិត្យការជួសជុលខ្សែពីមុន ឬ Harness ដែលបានប្ដូរ",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "មិនតម្រឹម Connector ត្រឹមត្រូវក្រោយប្ដូរ Sensor",
+      "ដេញតាម Sensor ខណៈ Connector គ្រាន់តែដោតច្រឡំ Bank ក្រោយការជួសជុល",
+    ],
   },
   {
     code: "P0042",
@@ -499,8 +515,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "Resistance របស់ Heater ចាស់/ខូចមិនត្រូវនឹងតម្លៃស្តង់ដារ។",
     possibleCauses: ["Heater ចាស់", "Sensor ថ្មីខុសប្រភេទ"],
-    inspectionFlow: ["វាស់ Resistance ធៀបនឹងស្តង់ដារក្រុមហ៊ុន"],
-    commonMistakes: ["ទិញ Sensor Universal ខុសប្រភេទ ធ្វើឲ្យ Resistance មិនត្រូវ"],
+    inspectionFlow: [
+      "វាស់ Resistance រវាង Pin Heater ទាំងពីររបស់ Sensor (Bank 1 Sensor 1) ធៀបនឹងស្តង់ដារ (ជាទូទៅ 5–15 Ω ត្រជាក់)",
+      "ពិនិត្យ Fuse និង Relay របស់ Heater — មុនសង្ស័យ Sensor",
+      "វាស់វ៉ុលចិញ្ចឹមមកដល់ Connector ពេលបើកកូនសោ",
+      "ពិនិត្យ Ground និង Driver ខាង ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ទិញ Sensor Universal ខុសប្រភេទ ធ្វើឲ្យ Resistance មិនត្រូវ",
+      "ប្ដូរ Sensor ខណៈ Fuse របស់ Heater ដាច់",
+    ],
   },
 
   /* ---------------------- P006x-P009x — Ambient Temp, Valve Solenoids, Fuel Rail (rest) ---------------------- */
@@ -991,8 +1016,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "Resistance របស់ Heater ចាស់/ខូចមិនត្រូវនឹងតម្លៃស្តង់ដារ។",
     possibleCauses: ["Heater ចាស់", "Sensor ថ្មីខុសប្រភេទ"],
-    inspectionFlow: ["វាស់ Resistance ធៀបនឹងស្តង់ដារ"],
-    commonMistakes: ["ទិញ Sensor Universal ខុសប្រភេទ"],
+    inspectionFlow: [
+      "វាស់ Resistance រវាង Pin Heater ទាំងពីររបស់ Sensor (Bank 1 Sensor 2) ធៀបនឹងស្តង់ដារ (ជាទូទៅ 5–15 Ω ត្រជាក់)",
+      "ពិនិត្យ Fuse និង Relay របស់ Heater — មុនសង្ស័យ Sensor",
+      "វាស់វ៉ុលចិញ្ចឹមមកដល់ Connector ពេលបើកកូនសោ",
+      "ពិនិត្យ Ground និង Driver ខាង ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ទិញ Sensor Universal ខុសប្រភេទ",
+      "ប្ដូរ Sensor ខណៈ Fuse របស់ Heater ដាច់",
+    ],
   },
   {
     code: "P0055",
@@ -1003,8 +1037,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V ឬ Boxer",
     descriptionKm: "Resistance របស់ Heater Bank 2 មិនត្រូវនឹងស្តង់ដារ។",
     possibleCauses: ["Heater ចាស់", "Sensor ខុសប្រភេទ"],
-    inspectionFlow: ["វាស់ Resistance ធៀបនឹងស្តង់ដារ"],
-    commonMistakes: ["ទិញ Sensor ខុសប្រភេទ"],
+    inspectionFlow: [
+      "វាស់ Resistance រវាង Pin Heater ទាំងពីររបស់ Sensor (Bank 2 Sensor 1) ធៀបនឹងស្តង់ដារ (ជាទូទៅ 5–15 Ω ត្រជាក់)",
+      "ពិនិត្យ Fuse និង Relay របស់ Heater — មុនសង្ស័យ Sensor",
+      "វាស់វ៉ុលចិញ្ចឹមមកដល់ Connector ពេលបើកកូនសោ",
+      "ពិនិត្យ Ground និង Driver ខាង ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ទិញ Sensor ខុសប្រភេទ",
+      "ប្ដូរ Sensor ខណៈ Fuse របស់ Heater ដាច់",
+    ],
   },
   {
     code: "P0056",
@@ -1015,8 +1058,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V ឬ Boxer",
     descriptionKm: "ដូច P0050 — កូដទូទៅសៀគ្វី Heater Bank 2 Sensor 2។",
     possibleCauses: ["Heater ខូច", "Fuse ដាច់"],
-    inspectionFlow: ["វាស់ Resistance Heater"],
-    commonMistakes: ["ប្ដូរ ECU ដោយមិនវាស់ Resistance ជាមុន"],
+    inspectionFlow: [
+      "វាស់ Resistance រវាង Pin Heater ទាំងពីររបស់ Sensor (Bank 2 Sensor 2) ធៀបនឹងស្តង់ដារ (ជាទូទៅ 5–15 Ω ត្រជាក់)",
+      "ពិនិត្យ Fuse និង Relay របស់ Heater — មុនសង្ស័យ Sensor",
+      "វាស់វ៉ុលចិញ្ចឹមមកដល់ Connector ពេលបើកកូនសោ",
+      "ពិនិត្យ Ground និង Driver ខាង ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ ECU ដោយមិនវាស់ Resistance ជាមុន",
+      "ប្ដូរ Sensor ខណៈ Fuse របស់ Heater ដាច់",
+    ],
   },
   {
     code: "P0057",
@@ -1069,8 +1121,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V ឬ Boxer",
     descriptionKm: "Resistance មិនត្រូវនឹងស្តង់ដារ។",
     possibleCauses: ["Heater ចាស់", "Sensor ខុសប្រភេទ"],
-    inspectionFlow: ["វាស់ Resistance"],
-    commonMistakes: ["ទិញ Sensor ខុសប្រភេទ"],
+    inspectionFlow: [
+      "វាស់ Resistance រវាង Pin Heater ទាំងពីររបស់ Sensor (Bank 2 Sensor 2) ធៀបនឹងស្តង់ដារ (ជាទូទៅ 5–15 Ω ត្រជាក់)",
+      "ពិនិត្យ Fuse និង Relay របស់ Heater — មុនសង្ស័យ Sensor",
+      "វាស់វ៉ុលចិញ្ចឹមមកដល់ Connector ពេលបើកកូនសោ",
+      "ពិនិត្យ Ground និង Driver ខាង ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ទិញ Sensor ខុសប្រភេទ",
+      "ប្ដូរ Sensor ខណៈ Fuse របស់ Heater ដាច់",
+    ],
   },
   {
     code: "P0060",
@@ -1081,8 +1142,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនធំដែលមាន Sensor ច្រើន",
     descriptionKm: "Resistance របស់ Sensor ទី ៣ (កម្រ) មិនត្រូវនឹងស្តង់ដារ។",
     possibleCauses: ["Heater ចាស់", "Sensor ខុសប្រភេទ"],
-    inspectionFlow: ["វាស់ Resistance"],
-    commonMistakes: ["ច្រឡំគិតថាមិនមាន Sensor ទី ៣ — ម៉ាស៊ីនធំខ្លះមានពិត"],
+    inspectionFlow: [
+      "វាស់ Resistance រវាង Pin Heater ទាំងពីររបស់ Sensor (Bank 2 Sensor 3) ធៀបនឹងស្តង់ដារ (ជាទូទៅ 5–15 Ω ត្រជាក់)",
+      "ពិនិត្យ Fuse និង Relay របស់ Heater — មុនសង្ស័យ Sensor",
+      "វាស់វ៉ុលចិញ្ចឹមមកដល់ Connector ពេលបើកកូនសោ",
+      "ពិនិត្យ Ground និង Driver ខាង ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ច្រឡំគិតថាមិនមាន Sensor ទី ៣ — ម៉ាស៊ីនធំខ្លះមានពិត",
+      "ប្ដូរ Sensor ខណៈ Fuse របស់ Heater ដាច់",
+    ],
   },
   {
     code: "P0104",
@@ -1244,8 +1314,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "Sensor ក្រោយ Catalyst ប្តូរសញ្ញាយឺតជាងធម្មតា។",
     possibleCauses: ["Sensor ចាស់/កខ្វក់"],
-    inspectionFlow: ["មើលចំនួនការប្តូរវ៉ុលក្នុងមួយវិនាទី"],
-    commonMistakes: ["ទុកចោលមិនប្ដូរ ធ្វើឲ្យស៊ីសាំងជាងមុន"],
+    inspectionFlow: [
+      "កម្ដៅឲ្យពេញ — Sensor (Bank 1 Sensor 2) នៅក្រោយ Catalytic មិនលោតញឹកញាប់ដូច Sensor មុខទេ ហើយនោះជារឿងធម្មតា។ តេស្តគឺបង្កើតការប្រែប្រួល រួចមើលថាវាឆ្លើយតបយឺតប៉ុណ្ណា មិនមែនរាប់ចំនួនលោតទេ",
+      "ធៀបនឹង Sensor របស់ Bank ម្ខាងទៀត បើមាន — Sensor ល្អជាមាត្រដ្ឋានប្រៀបធៀបល្អបំផុត",
+      "បង្កើតការប្រែប្រួល (បិទឥន្ធនៈពេលចុះជម្រាល ឬបន្ថែមឥន្ធនៈ) រួចវាស់រយៈពេលដែលវ៉ុលចាប់ផ្ដើមផ្លាស់ប្ដូរ",
+      "ដក Sensor ចេញ មើលពណ៌ចុង — ស = Silicone ឬ Coolant, ខ្មៅ = ប្រេង/កាបូន, ប្រផេះស្រាល = ចាស់តាមធម្មតា។ ពណ៌នោះប្រាប់មូលហេតុ",
+      "ពិនិត្យ Exhaust Leak មុខ Sensor — ខ្យល់ស្អាតចូលធ្វើឲ្យវ៉ុលជាប់ទាបជានិច្ច ហើយមើលទៅដូច Sensor ខូច",
+    ],
+    commonMistakes: [
+      "ទុកចោលមិនប្ដូរ ធ្វើឲ្យស៊ីសាំងជាងមុន",
+      "ប្ដូរ Sensor ដោយមិនរកមូលហេតុថាហេតុអ្វីវាចាស់មុនអាយុ (ម៉ាស៊ីនស៊ីប្រេង ឬ Coolant លេច) — Sensor ថ្មីនឹងខូចម្ដងទៀត",
+    ],
   },
   {
     code: "P0142",
@@ -1256,8 +1335,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនធំដែលមាន Sensor ច្រើន",
     descriptionKm: "សៀគ្វី Sensor ទី ៣ (កម្រ) មានបញ្ហា។",
     possibleCauses: ["Sensor ខូច", "ខ្សែភ្លើងដាច់"],
-    inspectionFlow: ["វាស់ខ្សែសញ្ញា Connector"],
-    commonMistakes: ["ច្រឡំគិតថាមិនមាន Sensor ទី ៣"],
+    inspectionFlow: [
+      "កម្ដៅម៉ាស៊ីនឲ្យឡើងពេញ រួចមើលវ៉ុល Sensor (Bank 1 Sensor 3) ក្នុង Live Data — Sensor ក្រោយ Catalytic ត្រូវនៅថេរប្រហែល 0.6–0.7V ⚠️ វាមិនត្រូវលោតដូច Sensor មុខទេ បើវាលោត នោះ Catalytic អស់",
+      "ពិនិត្យ Heater ជាមុន — Sensor ដែលមិនក្ដៅមិនដែលចាប់ផ្ដើមធ្វើការ។ វាស់ Resistance Heater (ជាទូទៅ 5–15 Ω ត្រជាក់) និងពិនិត្យ Fuse",
+      "វាស់ Continuity ខ្សែ Signal និង Ground ពី Connector ទៅ ECU",
+      "ពិនិត្យ Exhaust Leak មុខ Sensor — ខ្យល់ស្អាតចូលធ្វើឲ្យវ៉ុលជាប់ទាបជានិច្ច ហើយមើលទៅដូច Sensor ខូច",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ច្រឡំគិតថាមិនមាន Sensor ទី ៣",
+      "មិនពិនិត្យ Exhaust Leak មុខ Sensor — ខ្យល់ស្អាតធ្វើឲ្យ Sensor ល្អមើលទៅដូចខូច",
+    ],
   },
   {
     code: "P0143",
@@ -1311,8 +1399,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនធំដែលមាន Sensor ច្រើន",
     descriptionKm: "Sensor ប្តូរសញ្ញាយឺតជាងធម្មតា។",
     possibleCauses: ["Sensor ចាស់/កខ្វក់"],
-    inspectionFlow: ["មើលចំនួនការប្តូរវ៉ុលក្នុងមួយវិនាទី"],
-    commonMistakes: ["ទុកចោលមិនប្ដូរ"],
+    inspectionFlow: [
+      "កម្ដៅឲ្យពេញ — Sensor (Bank 1 Sensor 3) នៅក្រោយ Catalytic មិនលោតញឹកញាប់ដូច Sensor មុខទេ ហើយនោះជារឿងធម្មតា។ តេស្តគឺបង្កើតការប្រែប្រួល រួចមើលថាវាឆ្លើយតបយឺតប៉ុណ្ណា មិនមែនរាប់ចំនួនលោតទេ",
+      "ធៀបនឹង Sensor របស់ Bank ម្ខាងទៀត បើមាន — Sensor ល្អជាមាត្រដ្ឋានប្រៀបធៀបល្អបំផុត",
+      "បង្កើតការប្រែប្រួល (បិទឥន្ធនៈពេលចុះជម្រាល ឬបន្ថែមឥន្ធនៈ) រួចវាស់រយៈពេលដែលវ៉ុលចាប់ផ្ដើមផ្លាស់ប្ដូរ",
+      "ដក Sensor ចេញ មើលពណ៌ចុង — ស = Silicone ឬ Coolant, ខ្មៅ = ប្រេង/កាបូន, ប្រផេះស្រាល = ចាស់តាមធម្មតា។ ពណ៌នោះប្រាប់មូលហេតុ",
+      "ពិនិត្យ Exhaust Leak មុខ Sensor — ខ្យល់ស្អាតចូលធ្វើឲ្យវ៉ុលជាប់ទាបជានិច្ច ហើយមើលទៅដូច Sensor ខូច",
+    ],
+    commonMistakes: [
+      "ទុកចោលមិនប្ដូរ",
+      "ប្ដូរ Sensor ដោយមិនរកមូលហេតុថាហេតុអ្វីវាចាស់មុនអាយុ (ម៉ាស៊ីនស៊ីប្រេង ឬ Coolant លេច) — Sensor ថ្មីនឹងខូចម្ដងទៀត",
+    ],
   },
   {
     code: "P0146",
@@ -1323,8 +1420,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនធំដែលមាន Sensor ច្រើន",
     descriptionKm: "Sensor គាំងមិនប្រែប្រួលទាល់តែសោះ។",
     possibleCauses: ["Sensor ខូចដាច់ខាងក្នុង", "ខ្សែភ្លើងដាច់"],
-    inspectionFlow: ["វាស់ខ្សែសញ្ញា"],
-    commonMistakes: ["ប្ដូរ Sensor ដោយមិនវាស់ខ្សែភ្លើងជាមុន"],
+    inspectionFlow: [
+      "កម្ដៅម៉ាស៊ីនឲ្យឡើងពេញ រួចមើលវ៉ុល Sensor (Bank 1 Sensor 3) ក្នុង Live Data — Sensor ក្រោយ Catalytic ត្រូវនៅថេរប្រហែល 0.6–0.7V ⚠️ វាមិនត្រូវលោតដូច Sensor មុខទេ បើវាលោត នោះ Catalytic អស់",
+      "ពិនិត្យ Heater ជាមុន — Sensor ដែលមិនក្ដៅមិនដែលចាប់ផ្ដើមធ្វើការ។ វាស់ Resistance Heater (ជាទូទៅ 5–15 Ω ត្រជាក់) និងពិនិត្យ Fuse",
+      "បង្កើតល្បាយក្រាស់/ស្តើងដោយចេតនា (ដក Vacuum Hose ឬបន្ថែមឥន្ធនៈ) — មើលថាវ៉ុលឆ្លើយតបទាល់តែសោះឬអត់",
+      "ពិនិត្យ Exhaust Leak មុខ Sensor — ខ្យល់ស្អាតចូលធ្វើឲ្យវ៉ុលជាប់ទាបជានិច្ច ហើយមើលទៅដូច Sensor ខូច",
+      "វាស់ Continuity ខ្សែ Signal និង Ground ពី Connector ទៅ ECU",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Sensor ដោយមិនវាស់ខ្សែភ្លើងជាមុន",
+      "ប្ដូរ Sensor ខណៈ Fuse ឬ Heater ខូច — Sensor ដែលមិនក្ដៅមិនផ្ដល់សញ្ញា ហើយឡើងកូដដដែលនេះ",
+    ],
   },
   {
     code: "P0147",
@@ -1335,8 +1441,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនធំដែលមាន Sensor ច្រើន",
     descriptionKm: "ខ្សែរុំ Heater ដាច់ — Sensor ឡើងកម្តៅយឺត។",
     possibleCauses: ["Heater ក្នុង Sensor ដាច់", "Fuse ដាច់"],
-    inspectionFlow: ["វាស់ Resistance Heater"],
-    commonMistakes: ["ទិញ Sensor ខុសប្រភេទ"],
+    inspectionFlow: [
+      "វាស់ Resistance រវាង Pin Heater ទាំងពីររបស់ Sensor (Bank 1 Sensor 3) ធៀបនឹងស្តង់ដារ (ជាទូទៅ 5–15 Ω ត្រជាក់)",
+      "ពិនិត្យ Fuse និង Relay របស់ Heater — មុនសង្ស័យ Sensor",
+      "វាស់វ៉ុលចិញ្ចឹមមកដល់ Connector ពេលបើកកូនសោ",
+      "ពិនិត្យ Ground និង Driver ខាង ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ទិញ Sensor ខុសប្រភេទ",
+      "ប្ដូរ Sensor ខណៈ Fuse របស់ Heater ដាច់",
+    ],
   },
   {
     code: "P0150",
@@ -1402,8 +1517,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V ឬ Boxer",
     descriptionKm: "Sensor ចាស់/កខ្វក់ ធ្វើឲ្យឆ្លើយតបយឺតខុសធម្មតា Bank 2។",
     possibleCauses: ["Sensor ចាស់"],
-    inspectionFlow: ["មើលចំនួនការប្តូរវ៉ុលក្នុងមួយវិនាទី"],
-    commonMistakes: ["ទុកចោលមិនប្ដូរ ធ្វើឲ្យខូចដល់ Catalyst"],
+    inspectionFlow: [
+      "កម្ដៅឲ្យពេញ រួចរាប់ចំនួនការឆ្លងកាត់ 0.45V នៅ 2500 rpm — Sensor (Bank 2 Sensor 1) ល្អឆ្លងយ៉ាងតិច ១ ដងក្នុងមួយវិនាទី",
+      "ធៀបនឹង Sensor របស់ Bank ម្ខាងទៀត បើមាន — Sensor ល្អជាមាត្រដ្ឋានប្រៀបធៀបល្អបំផុត",
+      "បង្កើតល្បាយក្រាស់/ស្តើង រួចវាស់រយៈពេលឆ្លើយតប",
+      "ដក Sensor ចេញ មើលពណ៌ចុង — ស = Silicone ឬ Coolant, ខ្មៅ = ប្រេង/កាបូន, ប្រផេះស្រាល = ចាស់តាមធម្មតា។ ពណ៌នោះប្រាប់មូលហេតុ",
+      "ពិនិត្យ Exhaust Leak មុខ Sensor — ខ្យល់ស្អាតចូលធ្វើឲ្យវ៉ុលជាប់ទាបជានិច្ច ហើយមើលទៅដូច Sensor ខូច",
+    ],
+    commonMistakes: [
+      "ទុកចោលមិនប្ដូរ ធ្វើឲ្យខូចដល់ Catalyst",
+      "ប្ដូរ Sensor ដោយមិនរកមូលហេតុថាហេតុអ្វីវាចាស់មុនអាយុ (ម៉ាស៊ីនស៊ីប្រេង ឬ Coolant លេច) — Sensor ថ្មីនឹងខូចម្ដងទៀត",
+    ],
   },
   {
     code: "P0162",
@@ -1414,8 +1538,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនធំដែលមាន Sensor ច្រើន",
     descriptionKm: "សៀគ្វី Sensor ទី ៣ ជួរទី ២ (កម្រ) មានបញ្ហា។",
     possibleCauses: ["Sensor ខូច", "ខ្សែភ្លើងដាច់"],
-    inspectionFlow: ["វាស់ខ្សែសញ្ញា Connector"],
-    commonMistakes: ["ច្រឡំគិតថាមិនមាន Sensor ទី ៣"],
+    inspectionFlow: [
+      "កម្ដៅម៉ាស៊ីនឲ្យឡើងពេញ រួចមើលវ៉ុល Sensor (Bank 2 Sensor 3) ក្នុង Live Data — Sensor ក្រោយ Catalytic ត្រូវនៅថេរប្រហែល 0.6–0.7V ⚠️ វាមិនត្រូវលោតដូច Sensor មុខទេ បើវាលោត នោះ Catalytic អស់",
+      "ពិនិត្យ Heater ជាមុន — Sensor ដែលមិនក្ដៅមិនដែលចាប់ផ្ដើមធ្វើការ។ វាស់ Resistance Heater (ជាទូទៅ 5–15 Ω ត្រជាក់) និងពិនិត្យ Fuse",
+      "វាស់ Continuity ខ្សែ Signal និង Ground ពី Connector ទៅ ECU",
+      "ពិនិត្យ Exhaust Leak មុខ Sensor — ខ្យល់ស្អាតចូលធ្វើឲ្យវ៉ុលជាប់ទាបជានិច្ច ហើយមើលទៅដូច Sensor ខូច",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ច្រឡំគិតថាមិនមាន Sensor ទី ៣",
+      "មិនពិនិត្យ Exhaust Leak មុខ Sensor — ខ្យល់ស្អាតធ្វើឲ្យ Sensor ល្អមើលទៅដូចខូច",
+    ],
   },
   {
     code: "P0170",
@@ -5442,8 +5575,18 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "អត្ថន័យនេះសម្រាប់ Toyota/Lexus តែប៉ុណ្ណោះ — ⚠️ ម៉ាកផ្សេង (Ford, Mazda, Mitsubishi, Kia…) ប្រើលេខដដែលនេះដោយអត្ថន័យខុសគ្នាទាំងស្រុង។ សូមផ្ទៀងផ្ទាត់ជាមួយឯកសាររបស់ម៉ាករថយន្តជាក់ស្តែងជាមុនសិន",
     descriptionKm: "ដូច P1130 ប៉ុន្តែនៅ Bank 2។",
     possibleCauses: ["A/F Sensor Bank 2 ខូច", "Exhaust leak"],
-    inspectionFlow: ["ពិនិត្យ Waveform A/F Sensor Bank 2"],
-    commonMistakes: ["ជួសជុលតែ Bank 1"],
+    inspectionFlow: [
+      "កម្ដៅម៉ាស៊ីនឲ្យឡើងពេញ រួចមើលវ៉ុល Sensor (Bank 2 Sensor 1) ក្នុង Live Data នៅ 2500 rpm — Sensor មុខ Catalytic ត្រូវលោតឡើងចុះរវាង 0.1–0.9V ច្រើនដងក្នុងមួយវិនាទី",
+      "ពិនិត្យ Heater ជាមុន — Sensor ដែលមិនក្ដៅមិនដែលចាប់ផ្ដើមធ្វើការ។ វាស់ Resistance Heater (ជាទូទៅ 5–15 Ω ត្រជាក់) និងពិនិត្យ Fuse",
+      "វាស់ Continuity ខ្សែ Signal និង Ground ពី Connector ទៅ ECU",
+      "ពិនិត្យ Exhaust Leak មុខ Sensor — ខ្យល់ស្អាតចូលធ្វើឲ្យវ៉ុលជាប់ទាបជានិច្ច ហើយមើលទៅដូច Sensor ខូច",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+      "ពិនិត្យ Waveform A/F Sensor Bank 2",
+    ],
+    commonMistakes: [
+      "ជួសជុលតែ Bank 1",
+      "មិនពិនិត្យ Exhaust Leak មុខ Sensor — ខ្យល់ស្អាតធ្វើឲ្យ Sensor ល្អមើលទៅដូចខូច",
+    ],
   },
   {
     code: "P1153",
@@ -5454,8 +5597,18 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "អត្ថន័យនេះសម្រាប់ Toyota/Lexus តែប៉ុណ្ណោះ — ⚠️ ម៉ាកផ្សេង (Ford, Mazda, Mitsubishi, Kia…) ប្រើលេខដដែលនេះដោយអត្ថន័យខុសគ្នាទាំងស្រុង។ សូមផ្ទៀងផ្ទាត់ជាមួយឯកសាររបស់ម៉ាករថយន្តជាក់ស្តែងជាមុនសិន",
     descriptionKm: "ដូច P1133 ប៉ុន្តែនៅ Bank 2។",
     possibleCauses: ["A/F Sensor ចាស់"],
-    inspectionFlow: ["ពិនិត្យ Response Time Bank 2"],
-    commonMistakes: ["ទុកចោលមិនប្ដូរ"],
+    inspectionFlow: [
+      "កម្ដៅឲ្យពេញ រួចរាប់ចំនួនការឆ្លងកាត់ 0.45V នៅ 2500 rpm — Sensor (Bank 2 Sensor 1) ល្អឆ្លងយ៉ាងតិច ១ ដងក្នុងមួយវិនាទី",
+      "ធៀបនឹង Sensor របស់ Bank ម្ខាងទៀត បើមាន — Sensor ល្អជាមាត្រដ្ឋានប្រៀបធៀបល្អបំផុត",
+      "បង្កើតល្បាយក្រាស់/ស្តើង រួចវាស់រយៈពេលឆ្លើយតប",
+      "ដក Sensor ចេញ មើលពណ៌ចុង — ស = Silicone ឬ Coolant, ខ្មៅ = ប្រេង/កាបូន, ប្រផេះស្រាល = ចាស់តាមធម្មតា។ ពណ៌នោះប្រាប់មូលហេតុ",
+      "ពិនិត្យ Exhaust Leak មុខ Sensor — ខ្យល់ស្អាតចូលធ្វើឲ្យវ៉ុលជាប់ទាបជានិច្ច ហើយមើលទៅដូច Sensor ខូច",
+      "ពិនិត្យ Response Time Bank 2",
+    ],
+    commonMistakes: [
+      "ទុកចោលមិនប្ដូរ",
+      "ប្ដូរ Sensor ដោយមិនរកមូលហេតុថាហេតុអ្វីវាចាស់មុនអាយុ (ម៉ាស៊ីនស៊ីប្រេង ឬ Coolant លេច) — Sensor ថ្មីនឹងខូចម្ដងទៀត",
+    ],
   },
   {
     code: "P1200",
@@ -6352,8 +6505,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V ឬ Boxer",
     descriptionKm: "O2 Sensor Bank 2 Sensor 1 គាំងមិនដំណើរការសោះ។",
     possibleCauses: ["Sensor ខូចដាច់ខាងក្នុង", "ខ្សែភ្លើងដាច់"],
-    inspectionFlow: ["វាស់ខ្សែសញ្ញា Connector"],
-    commonMistakes: ["ប្ដូរ Sensor ដោយមិនវាស់ខ្សែភ្លើងជាមុន"],
+    inspectionFlow: [
+      "កម្ដៅម៉ាស៊ីនឲ្យឡើងពេញ រួចមើលវ៉ុល Sensor (Bank 2 Sensor 1) ក្នុង Live Data នៅ 2500 rpm — Sensor មុខ Catalytic ត្រូវលោតឡើងចុះរវាង 0.1–0.9V ច្រើនដងក្នុងមួយវិនាទី",
+      "ពិនិត្យ Heater ជាមុន — Sensor ដែលមិនក្ដៅមិនដែលចាប់ផ្ដើមធ្វើការ។ វាស់ Resistance Heater (ជាទូទៅ 5–15 Ω ត្រជាក់) និងពិនិត្យ Fuse",
+      "បង្កើតល្បាយក្រាស់/ស្តើងដោយចេតនា (ដក Vacuum Hose ឬបន្ថែមឥន្ធនៈ) — មើលថាវ៉ុលឆ្លើយតបទាល់តែសោះឬអត់",
+      "ពិនិត្យ Exhaust Leak មុខ Sensor — ខ្យល់ស្អាតចូលធ្វើឲ្យវ៉ុលជាប់ទាបជានិច្ច ហើយមើលទៅដូច Sensor ខូច",
+      "វាស់ Continuity ខ្សែ Signal និង Ground ពី Connector ទៅ ECU",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Sensor ដោយមិនវាស់ខ្សែភ្លើងជាមុន",
+      "ប្ដូរ Sensor ខណៈ Fuse ឬ Heater ខូច — Sensor ដែលមិនក្ដៅមិនផ្ដល់សញ្ញា ហើយឡើងកូដដដែលនេះ",
+    ],
   },
   {
     code: "P0155",
@@ -6364,8 +6526,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V ឬ Boxer",
     descriptionKm: "O2 Sensor Bank 2 Sensor 1 មានបញ្ហាខូច។",
     possibleCauses: ["Heater ក្នុង Sensor ដាច់", "Fuse ដាច់"],
-    inspectionFlow: ["វាស់ Resistance Heater (~5-15Ω)"],
-    commonMistakes: ["ទិញ Sensor ខុសប្រភេទ ធ្វើឲ្យ Resistance មិនត្រូវ"],
+    inspectionFlow: [
+      "វាស់ Resistance រវាង Pin Heater ទាំងពីររបស់ Sensor (Bank 2 Sensor 1) ធៀបនឹងស្តង់ដារ (ជាទូទៅ 5–15 Ω ត្រជាក់)",
+      "ពិនិត្យ Fuse និង Relay របស់ Heater — មុនសង្ស័យ Sensor",
+      "វាស់វ៉ុលចិញ្ចឹមមកដល់ Connector ពេលបើកកូនសោ",
+      "ពិនិត្យ Ground និង Driver ខាង ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ទិញ Sensor ខុសប្រភេទ ធ្វើឲ្យ Resistance មិនត្រូវ",
+      "ប្ដូរ Sensor ខណៈ Fuse របស់ Heater ដាច់",
+    ],
   },
   {
     code: "P0156",
@@ -6421,8 +6592,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V ឬ Boxer",
     descriptionKm: "O2 Sensor Bank 2 Sensor 2 ឆ្លើយតបយឺតខុសធម្មតា។",
     possibleCauses: ["Sensor ចាស់/កខ្វក់", "ពុលពី Oil burning"],
-    inspectionFlow: ["មើលចំនួនការប្ដូរវ៉ុលក្នុងមួយវិនាទី"],
-    commonMistakes: ["ទុកចោលមិនប្ដូរ — ធ្វើឲ្យខូច Catalyst"],
+    inspectionFlow: [
+      "កម្ដៅឲ្យពេញ — Sensor (Bank 2 Sensor 2) នៅក្រោយ Catalytic មិនលោតញឹកញាប់ដូច Sensor មុខទេ ហើយនោះជារឿងធម្មតា។ តេស្តគឺបង្កើតការប្រែប្រួល រួចមើលថាវាឆ្លើយតបយឺតប៉ុណ្ណា មិនមែនរាប់ចំនួនលោតទេ",
+      "ធៀបនឹង Sensor របស់ Bank ម្ខាងទៀត បើមាន — Sensor ល្អជាមាត្រដ្ឋានប្រៀបធៀបល្អបំផុត",
+      "បង្កើតការប្រែប្រួល (បិទឥន្ធនៈពេលចុះជម្រាល ឬបន្ថែមឥន្ធនៈ) រួចវាស់រយៈពេលដែលវ៉ុលចាប់ផ្ដើមផ្លាស់ប្ដូរ",
+      "ដក Sensor ចេញ មើលពណ៌ចុង — ស = Silicone ឬ Coolant, ខ្មៅ = ប្រេង/កាបូន, ប្រផេះស្រាល = ចាស់តាមធម្មតា។ ពណ៌នោះប្រាប់មូលហេតុ",
+      "ពិនិត្យ Exhaust Leak មុខ Sensor — ខ្យល់ស្អាតចូលធ្វើឲ្យវ៉ុលជាប់ទាបជានិច្ច ហើយមើលទៅដូច Sensor ខូច",
+    ],
+    commonMistakes: [
+      "ទុកចោលមិនប្ដូរ — ធ្វើឲ្យខូច Catalyst",
+      "ប្ដូរ Sensor ដោយមិនរកមូលហេតុថាហេតុអ្វីវាចាស់មុនអាយុ (ម៉ាស៊ីនស៊ីប្រេង ឬ Coolant លេច) — Sensor ថ្មីនឹងខូចម្ដងទៀត",
+    ],
   },
   {
     code: "P0160",
@@ -6433,8 +6613,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V ឬ Boxer",
     descriptionKm: "O2 Sensor Bank 2 Sensor 2 គាំងមិនដំណើរការសោះ។",
     possibleCauses: ["Sensor ខូចដាច់ខាងក្នុង", "ខ្សែភ្លើងដាច់"],
-    inspectionFlow: ["វាស់ខ្សែសញ្ញា Connector"],
-    commonMistakes: ["ប្ដូរ Sensor ដោយមិនវាស់ខ្សែភ្លើងជាមុន"],
+    inspectionFlow: [
+      "កម្ដៅម៉ាស៊ីនឲ្យឡើងពេញ រួចមើលវ៉ុល Sensor (Bank 2 Sensor 2) ក្នុង Live Data — Sensor ក្រោយ Catalytic ត្រូវនៅថេរប្រហែល 0.6–0.7V ⚠️ វាមិនត្រូវលោតដូច Sensor មុខទេ បើវាលោត នោះ Catalytic អស់",
+      "ពិនិត្យ Heater ជាមុន — Sensor ដែលមិនក្ដៅមិនដែលចាប់ផ្ដើមធ្វើការ។ វាស់ Resistance Heater (ជាទូទៅ 5–15 Ω ត្រជាក់) និងពិនិត្យ Fuse",
+      "បង្កើតល្បាយក្រាស់/ស្តើងដោយចេតនា (ដក Vacuum Hose ឬបន្ថែមឥន្ធនៈ) — មើលថាវ៉ុលឆ្លើយតបទាល់តែសោះឬអត់",
+      "ពិនិត្យ Exhaust Leak មុខ Sensor — ខ្យល់ស្អាតចូលធ្វើឲ្យវ៉ុលជាប់ទាបជានិច្ច ហើយមើលទៅដូច Sensor ខូច",
+      "វាស់ Continuity ខ្សែ Signal និង Ground ពី Connector ទៅ ECU",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Sensor ដោយមិនវាស់ខ្សែភ្លើងជាមុន",
+      "ប្ដូរ Sensor ខណៈ Fuse ឬ Heater ខូច — Sensor ដែលមិនក្ដៅមិនផ្ដល់សញ្ញា ហើយឡើងកូដដដែលនេះ",
+    ],
   },
   {
     code: "P0161",
@@ -6445,8 +6634,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V ឬ Boxer",
     descriptionKm: "O2 Sensor Bank 2 Sensor 2 មានបញ្ហាខូច។",
     possibleCauses: ["Heater ក្នុង Sensor ដាច់", "Fuse ដាច់"],
-    inspectionFlow: ["វាស់ Resistance Heater (~5-15Ω)"],
-    commonMistakes: ["ទិញ Sensor ខុសប្រភេទ ធ្វើឲ្យ Resistance មិនត្រូវ"],
+    inspectionFlow: [
+      "វាស់ Resistance រវាង Pin Heater ទាំងពីររបស់ Sensor (Bank 2 Sensor 2) ធៀបនឹងស្តង់ដារ (ជាទូទៅ 5–15 Ω ត្រជាក់)",
+      "ពិនិត្យ Fuse និង Relay របស់ Heater — មុនសង្ស័យ Sensor",
+      "វាស់វ៉ុលចិញ្ចឹមមកដល់ Connector ពេលបើកកូនសោ",
+      "ពិនិត្យ Ground និង Driver ខាង ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ទិញ Sensor ខុសប្រភេទ ធ្វើឲ្យ Resistance មិនត្រូវ",
+      "ប្ដូរ Sensor ខណៈ Fuse របស់ Heater ដាច់",
+    ],
   },
   {
     code: "P0163",
@@ -6490,8 +6688,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនធំដែលមាន Sensor ច្រើន",
     descriptionKm: "O2 Sensor Bank 2 Sensor 3 ឆ្លើយតបយឺតខុសធម្មតា។",
     possibleCauses: ["Sensor ចាស់/កខ្វក់", "ពុលពី Oil burning"],
-    inspectionFlow: ["មើលចំនួនការប្ដូរវ៉ុលក្នុងមួយវិនាទី"],
-    commonMistakes: ["ទុកចោលមិនប្ដូរ — ធ្វើឲ្យខូច Catalyst"],
+    inspectionFlow: [
+      "កម្ដៅឲ្យពេញ — Sensor (Bank 2 Sensor 3) នៅក្រោយ Catalytic មិនលោតញឹកញាប់ដូច Sensor មុខទេ ហើយនោះជារឿងធម្មតា។ តេស្តគឺបង្កើតការប្រែប្រួល រួចមើលថាវាឆ្លើយតបយឺតប៉ុណ្ណា មិនមែនរាប់ចំនួនលោតទេ",
+      "ធៀបនឹង Sensor របស់ Bank ម្ខាងទៀត បើមាន — Sensor ល្អជាមាត្រដ្ឋានប្រៀបធៀបល្អបំផុត",
+      "បង្កើតការប្រែប្រួល (បិទឥន្ធនៈពេលចុះជម្រាល ឬបន្ថែមឥន្ធនៈ) រួចវាស់រយៈពេលដែលវ៉ុលចាប់ផ្ដើមផ្លាស់ប្ដូរ",
+      "ដក Sensor ចេញ មើលពណ៌ចុង — ស = Silicone ឬ Coolant, ខ្មៅ = ប្រេង/កាបូន, ប្រផេះស្រាល = ចាស់តាមធម្មតា។ ពណ៌នោះប្រាប់មូលហេតុ",
+      "ពិនិត្យ Exhaust Leak មុខ Sensor — ខ្យល់ស្អាតចូលធ្វើឲ្យវ៉ុលជាប់ទាបជានិច្ច ហើយមើលទៅដូច Sensor ខូច",
+    ],
+    commonMistakes: [
+      "ទុកចោលមិនប្ដូរ — ធ្វើឲ្យខូច Catalyst",
+      "ប្ដូរ Sensor ដោយមិនរកមូលហេតុថាហេតុអ្វីវាចាស់មុនអាយុ (ម៉ាស៊ីនស៊ីប្រេង ឬ Coolant លេច) — Sensor ថ្មីនឹងខូចម្ដងទៀត",
+    ],
   },
   {
     code: "P0166",
@@ -6502,8 +6709,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនធំដែលមាន Sensor ច្រើន",
     descriptionKm: "O2 Sensor Bank 2 Sensor 3 គាំងមិនដំណើរការសោះ។",
     possibleCauses: ["Sensor ខូចដាច់ខាងក្នុង", "ខ្សែភ្លើងដាច់"],
-    inspectionFlow: ["វាស់ខ្សែសញ្ញា Connector"],
-    commonMistakes: ["ប្ដូរ Sensor ដោយមិនវាស់ខ្សែភ្លើងជាមុន"],
+    inspectionFlow: [
+      "កម្ដៅម៉ាស៊ីនឲ្យឡើងពេញ រួចមើលវ៉ុល Sensor (Bank 2 Sensor 3) ក្នុង Live Data — Sensor ក្រោយ Catalytic ត្រូវនៅថេរប្រហែល 0.6–0.7V ⚠️ វាមិនត្រូវលោតដូច Sensor មុខទេ បើវាលោត នោះ Catalytic អស់",
+      "ពិនិត្យ Heater ជាមុន — Sensor ដែលមិនក្ដៅមិនដែលចាប់ផ្ដើមធ្វើការ។ វាស់ Resistance Heater (ជាទូទៅ 5–15 Ω ត្រជាក់) និងពិនិត្យ Fuse",
+      "បង្កើតល្បាយក្រាស់/ស្តើងដោយចេតនា (ដក Vacuum Hose ឬបន្ថែមឥន្ធនៈ) — មើលថាវ៉ុលឆ្លើយតបទាល់តែសោះឬអត់",
+      "ពិនិត្យ Exhaust Leak មុខ Sensor — ខ្យល់ស្អាតចូលធ្វើឲ្យវ៉ុលជាប់ទាបជានិច្ច ហើយមើលទៅដូច Sensor ខូច",
+      "វាស់ Continuity ខ្សែ Signal និង Ground ពី Connector ទៅ ECU",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Sensor ដោយមិនវាស់ខ្សែភ្លើងជាមុន",
+      "ប្ដូរ Sensor ខណៈ Fuse ឬ Heater ខូច — Sensor ដែលមិនក្ដៅមិនផ្ដល់សញ្ញា ហើយឡើងកូដដដែលនេះ",
+    ],
   },
   {
     code: "P0167",
@@ -6514,8 +6730,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនធំដែលមាន Sensor ច្រើន",
     descriptionKm: "O2 Sensor Bank 2 Sensor 3 មានបញ្ហាខូច។",
     possibleCauses: ["Heater ក្នុង Sensor ដាច់", "Fuse ដាច់"],
-    inspectionFlow: ["វាស់ Resistance Heater (~5-15Ω)"],
-    commonMistakes: ["ទិញ Sensor ខុសប្រភេទ ធ្វើឲ្យ Resistance មិនត្រូវ"],
+    inspectionFlow: [
+      "វាស់ Resistance រវាង Pin Heater ទាំងពីររបស់ Sensor (Bank 2 Sensor 3) ធៀបនឹងស្តង់ដារ (ជាទូទៅ 5–15 Ω ត្រជាក់)",
+      "ពិនិត្យ Fuse និង Relay របស់ Heater — មុនសង្ស័យ Sensor",
+      "វាស់វ៉ុលចិញ្ចឹមមកដល់ Connector ពេលបើកកូនសោ",
+      "ពិនិត្យ Ground និង Driver ខាង ECU",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ទិញ Sensor ខុសប្រភេទ ធ្វើឲ្យ Resistance មិនត្រូវ",
+      "ប្ដូរ Sensor ខណៈ Fuse របស់ Heater ដាច់",
+    ],
   },
   {
     code: "P0176",
