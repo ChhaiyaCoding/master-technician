@@ -538,8 +538,18 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "កម្រជួប — លើម៉ាស៊ីនចាស់ខ្លះដែលមាន Air-Assisted Injection",
     descriptionKm: "ប្រព័ន្ធខ្យល់ជំនួយការចាក់សាំង (កម្រប្រើក្នុងម៉ាស៊ីនសម័យថ្មី) ដំណើរការមិនប្រក្រតី។",
     possibleCauses: ["Valve ខ្យល់ជំនួយស្ទះ", "Connector រលុង"],
-    inspectionFlow: ["ពិនិត្យ Valve/Hose ខ្យល់ជំនួយ"],
-    commonMistakes: ["មិនស៊ាំនឹងប្រព័ន្ធនេះ ព្រោះកម្រប្រើក្នុងម៉ាស៊ីនថ្មី"],
+    inspectionFlow: [
+      "ធៀបតម្លៃនឹង Sensor ដូចគ្នាម្ខាងទៀត ឬនឹងតម្លៃរំពឹងទុកនៅលក្ខខណ្ឌដែលអ្នកដឹងចម្លើយជាមុន",
+      "មើលតម្លៃ Air Assist Injector Control ពេញជួរប្រតិបត្តិការ មិនត្រឹមតែពេលទំនេរ — កំហុសលំអៀងជាច្រើនលេចតែនៅចុងជួរ",
+      "ពិនិត្យថាតម្លៃប្រែប្រួលរលូន មិនលោត និងមិនជាប់នៅចំណុចណាមួយ",
+      "ពិនិត្យ Ground របស់ Sensor — Ground អាក្រក់ធ្វើឲ្យតម្លៃលំអៀងដោយមិនចេញក្រៅជួរអគ្គិសនី ដូច្នេះវាមិនឡើងកូដ Circuit",
+      "ពិនិត្យមូលហេតុមេកានិកមុនសន្និដ្ឋានថា Sensor ខូច",
+      "ពិនិត្យ Valve/Hose ខ្យល់ជំនួយ",
+    ],
+    commonMistakes: [
+      "មិនស៊ាំនឹងប្រព័ន្ធនេះ ព្រោះកម្រប្រើក្នុងម៉ាស៊ីនថ្មី",
+      "ប្ដូរ Sensor ខណៈបញ្ហាជា Ground អាក្រក់ដែលធ្វើឲ្យតម្លៃលំអៀង — តម្លៃលំអៀងនៅតែស្ថិតក្នុងជួរអគ្គិសនីធម្មតា",
+    ],
   },
   {
     code: "P0066",
@@ -628,8 +638,18 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "តម្លៃមិនត្រូវនឹងសីតុណ្ហភាពជាក់ស្តែង។",
     possibleCauses: ["Sensor ចាស់", "ទីតាំង Sensor ជិតកម្ដៅម៉ាស៊ីនពេក"],
-    inspectionFlow: ["ប្រៀបធៀបតម្លៃជាមួយ Thermometer ពិត"],
-    commonMistakes: ["មិនប្រៀបធៀបជាមួយសីតុណ្ហភាពពិត"],
+    inspectionFlow: [
+      "ធៀបតម្លៃនឹង Sensor សីតុណ្ហភាពផ្សេង ក្រោយឡានចតមួយយប់ — Coolant Temp, Intake Air Temp និង Ambient Temp ត្រូវអានស្មើគ្នា។ តម្លៃណាខុសពីគេ នោះជាតម្លៃខុស។ នេះជាតេស្តលឿន និងច្បាស់បំផុត",
+      "មើលតម្លៃ Ambient Air Temperature Sensor ពេញជួរប្រតិបត្តិការ មិនត្រឹមតែពេលទំនេរ — កំហុសលំអៀងជាច្រើនលេចតែនៅចុងជួរ",
+      "ពិនិត្យថាតម្លៃប្រែប្រួលរលូន មិនលោត និងមិនជាប់នៅចំណុចណាមួយ",
+      "ពិនិត្យ Ground របស់ Sensor — Ground អាក្រក់ធ្វើឲ្យតម្លៃលំអៀងដោយមិនចេញក្រៅជួរអគ្គិសនី ដូច្នេះវាមិនឡើងកូដ Circuit",
+      "ពិនិត្យមូលហេតុមេកានិកមុនសន្និដ្ឋានថា Sensor ខូច",
+      "ប្រៀបធៀបតម្លៃជាមួយ Thermometer ពិត",
+    ],
+    commonMistakes: [
+      "មិនប្រៀបធៀបជាមួយសីតុណ្ហភាពពិត",
+      "ប្ដូរ Sensor ខណៈបញ្ហាជា Ground អាក្រក់ដែលធ្វើឲ្យតម្លៃលំអៀង — តម្លៃលំអៀងនៅតែស្ថិតក្នុងជួរអគ្គិសនីធម្មតា",
+    ],
   },
   {
     code: "P0072",
@@ -682,8 +702,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "សញ្ញាចេញមកមិនទៀងទាត់ — ជាទូទៅ Connector រលុង។",
     possibleCauses: ["Connector រលុង", "ខ្សែភ្លើងជិតដាច់"],
-    inspectionFlow: ["រង្កោល Connector ពេលមើល Live Data"],
-    commonMistakes: ["មិនរង្កោលខ្សែពេលពិនិត្យរក Intermittent Fault"],
+    inspectionFlow: [
+      "អាន Freeze Frame ជាមុនសិន — វាកត់ RPM, Load, សីតុណ្ហភាព និងល្បឿននៅវិនាទីដែលកំហុសកើត។ នោះជាតម្រុយតែមួយគត់ដែលអ្នកមាន ព្រោះកំហុសមិននៅទីនោះពេលអ្នកមើល",
+      "រង្កោលខ្សែ និង Connector របស់ Ambient Air Temperature Sensor តាមផ្លូវទាំងមូល ខណៈមើល Live Data — ចាប់ពី Connector ជិត Sensor រួចតាមខ្សែទៅ ECU",
+      "ពិនិត្យ Pin ក្នុង Connector — Pin ថយ (Pin Tension ធូរ) និងការច្រេះ ជាមូលហេតុញឹកញាប់បំផុតនៃកំហុសដាច់ៗ",
+      "ពិនិត្យកន្លែងខ្សែកកិត និងកន្លែងខ្សែឆ្លងកាត់គែមដែក ជាពិសេសកន្លែងរង្គោះរង្គើ ឬក្ដៅ",
+      "បើនៅរកមិនឃើញ — កត់ត្រា Live Data ខណៈបើកបរតាមលក្ខខណ្ឌដូចក្នុង Freeze Frame រួចមើលឡើងវិញ",
+    ],
+    commonMistakes: [
+      "មិនរង្កោលខ្សែពេលពិនិត្យរក Intermittent Fault",
+      "ប្ដូរ Sensor ព្រោះវាស់ពេលនោះឃើញធម្មតា — កំហុសដាច់ៗមិនបង្ហាញខ្លួនពេលអ្នកវាស់ទេ។ ត្រូវរង្កោលខ្សែ និងអាន Freeze Frame ជំនួស",
+    ],
   },
   {
     code: "P0075",
@@ -948,8 +977,18 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនមាន Intercooler",
     descriptionKm: "តម្លៃមិនត្រូវនឹងសីតុណ្ហភាពជាក់ស្តែងក្រោយ Intercooler។",
     possibleCauses: ["Sensor ចាស់", "Intercooler ស្ទះ"],
-    inspectionFlow: ["ប្រៀបធៀបតម្លៃជាមួយសីតុណ្ហភាពពិត"],
-    commonMistakes: ["មិនពិនិត្យ Intercooler ស្ទះជាមុន"],
+    inspectionFlow: [
+      "ធៀបតម្លៃនឹង Sensor សីតុណ្ហភាពផ្សេង ក្រោយឡានចតមួយយប់ — Coolant Temp, Intake Air Temp និង Ambient Temp ត្រូវអានស្មើគ្នា។ តម្លៃណាខុសពីគេ នោះជាតម្លៃខុស។ នេះជាតេស្តលឿន និងច្បាស់បំផុត",
+      "មើលតម្លៃ Intake Air Temperature Sensor 2 ពេញជួរប្រតិបត្តិការ មិនត្រឹមតែពេលទំនេរ — កំហុសលំអៀងជាច្រើនលេចតែនៅចុងជួរ",
+      "ពិនិត្យថាតម្លៃប្រែប្រួលរលូន មិនលោត និងមិនជាប់នៅចំណុចណាមួយ",
+      "ពិនិត្យ Ground របស់ Sensor — Ground អាក្រក់ធ្វើឲ្យតម្លៃលំអៀងដោយមិនចេញក្រៅជួរអគ្គិសនី ដូច្នេះវាមិនឡើងកូដ Circuit",
+      "ពិនិត្យមូលហេតុមេកានិកមុនសន្និដ្ឋានថា Sensor ខូច",
+      "ប្រៀបធៀបតម្លៃជាមួយសីតុណ្ហភាពពិត",
+    ],
+    commonMistakes: [
+      "មិនពិនិត្យ Intercooler ស្ទះជាមុន",
+      "ប្ដូរ Sensor ខណៈបញ្ហាជា Ground អាក្រក់ដែលធ្វើឲ្យតម្លៃលំអៀង — តម្លៃលំអៀងនៅតែស្ថិតក្នុងជួរអគ្គិសនីធម្មតា",
+    ],
   },
   {
     code: "P0097",
@@ -1002,8 +1041,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនមាន Intercooler",
     descriptionKm: "សញ្ញាចេញមកមិនទៀងទាត់ — ជាទូទៅ Connector រលុង។",
     possibleCauses: ["Connector រលុង", "ខ្សែភ្លើងជិតដាច់"],
-    inspectionFlow: ["រង្កោល Connector ពេលមើល Live Data"],
-    commonMistakes: ["មិនរង្កោលខ្សែពេលរក Intermittent Fault"],
+    inspectionFlow: [
+      "អាន Freeze Frame ជាមុនសិន — វាកត់ RPM, Load, សីតុណ្ហភាព និងល្បឿននៅវិនាទីដែលកំហុសកើត។ នោះជាតម្រុយតែមួយគត់ដែលអ្នកមាន ព្រោះកំហុសមិននៅទីនោះពេលអ្នកមើល",
+      "រង្កោលខ្សែ និង Connector របស់ Intake Air Temperature Sensor 2 តាមផ្លូវទាំងមូល ខណៈមើល Live Data — ចាប់ពី Connector ជិត Sensor រួចតាមខ្សែទៅ ECU",
+      "ពិនិត្យ Pin ក្នុង Connector — Pin ថយ (Pin Tension ធូរ) និងការច្រេះ ជាមូលហេតុញឹកញាប់បំផុតនៃកំហុសដាច់ៗ",
+      "ពិនិត្យកន្លែងខ្សែកកិត និងកន្លែងខ្សែឆ្លងកាត់គែមដែក ជាពិសេសកន្លែងរង្គោះរង្គើ ឬក្ដៅ",
+      "បើនៅរកមិនឃើញ — កត់ត្រា Live Data ខណៈបើកបរតាមលក្ខខណ្ឌដូចក្នុង Freeze Frame រួចមើលឡើងវិញ",
+    ],
+    commonMistakes: [
+      "មិនរង្កោលខ្សែពេលរក Intermittent Fault",
+      "ប្ដូរ Sensor ព្រោះវាស់ពេលនោះឃើញធម្មតា — កំហុសដាច់ៗមិនបង្ហាញខ្លួនពេលអ្នកវាស់ទេ។ ត្រូវរង្កោលខ្សែ និងអាន Freeze Frame ជំនួស",
+    ],
   },
 
   /* ---------------------- P005x-P018x — O2 Heater Resistance, IAT/ECT/TPS variants ---------------------- */
@@ -1163,8 +1211,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "សញ្ញា MAF ចេញមកមិនទៀងទាត់ — ជាទូទៅ Connector រលុង។",
     possibleCauses: ["Connector MAF រលុង", "ខ្សែភ្លើងជិតដាច់"],
-    inspectionFlow: ["រង្កោល Connector ពេលមើល Live Data"],
-    commonMistakes: ["មិនរង្កោលខ្សែពេលរក Intermittent Fault"],
+    inspectionFlow: [
+      "អាន Freeze Frame ជាមុនសិន — វាកត់ RPM, Load, សីតុណ្ហភាព និងល្បឿននៅវិនាទីដែលកំហុសកើត។ នោះជាតម្រុយតែមួយគត់ដែលអ្នកមាន ព្រោះកំហុសមិននៅទីនោះពេលអ្នកមើល",
+      "រង្កោលខ្សែ និង Connector របស់ Mass or Volume Air Flow តាមផ្លូវទាំងមូល ខណៈមើល Live Data — ចាប់ពី Connector ជិត Sensor រួចតាមខ្សែទៅ ECU",
+      "ពិនិត្យ Pin ក្នុង Connector — Pin ថយ (Pin Tension ធូរ) និងការច្រេះ ជាមូលហេតុញឹកញាប់បំផុតនៃកំហុសដាច់ៗ",
+      "ពិនិត្យកន្លែងខ្សែកកិត និងកន្លែងខ្សែឆ្លងកាត់គែមដែក ជាពិសេសកន្លែងរង្គោះរង្គើ ឬក្ដៅ",
+      "បើនៅរកមិនឃើញ — កត់ត្រា Live Data ខណៈបើកបរតាមលក្ខខណ្ឌដូចក្នុង Freeze Frame រួចមើលឡើងវិញ",
+    ],
+    commonMistakes: [
+      "មិនរង្កោលខ្សែពេលរក Intermittent Fault",
+      "ប្ដូរ Sensor ព្រោះវាស់ពេលនោះឃើញធម្មតា — កំហុសដាច់ៗមិនបង្ហាញខ្លួនពេលអ្នកវាស់ទេ។ ត្រូវរង្កោលខ្សែ និងអាន Freeze Frame ជំនួស",
+    ],
   },
   {
     code: "P0105",
@@ -1208,8 +1265,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "សញ្ញាចេញមកមិនទៀងទាត់ — ជាទូទៅ Connector រលុង។",
     possibleCauses: ["Connector រលុង", "ខ្សែភ្លើងជិតដាច់"],
-    inspectionFlow: ["រង្កោល Connector ពេលមើល Live Data"],
-    commonMistakes: ["មិនរង្កោលខ្សែពេលរក Intermittent Fault"],
+    inspectionFlow: [
+      "អាន Freeze Frame ជាមុនសិន — វាកត់ RPM, Load, សីតុណ្ហភាព និងល្បឿននៅវិនាទីដែលកំហុសកើត។ នោះជាតម្រុយតែមួយគត់ដែលអ្នកមាន ព្រោះកំហុសមិននៅទីនោះពេលអ្នកមើល",
+      "រង្កោលខ្សែ និង Connector របស់ Manifold Absolute Pressure/Barometric Pressure តាមផ្លូវទាំងមូល ខណៈមើល Live Data — ចាប់ពី Connector ជិត Sensor រួចតាមខ្សែទៅ ECU",
+      "ពិនិត្យ Pin ក្នុង Connector — Pin ថយ (Pin Tension ធូរ) និងការច្រេះ ជាមូលហេតុញឹកញាប់បំផុតនៃកំហុសដាច់ៗ",
+      "ពិនិត្យកន្លែងខ្សែកកិត និងកន្លែងខ្សែឆ្លងកាត់គែមដែក ជាពិសេសកន្លែងរង្គោះរង្គើ ឬក្ដៅ",
+      "បើនៅរកមិនឃើញ — កត់ត្រា Live Data ខណៈបើកបរតាមលក្ខខណ្ឌដូចក្នុង Freeze Frame រួចមើលឡើងវិញ",
+    ],
+    commonMistakes: [
+      "មិនរង្កោលខ្សែពេលរក Intermittent Fault",
+      "ប្ដូរ Sensor ព្រោះវាស់ពេលនោះឃើញធម្មតា — កំហុសដាច់ៗមិនបង្ហាញខ្លួនពេលអ្នកវាស់ទេ។ ត្រូវរង្កោលខ្សែ និងអាន Freeze Frame ជំនួស",
+    ],
   },
   {
     code: "P0111",
@@ -1220,8 +1286,18 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "តម្លៃមិនត្រូវនឹងសីតុណ្ហភាពជាក់ស្តែង។",
     possibleCauses: ["Sensor ចាស់", "ទីតាំង Sensor ជិតកម្ដៅពេក"],
-    inspectionFlow: ["ប្រៀបធៀបតម្លៃជាមួយ Thermometer"],
-    commonMistakes: ["មិនប្រៀបធៀបជាមួយសីតុណ្ហភាពពិត"],
+    inspectionFlow: [
+      "ធៀបតម្លៃនឹង Sensor សីតុណ្ហភាពផ្សេង ក្រោយឡានចតមួយយប់ — Coolant Temp, Intake Air Temp និង Ambient Temp ត្រូវអានស្មើគ្នា។ តម្លៃណាខុសពីគេ នោះជាតម្លៃខុស។ នេះជាតេស្តលឿន និងច្បាស់បំផុត",
+      "មើលតម្លៃ Intake Air Temperature Sensor 1 ពេញជួរប្រតិបត្តិការ មិនត្រឹមតែពេលទំនេរ — កំហុសលំអៀងជាច្រើនលេចតែនៅចុងជួរ",
+      "ពិនិត្យថាតម្លៃប្រែប្រួលរលូន មិនលោត និងមិនជាប់នៅចំណុចណាមួយ",
+      "ពិនិត្យ Ground របស់ Sensor — Ground អាក្រក់ធ្វើឲ្យតម្លៃលំអៀងដោយមិនចេញក្រៅជួរអគ្គិសនី ដូច្នេះវាមិនឡើងកូដ Circuit",
+      "ពិនិត្យមូលហេតុមេកានិកមុនសន្និដ្ឋានថា Sensor ខូច",
+      "ប្រៀបធៀបតម្លៃជាមួយ Thermometer",
+    ],
+    commonMistakes: [
+      "មិនប្រៀបធៀបជាមួយសីតុណ្ហភាពពិត",
+      "ប្ដូរ Sensor ខណៈបញ្ហាជា Ground អាក្រក់ដែលធ្វើឲ្យតម្លៃលំអៀង — តម្លៃលំអៀងនៅតែស្ថិតក្នុងជួរអគ្គិសនីធម្មតា",
+    ],
   },
   {
     code: "P0114",
@@ -1232,8 +1308,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "សញ្ញាចេញមកមិនទៀងទាត់។",
     possibleCauses: ["Connector រលុង", "ខ្សែភ្លើងជិតដាច់"],
-    inspectionFlow: ["រង្កោល Connector ពេលមើល Live Data"],
-    commonMistakes: ["មិនរង្កោលខ្សែពេលរក Intermittent Fault"],
+    inspectionFlow: [
+      "អាន Freeze Frame ជាមុនសិន — វាកត់ RPM, Load, សីតុណ្ហភាព និងល្បឿននៅវិនាទីដែលកំហុសកើត។ នោះជាតម្រុយតែមួយគត់ដែលអ្នកមាន ព្រោះកំហុសមិននៅទីនោះពេលអ្នកមើល",
+      "រង្កោលខ្សែ និង Connector របស់ Intake Air Temperature Sensor 1 តាមផ្លូវទាំងមូល ខណៈមើល Live Data — ចាប់ពី Connector ជិត Sensor រួចតាមខ្សែទៅ ECU",
+      "ពិនិត្យ Pin ក្នុង Connector — Pin ថយ (Pin Tension ធូរ) និងការច្រេះ ជាមូលហេតុញឹកញាប់បំផុតនៃកំហុសដាច់ៗ",
+      "ពិនិត្យកន្លែងខ្សែកកិត និងកន្លែងខ្សែឆ្លងកាត់គែមដែក ជាពិសេសកន្លែងរង្គោះរង្គើ ឬក្ដៅ",
+      "បើនៅរកមិនឃើញ — កត់ត្រា Live Data ខណៈបើកបរតាមលក្ខខណ្ឌដូចក្នុង Freeze Frame រួចមើលឡើងវិញ",
+    ],
+    commonMistakes: [
+      "មិនរង្កោលខ្សែពេលរក Intermittent Fault",
+      "ប្ដូរ Sensor ព្រោះវាស់ពេលនោះឃើញធម្មតា — កំហុសដាច់ៗមិនបង្ហាញខ្លួនពេលអ្នកវាស់ទេ។ ត្រូវរង្កោលខ្សែ និងអាន Freeze Frame ជំនួស",
+    ],
   },
   {
     code: "P0119",
@@ -1244,8 +1329,18 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "សញ្ញាចេញមកមិនទៀងទាត់ — ជាទូទៅ Connector ច្រេះ ឬរលុង។",
     possibleCauses: ["Connector ច្រេះ/រលុង", "ខ្សែភ្លើងជិតដាច់"],
-    inspectionFlow: ["ពិនិត្យ Connector ជិត Sensor"],
-    commonMistakes: ["មិនរង្កោលខ្សែពេលរក Intermittent Fault"],
+    inspectionFlow: [
+      "អាន Freeze Frame ជាមុនសិន — វាកត់ RPM, Load, សីតុណ្ហភាព និងល្បឿននៅវិនាទីដែលកំហុសកើត។ នោះជាតម្រុយតែមួយគត់ដែលអ្នកមាន ព្រោះកំហុសមិននៅទីនោះពេលអ្នកមើល",
+      "រង្កោលខ្សែ និង Connector របស់ Engine Coolant Temperature Sensor 1 តាមផ្លូវទាំងមូល ខណៈមើល Live Data — ចាប់ពី Connector ជិត Sensor រួចតាមខ្សែទៅ ECU",
+      "ពិនិត្យ Pin ក្នុង Connector — Pin ថយ (Pin Tension ធូរ) និងការច្រេះ ជាមូលហេតុញឹកញាប់បំផុតនៃកំហុសដាច់ៗ",
+      "ពិនិត្យកន្លែងខ្សែកកិត និងកន្លែងខ្សែឆ្លងកាត់គែមដែក ជាពិសេសកន្លែងរង្គោះរង្គើ ឬក្ដៅ",
+      "បើនៅរកមិនឃើញ — កត់ត្រា Live Data ខណៈបើកបរតាមលក្ខខណ្ឌដូចក្នុង Freeze Frame រួចមើលឡើងវិញ",
+      "ពិនិត្យ Connector ជិត Sensor",
+    ],
+    commonMistakes: [
+      "មិនរង្កោលខ្សែពេលរក Intermittent Fault",
+      "ប្ដូរ Sensor ព្រោះវាស់ពេលនោះឃើញធម្មតា — កំហុសដាច់ៗមិនបង្ហាញខ្លួនពេលអ្នកវាស់ទេ។ ត្រូវរង្កោលខ្សែ និងអាន Freeze Frame ជំនួស",
+    ],
   },
   {
     code: "P0124",
@@ -1256,8 +1351,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីន Gasoline ដែលមាន Electronic Throttle",
     descriptionKm: "សញ្ញាចេញមកមិនទៀងទាត់ — គ្រោះថ្នាក់ព្រោះអាចធ្វើឲ្យហ្គែរលោត។",
     possibleCauses: ["Connector រលុង", "ខ្សែភ្លើងជិតដាច់"],
-    inspectionFlow: ["រង្កោល Connector ពេលមើល Live Data TPS %"],
-    commonMistakes: ["រំលងបញ្ហានេះព្រោះកូដមិនកើតឡើងជានិច្ច — គ្រោះថ្នាក់ខ្ពស់"],
+    inspectionFlow: [
+      "អាន Freeze Frame ជាមុនសិន — វាកត់ RPM, Load, សីតុណ្ហភាព និងល្បឿននៅវិនាទីដែលកំហុសកើត។ នោះជាតម្រុយតែមួយគត់ដែលអ្នកមាន ព្រោះកំហុសមិននៅទីនោះពេលអ្នកមើល",
+      "រង្កោលខ្សែ និង Connector របស់ Throttle/Pedal Position Sensor/Switch A តាមផ្លូវទាំងមូល ខណៈមើល Live Data — ចាប់ពី Connector ជិត Sensor រួចតាមខ្សែទៅ ECU",
+      "ពិនិត្យ Pin ក្នុង Connector — Pin ថយ (Pin Tension ធូរ) និងការច្រេះ ជាមូលហេតុញឹកញាប់បំផុតនៃកំហុសដាច់ៗ",
+      "ពិនិត្យកន្លែងខ្សែកកិត និងកន្លែងខ្សែឆ្លងកាត់គែមដែក ជាពិសេសកន្លែងរង្គោះរង្គើ ឬក្ដៅ",
+      "បើនៅរកមិនឃើញ — កត់ត្រា Live Data ខណៈបើកបរតាមលក្ខខណ្ឌដូចក្នុង Freeze Frame រួចមើលឡើងវិញ",
+    ],
+    commonMistakes: [
+      "រំលងបញ្ហានេះព្រោះកូដមិនកើតឡើងជានិច្ច — គ្រោះថ្នាក់ខ្ពស់",
+      "ប្ដូរ Sensor ព្រោះវាស់ពេលនោះឃើញធម្មតា — កំហុសដាច់ៗមិនបង្ហាញខ្លួនពេលអ្នកវាស់ទេ។ ត្រូវរង្កោលខ្សែ និងអាន Freeze Frame ជំនួស",
+    ],
   },
   {
     code: "P0126",
@@ -1583,8 +1687,18 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើ Diesel Common Rail",
     descriptionKm: "តម្លៃមិនត្រូវនឹងសីតុណ្ហភាពជាក់ស្តែង។",
     possibleCauses: ["Sensor ចាស់"],
-    inspectionFlow: ["ប្រៀបធៀបតម្លៃជាមួយសីតុណ្ហភាពពិត"],
-    commonMistakes: ["មិនប្រៀបធៀបជាមួយសីតុណ្ហភាពពិត"],
+    inspectionFlow: [
+      "ធៀបតម្លៃនឹង Sensor សីតុណ្ហភាពផ្សេង ក្រោយឡានចតមួយយប់ — Coolant Temp, Intake Air Temp និង Ambient Temp ត្រូវអានស្មើគ្នា។ តម្លៃណាខុសពីគេ នោះជាតម្លៃខុស។ នេះជាតេស្តលឿន និងច្បាស់បំផុត",
+      "មើលតម្លៃ Fuel Temperature Sensor A ពេញជួរប្រតិបត្តិការ មិនត្រឹមតែពេលទំនេរ — កំហុសលំអៀងជាច្រើនលេចតែនៅចុងជួរ",
+      "ពិនិត្យថាតម្លៃប្រែប្រួលរលូន មិនលោត និងមិនជាប់នៅចំណុចណាមួយ",
+      "ពិនិត្យ Ground របស់ Sensor — Ground អាក្រក់ធ្វើឲ្យតម្លៃលំអៀងដោយមិនចេញក្រៅជួរអគ្គិសនី ដូច្នេះវាមិនឡើងកូដ Circuit",
+      "ពិនិត្យមូលហេតុមេកានិកមុនសន្និដ្ឋានថា Sensor ខូច",
+      "ប្រៀបធៀបតម្លៃជាមួយសីតុណ្ហភាពពិត",
+    ],
+    commonMistakes: [
+      "មិនប្រៀបធៀបជាមួយសីតុណ្ហភាពពិត",
+      "ប្ដូរ Sensor ខណៈបញ្ហាជា Ground អាក្រក់ដែលធ្វើឲ្យតម្លៃលំអៀង — តម្លៃលំអៀងនៅតែស្ថិតក្នុងជួរអគ្គិសនីធម្មតា",
+    ],
   },
   {
     code: "P0182",
@@ -1773,8 +1887,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីន Gasoline ដែលមាន Electronic Throttle",
     descriptionKm: "សញ្ញា TPS Sensor B មិនត្រូវនឹង Sensor A។",
     possibleCauses: ["Throttle Body ស្មោក", "TPS ខូច"],
-    inspectionFlow: ["ប្រៀបធៀប Signal TPS A/B"],
-    commonMistakes: ["ប្ដូរ Throttle Body ថ្លៃដោយមិនសម្អាតមុន"],
+    inspectionFlow: [
+      "បើកកូនសោ រួចចុចជើងបង្កើនល្បឿនបន្តិចម្ដងៗពីដើមដល់ចប់ — តម្លៃត្រូវឡើងរលូនគ្មានលោត ហើយ Sensor A និង B ត្រូវដើរតាមគ្នាតាមសមាមាត្រថេរ",
+      "មើលតម្លៃ Throttle/Pedal Position Sensor/Switch B ពេញជួរប្រតិបត្តិការ មិនត្រឹមតែពេលទំនេរ — កំហុសលំអៀងជាច្រើនលេចតែនៅចុងជួរ",
+      "ពិនិត្យថាតម្លៃប្រែប្រួលរលូន មិនលោត និងមិនជាប់នៅចំណុចណាមួយ",
+      "ពិនិត្យ Ground របស់ Sensor — Ground អាក្រក់ធ្វើឲ្យតម្លៃលំអៀងដោយមិនចេញក្រៅជួរអគ្គិសនី ដូច្នេះវាមិនឡើងកូដ Circuit",
+      "ពិនិត្យមូលហេតុមេកានិកមុនសន្និដ្ឋានថា Sensor ខូច",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Throttle Body ថ្លៃដោយមិនសម្អាតមុន",
+      "ប្ដូរ Sensor ខណៈបញ្ហាជា Ground អាក្រក់ដែលធ្វើឲ្យតម្លៃលំអៀង — តម្លៃលំអៀងនៅតែស្ថិតក្នុងជួរអគ្គិសនីធម្មតា",
+    ],
   },
   {
     code: "P0224",
@@ -1785,8 +1908,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីន Gasoline ដែលមាន Electronic Throttle",
     descriptionKm: "សញ្ញាចេញមកមិនទៀងទាត់ — គ្រោះថ្នាក់ព្រោះអាចធ្វើឲ្យហ្គែរលោត។",
     possibleCauses: ["Connector រលុង"],
-    inspectionFlow: ["រង្កោល Connector ពេលមើល Live Data"],
-    commonMistakes: ["រំលងបញ្ហានេះ — គ្រោះថ្នាក់ខ្ពស់"],
+    inspectionFlow: [
+      "អាន Freeze Frame ជាមុនសិន — វាកត់ RPM, Load, សីតុណ្ហភាព និងល្បឿននៅវិនាទីដែលកំហុសកើត។ នោះជាតម្រុយតែមួយគត់ដែលអ្នកមាន ព្រោះកំហុសមិននៅទីនោះពេលអ្នកមើល",
+      "រង្កោលខ្សែ និង Connector របស់ Throttle/Pedal Position Sensor/Switch B តាមផ្លូវទាំងមូល ខណៈមើល Live Data — ចាប់ពី Connector ជិត Sensor រួចតាមខ្សែទៅ ECU",
+      "ពិនិត្យ Pin ក្នុង Connector — Pin ថយ (Pin Tension ធូរ) និងការច្រេះ ជាមូលហេតុញឹកញាប់បំផុតនៃកំហុសដាច់ៗ",
+      "ពិនិត្យកន្លែងខ្សែកកិត និងកន្លែងខ្សែឆ្លងកាត់គែមដែក ជាពិសេសកន្លែងរង្គោះរង្គើ ឬក្ដៅ",
+      "បើនៅរកមិនឃើញ — កត់ត្រា Live Data ខណៈបើកបរតាមលក្ខខណ្ឌដូចក្នុង Freeze Frame រួចមើលឡើងវិញ",
+    ],
+    commonMistakes: [
+      "រំលងបញ្ហានេះ — គ្រោះថ្នាក់ខ្ពស់",
+      "ប្ដូរ Sensor ព្រោះវាស់ពេលនោះឃើញធម្មតា — កំហុសដាច់ៗមិនបង្ហាញខ្លួនពេលអ្នកវាស់ទេ។ ត្រូវរង្កោលខ្សែ និងអាន Freeze Frame ជំនួស",
+    ],
   },
   {
     code: "P0225",
@@ -1809,8 +1941,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "កម្រជួប",
     descriptionKm: "សញ្ញា Sensor C មិនត្រូវនឹង A/B។",
     possibleCauses: ["TPS ខូច", "Connector រលុង"],
-    inspectionFlow: ["ប្រៀបធៀប Signal TPS A/B/C"],
-    commonMistakes: ["ប្ដូរ Throttle Body ដោយមិនប្រៀបធៀប Sensor ជាមុន"],
+    inspectionFlow: [
+      "បើកកូនសោ រួចចុចជើងបង្កើនល្បឿនបន្តិចម្ដងៗពីដើមដល់ចប់ — តម្លៃត្រូវឡើងរលូនគ្មានលោត ហើយ Sensor A និង B ត្រូវដើរតាមគ្នាតាមសមាមាត្រថេរ",
+      "មើលតម្លៃ Throttle/Pedal Position Sensor/Switch C ពេញជួរប្រតិបត្តិការ មិនត្រឹមតែពេលទំនេរ — កំហុសលំអៀងជាច្រើនលេចតែនៅចុងជួរ",
+      "ពិនិត្យថាតម្លៃប្រែប្រួលរលូន មិនលោត និងមិនជាប់នៅចំណុចណាមួយ",
+      "ពិនិត្យ Ground របស់ Sensor — Ground អាក្រក់ធ្វើឲ្យតម្លៃលំអៀងដោយមិនចេញក្រៅជួរអគ្គិសនី ដូច្នេះវាមិនឡើងកូដ Circuit",
+      "ពិនិត្យមូលហេតុមេកានិកមុនសន្និដ្ឋានថា Sensor ខូច",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Throttle Body ដោយមិនប្រៀបធៀប Sensor ជាមុន",
+      "ប្ដូរ Sensor ខណៈបញ្ហាជា Ground អាក្រក់ដែលធ្វើឲ្យតម្លៃលំអៀង — តម្លៃលំអៀងនៅតែស្ថិតក្នុងជួរអគ្គិសនីធម្មតា",
+    ],
   },
   {
     code: "P0227",
@@ -1885,8 +2026,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "សញ្ញាចេញមកមិនទៀងទាត់ — ជាទូទៅ Connector រលុង។",
     possibleCauses: ["Connector រលុង", "ខ្សែភ្លើងជិតដាច់"],
-    inspectionFlow: ["រង្កោល Connector"],
-    commonMistakes: ["មិនរង្កោលខ្សែពេលរក Intermittent Fault"],
+    inspectionFlow: [
+      "អាន Freeze Frame ជាមុនសិន — វាកត់ RPM, Load, សីតុណ្ហភាព និងល្បឿននៅវិនាទីដែលកំហុសកើត។ នោះជាតម្រុយតែមួយគត់ដែលអ្នកមាន ព្រោះកំហុសមិននៅទីនោះពេលអ្នកមើល",
+      "រង្កោលខ្សែ និង Connector របស់ Fuel Pump Secondary តាមផ្លូវទាំងមូល ខណៈមើល Live Data — ចាប់ពី Connector ជិត Sensor រួចតាមខ្សែទៅ ECU",
+      "ពិនិត្យ Pin ក្នុង Connector — Pin ថយ (Pin Tension ធូរ) និងការច្រេះ ជាមូលហេតុញឹកញាប់បំផុតនៃកំហុសដាច់ៗ",
+      "ពិនិត្យកន្លែងខ្សែកកិត និងកន្លែងខ្សែឆ្លងកាត់គែមដែក ជាពិសេសកន្លែងរង្គោះរង្គើ ឬក្ដៅ",
+      "បើនៅរកមិនឃើញ — កត់ត្រា Live Data ខណៈបើកបរតាមលក្ខខណ្ឌដូចក្នុង Freeze Frame រួចមើលឡើងវិញ",
+    ],
+    commonMistakes: [
+      "មិនរង្កោលខ្សែពេលរក Intermittent Fault",
+      "ប្ដូរ Sensor ព្រោះវាស់ពេលនោះឃើញធម្មតា — កំហុសដាច់ៗមិនបង្ហាញខ្លួនពេលអ្នកវាស់ទេ។ ត្រូវរង្កោលខ្សែ និងអាន Freeze Frame ជំនួស",
+    ],
   },
   {
     code: "P0235",
@@ -1909,8 +2059,18 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនមាន Turbo",
     descriptionKm: "តម្លៃមិនត្រូវនឹង Load/RPM ជាក់ស្តែង។",
     possibleCauses: ["Vacuum Hose លេច", "Sensor ខូច"],
-    inspectionFlow: ["ពិនិត្យ Vacuum Hose"],
-    commonMistakes: ["មិនពិនិត្យ Vacuum Hose ជាមុនប្ដូរ Sensor"],
+    inspectionFlow: [
+      "បើកកូនសោដោយមិនបញ្ឆេះម៉ាស៊ីន — Turbocharger Boost Sensor 'A' វាស់សម្ពាធដាច់ខាត ដូច្នេះវាត្រូវអានស្មើនឹង Barometric Pressure ពេលម៉ាស៊ីនមិនដើរ។ បើខុសគ្នាច្រើន នោះ Sensor លំអៀង",
+      "មើលតម្លៃ Turbocharger Boost Sensor 'A' ពេញជួរប្រតិបត្តិការ មិនត្រឹមតែពេលទំនេរ — កំហុសលំអៀងជាច្រើនលេចតែនៅចុងជួរ",
+      "ពិនិត្យថាតម្លៃប្រែប្រួលរលូន មិនលោត និងមិនជាប់នៅចំណុចណាមួយ",
+      "ពិនិត្យ Ground របស់ Sensor — Ground អាក្រក់ធ្វើឲ្យតម្លៃលំអៀងដោយមិនចេញក្រៅជួរអគ្គិសនី ដូច្នេះវាមិនឡើងកូដ Circuit",
+      "ពិនិត្យមូលហេតុមេកានិកមុនសន្និដ្ឋានថា Sensor ខូច",
+      "ពិនិត្យ Vacuum Hose",
+    ],
+    commonMistakes: [
+      "មិនពិនិត្យ Vacuum Hose ជាមុនប្ដូរ Sensor",
+      "ប្ដូរ Sensor ខណៈបញ្ហាជា Ground អាក្រក់ដែលធ្វើឲ្យតម្លៃលំអៀង — តម្លៃលំអៀងនៅតែស្ថិតក្នុងជួរអគ្គិសនីធម្មតា",
+    ],
   },
   {
     code: "P0237",
@@ -1963,8 +2123,18 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនមាន Twin-Turbo",
     descriptionKm: "ដូច P0236 ប៉ុន្តែនៅ Sensor B (ម៉ាស៊ីនមាន Turbo ២)។",
     possibleCauses: ["Vacuum Hose លេច", "Sensor ខូច"],
-    inspectionFlow: ["ពិនិត្យ Vacuum Hose"],
-    commonMistakes: ["មិនពិនិត្យ Vacuum Hose ជាមុន"],
+    inspectionFlow: [
+      "បើកកូនសោដោយមិនបញ្ឆេះម៉ាស៊ីន — Turbocharger Boost Sensor 'B' វាស់សម្ពាធដាច់ខាត ដូច្នេះវាត្រូវអានស្មើនឹង Barometric Pressure ពេលម៉ាស៊ីនមិនដើរ។ បើខុសគ្នាច្រើន នោះ Sensor លំអៀង",
+      "មើលតម្លៃ Turbocharger Boost Sensor 'B' ពេញជួរប្រតិបត្តិការ មិនត្រឹមតែពេលទំនេរ — កំហុសលំអៀងជាច្រើនលេចតែនៅចុងជួរ",
+      "ពិនិត្យថាតម្លៃប្រែប្រួលរលូន មិនលោត និងមិនជាប់នៅចំណុចណាមួយ",
+      "ពិនិត្យ Ground របស់ Sensor — Ground អាក្រក់ធ្វើឲ្យតម្លៃលំអៀងដោយមិនចេញក្រៅជួរអគ្គិសនី ដូច្នេះវាមិនឡើងកូដ Circuit",
+      "ពិនិត្យមូលហេតុមេកានិកមុនសន្និដ្ឋានថា Sensor ខូច",
+      "ពិនិត្យ Vacuum Hose",
+    ],
+    commonMistakes: [
+      "មិនពិនិត្យ Vacuum Hose ជាមុន",
+      "ប្ដូរ Sensor ខណៈបញ្ហាជា Ground អាក្រក់ដែលធ្វើឲ្យតម្លៃលំអៀង — តម្លៃលំអៀងនៅតែស្ថិតក្នុងជួរអគ្គិសនីធម្មតា",
+    ],
   },
   {
     code: "P0241",
@@ -2536,8 +2706,18 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនចាស់មាន Distributor",
     descriptionKm: "សញ្ញាល្បឿនម៉ាស៊ីនមិនត្រូវនឹង Reference ធម្មតា។",
     possibleCauses: ["Distributor Pickup ខូច", "Wiring ដាច់"],
-    inspectionFlow: ["ពិនិត្យ Distributor Pickup Coil"],
-    commonMistakes: ["ប្ដូរ ECU ដោយមិនពិនិត្យ Distributor ជាមុន"],
+    inspectionFlow: [
+      "ធៀបតម្លៃនឹង Sensor ដូចគ្នាម្ខាងទៀត ឬនឹងតម្លៃរំពឹងទុកនៅលក្ខខណ្ឌដែលអ្នកដឹងចម្លើយជាមុន",
+      "មើលតម្លៃ Ignition/Distributor Engine Speed Input ពេញជួរប្រតិបត្តិការ មិនត្រឹមតែពេលទំនេរ — កំហុសលំអៀងជាច្រើនលេចតែនៅចុងជួរ",
+      "ពិនិត្យថាតម្លៃប្រែប្រួលរលូន មិនលោត និងមិនជាប់នៅចំណុចណាមួយ",
+      "ពិនិត្យ Ground របស់ Sensor — Ground អាក្រក់ធ្វើឲ្យតម្លៃលំអៀងដោយមិនចេញក្រៅជួរអគ្គិសនី ដូច្នេះវាមិនឡើងកូដ Circuit",
+      "ពិនិត្យមូលហេតុមេកានិកមុនសន្និដ្ឋានថា Sensor ខូច",
+      "ពិនិត្យ Distributor Pickup Coil",
+    ],
+    commonMistakes: [
+      "ប្ដូរ ECU ដោយមិនពិនិត្យ Distributor ជាមុន",
+      "ប្ដូរ Sensor ខណៈបញ្ហាជា Ground អាក្រក់ដែលធ្វើឲ្យតម្លៃលំអៀង — តម្លៃលំអៀងនៅតែស្ថិតក្នុងជួរអគ្គិសនីធម្មតា",
+    ],
   },
   {
     code: "P0323",
@@ -2548,8 +2728,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនចាស់មាន Distributor",
     descriptionKm: "សញ្ញាចេញមកមិនទៀងទាត់ — ជាទូទៅ Connector រលុង។",
     possibleCauses: ["Connector រលុង", "Pickup Coil ចាស់"],
-    inspectionFlow: ["រង្កោល Connector ពេលមើល Live Data"],
-    commonMistakes: ["មិនរង្កោលខ្សែពេលរក Intermittent Fault"],
+    inspectionFlow: [
+      "អាន Freeze Frame ជាមុនសិន — វាកត់ RPM, Load, សីតុណ្ហភាព និងល្បឿននៅវិនាទីដែលកំហុសកើត។ នោះជាតម្រុយតែមួយគត់ដែលអ្នកមាន ព្រោះកំហុសមិននៅទីនោះពេលអ្នកមើល",
+      "រង្កោលខ្សែ និង Connector របស់ Ignition/Distributor Engine Speed Input តាមផ្លូវទាំងមូល ខណៈមើល Live Data — ចាប់ពី Connector ជិត Sensor រួចតាមខ្សែទៅ ECU",
+      "ពិនិត្យ Pin ក្នុង Connector — Pin ថយ (Pin Tension ធូរ) និងការច្រេះ ជាមូលហេតុញឹកញាប់បំផុតនៃកំហុសដាច់ៗ",
+      "ពិនិត្យកន្លែងខ្សែកកិត និងកន្លែងខ្សែឆ្លងកាត់គែមដែក ជាពិសេសកន្លែងរង្គោះរង្គើ ឬក្ដៅ",
+      "បើនៅរកមិនឃើញ — កត់ត្រា Live Data ខណៈបើកបរតាមលក្ខខណ្ឌដូចក្នុង Freeze Frame រួចមើលឡើងវិញ",
+    ],
+    commonMistakes: [
+      "មិនរង្កោលខ្សែពេលរក Intermittent Fault",
+      "ប្ដូរ Sensor ព្រោះវាស់ពេលនោះឃើញធម្មតា — កំហុសដាច់ៗមិនបង្ហាញខ្លួនពេលអ្នកវាស់ទេ។ ត្រូវរង្កោលខ្សែ និងអាន Freeze Frame ជំនួស",
+    ],
   },
   {
     code: "P0330",
@@ -2572,8 +2761,18 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V ឬ Boxer",
     descriptionKm: "តម្លៃមិនត្រូវនឹង Load/RPM ជាក់ស្តែង។",
     possibleCauses: ["Torque Bolt Sensor ធូរ", "Sensor ខូច"],
-    inspectionFlow: ["ពិនិត្យ Torque ការដំឡើង Sensor"],
-    commonMistakes: ["ធូររំលង Torque Spec"],
+    inspectionFlow: [
+      "ធៀបតម្លៃនឹង Sensor ដូចគ្នាម្ខាងទៀត ឬនឹងតម្លៃរំពឹងទុកនៅលក្ខខណ្ឌដែលអ្នកដឹងចម្លើយជាមុន",
+      "មើលតម្លៃ Knock Sensor 2 (Bank 2) ពេញជួរប្រតិបត្តិការ មិនត្រឹមតែពេលទំនេរ — កំហុសលំអៀងជាច្រើនលេចតែនៅចុងជួរ",
+      "ពិនិត្យថាតម្លៃប្រែប្រួលរលូន មិនលោត និងមិនជាប់នៅចំណុចណាមួយ",
+      "ពិនិត្យ Ground របស់ Sensor — Ground អាក្រក់ធ្វើឲ្យតម្លៃលំអៀងដោយមិនចេញក្រៅជួរអគ្គិសនី ដូច្នេះវាមិនឡើងកូដ Circuit",
+      "ពិនិត្យមូលហេតុមេកានិកមុនសន្និដ្ឋានថា Sensor ខូច",
+      "ពិនិត្យ Torque ការដំឡើង Sensor",
+    ],
+    commonMistakes: [
+      "ធូររំលង Torque Spec",
+      "ប្ដូរ Sensor ខណៈបញ្ហាជា Ground អាក្រក់ដែលធ្វើឲ្យតម្លៃលំអៀង — តម្លៃលំអៀងនៅតែស្ថិតក្នុងជួរអគ្គិសនីធម្មតា",
+    ],
   },
   {
     code: "P0332",
@@ -2626,8 +2825,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V ឬ Boxer",
     descriptionKm: "សញ្ញាចេញមកមិនទៀងទាត់ — ជាទូទៅ Connector រលុង។",
     possibleCauses: ["Connector រលុង", "ខ្សែភ្លើងជិតដាច់"],
-    inspectionFlow: ["រង្កោល Connector ពេលមើល Live Data"],
-    commonMistakes: ["មិនរង្កោលខ្សែពេលរក Intermittent Fault"],
+    inspectionFlow: [
+      "អាន Freeze Frame ជាមុនសិន — វាកត់ RPM, Load, សីតុណ្ហភាព និងល្បឿននៅវិនាទីដែលកំហុសកើត។ នោះជាតម្រុយតែមួយគត់ដែលអ្នកមាន ព្រោះកំហុសមិននៅទីនោះពេលអ្នកមើល",
+      "រង្កោលខ្សែ និង Connector របស់ Knock Sensor 2 (Bank 2) តាមផ្លូវទាំងមូល ខណៈមើល Live Data — ចាប់ពី Connector ជិត Sensor រួចតាមខ្សែទៅ ECU",
+      "ពិនិត្យ Pin ក្នុង Connector — Pin ថយ (Pin Tension ធូរ) និងការច្រេះ ជាមូលហេតុញឹកញាប់បំផុតនៃកំហុសដាច់ៗ",
+      "ពិនិត្យកន្លែងខ្សែកកិត និងកន្លែងខ្សែឆ្លងកាត់គែមដែក ជាពិសេសកន្លែងរង្គោះរង្គើ ឬក្ដៅ",
+      "បើនៅរកមិនឃើញ — កត់ត្រា Live Data ខណៈបើកបរតាមលក្ខខណ្ឌដូចក្នុង Freeze Frame រួចមើលឡើងវិញ",
+    ],
+    commonMistakes: [
+      "មិនរង្កោលខ្សែពេលរក Intermittent Fault",
+      "ប្ដូរ Sensor ព្រោះវាស់ពេលនោះឃើញធម្មតា — កំហុសដាច់ៗមិនបង្ហាញខ្លួនពេលអ្នកវាស់ទេ។ ត្រូវរង្កោលខ្សែ និងអាន Freeze Frame ជំនួស",
+    ],
   },
 
   /* ---------------------- P033x-P038x — Crank/Cam Sensor B, Ignition Coils E-H, Glow Plug ---------------------- */
@@ -2696,8 +2904,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "សញ្ញាចេញមកមិនទៀងទាត់។",
     possibleCauses: ["Connector រលុង"],
-    inspectionFlow: ["រង្កោល Connector ពេលមើល Live Data"],
-    commonMistakes: ["មិនរង្កោលខ្សែពេលរក Intermittent Fault"],
+    inspectionFlow: [
+      "អាន Freeze Frame ជាមុនសិន — វាកត់ RPM, Load, សីតុណ្ហភាព និងល្បឿននៅវិនាទីដែលកំហុសកើត។ នោះជាតម្រុយតែមួយគត់ដែលអ្នកមាន ព្រោះកំហុសមិននៅទីនោះពេលអ្នកមើល",
+      "រង្កោលខ្សែ និង Connector របស់ Camshaft Position Sensor 'A' (Bank 1) តាមផ្លូវទាំងមូល ខណៈមើល Live Data — ចាប់ពី Connector ជិត Sensor រួចតាមខ្សែទៅ ECU",
+      "ពិនិត្យ Pin ក្នុង Connector — Pin ថយ (Pin Tension ធូរ) និងការច្រេះ ជាមូលហេតុញឹកញាប់បំផុតនៃកំហុសដាច់ៗ",
+      "ពិនិត្យកន្លែងខ្សែកកិត និងកន្លែងខ្សែឆ្លងកាត់គែមដែក ជាពិសេសកន្លែងរង្គោះរង្គើ ឬក្ដៅ",
+      "បើនៅរកមិនឃើញ — កត់ត្រា Live Data ខណៈបើកបរតាមលក្ខខណ្ឌដូចក្នុង Freeze Frame រួចមើលឡើងវិញ",
+    ],
+    commonMistakes: [
+      "មិនរង្កោលខ្សែពេលរក Intermittent Fault",
+      "ប្ដូរ Sensor ព្រោះវាស់ពេលនោះឃើញធម្មតា — កំហុសដាច់ៗមិនបង្ហាញខ្លួនពេលអ្នកវាស់ទេ។ ត្រូវរង្កោលខ្សែ និងអាន Freeze Frame ជំនួស",
+    ],
   },
   {
     code: "P0345",
@@ -2720,8 +2937,18 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V ឬ Boxer",
     descriptionKm: "តម្លៃមិនត្រូវនឹង Timing ជាក់ស្តែង Bank 2។",
     possibleCauses: ["Timing Chain Bank 2 រំលង Tooth", "Sensor ខូច"],
-    inspectionFlow: ["ពិនិត្យ Timing Mark Bank 2"],
-    commonMistakes: ["ប្ដូរ Sensor ជំនួសការពិនិត្យ Timing Chain"],
+    inspectionFlow: [
+      "ធៀបតម្លៃនឹង Sensor ដូចគ្នាម្ខាងទៀត ឬនឹងតម្លៃរំពឹងទុកនៅលក្ខខណ្ឌដែលអ្នកដឹងចម្លើយជាមុន",
+      "មើលតម្លៃ Camshaft Position Sensor 'A' (Bank 2) ពេញជួរប្រតិបត្តិការ មិនត្រឹមតែពេលទំនេរ — កំហុសលំអៀងជាច្រើនលេចតែនៅចុងជួរ",
+      "ពិនិត្យថាតម្លៃប្រែប្រួលរលូន មិនលោត និងមិនជាប់នៅចំណុចណាមួយ",
+      "ពិនិត្យ Ground របស់ Sensor — Ground អាក្រក់ធ្វើឲ្យតម្លៃលំអៀងដោយមិនចេញក្រៅជួរអគ្គិសនី ដូច្នេះវាមិនឡើងកូដ Circuit",
+      "ពិនិត្យមូលហេតុមេកានិកមុនសន្និដ្ឋានថា Sensor ខូច",
+      "ពិនិត្យ Timing Mark Bank 2",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Sensor ជំនួសការពិនិត្យ Timing Chain",
+      "ប្ដូរ Sensor ខណៈបញ្ហាជា Ground អាក្រក់ដែលធ្វើឲ្យតម្លៃលំអៀង — តម្លៃលំអៀងនៅតែស្ថិតក្នុងជួរអគ្គិសនីធម្មតា",
+    ],
   },
   {
     code: "P0347",
@@ -2770,8 +2997,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V ឬ Boxer",
     descriptionKm: "សញ្ញាចេញមកមិនទៀងទាត់។",
     possibleCauses: ["Connector រលុង"],
-    inspectionFlow: ["រង្កោល Connector"],
-    commonMistakes: ["មិនរង្កោលខ្សែពេលរក Intermittent Fault"],
+    inspectionFlow: [
+      "អាន Freeze Frame ជាមុនសិន — វាកត់ RPM, Load, សីតុណ្ហភាព និងល្បឿននៅវិនាទីដែលកំហុសកើត។ នោះជាតម្រុយតែមួយគត់ដែលអ្នកមាន ព្រោះកំហុសមិននៅទីនោះពេលអ្នកមើល",
+      "រង្កោលខ្សែ និង Connector របស់ Camshaft Position Sensor 'A' (Bank 2) តាមផ្លូវទាំងមូល ខណៈមើល Live Data — ចាប់ពី Connector ជិត Sensor រួចតាមខ្សែទៅ ECU",
+      "ពិនិត្យ Pin ក្នុង Connector — Pin ថយ (Pin Tension ធូរ) និងការច្រេះ ជាមូលហេតុញឹកញាប់បំផុតនៃកំហុសដាច់ៗ",
+      "ពិនិត្យកន្លែងខ្សែកកិត និងកន្លែងខ្សែឆ្លងកាត់គែមដែក ជាពិសេសកន្លែងរង្គោះរង្គើ ឬក្ដៅ",
+      "បើនៅរកមិនឃើញ — កត់ត្រា Live Data ខណៈបើកបរតាមលក្ខខណ្ឌដូចក្នុង Freeze Frame រួចមើលឡើងវិញ",
+    ],
+    commonMistakes: [
+      "មិនរង្កោលខ្សែពេលរក Intermittent Fault",
+      "ប្ដូរ Sensor ព្រោះវាស់ពេលនោះឃើញធម្មតា — កំហុសដាច់ៗមិនបង្ហាញខ្លួនពេលអ្នកវាស់ទេ។ ត្រូវរង្កោលខ្សែ និងអាន Freeze Frame ជំនួស",
+    ],
   },
   {
     code: "P0355",
@@ -2842,8 +3078,18 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនមាន Dual VVT",
     descriptionKm: "តម្លៃមិនត្រូវនឹង Timing ជាក់ស្តែងខាងផ្សែង។",
     possibleCauses: ["Timing Chain រំលង Tooth", "Sensor ខូច"],
-    inspectionFlow: ["ពិនិត្យ Timing Mark ខាងផ្សែង"],
-    commonMistakes: ["ប្ដូរ Sensor ជំនួសការពិនិត្យ Timing Chain"],
+    inspectionFlow: [
+      "ធៀបតម្លៃនឹង Sensor ដូចគ្នាម្ខាងទៀត ឬនឹងតម្លៃរំពឹងទុកនៅលក្ខខណ្ឌដែលអ្នកដឹងចម្លើយជាមុន",
+      "មើលតម្លៃ Camshaft Position Sensor 'B' (Bank 1) ពេញជួរប្រតិបត្តិការ មិនត្រឹមតែពេលទំនេរ — កំហុសលំអៀងជាច្រើនលេចតែនៅចុងជួរ",
+      "ពិនិត្យថាតម្លៃប្រែប្រួលរលូន មិនលោត និងមិនជាប់នៅចំណុចណាមួយ",
+      "ពិនិត្យ Ground របស់ Sensor — Ground អាក្រក់ធ្វើឲ្យតម្លៃលំអៀងដោយមិនចេញក្រៅជួរអគ្គិសនី ដូច្នេះវាមិនឡើងកូដ Circuit",
+      "ពិនិត្យមូលហេតុមេកានិកមុនសន្និដ្ឋានថា Sensor ខូច",
+      "ពិនិត្យ Timing Mark ខាងផ្សែង",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Sensor ជំនួសការពិនិត្យ Timing Chain",
+      "ប្ដូរ Sensor ខណៈបញ្ហាជា Ground អាក្រក់ដែលធ្វើឲ្យតម្លៃលំអៀង — តម្លៃលំអៀងនៅតែស្ថិតក្នុងជួរអគ្គិសនីធម្មតា",
+    ],
   },
   {
     code: "P0367",
@@ -2892,8 +3138,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនមាន Dual VVT",
     descriptionKm: "សញ្ញាចេញមកមិនទៀងទាត់។",
     possibleCauses: ["Connector រលុង"],
-    inspectionFlow: ["រង្កោល Connector"],
-    commonMistakes: ["មិនរង្កោលខ្សែពេលរក Intermittent Fault"],
+    inspectionFlow: [
+      "អាន Freeze Frame ជាមុនសិន — វាកត់ RPM, Load, សីតុណ្ហភាព និងល្បឿននៅវិនាទីដែលកំហុសកើត។ នោះជាតម្រុយតែមួយគត់ដែលអ្នកមាន ព្រោះកំហុសមិននៅទីនោះពេលអ្នកមើល",
+      "រង្កោលខ្សែ និង Connector របស់ Camshaft Position Sensor 'B' (Bank 1) តាមផ្លូវទាំងមូល ខណៈមើល Live Data — ចាប់ពី Connector ជិត Sensor រួចតាមខ្សែទៅ ECU",
+      "ពិនិត្យ Pin ក្នុង Connector — Pin ថយ (Pin Tension ធូរ) និងការច្រេះ ជាមូលហេតុញឹកញាប់បំផុតនៃកំហុសដាច់ៗ",
+      "ពិនិត្យកន្លែងខ្សែកកិត និងកន្លែងខ្សែឆ្លងកាត់គែមដែក ជាពិសេសកន្លែងរង្គោះរង្គើ ឬក្ដៅ",
+      "បើនៅរកមិនឃើញ — កត់ត្រា Live Data ខណៈបើកបរតាមលក្ខខណ្ឌដូចក្នុង Freeze Frame រួចមើលឡើងវិញ",
+    ],
+    commonMistakes: [
+      "មិនរង្កោលខ្សែពេលរក Intermittent Fault",
+      "ប្ដូរ Sensor ព្រោះវាស់ពេលនោះឃើញធម្មតា — កំហុសដាច់ៗមិនបង្ហាញខ្លួនពេលអ្នកវាស់ទេ។ ត្រូវរង្កោលខ្សែ និងអាន Freeze Frame ជំនួស",
+    ],
   },
   {
     code: "P0380",
@@ -2952,8 +3207,18 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនធំមាន Sensor ២",
     descriptionKm: "តម្លៃមិនត្រូវនឹង Sensor A។",
     possibleCauses: ["Sensor ខូច", "Reluctor Wheel កខ្វក់"],
-    inspectionFlow: ["ប្រៀបធៀប Signal Sensor A/B"],
-    commonMistakes: ["ប្ដូរ Sensor ដោយមិនប្រៀបធៀបជាមុន"],
+    inspectionFlow: [
+      "ធៀបតម្លៃនឹង Sensor ដូចគ្នាម្ខាងទៀត ឬនឹងតម្លៃរំពឹងទុកនៅលក្ខខណ្ឌដែលអ្នកដឹងចម្លើយជាមុន",
+      "មើលតម្លៃ Crankshaft Position Sensor 'B' ពេញជួរប្រតិបត្តិការ មិនត្រឹមតែពេលទំនេរ — កំហុសលំអៀងជាច្រើនលេចតែនៅចុងជួរ",
+      "ពិនិត្យថាតម្លៃប្រែប្រួលរលូន មិនលោត និងមិនជាប់នៅចំណុចណាមួយ",
+      "ពិនិត្យ Ground របស់ Sensor — Ground អាក្រក់ធ្វើឲ្យតម្លៃលំអៀងដោយមិនចេញក្រៅជួរអគ្គិសនី ដូច្នេះវាមិនឡើងកូដ Circuit",
+      "ពិនិត្យមូលហេតុមេកានិកមុនសន្និដ្ឋានថា Sensor ខូច",
+      "ប្រៀបធៀប Signal Sensor A/B",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Sensor ដោយមិនប្រៀបធៀបជាមុន",
+      "ប្ដូរ Sensor ខណៈបញ្ហាជា Ground អាក្រក់ដែលធ្វើឲ្យតម្លៃលំអៀង — តម្លៃលំអៀងនៅតែស្ថិតក្នុងជួរអគ្គិសនីធម្មតា",
+    ],
   },
   {
     code: "P0387",
@@ -3002,8 +3267,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនធំមាន Sensor ២",
     descriptionKm: "សញ្ញាចេញមកមិនទៀងទាត់។",
     possibleCauses: ["Connector រលុង"],
-    inspectionFlow: ["រង្កោល Connector"],
-    commonMistakes: ["មិនរង្កោលខ្សែពេលរក Intermittent Fault"],
+    inspectionFlow: [
+      "អាន Freeze Frame ជាមុនសិន — វាកត់ RPM, Load, សីតុណ្ហភាព និងល្បឿននៅវិនាទីដែលកំហុសកើត។ នោះជាតម្រុយតែមួយគត់ដែលអ្នកមាន ព្រោះកំហុសមិននៅទីនោះពេលអ្នកមើល",
+      "រង្កោលខ្សែ និង Connector របស់ Crankshaft Position Sensor 'B' តាមផ្លូវទាំងមូល ខណៈមើល Live Data — ចាប់ពី Connector ជិត Sensor រួចតាមខ្សែទៅ ECU",
+      "ពិនិត្យ Pin ក្នុង Connector — Pin ថយ (Pin Tension ធូរ) និងការច្រេះ ជាមូលហេតុញឹកញាប់បំផុតនៃកំហុសដាច់ៗ",
+      "ពិនិត្យកន្លែងខ្សែកកិត និងកន្លែងខ្សែឆ្លងកាត់គែមដែក ជាពិសេសកន្លែងរង្គោះរង្គើ ឬក្ដៅ",
+      "បើនៅរកមិនឃើញ — កត់ត្រា Live Data ខណៈបើកបរតាមលក្ខខណ្ឌដូចក្នុង Freeze Frame រួចមើលឡើងវិញ",
+    ],
+    commonMistakes: [
+      "មិនរង្កោលខ្សែពេលរក Intermittent Fault",
+      "ប្ដូរ Sensor ព្រោះវាស់ពេលនោះឃើញធម្មតា — កំហុសដាច់ៗមិនបង្ហាញខ្លួនពេលអ្នកវាស់ទេ។ ត្រូវរង្កោលខ្សែ និងអាន Freeze Frame ជំនួស",
+    ],
   },
 
   /* ---------------------- P040x — EGR Sensor A/B ---------------------- */
@@ -3330,8 +3604,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីន Gasoline",
     descriptionKm: "សញ្ញាចេញមកមិនទៀងទាត់។",
     possibleCauses: ["Connector រលុង"],
-    inspectionFlow: ["រង្កោល Connector"],
-    commonMistakes: ["មិនរង្កោលខ្សែពេលរក Intermittent Fault"],
+    inspectionFlow: [
+      "អាន Freeze Frame ជាមុនសិន — វាកត់ RPM, Load, សីតុណ្ហភាព និងល្បឿននៅវិនាទីដែលកំហុសកើត។ នោះជាតម្រុយតែមួយគត់ដែលអ្នកមាន ព្រោះកំហុសមិននៅទីនោះពេលអ្នកមើល",
+      "រង្កោលខ្សែ និង Connector របស់ EVAP System Pressure Sensor តាមផ្លូវទាំងមូល ខណៈមើល Live Data — ចាប់ពី Connector ជិត Sensor រួចតាមខ្សែទៅ ECU",
+      "ពិនិត្យ Pin ក្នុង Connector — Pin ថយ (Pin Tension ធូរ) និងការច្រេះ ជាមូលហេតុញឹកញាប់បំផុតនៃកំហុសដាច់ៗ",
+      "ពិនិត្យកន្លែងខ្សែកកិត និងកន្លែងខ្សែឆ្លងកាត់គែមដែក ជាពិសេសកន្លែងរង្គោះរង្គើ ឬក្ដៅ",
+      "បើនៅរកមិនឃើញ — កត់ត្រា Live Data ខណៈបើកបរតាមលក្ខខណ្ឌដូចក្នុង Freeze Frame រួចមើលឡើងវិញ",
+    ],
+    commonMistakes: [
+      "មិនរង្កោលខ្សែពេលរក Intermittent Fault",
+      "ប្ដូរ Sensor ព្រោះវាស់ពេលនោះឃើញធម្មតា — កំហុសដាច់ៗមិនបង្ហាញខ្លួនពេលអ្នកវាស់ទេ។ ត្រូវរង្កោលខ្សែ និងអាន Freeze Frame ជំនួស",
+    ],
   },
   {
     code: "P0458",
@@ -3714,8 +3997,18 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "តម្លៃមិនត្រូវនឹងសម្ពាធជាក់ស្តែង។",
     possibleCauses: ["Refrigerant កម្រិតខុស", "Sensor ចាស់"],
-    inspectionFlow: ["វាស់សម្ពាធ A/C ដោយ Manifold Gauge ធៀបនឹង Live Data"],
-    commonMistakes: ["មិនប្រៀបធៀបជាមួយ Gauge ពិត"],
+    inspectionFlow: [
+      "ធៀបតម្លៃនឹង Sensor ដូចគ្នាម្ខាងទៀត ឬនឹងតម្លៃរំពឹងទុកនៅលក្ខខណ្ឌដែលអ្នកដឹងចម្លើយជាមុន",
+      "មើលតម្លៃ A/C Refrigerant Pressure Sensor ពេញជួរប្រតិបត្តិការ មិនត្រឹមតែពេលទំនេរ — កំហុសលំអៀងជាច្រើនលេចតែនៅចុងជួរ",
+      "ពិនិត្យថាតម្លៃប្រែប្រួលរលូន មិនលោត និងមិនជាប់នៅចំណុចណាមួយ",
+      "ពិនិត្យ Ground របស់ Sensor — Ground អាក្រក់ធ្វើឲ្យតម្លៃលំអៀងដោយមិនចេញក្រៅជួរអគ្គិសនី ដូច្នេះវាមិនឡើងកូដ Circuit",
+      "ពិនិត្យមូលហេតុមេកានិកមុនសន្និដ្ឋានថា Sensor ខូច",
+      "វាស់សម្ពាធ A/C ដោយ Manifold Gauge ធៀបនឹង Live Data",
+    ],
+    commonMistakes: [
+      "មិនប្រៀបធៀបជាមួយ Gauge ពិត",
+      "ប្ដូរ Sensor ខណៈបញ្ហាជា Ground អាក្រក់ដែលធ្វើឲ្យតម្លៃលំអៀង — តម្លៃលំអៀងនៅតែស្ថិតក្នុងជួរអគ្គិសនីធម្មតា",
+    ],
   },
   {
     code: "P0532",
@@ -4296,8 +4589,18 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើរថយន្តអូតូម៉ាទិក",
     descriptionKm: "តម្លៃមិនត្រូវនឹងសីតុណ្ហភាព ATF ជាក់ស្តែង។",
     possibleCauses: ["Sensor ចាស់", "ATF កម្រិតទាប"],
-    inspectionFlow: ["ប្រៀបធៀបតម្លៃ Live Data ជាមួយវាស់ផ្ទាល់"],
-    commonMistakes: ["មិនពិនិត្យកម្រិត ATF ជាមុន"],
+    inspectionFlow: [
+      "ធៀបតម្លៃនឹង Sensor សីតុណ្ហភាពផ្សេង ក្រោយឡានចតមួយយប់ — Coolant Temp, Intake Air Temp និង Ambient Temp ត្រូវអានស្មើគ្នា។ តម្លៃណាខុសពីគេ នោះជាតម្លៃខុស។ នេះជាតេស្តលឿន និងច្បាស់បំផុត",
+      "មើលតម្លៃ Transmission Fluid Temperature Sensor 'A' ពេញជួរប្រតិបត្តិការ មិនត្រឹមតែពេលទំនេរ — កំហុសលំអៀងជាច្រើនលេចតែនៅចុងជួរ",
+      "ពិនិត្យថាតម្លៃប្រែប្រួលរលូន មិនលោត និងមិនជាប់នៅចំណុចណាមួយ",
+      "ពិនិត្យ Ground របស់ Sensor — Ground អាក្រក់ធ្វើឲ្យតម្លៃលំអៀងដោយមិនចេញក្រៅជួរអគ្គិសនី ដូច្នេះវាមិនឡើងកូដ Circuit",
+      "ពិនិត្យមូលហេតុមេកានិកមុនសន្និដ្ឋានថា Sensor ខូច",
+      "ប្រៀបធៀបតម្លៃ Live Data ជាមួយវាស់ផ្ទាល់",
+    ],
+    commonMistakes: [
+      "មិនពិនិត្យកម្រិត ATF ជាមុន",
+      "ប្ដូរ Sensor ខណៈបញ្ហាជា Ground អាក្រក់ដែលធ្វើឲ្យតម្លៃលំអៀង — តម្លៃលំអៀងនៅតែស្ថិតក្នុងជួរអគ្គិសនីធម្មតា",
+    ],
   },
   {
     code: "P0712",
@@ -4350,8 +4653,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើរថយន្តអូតូម៉ាទិក",
     descriptionKm: "សញ្ញាចេញមកមិនទៀងទាត់។",
     possibleCauses: ["Connector រលុង"],
-    inspectionFlow: ["រង្កោល Connector"],
-    commonMistakes: ["មិនរង្កោលខ្សែពេលរក Intermittent Fault"],
+    inspectionFlow: [
+      "អាន Freeze Frame ជាមុនសិន — វាកត់ RPM, Load, សីតុណ្ហភាព និងល្បឿននៅវិនាទីដែលកំហុសកើត។ នោះជាតម្រុយតែមួយគត់ដែលអ្នកមាន ព្រោះកំហុសមិននៅទីនោះពេលអ្នកមើល",
+      "រង្កោលខ្សែ និង Connector របស់ Transmission Fluid Temperature Sensor 'A' តាមផ្លូវទាំងមូល ខណៈមើល Live Data — ចាប់ពី Connector ជិត Sensor រួចតាមខ្សែទៅ ECU",
+      "ពិនិត្យ Pin ក្នុង Connector — Pin ថយ (Pin Tension ធូរ) និងការច្រេះ ជាមូលហេតុញឹកញាប់បំផុតនៃកំហុសដាច់ៗ",
+      "ពិនិត្យកន្លែងខ្សែកកិត និងកន្លែងខ្សែឆ្លងកាត់គែមដែក ជាពិសេសកន្លែងរង្គោះរង្គើ ឬក្ដៅ",
+      "បើនៅរកមិនឃើញ — កត់ត្រា Live Data ខណៈបើកបរតាមលក្ខខណ្ឌដូចក្នុង Freeze Frame រួចមើលឡើងវិញ",
+    ],
+    commonMistakes: [
+      "មិនរង្កោលខ្សែពេលរក Intermittent Fault",
+      "ប្ដូរ Sensor ព្រោះវាស់ពេលនោះឃើញធម្មតា — កំហុសដាច់ៗមិនបង្ហាញខ្លួនពេលអ្នកវាស់ទេ។ ត្រូវរង្កោលខ្សែ និងអាន Freeze Frame ជំនួស",
+    ],
   },
   {
     code: "P0716",
@@ -4434,8 +4746,18 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើរថយន្តអូតូម៉ាទិក",
     descriptionKm: "សញ្ញាល្បឿនម៉ាស៊ីនទៅ TCM មិនត្រឹមត្រូវ។",
     possibleCauses: ["Wiring ដាច់", "Crankshaft Sensor ខូច"],
-    inspectionFlow: ["ប្រៀបធៀប RPM Live Data ជាមួយ TCM"],
-    commonMistakes: ["ជួសជុលប្រអប់លេខខណៈបញ្ហាមកពី Engine Sensor"],
+    inspectionFlow: [
+      "ធៀបតម្លៃនឹង Sensor ដូចគ្នាម្ខាងទៀត ឬនឹងតម្លៃរំពឹងទុកនៅលក្ខខណ្ឌដែលអ្នកដឹងចម្លើយជាមុន",
+      "មើលតម្លៃ Engine Speed Input ពេញជួរប្រតិបត្តិការ មិនត្រឹមតែពេលទំនេរ — កំហុសលំអៀងជាច្រើនលេចតែនៅចុងជួរ",
+      "ពិនិត្យថាតម្លៃប្រែប្រួលរលូន មិនលោត និងមិនជាប់នៅចំណុចណាមួយ",
+      "ពិនិត្យ Ground របស់ Sensor — Ground អាក្រក់ធ្វើឲ្យតម្លៃលំអៀងដោយមិនចេញក្រៅជួរអគ្គិសនី ដូច្នេះវាមិនឡើងកូដ Circuit",
+      "ពិនិត្យមូលហេតុមេកានិកមុនសន្និដ្ឋានថា Sensor ខូច",
+      "ប្រៀបធៀប RPM Live Data ជាមួយ TCM",
+    ],
+    commonMistakes: [
+      "ជួសជុលប្រអប់លេខខណៈបញ្ហាមកពី Engine Sensor",
+      "ប្ដូរ Sensor ខណៈបញ្ហាជា Ground អាក្រក់ដែលធ្វើឲ្យតម្លៃលំអៀង — តម្លៃលំអៀងនៅតែស្ថិតក្នុងជួរអគ្គិសនីធម្មតា",
+    ],
   },
   {
     code: "P0727",
@@ -4458,8 +4780,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើរថយន្តអូតូម៉ាទិក",
     descriptionKm: "សញ្ញាចេញមកមិនទៀងទាត់។",
     possibleCauses: ["Connector រលុង", "Wiring ជិតដាច់"],
-    inspectionFlow: ["រង្កោល Connector"],
-    commonMistakes: ["មិនរង្កោលខ្សែពេលរក Intermittent Fault"],
+    inspectionFlow: [
+      "អាន Freeze Frame ជាមុនសិន — វាកត់ RPM, Load, សីតុណ្ហភាព និងល្បឿននៅវិនាទីដែលកំហុសកើត។ នោះជាតម្រុយតែមួយគត់ដែលអ្នកមាន ព្រោះកំហុសមិននៅទីនោះពេលអ្នកមើល",
+      "រង្កោលខ្សែ និង Connector របស់ Engine Speed Input តាមផ្លូវទាំងមូល ខណៈមើល Live Data — ចាប់ពី Connector ជិត Sensor រួចតាមខ្សែទៅ ECU",
+      "ពិនិត្យ Pin ក្នុង Connector — Pin ថយ (Pin Tension ធូរ) និងការច្រេះ ជាមូលហេតុញឹកញាប់បំផុតនៃកំហុសដាច់ៗ",
+      "ពិនិត្យកន្លែងខ្សែកកិត និងកន្លែងខ្សែឆ្លងកាត់គែមដែក ជាពិសេសកន្លែងរង្គោះរង្គើ ឬក្ដៅ",
+      "បើនៅរកមិនឃើញ — កត់ត្រា Live Data ខណៈបើកបរតាមលក្ខខណ្ឌដូចក្នុង Freeze Frame រួចមើលឡើងវិញ",
+    ],
+    commonMistakes: [
+      "មិនរង្កោលខ្សែពេលរក Intermittent Fault",
+      "ប្ដូរ Sensor ព្រោះវាស់ពេលនោះឃើញធម្មតា — កំហុសដាច់ៗមិនបង្ហាញខ្លួនពេលអ្នកវាស់ទេ។ ត្រូវរង្កោលខ្សែ និងអាន Freeze Frame ជំនួស",
+    ],
   },
   {
     code: "P0731",
@@ -5479,8 +5810,18 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "អត្ថន័យនេះសម្រាប់ Toyota/Lexus តែប៉ុណ្ណោះ — ⚠️ ម៉ាកផ្សេង (Ford, Mazda, Mitsubishi, Kia…) ប្រើលេខដដែលនេះដោយអត្ថន័យខុសគ្នាទាំងស្រុង។ សូមផ្ទៀងផ្ទាត់ជាមួយឯកសាររបស់ម៉ាករថយន្តជាក់ស្តែងជាមុនសិន",
     descriptionKm: "សញ្ញាមិនត្រូវនឹងទីតាំងឈ្នាន់ជាក់ស្តែង។",
     possibleCauses: ["Pedal Sensor ចាស់", "Connector រលុង"],
-    inspectionFlow: ["ពិនិត្យ Live Data % ពេលចុចយឺតៗ"],
-    commonMistakes: ["មិនប្រៀបធៀប Sensor ទាំងពីរ"],
+    inspectionFlow: [
+      "បើកកូនសោ រួចចុចជើងបង្កើនល្បឿនបន្តិចម្ដងៗពីដើមដល់ចប់ — តម្លៃត្រូវឡើងរលូនគ្មានលោត ហើយ Sensor A និង B ត្រូវដើរតាមគ្នាតាមសមាមាត្រថេរ",
+      "មើលតម្លៃ Accelerator Pedal Position Sensor ពេញជួរប្រតិបត្តិការ មិនត្រឹមតែពេលទំនេរ — កំហុសលំអៀងជាច្រើនលេចតែនៅចុងជួរ",
+      "ពិនិត្យថាតម្លៃប្រែប្រួលរលូន មិនលោត និងមិនជាប់នៅចំណុចណាមួយ",
+      "ពិនិត្យ Ground របស់ Sensor — Ground អាក្រក់ធ្វើឲ្យតម្លៃលំអៀងដោយមិនចេញក្រៅជួរអគ្គិសនី ដូច្នេះវាមិនឡើងកូដ Circuit",
+      "ពិនិត្យមូលហេតុមេកានិកមុនសន្និដ្ឋានថា Sensor ខូច",
+      "ពិនិត្យ Live Data % ពេលចុចយឺតៗ",
+    ],
+    commonMistakes: [
+      "មិនប្រៀបធៀប Sensor ទាំងពីរ",
+      "ប្ដូរ Sensor ខណៈបញ្ហាជា Ground អាក្រក់ដែលធ្វើឲ្យតម្លៃលំអៀង — តម្លៃលំអៀងនៅតែស្ថិតក្នុងជួរអគ្គិសនីធម្មតា",
+    ],
   },
   {
     code: "P1125",
@@ -6799,8 +7140,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើ Diesel",
     descriptionKm: "សញ្ញាចេញមកមិនទៀងទាត់ — ជាទូទៅ Connector រលុង។",
     possibleCauses: ["Connector រលុង", "ខ្សែជិតដាច់"],
-    inspectionFlow: ["រង្កោល Connector ពេលមើល Live Data"],
-    commonMistakes: ["មិនរង្កោលខ្សែពេលរក Intermittent Fault"],
+    inspectionFlow: [
+      "អាន Freeze Frame ជាមុនសិន — វាកត់ RPM, Load, សីតុណ្ហភាព និងល្បឿននៅវិនាទីដែលកំហុសកើត។ នោះជាតម្រុយតែមួយគត់ដែលអ្នកមាន ព្រោះកំហុសមិននៅទីនោះពេលអ្នកមើល",
+      "រង្កោលខ្សែ និង Connector របស់ Fuel Temperature Sensor A តាមផ្លូវទាំងមូល ខណៈមើល Live Data — ចាប់ពី Connector ជិត Sensor រួចតាមខ្សែទៅ ECU",
+      "ពិនិត្យ Pin ក្នុង Connector — Pin ថយ (Pin Tension ធូរ) និងការច្រេះ ជាមូលហេតុញឹកញាប់បំផុតនៃកំហុសដាច់ៗ",
+      "ពិនិត្យកន្លែងខ្សែកកិត និងកន្លែងខ្សែឆ្លងកាត់គែមដែក ជាពិសេសកន្លែងរង្គោះរង្គើ ឬក្ដៅ",
+      "បើនៅរកមិនឃើញ — កត់ត្រា Live Data ខណៈបើកបរតាមលក្ខខណ្ឌដូចក្នុង Freeze Frame រួចមើលឡើងវិញ",
+    ],
+    commonMistakes: [
+      "មិនរង្កោលខ្សែពេលរក Intermittent Fault",
+      "ប្ដូរ Sensor ព្រោះវាស់ពេលនោះឃើញធម្មតា — កំហុសដាច់ៗមិនបង្ហាញខ្លួនពេលអ្នកវាស់ទេ។ ត្រូវរង្កោលខ្សែ និងអាន Freeze Frame ជំនួស",
+    ],
   },
   {
     code: "P0185",
@@ -7452,8 +7802,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "កម្រជួប",
     descriptionKm: "សញ្ញា Sensor C ចេញមកមិនទៀងទាត់។",
     possibleCauses: ["Connector រលុង"],
-    inspectionFlow: ["រង្កោល Connector ពេលមើល Live Data"],
-    commonMistakes: ["រំលងបញ្ហានេះ — គ្រោះថ្នាក់ហ្គែរលោត"],
+    inspectionFlow: [
+      "អាន Freeze Frame ជាមុនសិន — វាកត់ RPM, Load, សីតុណ្ហភាព និងល្បឿននៅវិនាទីដែលកំហុសកើត។ នោះជាតម្រុយតែមួយគត់ដែលអ្នកមាន ព្រោះកំហុសមិននៅទីនោះពេលអ្នកមើល",
+      "រង្កោលខ្សែ និង Connector របស់ Throttle/Pedal Position Sensor/Switch C តាមផ្លូវទាំងមូល ខណៈមើល Live Data — ចាប់ពី Connector ជិត Sensor រួចតាមខ្សែទៅ ECU",
+      "ពិនិត្យ Pin ក្នុង Connector — Pin ថយ (Pin Tension ធូរ) និងការច្រេះ ជាមូលហេតុញឹកញាប់បំផុតនៃកំហុសដាច់ៗ",
+      "ពិនិត្យកន្លែងខ្សែកកិត និងកន្លែងខ្សែឆ្លងកាត់គែមដែក ជាពិសេសកន្លែងរង្គោះរង្គើ ឬក្ដៅ",
+      "បើនៅរកមិនឃើញ — កត់ត្រា Live Data ខណៈបើកបរតាមលក្ខខណ្ឌដូចក្នុង Freeze Frame រួចមើលឡើងវិញ",
+    ],
+    commonMistakes: [
+      "រំលងបញ្ហានេះ — គ្រោះថ្នាក់ហ្គែរលោត",
+      "ប្ដូរ Sensor ព្រោះវាស់ពេលនោះឃើញធម្មតា — កំហុសដាច់ៗមិនបង្ហាញខ្លួនពេលអ្នកវាស់ទេ។ ត្រូវរង្កោលខ្សែ និងអាន Freeze Frame ជំនួស",
+    ],
   },
   {
     code: "P0298",
