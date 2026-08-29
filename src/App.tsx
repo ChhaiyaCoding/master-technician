@@ -26,6 +26,7 @@ const DiagnosticSessionScreen = lazy(() => import("@/screens/DiagnosticSessionSc
 const AiDiagnose = lazy(() => import("@/screens/AiDiagnose"));
 const SessionList = lazy(() => import("@/screens/SessionList"));
 const ObdScan = lazy(() => import("@/screens/ObdScan"));
+const DiagnosticReport = lazy(() => import("@/screens/DiagnosticReport"));
 
 /** Shown for the brief moment a lazy screen's chunk is downloading. */
 function ScreenFallback() {
@@ -76,6 +77,9 @@ export default function App() {
 
           {/* Milestone 6 — interactive prototype connecting the diagnostic engines */}
           <Route path="/diagnostic-session" element={<DiagnosticSessionScreen />} />
+
+          {/* mvp-scope.md §6 — on-demand 8-section snapshot of a session */}
+          <Route path="/report/:id" element={<DiagnosticReport />} />
 
           <Route path="*" element={<Home />} />
         </Routes>

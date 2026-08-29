@@ -32,7 +32,7 @@ export const SYMPTOM_PATTERNS: SymptomPattern[] = [
     id: "engine_misfire",
     match: ["ញ័រ", "misfire", "រញ្ជួយ", "ខូច ស៊ីឡាំង"],
     title: "Ignition coil / Spark plug ខ្សោយ",
-    systemId: "engine",
+    systemId: "ignition",
     conf: 60,
     why: "រោគសញ្ញាញ័រពេលដើរ ជាទូទៅបណ្ដាលមកពី misfire នៅស៊ីឡាំងណាមួយ។",
   },
@@ -112,7 +112,7 @@ export const SYMPTOM_PATTERNS: SymptomPattern[] = [
     id: "engine_overheat",
     match: ["ក្ដៅ", "overheat", "ក្ដៅពេក", "សំពាធទឹក"],
     title: "Cooling system (Thermostat/Radiator/Water pump/Fan)",
-    systemId: "engine",
+    systemId: "cooling",
     conf: 58,
     why: "រោគសញ្ញាក្ដៅលើសកម្រិត ភ្ជាប់ដោយផ្ទាល់នឹងប្រព័ន្ធ cooling។",
   },
@@ -123,6 +123,216 @@ export const SYMPTOM_PATTERNS: SymptomPattern[] = [
     systemId: "engine",
     conf: 38,
     why: "Check Engine ភ្លឺ ដោយគ្មានរោគសញ្ញាផ្សេង ជាញឹកញាប់មកពីមូលហេតុតូចៗទាំងនេះ។",
+  },
+
+  /* ---------------------------- Fuel ---------------------------- */
+  {
+    id: "fuel_hard_start_cold",
+    match: ["ចាប់ផ្ដើមពិបាក ត្រជាក់", "hard start ត្រជាក់", "cold start ពិបាក"],
+    title: "Fuel pressure ចុះ ឬ Injector leak",
+    systemId: "fuel",
+    conf: 50,
+    why: "ចាប់ផ្ដើមពិបាកពេលត្រជាក់ ជាទូទៅទាក់ទង fuel pressure ធ្លាក់ចុះពេលចត។",
+  },
+  {
+    id: "fuel_stumble_acceleration",
+    match: ["ជាប់ ពេលបំពេញឧស្ម័ន", "hesitation", "stumble ពេលបញ្ជិល"],
+    title: "Fuel delivery មិនគ្រប់គ្រាន់ (Pump/Filter/Injector)",
+    systemId: "fuel",
+    conf: 48,
+    why: "ជាប់/ខ្វះកម្លាំងភ្លាមៗពេលបំពេញឧស្ម័ន ជាទូទៅ pump ចាស់ ឬ filter ស្ទះ។",
+  },
+  {
+    id: "fuel_smell_leak",
+    match: ["ក្លិន ប្រេង", "fuel smell", "ក្លិន ស្គរ"],
+    title: "Fuel leak (line/injector/tank)",
+    systemId: "fuel",
+    conf: 55,
+    why: "ក្លិនប្រេងខាងក្នុង ឬក្រោមឡាន ជាសញ្ញា leak — ត្រូវរកឲ្យឃើញមុនបើកម៉ាស៊ីន (ហានិភ័យភ្លើងឆេះ)។",
+  },
+  {
+    id: "fuel_high_consumption",
+    match: ["ស៊ីប្រេងច្រើន", "fuel consumption ខ្ពស់"],
+    title: "Fuel trim ខុសប្រក្រតី ឬ Injector leak ក្នុង",
+    systemId: "fuel",
+    conf: 42,
+    why: "ស៊ីប្រេងច្រើនលើសធម្មតា ជាទូទៅមកពី fuel trim ខុស ឬ injector leak ក្នុង cylinder។",
+  },
+
+  /* --------------------------- Ignition --------------------------- */
+  {
+    id: "ignition_no_spark_no_start",
+    match: ["គ្មាន spark", "no spark", "ចាប់មិនផ្ដើម គ្មានភ្លើង"],
+    title: "Ignition coil/Igniter/Crank sensor ខូច",
+    systemId: "ignition",
+    conf: 52,
+    why: "គ្មាន spark ទាល់តែសោះ ត្រូវពិនិត្យ coil, igniter, ឬ crank position sensor។",
+  },
+  {
+    id: "ignition_hesitation_accel",
+    match: ["ខ្សោយកម្លាំង ពេលបង្កើន", "hesitation ល្បឿន"],
+    title: "Ignition timing ខុស ឬ Knock sensor",
+    systemId: "ignition",
+    conf: 40,
+    why: "ខ្សោយកម្លាំងពេលបង្កើនល្បឿន អាចទាក់ទង ignition timing retard ពី knock sensor។",
+  },
+
+  /* --------------------------- Starting --------------------------- */
+  {
+    id: "starting_no_crank_click",
+    match: ["click ម្ដង គ្មានបត់", "no crank click"],
+    title: "Starter solenoid/Starter motor ខូច",
+    systemId: "starting",
+    conf: 60,
+    why: "សូរ click តែម្ដង គ្មាន crank ជាទូទៅ starter solenoid ឬ motor ខូច។",
+  },
+  {
+    id: "starting_slow_crank",
+    match: ["crank យឺត", "slow crank", "បត់យឺត"],
+    title: "Battery ខ្សោយ ឬ Starter ចាស់",
+    systemId: "starting",
+    conf: 55,
+    why: "Crank យឺត ភាគច្រើន battery ខ្សោយ ឬ starter motor ចាស់ ស៊ីលើស current។",
+  },
+  {
+    id: "starting_intermittent_no_start",
+    match: ["ពេលខ្លះ មិនចាប់", "intermittent no start"],
+    title: "Starter relay/wiring loose connection",
+    systemId: "starting",
+    conf: 45,
+    why: "ចាប់ផ្ដើមពេលខ្លះមិនបាន ជាទូទៅ connection loose នៅ starter circuit ឬ relay ចាស់។",
+  },
+
+  /* --------------------------- Charging --------------------------- */
+  {
+    id: "charging_battery_light_on",
+    match: ["ភ្លើង battery ភ្លឺ", "battery light", "charge warning"],
+    title: "Alternator/Generator ខ្សោយ",
+    systemId: "charging",
+    conf: 60,
+    why: "ភ្លើង battery ភ្លឺពេលដើរ ជាទូទៅ alternator មិនសាកថ្មគ្រប់គ្រាន់។",
+  },
+  {
+    id: "charging_battery_dead_repeat",
+    match: ["ថ្ម ស្លាប់ ញឹកញាប់", "battery ស្លាប់ រឿយៗ", "ថ្ម ចុះញឹកញាប់"],
+    title: "Alternator មិនសាកគ្រប់ ឬ Parasitic drain",
+    systemId: "charging",
+    conf: 50,
+    why: "ថ្មស្លាប់ញឹកញាប់ ខណៈ battery/starter ថ្មី ត្រូវសង្ស័យ alternator ឬ current leak ពេលចត។",
+  },
+  {
+    id: "charging_dim_flicker_lights",
+    match: ["ភ្លើងលោត", "lights flicker", "ភ្លើងស្រអាប់ ពេលទំនេរ"],
+    title: "Alternator diode/Belt tension",
+    systemId: "charging",
+    conf: 42,
+    why: "ភ្លើងលោត/ស្រអាប់ពេលល្បឿនប្រែប្រួល ភ្ជាប់ alternator diode ខូច ឬខ្សែក្រវាត់រអិល។",
+  },
+
+  /* --------------------------- Cooling --------------------------- */
+  {
+    id: "cooling_fan_not_running",
+    match: ["fan មិនដើរ", "cooling fan ស្ងាត់", "ម៉ាស៊ីនក្ដៅពេលឈប់"],
+    title: "Cooling fan motor/relay ខូច",
+    systemId: "cooling",
+    conf: 55,
+    why: "ក្ដៅពេលឈប់ (traffic) ជាទូទៅ cooling fan មិនដើរ — ពិនិត្យ motor/relay/fuse។",
+  },
+  {
+    id: "cooling_white_smoke_sweet_smell",
+    match: ["ផ្សែងស ក្លិន ផ្អែម", "sweet smell exhaust", "coolant ក្នុង ប្រេង"],
+    title: "Head gasket leak ចូល cylinder",
+    systemId: "cooling",
+    conf: 50,
+    why: "ក្លិនផ្អែម + ផ្សែងសក្រាស់ ជាសញ្ញា coolant leak ចូល combustion chamber — ធ្ងន់ធ្ងរ។",
+  },
+
+  /* -------------------------- Air Intake -------------------------- */
+  {
+    id: "airintake_hesitation_rough_idle",
+    match: ["ខ្យល់ចូល", "air leak", "idle មិនស្មើ"],
+    title: "MAF/Vacuum leak",
+    systemId: "airIntake",
+    conf: 45,
+    why: "Idle មិនស្មើ ឬ hesitation ជាទូទៅ air leak ក្រោយ MAF ឬ intake gasket ប្រេះ។",
+  },
+  {
+    id: "airintake_dirty_filter",
+    match: ["filter ខ្យល់ កខ្វក់", "dirty air filter", "ខ្យល់ចូល តិច"],
+    title: "Air filter ស្ទះ ឬ MAF កខ្វក់",
+    systemId: "airIntake",
+    conf: 40,
+    why: "កម្លាំងចុះ + ស៊ីប្រេងច្រើន ជាទូទៅ air filter ស្ទះ ឬ MAF sensor កខ្វក់អានខុស។",
+  },
+  {
+    id: "airintake_boost_loss_turbo",
+    match: ["turbo គ្មានកម្លាំង", "boost ចុះ", "turbo lag ខ្លាំង"],
+    title: "Turbo boost leak ឬ Wastegate ខូច",
+    systemId: "airIntake",
+    conf: 42,
+    why: "កម្លាំង turbo ធ្លាក់ចុះ ភ្ជាប់ boost leak (intercooler hose) ឬ wastegate ជាប់។",
+  },
+
+  /* ---------------------------- Exhaust ---------------------------- */
+  {
+    id: "exhaust_check_engine_cat",
+    match: ["catalytic", "ស៊ីលង់ស័រ ក្ដៅខ្លាំង", "cat converter"],
+    title: "Catalytic converter efficiency ទាប",
+    systemId: "exhaust",
+    conf: 45,
+    why: "Check engine + កម្លាំងចុះបន្តិច ជាទូទៅ catalyst efficiency ធ្លាក់ចុះ។",
+  },
+  {
+    id: "exhaust_rattle_noise",
+    match: ["សូរ rattle ក្រោមឡាន", "exhaust rattle", "ស៊ីលង់ស័រ សូរ"],
+    title: "Exhaust hanger/heat shield ធូរ",
+    systemId: "exhaust",
+    conf: 38,
+    why: "សូរ rattle ក្រោមឡានពេលបើកម៉ាស៊ីន ភាគច្រើន heat shield ធូរ មិនមែនបញ្ហាធ្ងន់ធ្ងរ។",
+  },
+  {
+    id: "exhaust_smell_cabin",
+    match: ["ក្លិន ផ្សែង ក្នុងឡាន", "exhaust smell inside", "ក្លិន co ក្នុងឡាន"],
+    title: "Exhaust leak ចូល cabin — CO risk",
+    systemId: "exhaust",
+    conf: 55,
+    why: "ក្លិនផ្សែងក្នុងឡាន ជាហានិភ័យ CO ពុល — ត្រូវពិនិត្យ exhaust leak ជាបន្ទាន់។",
+  },
+
+  /* ---------------------- CAN Communication ---------------------- */
+  {
+    id: "can_multiple_warning_lights",
+    match: ["ភ្លើងព្រមាន ច្រើន ព្រមគ្នា", "multiple warning lights", "dash ភ្លឺ ច្រើន"],
+    title: "CAN bus communication loss",
+    systemId: "canBus",
+    conf: 42,
+    why: "ភ្លើងព្រមានច្រើនប្រព័ន្ធព្រមគ្នា ជាទូទៅ CAN bus miscommunication ឬ ground ខូច។",
+  },
+  {
+    id: "can_intermittent_dash_reset",
+    match: ["dash reset ខ្លួនឯង", "cluster restart", "ម៉ូនីទ័រ reset"],
+    title: "CAN bus wiring/ground intermittent",
+    systemId: "canBus",
+    conf: 40,
+    why: "Dashboard/cluster restart ភ្លាមៗ ជាទូទៅ CAN bus wiring rub ឬ ground loose។",
+  },
+
+  /* ------------------------------ ADAS ------------------------------ */
+  {
+    id: "adas_camera_calibration_warning",
+    match: ["camera miscalibrated", "lane assist ព្រមាន", "adas warning"],
+    title: "ADAS Camera/Radar ត្រូវ calibrate",
+    systemId: "adas",
+    conf: 45,
+    why: "ភ្លើងព្រមាន ADAS ក្រោយផ្លាស់ខ្សែកញ្ចក់មុខ ឬ bumper ត្រូវការ calibration ជាថ្មី។",
+  },
+  {
+    id: "adas_radar_blocked",
+    match: ["radar មិនដំណើរការ", "cruise control ព្រមាន", "adaptive cruise disable"],
+    title: "Radar sensor ស្ទះ/ខូច",
+    systemId: "adas",
+    conf: 40,
+    why: "Adaptive cruise/collision warning មិនដំណើរការ ជាទូទៅ radar bumper កខ្វក់ ឬ misaligned។",
   },
 
   /* ------------------------- Transmission ------------------------- */

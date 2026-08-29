@@ -43,6 +43,8 @@ import { canSaveAsCase, diagnosticSessionToRepairCase } from "@/diagnosis/sessio
 import { guessFailureDomain } from "@/diagnosis/bootstrapSession";
 import { CURRENT_SESSION_ID_KEY } from "@/services/currentSession";
 import { caseStore } from "@/services/store";
+import { SYSTEM_BY_ID } from "@/data/systems";
+import { t } from "@/i18n/strings";
 import { buildReasoningInput } from "@/reasoning/reasoningProvider";
 import { ruleBasedReasoningProvider } from "@/reasoning/ruleBasedReasoningProvider";
 import {
@@ -1042,6 +1044,45 @@ export default function DiagnosticSessionScreen() {
           </div>
         </Card>
 
+        {/* Matching Past Cases — the flywheel closing the loop: surfaces
+            earlier repairs as soon as system/DTCs are known, instead of only
+            after this session itself becomes a case. Reference only — the
+            mechanic can open one to read it, but it never feeds the Rule
+            Engine's ranking or the AI's confidence. */}
+        {(() => {
+          const matches = caseStore.matchingForSession(session);
+          if (matches.length === 0) return null;
+          return (
+            <Card className="mb-4">
+              <SectionTitle icon={<Icon.Book size={18} className="text-accent" />}>
+                {t.cases.similar}
+              </SectionTitle>
+              <div className="space-y-2">
+                {matches.map((m) => {
+                  const msys = SYSTEM_BY_ID[m.system];
+                  return (
+                    <button
+                      key={m.id}
+                      onClick={() => navigate(`/cases/${m.id}`)}
+                      className="flex w-full items-center gap-3 rounded-xl border border-border p-2.5 text-left active:bg-surface-2"
+                    >
+                      <span className="text-xl">{msys?.icon}</span>
+                      <div className="min-w-0 flex-1">
+                        <p className="truncate text-sm font-semibold">
+                          {m.vehicle.brand} {m.vehicle.model} {m.vehicle.year ?? ""}
+                        </p>
+                        <p className="truncate text-xs text-muted">
+                          {m.dtcCodes.join(", ") || msys?.en} · {m.rootCause}
+                        </p>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+            </Card>
+          );
+        })()}
+
         {/* Customer Complaint */}
         <Card className="mb-4">
           <SectionTitle icon={<Icon.Chat size={18} className="text-accent" />}>
@@ -1155,6 +1196,18 @@ export default function DiagnosticSessionScreen() {
                 ▶ បន្តការងារ
               </Button>
             )}
+          </div>
+          {/* mvp-scope.md §6 — Diagnostic Report, reachable at any time,
+              not gated on session status. */}
+          <div className="mt-2">
+            <Button
+              variant="surface"
+              full
+              onClick={() => navigate(`/report/${session.id}`)}
+              className="!min-h-0 !py-3 text-sm"
+            >
+              📄 មើលរបាយការណ៍វិនិច្ឆ័យ
+            </Button>
           </div>
           {/* Fix #8 — hide Finish while the record-repair form is open, so the
               mechanic can't tap it twice or miss the revealed fields. */}

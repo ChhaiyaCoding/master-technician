@@ -19,6 +19,37 @@ import { caseStore, sessionStore } from "@/services/store";
 export const BACKUP_FORMAT = "master-technician-backup";
 export const BACKUP_VERSION = 1;
 
+const LAST_BACKUP_KEY = "mt.lastBackup.v1";
+
+/** When the mechanic last exported a backup, or null if never. */
+export function getLastBackupAt(): number | null {
+  try {
+    const raw = localStorage.getItem(LAST_BACKUP_KEY);
+    return raw ? Number(raw) : null;
+  } catch {
+    return null;
+  }
+}
+
+function markBackedUpNow(): void {
+  try {
+    localStorage.setItem(LAST_BACKUP_KEY, String(Date.now()));
+  } catch {
+    // Best-effort — a failed write here shouldn't block the download itself.
+  }
+}
+
+/**
+ * Whether the mechanic should be nudged to export — never done, or overdue.
+ * Only fires when there is actually something worth losing.
+ */
+export function isBackupOverdue(caseCount: number, staleAfterDays = 7): boolean {
+  if (caseCount === 0) return false;
+  const last = getLastBackupAt();
+  if (last === null) return true;
+  return Date.now() - last > staleAfterDays * 24 * 60 * 60 * 1000;
+}
+
 export interface BackupFile {
   format: typeof BACKUP_FORMAT;
   version: number;
@@ -53,6 +84,7 @@ export function downloadBackup(): void {
   a.download = backupFilename();
   a.click();
   URL.revokeObjectURL(url);
+  markBackedUpNow();
 }
 
 export interface RestoreResult {

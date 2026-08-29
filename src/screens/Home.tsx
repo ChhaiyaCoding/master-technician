@@ -9,6 +9,7 @@ import { SYSTEM_BY_ID } from "@/data/systems";
 import { useTheme } from "@/context/ThemeContext";
 import { useDiagnosis } from "@/context/DiagnosisContext";
 import { relTime } from "@/utils/format";
+import { isBackupOverdue } from "@/services/backup";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -17,6 +18,9 @@ export default function Home() {
   const recent = caseStore.list().slice(0, 3);
   // Milestone 9 — surface unfinished work so a paused diagnosis is never lost.
   const unfinishedSessions = sessionStore.list().filter(isUnfinished);
+  // Data lives only in this phone's storage — nudge before that becomes a
+  // silent loss, but only once there's actually something worth losing.
+  const backupOverdue = isBackupOverdue(caseStore.list().length);
 
   const actions = [
     {
@@ -91,6 +95,24 @@ export default function Home() {
               <span className="block truncate text-sm text-muted">
                 មានសម័យវិនិច្ឆ័យ {unfinishedSessions.length} មិនទាន់រួច —{" "}
                 {unfinishedSessions[0].vehicle.brand} {unfinishedSessions[0].vehicle.model}
+              </span>
+            </span>
+            <span className="shrink-0 text-muted">›</span>
+          </button>
+        )}
+
+        {backupOverdue && (
+          <button
+            onClick={() => navigate("/settings")}
+            className="card mb-3 flex w-full items-center gap-3 border-accent/40 bg-accent/8 p-4 text-left transition-active active:scale-[0.99]"
+          >
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent/15 text-accent">
+              <Icon.Book size={22} />
+            </span>
+            <span className="min-w-0 flex-1">
+              <span className="block font-bold">សូម Export ទុកជាមុន</span>
+              <span className="block truncate text-sm text-muted">
+                ទិន្នន័យករណីនៅតែក្នុងទូរស័ព្ទនេះតែមួយ — Export ការពារបាត់បង់
               </span>
             </span>
             <span className="shrink-0 text-muted">›</span>

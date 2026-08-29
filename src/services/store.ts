@@ -147,20 +147,62 @@ export const caseStore = {
   similar(to: RepairCase, limit = 3): RepairCase[] {
     return this.list()
       .filter((c) => c.id !== to.id)
-      .map((c) => {
-        let score = 0;
-        if (c.system === to.system) score += 2;
-        if (c.vehicle.brand === to.vehicle.brand) score += 1;
-        if (c.vehicle.model === to.vehicle.model) score += 1;
-        if (c.dtcCodes.some((d) => to.dtcCodes.includes(d))) score += 3;
-        return { c, score };
-      })
+      .map((c) => ({
+        c,
+        score: scoreCaseMatch(c, {
+          system: to.system,
+          brand: to.vehicle.brand,
+          model: to.vehicle.model,
+          dtcCodes: to.dtcCodes,
+        }),
+      }))
+      .filter((x) => x.score > 0)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, limit)
+      .map((x) => x.c);
+  },
+
+  /**
+   * Same matching, but against an in-progress diagnosis rather than a saved
+   * case — surfaces past cases as soon as vehicle/system/DTCs are known,
+   * instead of only after the session is itself saved as a case. Read-only
+   * reference: it never feeds the Rule Engine's ranking or the AI's
+   * confidence, only the mechanic's own judgment.
+   */
+  matchingForSession(session: DiagnosticSession, limit = 3): RepairCase[] {
+    return this.list()
+      .map((c) => ({
+        c,
+        score: scoreCaseMatch(c, {
+          system: session.system,
+          brand: session.vehicle.brand,
+          model: session.vehicle.model,
+          dtcCodes: session.dtcs,
+        }),
+      }))
       .filter((x) => x.score > 0)
       .sort((a, b) => b.score - a.score)
       .slice(0, limit)
       .map((x) => x.c);
   },
 };
+
+function scoreCaseMatch(
+  c: RepairCase,
+  criteria: {
+    system: RepairCase["system"] | null;
+    brand: string;
+    model: string;
+    dtcCodes: string[];
+  },
+): number {
+  let score = 0;
+  if (criteria.system && c.system === criteria.system) score += 2;
+  if (c.vehicle.brand === criteria.brand) score += 1;
+  if (c.vehicle.model === criteria.model) score += 1;
+  if (c.dtcCodes.some((d) => criteria.dtcCodes.includes(d))) score += 3;
+  return score;
+}
 
 /* ---------------------------- Expert threads ---------------------------- */
 

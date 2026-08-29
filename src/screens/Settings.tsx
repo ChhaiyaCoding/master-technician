@@ -5,7 +5,9 @@ import { Icon } from "@/components/Icon";
 import { t } from "@/i18n/strings";
 import { useTheme } from "@/context/ThemeContext";
 import { caseStore, sessionStore } from "@/services/store";
-import { downloadBackup, parseBackup, restoreBackup } from "@/services/backup";
+import { downloadBackup, getLastBackupAt, parseBackup, restoreBackup } from "@/services/backup";
+import { getApiKey, setApiKey } from "@/services/aiExplain";
+import { relTime } from "@/utils/format";
 import type { ThemeMode } from "@/types";
 
 export default function Settings() {
@@ -13,6 +15,27 @@ export default function Settings() {
   const fileRef = useRef<HTMLInputElement>(null);
   const [note, setNote] = useState<{ text: string; bad?: boolean } | null>(null);
   const [demoCount, setDemoCount] = useState(() => caseStore.countDemoCases());
+  const [lastBackupAt, setLastBackupAt] = useState(() => getLastBackupAt());
+  const [apiKeyInput, setApiKeyInput] = useState(() => getApiKey());
+  const [apiKeySaved, setApiKeySaved] = useState(() => getApiKey().length > 0);
+
+  function onExport() {
+    downloadBackup();
+    setLastBackupAt(getLastBackupAt());
+  }
+
+  function onSaveApiKey() {
+    setApiKey(apiKeyInput);
+    setApiKeySaved(apiKeyInput.trim().length > 0);
+    setNote({ text: apiKeyInput.trim() ? "AI key រក្សាទុករួច" : "AI key ត្រូវបានលុប" });
+  }
+
+  function onClearApiKey() {
+    setApiKey("");
+    setApiKeyInput("");
+    setApiKeySaved(false);
+    setNote({ text: "AI key ត្រូវបានលុប" });
+  }
 
   async function onRestoreFile(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
@@ -94,10 +117,16 @@ export default function Settings() {
         <p className="mb-2 text-xs text-muted">
           ទិន្នន័យរក្សាទុកក្នុងទូរស័ព្ទតែប៉ុណ្ណោះ — សូម Export ទុកជាប្រចាំ។
         </p>
+        <p className="mb-2 text-xs text-muted">
+          Export ចុងក្រោយ៖{" "}
+          <span className="font-semibold">
+            {lastBackupAt ? relTime(lastBackupAt) : "មិនទាន់ធ្លាប់ Export"}
+          </span>
+        </p>
 
         <div className="mb-3 grid grid-cols-2 gap-2">
           <button
-            onClick={downloadBackup}
+            onClick={onExport}
             className="btn min-h-[52px] rounded-xl border border-border bg-surface text-sm font-semibold active:bg-surface-2"
           >
             <Icon.Book size={18} /> Export
@@ -150,6 +179,40 @@ export default function Settings() {
           <Icon.Trash size={20} />
           <span className="font-semibold">{t.settings.clearCases}</span>
         </Card>
+
+        {/* AI (optional, opt-in) */}
+        <SectionTitle>AI (ស្រេចចិត្ត)</SectionTitle>
+        <p className="mb-2 text-xs text-muted">
+          App នេះដំណើរការ offline 100% ដោយគ្មាន AI ក៏បាន។ ដាក់ Anthropic API key
+          ផ្ទាល់ខ្លួន ដើម្បីឲ្យ "ករណីស្រដៀងគ្នា" បង្ហាញហេតុផលពន្យល់ដោយ AI ជាបន្ថែម។
+          Key រក្សាទុកតែក្នុងទូរស័ព្ទនេះ (មិនចេញទៅណាក្រៅ Anthropic ទេ) ហើយថ្លៃសេវាកាត់
+          ចេញពី account Anthropic ផ្ទាល់ខ្លួនអ្នក។
+        </p>
+        <div className="mb-6">
+          <div className="flex gap-2">
+            <input
+              type="password"
+              className="input flex-1"
+              placeholder="sk-ant-..."
+              value={apiKeyInput}
+              onChange={(e) => setApiKeyInput(e.target.value)}
+            />
+            <button
+              onClick={onSaveApiKey}
+              className="btn min-h-[48px] rounded-xl border border-border bg-surface px-4 text-sm font-semibold active:bg-surface-2"
+            >
+              រក្សាទុក
+            </button>
+          </div>
+          {apiKeySaved && (
+            <button
+              onClick={onClearApiKey}
+              className="mt-2 text-xs font-semibold text-danger"
+            >
+              លុប key
+            </button>
+          )}
+        </div>
 
         {/* About */}
         <SectionTitle>{t.settings.about}</SectionTitle>

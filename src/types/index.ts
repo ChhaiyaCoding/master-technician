@@ -10,17 +10,26 @@
 /** Vehicle systems a technician can diagnose against. */
 export type SystemId =
   | "engine"
+  | "fuel"
+  | "ignition"
+  | "starting"
+  | "charging"
   | "abs"
   | "airbag"
   | "hybrid"
   | "ev"
   | "transmission"
+  | "cooling"
+  | "airIntake"
+  | "exhaust"
   | "ac"
   | "electrical"
+  | "canBus"
   | "suspension"
   | "brake"
   | "steering"
-  | "body";
+  | "body"
+  | "adas";
 
 export interface VehicleSystem {
   id: SystemId;

@@ -134,6 +134,52 @@ const SAFETY_CRITICAL_CONTENT: Partial<
     requiredTool: "None beyond standard hand tools; never probe squib circuits with a meter.",
     warning: "SRS/Airbag system — incorrect handling can cause unintended deployment.",
   },
+  ignition: {
+    instruction:
+      "កុំប៉ះខ្សែ Spark plug ឬ Ignition coil ខណៈម៉ាស៊ីនកំពុងដើរ ឬ crank — voltage អាចលើសពី " +
+      "20,000–40,000V។ ផ្តាច់ខ្សែ Battery មុននឹងផ្លាស់ប្ដូរ ឬតេស្ត Coil ដោយផ្ទាល់។",
+    requiredTool: "ស្រោមដៃ insulated, Ignition tester (inductive — មិនប៉ះខ្សែផ្ទាល់)",
+    warning: "High-voltage Ignition — ប៉ះខ្សែផ្ទាល់ខណៈម៉ាស៊ីនដើរ អាចធ្វើឲ្យខ្សោះឆក់យ៉ាងខ្លាំង។",
+  },
+  starting: {
+    instruction:
+      "ផ្តាច់ Battery negative មុននឹងផ្លាស់ប្ដូរ Starter ឬ Solenoid — Starting circuit " +
+      "អាចផ្ទុក current រាប់រយ Amp។ កុំធ្វើឲ្យ short រវាង terminal។",
+    requiredTool: "ស្រោមដៃការពារ, wrench ដងកាប់ insulated",
+    warning: "Short-circuit លើ Starting circuit អាចបណ្ដាលឲ្យ spark ខ្លាំង ឬ ដុត wire។",
+  },
+  charging: {
+    instruction:
+      "ផ្ដាច់ Battery negative មុននឹងធ្វើការនៅ Alternator។ Battery បញ្ចេញឧស្ម័ន Hydrogen " +
+      "ដែលអាចផ្ទុះបាន — កុំបង្កើត spark ឬ ជក់បារីក្បែរ Battery។",
+    requiredTool: "វែនតាការពារ, ស្រោមដៃការពារអាស៊ីត",
+    warning: "Battery acid និង ឧស្ម័នផ្ទុះបាន — មិនប្រុងប្រយ័ត្នអាចបណ្ដាលរបួស ឬ ការផ្ទុះ។",
+  },
+  cooling: {
+    instruction:
+      "កុំបើក Radiator cap ខណៈម៉ាស៊ីនក្ដៅ — សម្ពាធនិងចំហាយក្ដៅអាចខាំស្បែកយ៉ាងធ្ងន់ធ្ងរ។ " +
+      "រង់ចាំម៉ាស៊ីនត្រជាក់ សិន ឬ ស្រាយសម្ពាធបន្តិចម្ដងៗ។",
+    requiredTool: "ស្រោមដៃការពារកម្ដៅ, ក្រណាត់ក្រាស់ការពារដៃ",
+    warning: "ចំហាយ Coolant ក្ដៅ និង សម្ពាធខ្ពស់ — បើកមិនត្រូវវិធីអាចខាំស្បែកធ្ងន់ធ្ងរ។",
+  },
+  exhaust: {
+    instruction:
+      "ធ្វើការនៅ Exhaust តែក្នុងកន្លែងខ្យល់ចេញចូលល្អប៉ុណ្ណោះ (CO ពុលស្លាប់បាន)។ រង់ចាំ " +
+      "Muffler/Catalytic converter ត្រជាក់ជាមុនសិន — កំដៅអាចលើសពី 400°C។",
+    requiredTool: "ស្រោមដៃការពារកម្ដៅ, gas detector (បើមាន)",
+    warning:
+      "Carbon Monoxide (CO) ពុលគ្មានក្លិន — កុំដើរម៉ាស៊ីនក្នុងបន្ទប់បិទជិត។ Catalytic " +
+      "converter ក្ដៅខ្លាំង អាចដុតស្បែក។",
+  },
+  fuel: {
+    instruction:
+      "ផ្ដាច់ Battery negative ហើយស្រាយសម្ពាធ Fuel rail មុននឹងផ្ដាច់ខ្សែប្រេង — ប្រើក្រណាត់ស្រូប " +
+      "ប្រេងលើសដែលចេញមក។ កុំធ្វើការជិត spark ឬ ភ្លើង។",
+    requiredTool: "ស្រោមដៃការពារប្រេង, ក្រណាត់ស្រូបប្រេង, Fuel pressure gauge",
+    warning:
+      "ប្រេងឥន្ធនៈឆាបឆេះខ្លាំង — Fuel rail នៅតែមានសម្ពាធសូម្បីម៉ាស៊ីនស្លាប់ក៏ដោយ។ កុំបង្កើត " +
+      "spark ក្បែរកន្លែងធ្វើការ។",
+  },
 };
 
 function isSafetyAcknowledged(session: DiagnosticSession): boolean {

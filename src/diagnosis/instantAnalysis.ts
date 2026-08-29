@@ -168,17 +168,26 @@ function buildTools(system: SystemId | null, matchedDtc: DtcCode[]): string[] {
   const base = new Set<string>(["OBD-II scan tool", "Digital multimeter (DMM)"]);
   const bySystem: Partial<Record<SystemId, string[]>> = {
     engine: ["Compression tester", "Smoke machine", "Fuel pressure gauge"],
+    fuel: ["Fuel pressure gauge", "Fuel injector tester"],
+    ignition: ["Ignition coil tester", "Spark tester"],
+    starting: ["Carbon pile load tester", "Clamp meter (inrush amps)"],
+    charging: ["Carbon pile load tester", "Clamp meter"],
     transmission: ["ATF level tool", "Pressure gauge"],
+    cooling: ["Cooling system pressure tester", "Infrared thermometer"],
+    airIntake: ["Smoke machine"],
+    exhaust: ["Backpressure gauge", "Gas analyzer (CO/HC)"],
     abs: ["Scope សម្រាប់ wheel speed sensor"],
     brake: ["Brake bleeder", "Feeler/dial gauge"],
     ac: ["Manifold gauge set", "Leak detector"],
     electrical: ["Test light", "Power probe"],
+    canBus: ["CAN bus diagnostic scanner/oscilloscope"],
     hybrid: ["Insulated gloves class 0", "Insulation resistance tester (megohm)"],
     ev: ["Insulated gloves class 0", "Megohm tester"],
     airbag: ["SRS-capable scan tool"],
     suspension: ["Alignment gauge"],
     steering: ["Alignment gauge"],
     body: ["Wiring diagram"],
+    adas: ["ADAS calibration target/rig"],
   };
   if (system && bySystem[system]) bySystem[system]!.forEach((x) => base.add(x));
   if (matchedDtc.some((d) => d.severity === "critical")) base.add("Insulated gloves class 0");
@@ -197,6 +206,21 @@ function buildSafetyNotes(system: SystemId | null, matchedDtc: DtcCode[]): strin
   const touchesAirbag = system === "airbag" || matchedDtc.some((d) => d.systems.includes("airbag"));
   if (touchesAirbag) {
     notes.push("⚠️ SRS/Airbag — ដក battery រង់ចាំ discharge ≥ 3 នាទី។ កុំវាស់ squib ដោយ DMM ផ្ទាល់។");
+  }
+  if (system === "ignition") {
+    notes.push("⚠️ Ignition — voltage អាចលើសពី 20,000–40,000V ខណៈម៉ាស៊ីនដើរ/crank។ កុំប៉ះខ្សែផ្ទាល់។");
+  }
+  if (system === "starting" || system === "charging") {
+    notes.push("⚠️ ផ្តាច់ Battery negative មុនធ្វើការ — Starting/Charging circuit ផ្ទុក current ខ្ពស់ ហើយ Battery បញ្ចេញឧស្ម័នផ្ទុះបាន។");
+  }
+  if (system === "cooling") {
+    notes.push("⚠️ កុំបើក Radiator cap ខណៈម៉ាស៊ីនក្ដៅ — ចំហាយនិងសម្ពាធអាចខាំស្បែកធ្ងន់ធ្ងរ។");
+  }
+  if (system === "exhaust") {
+    notes.push("⚠️ Carbon Monoxide (CO) ពុលគ្មានក្លិន — ធ្វើការក្នុងកន្លែងខ្យល់ចេញចូលល្អប៉ុណ្ណោះ។ Catalytic converter ក្ដៅខ្លាំង។");
+  }
+  if (system === "fuel") {
+    notes.push("⚠️ Fuel rail នៅតែមានសម្ពាធសូម្បីម៉ាស៊ីនស្លាប់ — ស្រាយសម្ពាធជាមុន ហើយកុំបង្កើត spark ក្បែរប្រេង។");
   }
   return notes;
 }

@@ -1,9 +1,11 @@
+import { useEffect, useState } from "react";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { Page, TopBar } from "@/components/Layout";
 import { Card, SectionTitle } from "@/components/ui";
 import { Icon } from "@/components/Icon";
 import { t } from "@/i18n/strings";
 import { caseStore } from "@/services/store";
+import { explainSimilarity, hasApiKey } from "@/services/aiExplain";
 import { SYSTEM_BY_ID } from "@/data/systems";
 import { formatDate, formatKm } from "@/utils/format";
 
@@ -11,10 +13,37 @@ export default function CaseDetail() {
   const { id = "" } = useParams();
   const navigate = useNavigate();
   const c = caseStore.get(id);
+  const similar = c ? caseStore.similar(c) : [];
+
+  // Real AI, opt-in — only runs when the mechanic has configured their own
+  // Anthropic key in Settings. Failure (no key, offline, API error) is
+  // silent: the rule-based row above still shows either way.
+  const [aiText, setAiText] = useState<Record<string, string>>({});
+  const [aiLoading, setAiLoading] = useState<Record<string, boolean>>({});
+  useEffect(() => {
+    if (!c || !hasApiKey()) return;
+    let cancelled = false;
+    for (const s of similar) {
+      setAiLoading((prev) => ({ ...prev, [s.id]: true }));
+      explainSimilarity(c, s)
+        .then((text) => {
+          if (!cancelled) setAiText((prev) => ({ ...prev, [s.id]: text }));
+        })
+        .catch(() => {
+          // Fall back to the rule-based line — no error shown to the mechanic.
+        })
+        .finally(() => {
+          if (!cancelled) setAiLoading((prev) => ({ ...prev, [s.id]: false }));
+        });
+    }
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [c?.id]);
 
   if (!c) return <Navigate to="/cases" replace />;
   const sys = SYSTEM_BY_ID[c.system];
-  const similar = caseStore.similar(c);
 
   function remove() {
     if (confirm(t.cases.confirmDelete)) {
@@ -146,6 +175,12 @@ export default function CaseDetail() {
                       <p className="truncate text-sm text-muted">
                         {s.dtcCodes.join(", ") || ssys?.en} · {s.rootCause}
                       </p>
+                      {aiLoading[s.id] && (
+                        <p className="mt-1 text-xs text-muted">🤖 កំពុងវិភាគ...</p>
+                      )}
+                      {aiText[s.id] && (
+                        <p className="mt-1 text-xs italic text-accent">🤖 {aiText[s.id]}</p>
+                      )}
                     </div>
                   </Card>
                 );
