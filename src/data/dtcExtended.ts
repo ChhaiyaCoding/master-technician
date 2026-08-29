@@ -777,8 +777,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនមាន Variable Valve Lift",
     descriptionKm: "ដូច P0075 ប៉ុន្តែខាង Exhaust Valve។",
     possibleCauses: ["Solenoid ស្ទះ/ខូច", "Connector រលុង"],
-    inspectionFlow: ["វាស់ Resistance Solenoid"],
-    commonMistakes: ["ប្ដូរគ្រឿងធំមុនពិនិត្យ Solenoid"],
+    inspectionFlow: [
+      "វាស់ Resistance របស់ Exhaust Valve Control Solenoid (Bank 1) ធៀបនឹងតម្លៃស្តង់ដារ",
+      "ដក Connector របស់ Exhaust Valve Control Solenoid (Bank 1) ចេញ រួចអានកូដឡើងវិញ — កូដដែលប្ដូរប្រភេទបញ្ជាក់ថា Exhaust Valve Control Solenoid (Bank 1) ខូច ជាជាង Wiring",
+      "ពិនិត្យ Power Feed មកដល់ Exhaust Valve Control Solenoid (Bank 1) — Fuse និង Relay",
+      "សាកបញ្ជា Exhaust Valve Control Solenoid (Bank 1) ដោយ Scan Tool ហើយស្ដាប់សំឡេង ឬស្ទាបការរំញ័រ",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរគ្រឿងធំមុនពិនិត្យ Solenoid",
+      "ប្ដូរ Exhaust Valve Control Solenoid (Bank 1) ដោយមិនពិនិត្យ Power Feed និង Wiring ជាមុន",
+    ],
   },
   {
     code: "P0079",
@@ -831,8 +840,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V ដែលមាន Variable Valve Lift",
     descriptionKm: "ដូច P0075 ប៉ុន្តែនៅ Bank 2។",
     possibleCauses: ["Solenoid ស្ទះ/ខូច", "Connector រលុង"],
-    inspectionFlow: ["វាស់ Resistance Solenoid Bank 2"],
-    commonMistakes: ["ប្ដូរគ្រឿងធំមុនពិនិត្យ Solenoid"],
+    inspectionFlow: [
+      "វាស់ Resistance របស់ Intake Valve Control Solenoid (Bank 2) ធៀបនឹងតម្លៃស្តង់ដារ",
+      "ដក Connector របស់ Intake Valve Control Solenoid (Bank 2) ចេញ រួចអានកូដឡើងវិញ — កូដដែលប្ដូរប្រភេទបញ្ជាក់ថា Intake Valve Control Solenoid (Bank 2) ខូច ជាជាង Wiring",
+      "ពិនិត្យ Power Feed មកដល់ Intake Valve Control Solenoid (Bank 2) — Fuse និង Relay",
+      "សាកបញ្ជា Intake Valve Control Solenoid (Bank 2) ដោយ Scan Tool ហើយស្ដាប់សំឡេង ឬស្ទាបការរំញ័រ",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរគ្រឿងធំមុនពិនិត្យ Solenoid",
+      "ប្ដូរ Intake Valve Control Solenoid (Bank 2) ដោយមិនពិនិត្យ Power Feed និង Wiring ជាមុន",
+    ],
   },
   {
     code: "P0082",
@@ -885,8 +903,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V",
     descriptionKm: "ដូច P0078 ប៉ុន្តែនៅ Bank 2។",
     possibleCauses: ["Solenoid ស្ទះ/ខូច", "Connector រលុង"],
-    inspectionFlow: ["វាស់ Resistance Solenoid"],
-    commonMistakes: ["ប្ដូរគ្រឿងធំមុនពិនិត្យ Solenoid"],
+    inspectionFlow: [
+      "វាស់ Resistance របស់ Exhaust Valve Control Solenoid (Bank 2) ធៀបនឹងតម្លៃស្តង់ដារ",
+      "ដក Connector របស់ Exhaust Valve Control Solenoid (Bank 2) ចេញ រួចអានកូដឡើងវិញ — កូដដែលប្ដូរប្រភេទបញ្ជាក់ថា Exhaust Valve Control Solenoid (Bank 2) ខូច ជាជាង Wiring",
+      "ពិនិត្យ Power Feed មកដល់ Exhaust Valve Control Solenoid (Bank 2) — Fuse និង Relay",
+      "សាកបញ្ជា Exhaust Valve Control Solenoid (Bank 2) ដោយ Scan Tool ហើយស្ដាប់សំឡេង ឬស្ទាបការរំញ័រ",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរគ្រឿងធំមុនពិនិត្យ Solenoid",
+      "ប្ដូរ Exhaust Valve Control Solenoid (Bank 2) ដោយមិនពិនិត្យ Power Feed និង Wiring ជាមុន",
+    ],
   },
   {
     code: "P0085",
@@ -1789,8 +1816,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនធំ ៦-៨ ស៊ីឡាំង",
     descriptionKm: "ដូច P0201 ប៉ុន្តែនៅស៊ីឡាំង ៥។",
     possibleCauses: ["Connector Injector ៥ រលុង", "Injector ៥ ដាច់ Coil"],
-    inspectionFlow: ["វាស់ Resistance Injector ៥"],
-    commonMistakes: ["ច្រឡំប្ដូរ Ignition Coil ជំនួស Injector"],
+    inspectionFlow: [
+      "វាស់ Resistance Injector ស៊ីឡាំង ៥ ធៀបនឹង Injector ផ្សេង — តម្លៃត្រូវជិតគ្នា",
+      "ដក Connector រួចប្រើ Noid Light ឬ Test Light — មើលថា ECU បញ្ជូន Pulse មកឬអត់",
+      "វាស់ Power Feed មកដល់ Injector (ជាទូទៅ 12V ពេលបើកកូនសោ)",
+      "វាស់ Continuity ខ្សែ Driver ពី ECU ទៅ Connector",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ច្រឡំប្ដូរ Ignition Coil ជំនួស Injector",
+      "ប្ដូរ Injector ស៊ីឡាំង ៥ ដោយមិនបញ្ជាក់ថា ECU បញ្ជូន Pulse មកឬអត់ជាមុន",
+    ],
   },
   {
     code: "P0206",
@@ -1801,8 +1837,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនធំ ៦-៨ ស៊ីឡាំង",
     descriptionKm: "ដូច P0201 ប៉ុន្តែនៅស៊ីឡាំង ៦។",
     possibleCauses: ["Connector Injector ៦ រលុង", "Injector ៦ ដាច់ Coil"],
-    inspectionFlow: ["វាស់ Resistance Injector ៦"],
-    commonMistakes: ["ច្រឡំប្ដូរ Ignition Coil ជំនួស Injector"],
+    inspectionFlow: [
+      "វាស់ Resistance Injector ស៊ីឡាំង ៦ ធៀបនឹង Injector ផ្សេង — តម្លៃត្រូវជិតគ្នា",
+      "ដក Connector រួចប្រើ Noid Light ឬ Test Light — មើលថា ECU បញ្ជូន Pulse មកឬអត់",
+      "វាស់ Power Feed មកដល់ Injector (ជាទូទៅ 12V ពេលបើកកូនសោ)",
+      "វាស់ Continuity ខ្សែ Driver ពី ECU ទៅ Connector",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ច្រឡំប្ដូរ Ignition Coil ជំនួស Injector",
+      "ប្ដូរ Injector ស៊ីឡាំង ៦ ដោយមិនបញ្ជាក់ថា ECU បញ្ជូន Pulse មកឬអត់ជាមុន",
+    ],
   },
   {
     code: "P0207",
@@ -1813,8 +1858,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនធំ ៨ ស៊ីឡាំង",
     descriptionKm: "ដូច P0201 ប៉ុន្តែនៅស៊ីឡាំង ៧។",
     possibleCauses: ["Connector Injector ៧ រលុង", "Injector ៧ ដាច់ Coil"],
-    inspectionFlow: ["វាស់ Resistance Injector ៧"],
-    commonMistakes: ["ច្រឡំប្ដូរ Ignition Coil ជំនួស Injector"],
+    inspectionFlow: [
+      "វាស់ Resistance Injector ស៊ីឡាំង ៧ ធៀបនឹង Injector ផ្សេង — តម្លៃត្រូវជិតគ្នា",
+      "ដក Connector រួចប្រើ Noid Light ឬ Test Light — មើលថា ECU បញ្ជូន Pulse មកឬអត់",
+      "វាស់ Power Feed មកដល់ Injector (ជាទូទៅ 12V ពេលបើកកូនសោ)",
+      "វាស់ Continuity ខ្សែ Driver ពី ECU ទៅ Connector",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ច្រឡំប្ដូរ Ignition Coil ជំនួស Injector",
+      "ប្ដូរ Injector ស៊ីឡាំង ៧ ដោយមិនបញ្ជាក់ថា ECU បញ្ជូន Pulse មកឬអត់ជាមុន",
+    ],
   },
   {
     code: "P0208",
@@ -1825,8 +1879,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនធំ ៨ ស៊ីឡាំង",
     descriptionKm: "ដូច P0201 ប៉ុន្តែនៅស៊ីឡាំង ៨។",
     possibleCauses: ["Connector Injector ៨ រលុង", "Injector ៨ ដាច់ Coil"],
-    inspectionFlow: ["វាស់ Resistance Injector ៨"],
-    commonMistakes: ["ច្រឡំប្ដូរ Ignition Coil ជំនួស Injector"],
+    inspectionFlow: [
+      "វាស់ Resistance Injector ស៊ីឡាំង ៨ ធៀបនឹង Injector ផ្សេង — តម្លៃត្រូវជិតគ្នា",
+      "ដក Connector រួចប្រើ Noid Light ឬ Test Light — មើលថា ECU បញ្ជូន Pulse មកឬអត់",
+      "វាស់ Power Feed មកដល់ Injector (ជាទូទៅ 12V ពេលបើកកូនសោ)",
+      "វាស់ Continuity ខ្សែ Driver ពី ECU ទៅ Connector",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ច្រឡំប្ដូរ Ignition Coil ជំនួស Injector",
+      "ប្ដូរ Injector ស៊ីឡាំង ៨ ដោយមិនបញ្ជាក់ថា ECU បញ្ជូន Pulse មកឬអត់ជាមុន",
+    ],
   },
   {
     code: "P0213",
@@ -2183,8 +2246,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនមាន Turbo",
     descriptionKm: "Wastegate Solenoid មិនគ្រប់គ្រង Boost បានត្រឹមត្រូវ។",
     possibleCauses: ["Solenoid ស្ទះ/ខូច", "Connector រលុង"],
-    inspectionFlow: ["វាស់ Resistance Solenoid"],
-    commonMistakes: ["ប្ដូរ Turbo ទាំងមូលដោយមិនពិនិត្យ Solenoid ជាមុន"],
+    inspectionFlow: [
+      "វាស់ Resistance របស់ Turbocharger Wastegate Solenoid 'A' ធៀបនឹងតម្លៃស្តង់ដារ",
+      "ដក Connector របស់ Turbocharger Wastegate Solenoid 'A' ចេញ រួចអានកូដឡើងវិញ — កូដដែលប្ដូរប្រភេទបញ្ជាក់ថា Turbocharger Wastegate Solenoid 'A' ខូច ជាជាង Wiring",
+      "ពិនិត្យ Power Feed មកដល់ Turbocharger Wastegate Solenoid 'A' — Fuse និង Relay",
+      "សាកបញ្ជា Turbocharger Wastegate Solenoid 'A' ដោយ Scan Tool ហើយស្ដាប់សំឡេង ឬស្ទាបការរំញ័រ",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Turbo ទាំងមូលដោយមិនពិនិត្យ Solenoid ជាមុន",
+      "ប្ដូរ Turbocharger Wastegate Solenoid 'A' ដោយមិនពិនិត្យ Power Feed និង Wiring ជាមុន",
+    ],
   },
   {
     code: "P0244",
@@ -2574,8 +2646,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនធំ ៨ ស៊ីឡាំង",
     descriptionKm: "ការបាញ់ភ្លើងខុសចង្វាក់ជាក់លាក់លើស៊ីឡាំងទី ៧។",
     possibleCauses: ["Spark plug/Coil ស៊ីឡាំង ៧ ខូច", "Compression ទាប"],
-    inspectionFlow: ["Swap coil/plug ស៊ីឡាំង ៧"],
-    commonMistakes: ["មិន Swap Test មុនប្ដូរគ្រឿង"],
+    inspectionFlow: [
+      "អាន Misfire Counter រាល់ស៊ីឡាំងក្នុង Live Data — បញ្ជាក់ថាស៊ីឡាំង ៧ ពិតជាលើសគេ មុននឹងប៉ះអ្វី",
+      "Swap Ignition Coil ស៊ីឡាំង ៧ ទៅស៊ីឡាំងជិតខាង រួចលុបកូដ និងបើកបរឡើងវិញ — បើ misfire ផ្លាស់ទីតាមទៅស៊ីឡាំងនោះ នោះ Coil ខូច",
+      "Swap Spark Plug តាមរបៀបដដែល",
+      "ពិនិត្យ Injector ស៊ីឡាំង ៧ — វាស់ Resistance និងសាក Activation",
+      "វាស់ Compression និង Leak-down ស៊ីឡាំង ៧ — បើ Coil, Plug និង Injector ល្អទាំងអស់ នោះជាបញ្ហាមេកានិក",
+    ],
+    commonMistakes: [
+      "ប្ដូរគ្រឿងដោយមិនធ្វើ Swap Test ជាមុន — Swap ប្រាប់ចម្លើយដោយឥតចំណាយ",
+      "បន្តបើកបរដោយទុក misfire ចោល — ឥន្ធនៈមិនឆេះហូរចូល Catalytic ធ្វើឲ្យវារលាយ ហើយការជួសជុលថ្លៃជាងច្រើនដង",
+    ],
   },
   {
     code: "P0308",
@@ -2586,8 +2667,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនធំ ៨ ស៊ីឡាំង",
     descriptionKm: "ការបាញ់ភ្លើងខុសចង្វាក់ជាក់លាក់លើស៊ីឡាំងទី ៨។",
     possibleCauses: ["Spark plug/Coil ស៊ីឡាំង ៨ ខូច", "Compression ទាប"],
-    inspectionFlow: ["Swap coil/plug ស៊ីឡាំង ៨"],
-    commonMistakes: ["មិន Swap Test មុនប្ដូរគ្រឿង"],
+    inspectionFlow: [
+      "អាន Misfire Counter រាល់ស៊ីឡាំងក្នុង Live Data — បញ្ជាក់ថាស៊ីឡាំង ៨ ពិតជាលើសគេ មុននឹងប៉ះអ្វី",
+      "Swap Ignition Coil ស៊ីឡាំង ៨ ទៅស៊ីឡាំងជិតខាង រួចលុបកូដ និងបើកបរឡើងវិញ — បើ misfire ផ្លាស់ទីតាមទៅស៊ីឡាំងនោះ នោះ Coil ខូច",
+      "Swap Spark Plug តាមរបៀបដដែល",
+      "ពិនិត្យ Injector ស៊ីឡាំង ៨ — វាស់ Resistance និងសាក Activation",
+      "វាស់ Compression និង Leak-down ស៊ីឡាំង ៨ — បើ Coil, Plug និង Injector ល្អទាំងអស់ នោះជាបញ្ហាមេកានិក",
+    ],
+    commonMistakes: [
+      "ប្ដូរគ្រឿងដោយមិនធ្វើ Swap Test ជាមុន — Swap ប្រាប់ចម្លើយដោយឥតចំណាយ",
+      "បន្តបើកបរដោយទុក misfire ចោល — ឥន្ធនៈមិនឆេះហូរចូល Catalytic ធ្វើឲ្យវារលាយ ហើយការជួសជុលថ្លៃជាងច្រើនដង",
+    ],
   },
   {
     code: "P0309",
@@ -2598,8 +2688,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "កម្រជួប — លើម៉ាស៊ីនធំពិសេស ១០-១២ ស៊ីឡាំង",
     descriptionKm: "ការបាញ់ភ្លើងខុសចង្វាក់លើស៊ីឡាំងទី ៩។",
     possibleCauses: ["Spark plug/Coil ស៊ីឡាំង ៩ ខូច"],
-    inspectionFlow: ["Swap coil/plug ស៊ីឡាំង ៩"],
-    commonMistakes: ["មិន Swap Test មុនប្ដូរគ្រឿង"],
+    inspectionFlow: [
+      "អាន Misfire Counter រាល់ស៊ីឡាំងក្នុង Live Data — បញ្ជាក់ថាស៊ីឡាំង ៩ ពិតជាលើសគេ មុននឹងប៉ះអ្វី",
+      "Swap Ignition Coil ស៊ីឡាំង ៩ ទៅស៊ីឡាំងជិតខាង រួចលុបកូដ និងបើកបរឡើងវិញ — បើ misfire ផ្លាស់ទីតាមទៅស៊ីឡាំងនោះ នោះ Coil ខូច",
+      "Swap Spark Plug តាមរបៀបដដែល",
+      "ពិនិត្យ Injector ស៊ីឡាំង ៩ — វាស់ Resistance និងសាក Activation",
+      "វាស់ Compression និង Leak-down ស៊ីឡាំង ៩ — បើ Coil, Plug និង Injector ល្អទាំងអស់ នោះជាបញ្ហាមេកានិក",
+    ],
+    commonMistakes: [
+      "ប្ដូរគ្រឿងដោយមិនធ្វើ Swap Test ជាមុន — Swap ប្រាប់ចម្លើយដោយឥតចំណាយ",
+      "បន្តបើកបរដោយទុក misfire ចោល — ឥន្ធនៈមិនឆេះហូរចូល Catalytic ធ្វើឲ្យវារលាយ ហើយការជួសជុលថ្លៃជាងច្រើនដង",
+    ],
   },
   {
     code: "P0310",
@@ -2610,8 +2709,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "កម្រជួប — លើម៉ាស៊ីនធំពិសេស",
     descriptionKm: "ការបាញ់ភ្លើងខុសចង្វាក់លើស៊ីឡាំងទី ១០។",
     possibleCauses: ["Spark plug/Coil ស៊ីឡាំង ១០ ខូច"],
-    inspectionFlow: ["Swap coil/plug ស៊ីឡាំង ១០"],
-    commonMistakes: ["មិន Swap Test មុនប្ដូរគ្រឿង"],
+    inspectionFlow: [
+      "អាន Misfire Counter រាល់ស៊ីឡាំងក្នុង Live Data — បញ្ជាក់ថាស៊ីឡាំង ១០ ពិតជាលើសគេ មុននឹងប៉ះអ្វី",
+      "Swap Ignition Coil ស៊ីឡាំង ១០ ទៅស៊ីឡាំងជិតខាង រួចលុបកូដ និងបើកបរឡើងវិញ — បើ misfire ផ្លាស់ទីតាមទៅស៊ីឡាំងនោះ នោះ Coil ខូច",
+      "Swap Spark Plug តាមរបៀបដដែល",
+      "ពិនិត្យ Injector ស៊ីឡាំង ១០ — វាស់ Resistance និងសាក Activation",
+      "វាស់ Compression និង Leak-down ស៊ីឡាំង ១០ — បើ Coil, Plug និង Injector ល្អទាំងអស់ នោះជាបញ្ហាមេកានិក",
+    ],
+    commonMistakes: [
+      "ប្ដូរគ្រឿងដោយមិនធ្វើ Swap Test ជាមុន — Swap ប្រាប់ចម្លើយដោយឥតចំណាយ",
+      "បន្តបើកបរដោយទុក misfire ចោល — ឥន្ធនៈមិនឆេះហូរចូល Catalytic ធ្វើឲ្យវារលាយ ហើយការជួសជុលថ្លៃជាងច្រើនដង",
+    ],
   },
   {
     code: "P0311",
@@ -2622,8 +2730,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "កម្រជួប — លើម៉ាស៊ីនធំពិសេស",
     descriptionKm: "ការបាញ់ភ្លើងខុសចង្វាក់លើស៊ីឡាំងទី ១១។",
     possibleCauses: ["Spark plug/Coil ស៊ីឡាំង ១១ ខូច"],
-    inspectionFlow: ["Swap coil/plug ស៊ីឡាំង ១១"],
-    commonMistakes: ["មិន Swap Test មុនប្ដូរគ្រឿង"],
+    inspectionFlow: [
+      "អាន Misfire Counter រាល់ស៊ីឡាំងក្នុង Live Data — បញ្ជាក់ថាស៊ីឡាំង ១១ ពិតជាលើសគេ មុននឹងប៉ះអ្វី",
+      "Swap Ignition Coil ស៊ីឡាំង ១១ ទៅស៊ីឡាំងជិតខាង រួចលុបកូដ និងបើកបរឡើងវិញ — បើ misfire ផ្លាស់ទីតាមទៅស៊ីឡាំងនោះ នោះ Coil ខូច",
+      "Swap Spark Plug តាមរបៀបដដែល",
+      "ពិនិត្យ Injector ស៊ីឡាំង ១១ — វាស់ Resistance និងសាក Activation",
+      "វាស់ Compression និង Leak-down ស៊ីឡាំង ១១ — បើ Coil, Plug និង Injector ល្អទាំងអស់ នោះជាបញ្ហាមេកានិក",
+    ],
+    commonMistakes: [
+      "ប្ដូរគ្រឿងដោយមិនធ្វើ Swap Test ជាមុន — Swap ប្រាប់ចម្លើយដោយឥតចំណាយ",
+      "បន្តបើកបរដោយទុក misfire ចោល — ឥន្ធនៈមិនឆេះហូរចូល Catalytic ធ្វើឲ្យវារលាយ ហើយការជួសជុលថ្លៃជាងច្រើនដង",
+    ],
   },
   {
     code: "P0312",
@@ -2634,8 +2751,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "កម្រជួប — លើម៉ាស៊ីនធំពិសេស",
     descriptionKm: "ការបាញ់ភ្លើងខុសចង្វាក់លើស៊ីឡាំងទី ១២។",
     possibleCauses: ["Spark plug/Coil ស៊ីឡាំង ១២ ខូច"],
-    inspectionFlow: ["Swap coil/plug ស៊ីឡាំង ១២"],
-    commonMistakes: ["មិន Swap Test មុនប្ដូរគ្រឿង"],
+    inspectionFlow: [
+      "អាន Misfire Counter រាល់ស៊ីឡាំងក្នុង Live Data — បញ្ជាក់ថាស៊ីឡាំង ១២ ពិតជាលើសគេ មុននឹងប៉ះអ្វី",
+      "Swap Ignition Coil ស៊ីឡាំង ១២ ទៅស៊ីឡាំងជិតខាង រួចលុបកូដ និងបើកបរឡើងវិញ — បើ misfire ផ្លាស់ទីតាមទៅស៊ីឡាំងនោះ នោះ Coil ខូច",
+      "Swap Spark Plug តាមរបៀបដដែល",
+      "ពិនិត្យ Injector ស៊ីឡាំង ១២ — វាស់ Resistance និងសាក Activation",
+      "វាស់ Compression និង Leak-down ស៊ីឡាំង ១២ — បើ Coil, Plug និង Injector ល្អទាំងអស់ នោះជាបញ្ហាមេកានិក",
+    ],
+    commonMistakes: [
+      "ប្ដូរគ្រឿងដោយមិនធ្វើ Swap Test ជាមុន — Swap ប្រាប់ចម្លើយដោយឥតចំណាយ",
+      "បន្តបើកបរដោយទុក misfire ចោល — ឥន្ធនៈមិនឆេះហូរចូល Catalytic ធ្វើឲ្យវារលាយ ហើយការជួសជុលថ្លៃជាងច្រើនដង",
+    ],
   },
   {
     code: "P0313",
@@ -2646,8 +2772,16 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "Misfire កើតឡើងព្រោះកម្រិត Fuel ក្នុងធុងទាបខ្លាំង — មិនមែនបញ្ហាមេកានិច។",
     possibleCauses: ["ប្រេងសាំង/ម៉ាស៊ូតក្នុងធុងជិតអស់"],
-    inspectionFlow: ["ពិនិត្យកម្រិត Fuel ក្នុងធុង"],
-    commonMistakes: ["ជួសជុលដូចជា Misfire ធម្មតា ដោយមិនពិនិត្យកម្រិត Fuel ជាមុន"],
+    inspectionFlow: [
+      "ពិនិត្យកម្រិតឥន្ធនៈក្នុងធុងជាមុនសិន — កូដនេះកើតឡើងពេលឥន្ធនៈតិច ហើយអាចមិនមែនជាកំហុសពិតទេ",
+      "បំពេញឥន្ធនៈឲ្យគ្រប់ លុបកូដ រួចបើកបរសាកល្បង — បើកូដមិនត្រឡប់មកវិញ នោះជារឿងចប់",
+      "បើកូដត្រឡប់មកវិញទោះឥន្ធនៈពេញ — ចាត់ទុកជា misfire ធម្មតា ហើយអាន Misfire Counter រាល់ស៊ីឡាំង",
+      "ពិនិត្យ Fuel Pump និង Fuel Filter — សម្ពាធធ្លាក់ពេលឥន្ធនៈតិចជាសញ្ញានៃ Pump ខ្សោយ ឬ Strainer ស្ទះ",
+    ],
+    commonMistakes: [
+      "ចាប់ផ្ដើមប្ដូរ Coil និង Plug មុនពិនិត្យកម្រិតឥន្ធនៈ — កូដនេះប្រាប់ត្រង់ៗថាឥន្ធនៈតិច",
+      "បន្តបើកបរដោយទុក misfire ចោល — ឥន្ធនៈមិនឆេះហូរចូល Catalytic ធ្វើឲ្យវារលាយ ហើយការជួសជុលថ្លៃជាងច្រើនដង",
+    ],
   },
   {
     code: "P0314",
@@ -2658,8 +2792,18 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "ECU ចាប់ Misfire បាន តែមិនអាចកំណត់លេខស៊ីឡាំងច្បាស់លាស់។",
     possibleCauses: ["Crankshaft Sensor Signal ចង្រៀវ", "Misfire កម្រិតស្រាល"],
-    inspectionFlow: ["អាន Misfire Counter រាល់ស៊ីឡាំង Live Data"],
-    commonMistakes: ["ជួសជុលចៃដន្យដោយមិនអាន Misfire Counter ជាមុន"],
+    inspectionFlow: [
+      "អាន Misfire Counter រាល់ស៊ីឡាំងក្នុង Live Data — ECU មិនបានបញ្ជាក់ស៊ីឡាំង តែ Counter ជាញឹកញាប់នៅតែបង្ហាញ",
+      "បើ Counter មិនបង្ហាញ — ពិនិត្យថា Crankshaft Position Variation Learn ត្រូវបានធ្វើឬអត់ (P0315)។ បើមិនទាន់ ECU ញែកស៊ីឡាំងមិនបាន",
+      "ធ្វើ Cylinder Balance Test ដោយ Scan Tool បើមាន",
+      "បើនៅមិនច្បាស់ — Swap Coil និង Plug ជាគូ រួចមើលថា Misfire Counter ផ្លាស់ទីតាមទេ",
+      "វាស់ Compression គ្រប់ស៊ីឡាំង ធៀបគ្នា",
+    ],
+    commonMistakes: [
+      "ជួសជុលចៃដន្យដោយមិនអាន Misfire Counter ជាមុន",
+      "ប្ដូរ Coil និង Plug ទាំងអស់ដោយឥតគិត ខណៈ Crank Variation Learn មិនទាន់ធ្វើ",
+      "បន្តបើកបរដោយទុក misfire ចោល — ឥន្ធនៈមិនឆេះហូរចូល Catalytic ធ្វើឲ្យវារលាយ ហើយការជួសជុលថ្លៃជាងច្រើនដង",
+    ],
   },
   {
     code: "P0315",
@@ -3422,8 +3566,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីន Gasoline មាន Secondary Air Injection",
     descriptionKm: "សៀគ្វី Valve មានការឆ្លងសៀគ្វី (Short)។",
     possibleCauses: ["ខ្សែភ្លើងឆ្លងសៀគ្វី", "Valve ខូច"],
-    inspectionFlow: ["ពិនិត្យ Wiring រករក Short"],
-    commonMistakes: ["ប្ដូរ Valve ដោយមិនរក Short ក្នុង Wiring"],
+    inspectionFlow: [
+      "វាស់ Resistance របស់ Secondary Air Injection System Switching Valve 'A' ធៀបនឹងតម្លៃស្តង់ដារ",
+      "ដក Connector របស់ Secondary Air Injection System Switching Valve 'A' ចេញ រួចអានកូដឡើងវិញ — កូដដែលប្ដូរប្រភេទបញ្ជាក់ថា Secondary Air Injection System Switching Valve 'A' ខូច ជាជាង Wiring",
+      "ពិនិត្យ Power Feed មកដល់ Secondary Air Injection System Switching Valve 'A' — Fuse និង Relay",
+      "សាកបញ្ជា Secondary Air Injection System Switching Valve 'A' ដោយ Scan Tool ហើយស្ដាប់សំឡេង ឬស្ទាបការរំញ័រ",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Valve ដោយមិនរក Short ក្នុង Wiring",
+      "ប្ដូរ Secondary Air Injection System Switching Valve 'A' ដោយមិនពិនិត្យ Power Feed និង Wiring ជាមុន",
+    ],
   },
   {
     code: "P0416",
@@ -3456,8 +3609,17 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីន Gasoline មាន Secondary Air Injection",
     descriptionKm: "ដូច P0414 ប៉ុន្តែនៅ Valve B។",
     possibleCauses: ["ខ្សែភ្លើងឆ្លងសៀគ្វី", "Valve ខូច"],
-    inspectionFlow: ["ពិនិត្យ Wiring រករក Short"],
-    commonMistakes: ["ប្ដូរ Valve ដោយមិនរក Short"],
+    inspectionFlow: [
+      "វាស់ Resistance របស់ Secondary Air Injection System Switching Valve 'B' ធៀបនឹងតម្លៃស្តង់ដារ",
+      "ដក Connector របស់ Secondary Air Injection System Switching Valve 'B' ចេញ រួចអានកូដឡើងវិញ — កូដដែលប្ដូរប្រភេទបញ្ជាក់ថា Secondary Air Injection System Switching Valve 'B' ខូច ជាជាង Wiring",
+      "ពិនិត្យ Power Feed មកដល់ Secondary Air Injection System Switching Valve 'B' — Fuse និង Relay",
+      "សាកបញ្ជា Secondary Air Injection System Switching Valve 'B' ដោយ Scan Tool ហើយស្ដាប់សំឡេង ឬស្ទាបការរំញ័រ",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Valve ដោយមិនរក Short",
+      "ប្ដូរ Secondary Air Injection System Switching Valve 'B' ដោយមិនពិនិត្យ Power Feed និង Wiring ជាមុន",
+    ],
   },
   {
     code: "P0421",
@@ -3480,8 +3642,16 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក",
     descriptionKm: "Catalyst ចម្បងដំណើរការទាបជាងស្តង់ដារ។",
     possibleCauses: ["Catalyst ចាស់", "O2 Sensor ខូច", "Exhaust leak"],
-    inspectionFlow: ["ប្រៀបធៀប Waveform O2 មុន/ក្រោយ Cat"],
-    commonMistakes: ["ប្ដូរ Catalyst ដោយមិនដោះស្រាយមូលហេតុដើម"],
+    inspectionFlow: [
+      "ដោះស្រាយ misfire, exhaust leak និងការស៊ីប្រេងជាមុនសិន — Catalytic កម្រខូចដោយខ្លួនឯង វាតែងត្រូវបានសម្លាប់ដោយអ្វីមួយផ្សេង",
+      "ប្រៀបធៀប Waveform O2 មុន និងក្រោយ Catalytic Bank 1 — Sensor ក្រោយត្រូវនៅថេរ ខណៈ Sensor មុខលោត។ បើទាំងពីរលោតដូចគ្នា នោះ Catalytic អស់",
+      "ពិនិត្យ Exhaust Leak មុខ O2 Sensor — ខ្យល់ស្អាតចូលធ្វើឲ្យលទ្ធផលខុស",
+      "វាស់សីតុណ្ហភាពមុខ និងក្រោយ Catalytic — ក្រោយគួរក្ដៅជាងមុខប្រហែល 50–100°C បើវាកំពុងធ្វើការ",
+      "ពិនិត្យ Backpressure បើសង្ស័យស្ទះ",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Catalytic ថ្លៃដោយមិនដោះស្រាយមូលហេតុ — Cat ថ្មីនឹងខូចដដែលក្នុងរយៈពេលខ្លី",
+    ],
   },
   {
     code: "P0423",
@@ -3516,8 +3686,16 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើម៉ាស៊ីនរាង V ឬ Boxer",
     descriptionKm: "ដូច P0422 ប៉ុន្តែនៅ Bank 2។",
     possibleCauses: ["Catalyst Bank 2 ចាស់", "O2 Sensor Bank 2 ខូច"],
-    inspectionFlow: ["ប្រៀបធៀប Waveform O2 Bank 2"],
-    commonMistakes: ["ប្ដូរ Catalyst ដោយមិនដោះស្រាយមូលហេតុដើម"],
+    inspectionFlow: [
+      "ដោះស្រាយ misfire, exhaust leak និងការស៊ីប្រេងជាមុនសិន — Catalytic កម្រខូចដោយខ្លួនឯង វាតែងត្រូវបានសម្លាប់ដោយអ្វីមួយផ្សេង",
+      "ប្រៀបធៀប Waveform O2 មុន និងក្រោយ Catalytic Bank 2 — Sensor ក្រោយត្រូវនៅថេរ ខណៈ Sensor មុខលោត។ បើទាំងពីរលោតដូចគ្នា នោះ Catalytic អស់",
+      "ពិនិត្យ Exhaust Leak មុខ O2 Sensor — ខ្យល់ស្អាតចូលធ្វើឲ្យលទ្ធផលខុស",
+      "វាស់សីតុណ្ហភាពមុខ និងក្រោយ Catalytic — ក្រោយគួរក្ដៅជាងមុខប្រហែល 50–100°C បើវាកំពុងធ្វើការ",
+      "ពិនិត្យ Backpressure បើសង្ស័យស្ទះ",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Catalytic ថ្លៃដោយមិនដោះស្រាយមូលហេតុ — Cat ថ្មីនឹងខូចដដែលក្នុងរយៈពេលខ្លី",
+    ],
   },
 
   /* ---------------------- P044x-P047x — EVAP Vent/Pressure, Fuel Level, Exhaust Pressure ---------------------- */
@@ -4107,8 +4285,16 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក រថយន្តមាន Cruise Control",
     descriptionKm: "សញ្ញាប៊ូតុងបិទមិនធ្វើការត្រឹមត្រូវ។",
     possibleCauses: ["Switch ខូច", "Clock Spring ខូច"],
-    inspectionFlow: ["វាស់សញ្ញា Switch"],
-    commonMistakes: ["ប្ដូរ Switch ដោយមិនពិនិត្យ Clock Spring"],
+    inspectionFlow: [
+      "អានស្ថានភាព Switch ក្នុង Live Data ខណៈចុច និងលែង — មើលថា ECU ឃើញការផ្លាស់ប្ដូរឬអត់",
+      "វាស់ Continuity Switch ដោយផ្ទាល់ ខណៈចុច និងលែង",
+      "ពិនិត្យ Clock Spring បើ Switch នៅលើកង់ចង្កូត — Clock Spring ដាច់ជាមូលហេតុញឹកញាប់បំផុតនៃបញ្ហា Switch លើកង់ចង្កូត",
+      "ពិនិត្យ Brake Switch — Cruise ត្រូវបានផ្ដាច់ដោយចេតនាពេល Brake Switch មានបញ្ហា",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ដេញតាម Switch ខណៈ Clock Spring ដាច់ ឬ Brake Switch ជាមូលហេតុ",
+    ],
   },
   {
     code: "P0567",
@@ -4119,8 +4305,16 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក រថយន្តមាន Cruise Control",
     descriptionKm: "សញ្ញាប៊ូតុងបន្តល្បឿនមិនធ្វើការត្រឹមត្រូវ។",
     possibleCauses: ["Switch ខូច", "Clock Spring ខូច"],
-    inspectionFlow: ["វាស់សញ្ញា Switch"],
-    commonMistakes: ["ប្ដូរ Switch ដោយមិនពិនិត្យ Clock Spring"],
+    inspectionFlow: [
+      "អានស្ថានភាព Switch ក្នុង Live Data ខណៈចុច និងលែង — មើលថា ECU ឃើញការផ្លាស់ប្ដូរឬអត់",
+      "វាស់ Continuity Switch ដោយផ្ទាល់ ខណៈចុច និងលែង",
+      "ពិនិត្យ Clock Spring បើ Switch នៅលើកង់ចង្កូត — Clock Spring ដាច់ជាមូលហេតុញឹកញាប់បំផុតនៃបញ្ហា Switch លើកង់ចង្កូត",
+      "ពិនិត្យ Brake Switch — Cruise ត្រូវបានផ្ដាច់ដោយចេតនាពេល Brake Switch មានបញ្ហា",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ដេញតាម Switch ខណៈ Clock Spring ដាច់ ឬ Brake Switch ជាមូលហេតុ",
+    ],
   },
   {
     code: "P0568",
@@ -4131,8 +4325,16 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក រថយន្តមាន Cruise Control",
     descriptionKm: "សញ្ញាប៊ូតុងកំណត់ល្បឿនមិនធ្វើការត្រឹមត្រូវ។",
     possibleCauses: ["Switch ខូច", "Clock Spring ខូច"],
-    inspectionFlow: ["វាស់សញ្ញា Switch"],
-    commonMistakes: ["ប្ដូរ Switch ដោយមិនពិនិត្យ Clock Spring"],
+    inspectionFlow: [
+      "អានស្ថានភាព Switch ក្នុង Live Data ខណៈចុច និងលែង — មើលថា ECU ឃើញការផ្លាស់ប្ដូរឬអត់",
+      "វាស់ Continuity Switch ដោយផ្ទាល់ ខណៈចុច និងលែង",
+      "ពិនិត្យ Clock Spring បើ Switch នៅលើកង់ចង្កូត — Clock Spring ដាច់ជាមូលហេតុញឹកញាប់បំផុតនៃបញ្ហា Switch លើកង់ចង្កូត",
+      "ពិនិត្យ Brake Switch — Cruise ត្រូវបានផ្ដាច់ដោយចេតនាពេល Brake Switch មានបញ្ហា",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ដេញតាម Switch ខណៈ Clock Spring ដាច់ ឬ Brake Switch ជាមូលហេតុ",
+    ],
   },
   {
     code: "P0569",
@@ -4143,8 +4345,16 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជួបលើគ្រប់ម៉ាក រថយន្តមាន Cruise Control",
     descriptionKm: "សញ្ញាប៊ូតុងបន្ថយល្បឿនមិនធ្វើការត្រឹមត្រូវ។",
     possibleCauses: ["Switch ខូច", "Clock Spring ខូច"],
-    inspectionFlow: ["វាស់សញ្ញា Switch"],
-    commonMistakes: ["ប្ដូរ Switch ដោយមិនពិនិត្យ Clock Spring"],
+    inspectionFlow: [
+      "អានស្ថានភាព Switch ក្នុង Live Data ខណៈចុច និងលែង — មើលថា ECU ឃើញការផ្លាស់ប្ដូរឬអត់",
+      "វាស់ Continuity Switch ដោយផ្ទាល់ ខណៈចុច និងលែង",
+      "ពិនិត្យ Clock Spring បើ Switch នៅលើកង់ចង្កូត — Clock Spring ដាច់ជាមូលហេតុញឹកញាប់បំផុតនៃបញ្ហា Switch លើកង់ចង្កូត",
+      "ពិនិត្យ Brake Switch — Cruise ត្រូវបានផ្ដាច់ដោយចេតនាពេល Brake Switch មានបញ្ហា",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ដេញតាម Switch ខណៈ Clock Spring ដាច់ ឬ Brake Switch ជាមូលហេតុ",
+    ],
   },
   {
     code: "P0571",
@@ -4921,8 +5131,16 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើរថយន្តអូតូម៉ាទិក",
     descriptionKm: "សៀគ្វី Solenoid A មានបញ្ហាអគ្គិសនី។",
     possibleCauses: ["Solenoid ខូច", "Wiring ដាច់"],
-    inspectionFlow: ["វាស់ Resistance Solenoid A"],
-    commonMistakes: ["មិនប្ដូរ ATF Filter ពេលប្ដូរ Solenoid"],
+    inspectionFlow: [
+      "វាស់ Resistance របស់ Shift Solenoid 'A' ធៀបនឹងតម្លៃស្តង់ដារ",
+      "ដក Connector របស់ Shift Solenoid 'A' ចេញ រួចអានកូដឡើងវិញ — កូដដែលប្ដូរប្រភេទបញ្ជាក់ថា Shift Solenoid 'A' ខូច ជាជាង Wiring",
+      "ពិនិត្យកម្រិត និងគុណភាព ATF — ATF កខ្វក់ស្ទះ Solenoid ជាមូលហេតុញឹកញាប់បំផុត ហើយ Solenoid ថ្មីនឹងស្ទះដដែល បើមិនប្ដូរ ATF និង Filter ជាមួយគ្នា",
+      "សាកបញ្ជា Shift Solenoid 'A' ដោយ Scan Tool ហើយស្ដាប់សំឡេង ឬស្ទាបការរំញ័រ",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Solenoid ដោយមិនប្ដូរ ATF និង Filter — សំណល់ដដែលនឹងស្ទះ Solenoid ថ្មី",
+    ],
   },
   {
     code: "P0757",
@@ -4945,8 +5163,16 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonOn: "ជាទូទៅជួបលើរថយន្តអូតូម៉ាទិក",
     descriptionKm: "ដូច P0753 ប៉ុន្តែនៅ Solenoid B។",
     possibleCauses: ["Solenoid ខូច", "Wiring ដាច់"],
-    inspectionFlow: ["វាស់ Resistance Solenoid B"],
-    commonMistakes: ["មិនប្ដូរ ATF Filter ពេលប្ដូរ Solenoid"],
+    inspectionFlow: [
+      "វាស់ Resistance របស់ Shift Solenoid 'B' ធៀបនឹងតម្លៃស្តង់ដារ",
+      "ដក Connector របស់ Shift Solenoid 'B' ចេញ រួចអានកូដឡើងវិញ — កូដដែលប្ដូរប្រភេទបញ្ជាក់ថា Shift Solenoid 'B' ខូច ជាជាង Wiring",
+      "ពិនិត្យកម្រិត និងគុណភាព ATF — ATF កខ្វក់ស្ទះ Solenoid ជាមូលហេតុញឹកញាប់បំផុត ហើយ Solenoid ថ្មីនឹងស្ទះដដែល បើមិនប្ដូរ ATF និង Filter ជាមួយគ្នា",
+      "សាកបញ្ជា Shift Solenoid 'B' ដោយ Scan Tool ហើយស្ដាប់សំឡេង ឬស្ទាបការរំញ័រ",
+      "រង្កោលខ្សែ និង Connector ពេលមើល Live Data — រកការដាច់ៗមិនទៀងទាត់",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Solenoid ដោយមិនប្ដូរ ATF និង Filter — សំណល់ដដែលនឹងស្ទះ Solenoid ថ្មី",
+    ],
   },
   {
     code: "P0760",
