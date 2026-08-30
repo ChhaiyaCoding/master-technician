@@ -8712,4 +8712,80 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     inspectionFlow: ["ប្រើ Leak Detector ឬ UV Dye រកកន្លែងលេច", "ពិនិត្យ O-ring និង Condenser"],
     commonMistakes: ["បញ្ចូលហ្គាសដដែលៗដោយមិនរកកន្លែងលេច"],
   },
+
+  /* ---------------------------- ADAS (first entries) ---------------------------- */
+  {
+    code: "P2583",
+    titleEn: "Cruise Control Front Distance Range Sensor Circuit (Single Sensor or Center)",
+    titleKm: "Sensor ចម្ងាយមុខ Cruise Control ខូច (Sensor តែមួយ ឬកណ្ដាល)",
+    systems: ["adas"],
+    severity: "medium",
+    commonOn: "ជាទូទៅជួបលើ Honda/Acura",
+    descriptionKm:
+      "Sensor វាស់ចម្ងាយរថយន្តខាងមុខ សម្រាប់ Adaptive Cruise Control រកមិនឃើញសញ្ញា ឬសញ្ញាខុសពីធម្មតា " +
+      "— ប្រព័ន្ធបិទមុខងារ Cruise ស្វ័យប្រវត្តិ។",
+    possibleCauses: [
+      "Sensor កខ្វក់ ឬត្រូវបាំង (ភក់ ព្រិល sticker)",
+      "Sensor រំកិលទីតាំង ឬខូចខាងក្នុង",
+      "Connector/ខ្សែភ្ជាប់ ដាច់ ឬច្រេះ",
+      "Bumper ខាងមុខធ្លាប់ប៉ះទង្គិចបន្តិច ធ្វើឲ្យ bracket កោង",
+    ],
+    inspectionFlow: [
+      "សម្អាត Sensor នៅ Bumper មុខ មើលមានស្នាមប៉ះទង្គិចទេ",
+      "ពិនិត្យ Connector និងខ្សែភ្ជាប់",
+      "Calibrate Sensor ជាថ្មីក្រោយពិនិត្យ/សម្អាតរួច",
+    ],
+    commonMistakes: ["សម្អាត Sensor ហើយលុប code ចោលដោយមិន Calibrate ជាថ្មី — code នឹងវិលមកវិញ"],
+  },
+  {
+    code: "C1A67",
+    titleEn: "Adaptive Cruise Control Radar Sensor Malfunction",
+    titleKm: "Radar Sensor របស់ Adaptive Cruise Control ខូច/ស្ទះ/មិនទាន់ Calibrate",
+    systems: ["adas"],
+    severity: "medium",
+    commonOn: "ជាទូទៅជួបលើ Mazda, Ford, Land Rover/Jaguar",
+    descriptionKm:
+      "Radar Sensor ខាងមុខ (សម្រាប់ Adaptive Cruise Control) រាយការណ៍បញ្ហា — អាចជា sensor ត្រូវបាំង, " +
+      "ខូចទីតាំង, ឬមិនទាន់ calibrate ក្រោយប្ដូរ/ដកចេញ។ Sub-code លម្អិតខុសគ្នា (-97 ស្ទះ, -78 ខុសទីតាំង, " +
+      "-54 មិនទាន់ calibrate)។",
+    possibleCauses: [
+      "Sensor ត្រូវបាំង (ភក់ ព្រិល badge/sticker លើ Bumper)",
+      "Bracket កោង ពី Bumper ធ្លាប់ប៉ះទង្គិចបន្តិច",
+      "Sensor ថ្មី ឬដកចេញ តែមិនទាន់ calibrate",
+    ],
+    inspectionFlow: [
+      "សម្អាត Sensor និង Bumper ជុំវិញ",
+      "ពិនិត្យ Bracket កោង ឬរើទីតាំង",
+      "អាន sub-code លម្អិត (-97/-78/-54) ដើម្បីដឹងចំណុចជាក់លាក់",
+      "Calibrate ដោយ tool ជំនាញក្រោយពិនិត្យ/ប្ដូររួច",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Sensor ថ្មីតែមិន Calibrate — code នៅតែឡើងវិញ, Cruise នៅតែមិនដំណើរការត្រឹមត្រូវ",
+    ],
+  },
+  {
+    code: "B1240",
+    titleEn: "Forward Camera Misalignment (Pre-Collision System Malfunction)",
+    titleKm: "កាមេរ៉ាមុខ Pre-Collision ខុសទីតាំង",
+    systems: ["adas"],
+    severity: "medium",
+    commonOn: "ជាទូទៅជួបលើ Toyota/Lexus/Subaru",
+    descriptionKm:
+      "កាមេរ៉ាមុខ (សម្រាប់ Pre-Collision/Lane Departure) មិនត្រូវទីតាំងត្រឹមត្រូវ — Dashboard បង្ហាញ " +
+      "'Pre-Collision System Malfunction'។ ជាទូទៅកើតឡើងក្រោយប្ដូរកញ្ចក់មុខ (Windshield) សូម្បីតំឡើង " +
+      "កាមេរ៉ាដដែលក៏ដោយ ព្រោះកញ្ចក់ថ្មីមានភាពខុសបន្តិចបន្តួច។",
+    possibleCauses: [
+      "ទើបប្ដូរកញ្ចក់មុខ (Windshield) មិនទាន់ Calibrate កាមេរ៉ា",
+      "កាមេរ៉ារំកិលទីតាំង ពីរំញ័រ ឬប៉ះទង្គិច",
+      "Bracket តំឡើងកាមេរ៉ាធូរ",
+    ],
+    inspectionFlow: [
+      "ពិនិត្យប្រវត្តិ — ទើបប្ដូរកញ្ចក់មុខថ្មីៗទេ?",
+      "ពិនិត្យ Bracket កាមេរ៉ាមុខថាតឹងល្អ",
+      "Static Calibration ដោយ target board តាមស្តង់ដារក្រុមហ៊ុន",
+    ],
+    commonMistakes: [
+      "តំឡើងកញ្ចក់មុខថ្មីរួច គិតថាកាមេរ៉ាដដែល មិនចាំបាច់ calibrate — តាមពិត ត្រូវ Calibrate ជានិច្ចក្រោយប្ដូរកញ្ចក់",
+    ],
+  },
 ];
