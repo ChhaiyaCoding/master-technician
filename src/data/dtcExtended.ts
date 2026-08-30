@@ -5958,7 +5958,7 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     code: "P0A94",
     titleEn: "DC/DC Converter Performance",
     titleKm: "DC/DC Converter ដើរមិនប្រក្រតី",
-    systems: ["hybrid"],
+    systems: ["hybrid", "ev"],
     severity: "critical",
     commonOn: "ជាទូទៅជួបលើរថយន្ត Hybrid (Toyota Prius/Camry Hybrid ជាដើម)",
     descriptionKm: "Converter បំលែងចរន្ត HV ទៅ 12V មិនប្រក្រតី — ថ្ម 12V នឹងអស់ រថយន្តរលត់។ ⚠️ ប្រព័ន្ធតង់ស្យុងខ្ពស់ (HV) — ISOLATE មុនធ្វើការ ដក service plug ស្លៀក glove class 0។",
@@ -5970,13 +5970,31 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     code: "P0AA6",
     titleEn: "Hybrid Battery System Isolation Fault",
     titleKm: "រកឃើញការលេចចរន្ត HV ចូលតួរថយន្ត (Isolation Fault)",
-    systems: ["hybrid"],
+    systems: ["hybrid", "ev"],
     severity: "critical",
     commonOn: "ជាទូទៅជួបលើរថយន្ត Hybrid (Toyota Prius/Camry Hybrid ជាដើម)",
     descriptionKm: "⚠️ គ្រោះថ្នាក់ខ្លាំង — ចរន្តតង់ស្យុងខ្ពស់លេចចូលតួរថយន្ត។ កុំប៉ះរថយន្តដោយគ្មានឧបករណ៍ការពារ។ ⚠️ ប្រព័ន្ធតង់ស្យុងខ្ពស់ (HV) — ISOLATE មុនធ្វើការ ដក service plug ស្លៀក glove class 0។",
     possibleCauses: ["HV Battery ជ្រាបទឹក/ច្រេះ", "ខ្សែ HV (Orange) រហែក", "Inverter/Compressor A/C អគ្គិសនីលេច"],
     inspectionFlow: ["⚠️ ISOLATE HV ជាមុនសិន — កុំប៉ះមុន", "វាស់ Insulation Resistance ដោយ Megohm Tester", "រកកន្លែងលេច (Battery/Inverter/AC Compressor)"],
     commonMistakes: ["ប៉ះរថយន្តដោយដៃទទេមុន isolate — អាចប៉ះពាល់ដល់អាយុជីវិត"],
+  },
+  {
+    code: "P0AC0",
+    titleEn: "Hybrid/EV Battery Pack Current Sensor 1 Circuit Performance",
+    titleKm: "Current Sensor ថ្ម HV (វាស់ចរន្តសាក/ប្រើ) ដើរមិនប្រក្រតី",
+    systems: ["hybrid", "ev"],
+    severity: "high",
+    commonOn: "ជាទូទៅជួបលើរថយន្ត Hybrid/EV គ្រប់ម៉ាក",
+    descriptionKm:
+      "Sensor វាស់ចរន្តភ្ជាប់ខ្សែអវិជ្ជមាន HV Battery Pack (ប្រាប់ថាកំពុងសាក ឬបញ្ចេញចរន្ត) អានតម្លៃខុសពី " +
+      "spec ។ ⚠️ ប្រព័ន្ធតង់ស្យុងខ្ពស់ (HV) — ISOLATE មុនធ្វើការ ដក service plug ស្លៀក glove class 0។",
+    possibleCauses: ["Current Sensor ខូច", "Connector/ខ្សែភ្ជាប់ Sensor រលុង ឬច្រេះ", "HV Battery ECU អានខុស"],
+    inspectionFlow: [
+      "⚠️ ISOLATE HV ជាមុនសិន — កុំប៉ះមុន",
+      "ពិនិត្យ Connector/ខ្សែភ្ជាប់ Current Sensor",
+      "ប្រៀបធៀបតម្លៃ Live Data ជាមួយ spec ក្រុមហ៊ុន",
+    ],
+    commonMistakes: ["ប្ដូរ HV Battery Pack ទាំងមូលដោយមិនពិនិត្យ Current Sensor ជាមុន"],
   },
   {
     code: "P0AC4",
@@ -5992,6 +6010,80 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonMistakes: ["ព្យាយាមជួសជុលកូដនេះផ្ទាល់ — វាគ្រាន់តែជាសញ្ញាបញ្ជូនប៉ុណ្ណោះ"],
   },
   {
+    code: "P3000",
+    titleEn: "Battery Control System Malfunction",
+    titleKm: "ប្រព័ន្ធត្រួតពិនិត្យ HV Battery រកឃើញបញ្ហា (កូដទូទៅ)",
+    systems: ["hybrid"],
+    severity: "high",
+    commonOn: "ជាទូទៅជួបលើ Toyota Prius (2004-2009)",
+    descriptionKm:
+      "HV ECU ទទួលសញ្ញា distress ពី HV Battery ECU ដាច់ដោយឡែក — ជាកូដ 'ព្រមានទូទៅ' មិនប្រាប់ចំណុចជាក់លាក់ទេ។ " +
+      "ត្រូវអាន sub-code/info-code ពី HV Battery ECU (ដូច P3006, P3011-P3024) ដើម្បីដឹងមូលហេតុពិត។ ⚠️ ប្រព័ន្ធ" +
+      "តង់ស្យុងខ្ពស់ (HV) — ISOLATE មុនធ្វើការ ដក service plug ស្លៀក glove class 0។",
+    possibleCauses: [
+      "SOC (State of Charge) ធ្លាក់ចុះ (ចត N យូរ, អស់ប្រេង)",
+      "Block/Cell ណាមួយក្នុង Pack ខ្សោយ (មើល P3011-P3024)",
+      "HV Battery ECU ខូច",
+    ],
+    inspectionFlow: [
+      "⚠️ ISOLATE HV ជាមុនសិន",
+      "អាន sub-code/info-code លម្អិតពី HV Battery ECU ដោយ Techstream ឬ scan tool ជំនាញ",
+      "ពិនិត្យ Block/Cell ណាមួយខ្សោយ (P3011-P3024)",
+    ],
+    commonMistakes: [
+      "ព្យាយាមដោះស្រាយ P3000 ដាច់ដោយឡែក ដោយមិនអាន info-code លម្អិត — P3000 តែឯងមិនប្រាប់ចំណុចជាក់លាក់ទេ",
+    ],
+  },
+  {
+    code: "P3006",
+    titleEn: "High Voltage Battery System Malfunction",
+    titleKm: "HV Battery System មិនស្មើគ្នា (Cell Voltage Imbalance)",
+    systems: ["hybrid"],
+    severity: "high",
+    commonOn: "ជាទូទៅជួបលើ Toyota Prius, ភាគច្រើនកើតជាមួយ P3000 និង P3011-P3024",
+    descriptionKm:
+      "Voltage រវាង Block ក្នុង HV Battery Pack មិនស្មើគ្នា — ជាទូទៅលេចជាមួយ P3000 (HV ECU) និង Block ជាក់លាក់ " +
+      "(P3011-P3024) ពី HV Battery ECU។ ⚠️ ប្រព័ន្ធតង់ស្យុងខ្ពស់ (HV) — ISOLATE មុនធ្វើការ ដក service plug ស្លៀក " +
+      "glove class 0។",
+    possibleCauses: ["Block មួយ ឬច្រើនក្នុង Pack ខ្សោយ", "Pack ចាស់ទាំងមូល (aging)", "HV Battery ECU/Sensor អានខុស"],
+    inspectionFlow: [
+      "⚠️ ISOLATE HV ជាមុនសិន",
+      "អាន P3011-P3024 ដើម្បីដឹង Block ជាក់លាក់ណាខ្សោយ",
+      "វាស់ Voltage គ្រប់ Block ធៀបគ្នា",
+    ],
+    commonMistakes: ["ព្យាយាមប្ដូរ Pack ទាំងមូលមុនពិនិត្យថា Block ប៉ុន្មានពិតជាខ្សោយ"],
+  },
+  // P3011-P3024 — one code per HV battery block (block N = P30(10+N)), Toyota
+  // Prius Gen2 (2007-2015). Verified against 3 independent sources agreeing on
+  // this exact 14-block mapping, not guessed — same sequential-code pattern
+  // already used for glow plug cylinders in dtcDiesel.ts.
+  ...Array.from({ length: 14 }, (_, i) => i + 1).map<DtcCode>((block) => ({
+    code: `P30${10 + block}`,
+    titleEn: `Battery Block ${block} Becomes Weak`,
+    titleKm: `HV Battery Block ${block} ខ្សោយ (Cell Imbalance)`,
+    systems: ["hybrid"],
+    severity: "high",
+    commonOn: "ជាទូទៅជួបលើ Toyota Prius Gen2 (2007-2015)",
+    descriptionKm:
+      `HV Battery Block ${block} ក្នុងចំណោម Block ១៤ របស់ Pack ចាស់ខ្សោយជាងគេ — Internal Resistance ឡើងខ្ពស់ ` +
+      `ឬ Voltage ធ្លាក់ចុះលឿនជាង Block ដទៃ។ ⚠️ ប្រព័ន្ធតង់ស្យុងខ្ពស់ (HV) — ISOLATE មុនធ្វើការ ដក service plug ` +
+      `ស្លៀក glove class 0។`,
+    possibleCauses: [
+      `Block ${block} Cell ចាស់ ឬខូចខាងក្នុង`,
+      "Connection រវាង Block ច្រេះ ឬរឹង",
+      "Pack ទាំងមូលចាស់ (Block ផ្សេងទៀតអាចខ្សោយបន្ទាប់)",
+    ],
+    inspectionFlow: [
+      "⚠️ ISOLATE HV ជាមុនសិន",
+      `វាស់ Voltage Block ${block} ដាច់ដោយឡែក ធៀបនឹង Block ដទៃ`,
+      "ធ្វើ Battery Reconditioning/Balance តេស្ត បើអាច",
+      "ពិនិត្យប្រសិនបើមាន P3000/P3006 រួមផង (បញ្ជាក់ pattern)",
+    ],
+    commonMistakes: [
+      `ប្ដូរ Pack ទាំងមូលភ្លាមៗ — ជាទូទៅអាចប្ដូរតែ Block ${block} ឬ Rebuild មួយផ្នែក ថោកជាង`,
+    ],
+  })),
+  {
     code: "P3120",
     titleEn: "HV Transaxle Malfunction",
     titleKm: "ប្រអប់លេខ Hybrid (HV Transaxle) មានបញ្ហា",
@@ -6002,6 +6094,117 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     possibleCauses: ["ម៉ូទ័រ MG1/MG2 ខូច", "Transaxle Fluid ខ្សោយ", "Resolver ខូច"],
     inspectionFlow: ["⚠️ ISOLATE HV ជាមុនសិន", "ពិនិត្យ Transaxle Fluid", "អានកូដលម្អិត HV ECU"],
     commonMistakes: ["ធ្វើការលើ HV ដោយមិន isolate"],
+  },
+  {
+    code: "P3125",
+    titleEn: "Converter & Inverter Assembly Malfunction",
+    titleKm: "Converter & Inverter Assembly មានបញ្ហា",
+    systems: ["hybrid"],
+    severity: "critical",
+    commonOn: "ជាទូទៅជួបលើ Toyota Prius Gen1 (2001-2003), ក៏អាចជួបលើ Prius ជំនាន់ក្រោយ",
+    descriptionKm:
+      "HV ECU រកឃើញវ៉ុល Inverter ខុសពី spec — ត្រូវពិនិត្យ DC/DC Converter ថាដំណើរការត្រឹមត្រូវទេ ព្រោះបើ " +
+      "Converter ខូច Battery 12V នឹងធ្លាក់ចុះរហូតដល់រថយន្តបើកមិនកើត។ ⚠️ ប្រព័ន្ធតង់ស្យុងខ្ពស់ (HV) — ISOLATE " +
+      "មុនធ្វើការ ដក service plug ស្លៀក glove class 0។",
+    possibleCauses: [
+      "ខ្សែភ្ជាប់ HV ECU↔Inverter (terminal VB/MIVG/M-GINV) ដាច់ ឬ Short",
+      "Inverter Coolant ខ្សោយ ឬកំដៅលើស",
+      "HV Battery Pack Cell ខ្សោយ",
+    ],
+    inspectionFlow: [
+      "⚠️ ISOLATE HV ជាមុនសិន",
+      "ពិនិត្យ Inverter Coolant level/condition",
+      "អាន info-code 3-ខ្ទង់បន្ថែម ដើម្បីបញ្ជាក់ចំណុចជាក់លាក់",
+      "ពិនិត្យខ្សែភ្ជាប់ HV ECU↔Inverter Assembly",
+    ],
+    commonMistakes: ["ប្ដូរ Inverter Assembly ថ្លៃភ្លាមដោយមិនពិនិត្យ Coolant/Wiring ជាមុន"],
+  },
+  {
+    code: "P3190",
+    titleEn: "Poor Engine Power",
+    titleKm: "កម្លាំងម៉ាស៊ីនចុះខ្សោយ (Hybrid)",
+    systems: ["hybrid"],
+    severity: "high",
+    commonOn: "ជាទូទៅជួបលើ Toyota Prius (2004-2011) — កូដល្បីល្បាញមួយក្នុងចំណោម mechanic ដែលមិនធ្លាប់ជួប Hybrid",
+    descriptionKm:
+      "HV ECU រកឃើញកម្លាំងម៉ាស៊ីនចុះខ្សោយខុសពីធម្មតា — ជាទូទៅលេចជាមួយ P3191 ឬ P0A0F ។ ភាគច្រើនមកពី " +
+      "Battery 12V ចាស់/វ៉ុលទាប ធ្វើឲ្យ HV ECU បាត់ Power មួយភ្លែត Throttle Body reset ទៅទីតាំង minimum។ " +
+      "⚠️ ការត្រួតពិនិត្យនេះមិនប៉ះ HV ដោយផ្ទាល់ទេ (Battery 12V/Fuel system) ប៉ុន្តែនេះនៅតែជារថយន្ត Hybrid — " +
+      "កុំប៉ះខ្សែពណ៌ទឹកក្រូច (HV Orange cable) ណាមួយឡើយ។",
+    possibleCauses: [
+      "Battery 12V ចាស់ ឬវ៉ុលទាប",
+      "Fuel Pump ខ្សោយ (ជាពិសេស Gen1 2001-2003)",
+      "HV ECU បាត់ Power មួយភ្លែត",
+    ],
+    inspectionFlow: [
+      "វាស់វ៉ុល Battery 12V ជាមុនសិន (គួរលើស 12.5V)",
+      "ពិនិត្យ Fuel Pump pressure",
+      "អានកូដរួមជាមួយ (P3191/P0A0F) ដើម្បីបញ្ជាក់ pattern",
+    ],
+    commonMistakes: [
+      "ប្ដូរ HV ECU ថ្លៃដោយមិនពិនិត្យ Battery 12V ជាមុន — ភាគច្រើនដោះស្រាយដោយគ្រាន់តែប្ដូរ Battery 12V",
+    ],
+  },
+  {
+    code: "P3191",
+    titleEn: "Engine Does Not Start",
+    titleKm: "ម៉ាស៊ីនមិនចាប់ផ្ដើម (Hybrid)",
+    systems: ["hybrid"],
+    severity: "high",
+    commonOn: "ជាទូទៅជួបលើ Toyota Prius (2001-2009), ភាគច្រើនកើតជាមួយ P3190/P0A0F",
+    descriptionKm:
+      "កំណែធ្ងន់ធ្ងរជាង P3190 — ម៉ាស៊ីនសាំងមិនចាប់ផ្ដើមទាល់តែសោះ ខណៈ Hybrid System នៅ Ready។ ⚠️ ការត្រួតពិនិត្យ " +
+      "នេះមិនប៉ះ HV ដោយផ្ទាល់ទេ ប៉ុន្តែនេះនៅតែជារថយន្ត Hybrid — កុំប៉ះខ្សែពណ៌ទឹកក្រូច (HV Orange cable) ណាមួយឡើយ។",
+    possibleCauses: [
+      "Battery 12V ចាស់ ឬវ៉ុលទាប",
+      "Fuel Pump ខ្សោយ ឬបាត់សម្ពាធ",
+      "MG1 មិនអាច crank ម៉ាស៊ីនបាន",
+    ],
+    inspectionFlow: [
+      "វាស់វ៉ុល Battery 12V",
+      "ពិនិត្យ Fuel Pump/Fuel pressure",
+      "ពិនិត្យ MG1 crank ម៉ាស៊ីនបានទេ ក្នុង Live Data",
+    ],
+    commonMistakes: ["ព្យាយាមប្ដូរគ្រឿងធំៗ (HV ECU, Inverter) មុនពិនិត្យ Battery 12V/Fuel system"],
+  },
+  {
+    code: "P0A0F",
+    titleEn: "Engine Failed to Start",
+    titleKm: "ម៉ាស៊ីនចាប់ផ្ដើមមិនជោគជ័យ (Hybrid)",
+    systems: ["hybrid"],
+    severity: "high",
+    commonOn: "ជាទូទៅជួបលើ Toyota Prius, ស្ទើរតែជានិច្ចជាមួយ P3190/P3191",
+    descriptionKm:
+      "កូដនេះ និង P3190/P3191 ពិពណ៌នាព្រឹត្តិការណ៍ចាប់ផ្ដើមម៉ាស៊ីនបរាជ័យដូចគ្នា ពីមុំមើលខុសគ្នាក្នុង HV ECU " +
+      "— ស្ទើរតែជានិច្ចលេចជាមួយគ្នា មិនមែនដាច់ដោយឡែកទេ។ ⚠️ ការត្រួតពិនិត្យនេះមិនប៉ះ HV ដោយផ្ទាល់ទេ ប៉ុន្តែនេះនៅតែជា " +
+      "រថយន្ត Hybrid — កុំប៉ះខ្សែពណ៌ទឹកក្រូច (HV Orange cable) ណាមួយឡើយ។",
+    possibleCauses: ["Battery 12V ចាស់ ឬវ៉ុលទាប", "Fuel Pump ខ្សោយ", "HV ECU/MG1 crank បរាជ័យ"],
+    inspectionFlow: [
+      "អានកូដរួមទាំងអស់ (P3190/P3191/P0A0F) ជាមួយគ្នា កុំមើលដាច់ដោយឡែក",
+      "វាស់វ៉ុល Battery 12V ជាមុនសិន",
+      "ពិនិត្យ Fuel Pump/Fuel pressure",
+    ],
+    commonMistakes: ["ព្យាយាមដោះស្រាយកូដនេះដាច់ដោយឡែក ដោយមិនមើល P3190/P3191 ដែលកើតជាមួយគ្នា"],
+  },
+  {
+    code: "P324E",
+    titleEn: "MG ECU Power Relay Intermittent Circuit",
+    titleKm: "សៀគ្វី MG ECU Power Relay ដាច់ៗ (Inverter IPM)",
+    systems: ["hybrid"],
+    severity: "critical",
+    commonOn: "ជាទូទៅជួបលើ Toyota Prius/Prius V (2010-2014) — Toyota ធ្លាប់ចេញ Warranty Extension សម្រាប់បញ្ហានេះ",
+    descriptionKm:
+      "IPM (Intelligent Power Module) ក្នុង Inverter Assembly មានបញ្ហា — ជាទូទៅលេចជាមួយ P0A94/P0A1A/P3004។ " +
+      "រថយន្តចូល fail-safe mode។ ⚠️ ប្រព័ន្ធតង់ស្យុងខ្ពស់ (HV) — ISOLATE មុនធ្វើការ ដក service plug ស្លៀក glove class 0។",
+    possibleCauses: ["IPM ក្នុង Inverter Assembly ខូច (ស្គាល់ជា Toyota TSB/Warranty issue)", "MG ECU Power Relay ខូច"],
+    inspectionFlow: [
+      "⚠️ ISOLATE HV ជាមុនសិន — កុំប៉ះមុន",
+      "ពិនិត្យថាមានកូដ P0A94/P0A1A/P3004 រួមទេ (បញ្ជាក់ pattern IPM)",
+      "ត្រួតពិនិត្យ Toyota Warranty Extension តាមលេខ VIN (Prius/Prius V 2010-2014)",
+    ],
+    commonMistakes: [
+      "ប្ដូរ Inverter Assembly ថ្លៃភ្លាមដោយមិនពិនិត្យ Warranty coverage ជាមុន (Toyota extend warranty ករណីនេះ)",
+    ],
   },
   {
     code: "P1105",
@@ -6989,6 +7192,41 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     possibleCauses: ["CAN Bus Wiring ដាច់/Short", "Power/Ground Module បាត់", "Module ខូច"],
     inspectionFlow: ["ពិនិត្យ Power/Ground Module នោះ", "វាស់ CAN High/Low Resistance", "ស្កេនរក Module ណា offline"],
     commonMistakes: ["ប្ដូរ Module មុនពិនិត្យ Power/Ground/Wiring"],
+  },
+  {
+    code: "C0450",
+    titleEn: "Steering Assist Control Actuator Circuit",
+    titleKm: "សៀគ្វី Actuator ជំនួយបត់ចង្កូត (EPS) មានបញ្ហា",
+    systems: ["steering"],
+    severity: "high",
+    commonOn: "ជួបលើគ្រប់ម៉ាក រថយន្តដែលមាន Electric Power Steering (EPS)",
+    descriptionKm:
+      "Actuator/Motor ជំនួយបត់ចង្កូតអគ្គិសនី (EPS) មិនដំណើរការត្រឹមត្រូវ — ចង្កូតនឹងធ្ងន់ខុសពីធម្មតា " +
+      "ជាពិសេសពេលបត់យឺត ឬចត។",
+    possibleCauses: ["Motor/Actuator EPS ខូច", "Power/Ground Circuit ទៅ Actuator បាត់", "EPS ECU ខូច"],
+    inspectionFlow: [
+      "វាស់ Power/Ground ទៅ Actuator",
+      "ស្កេនរក sub-code លម្អិត (over-current/open circuit)",
+      "ពិនិត្យ Connector EPS Motor",
+    ],
+    commonMistakes: ["ប្ដូរ EPS Rack ទាំងមូលដោយមិនពិនិត្យ Power/Ground Circuit ជាមុន"],
+  },
+  {
+    code: "C1523",
+    titleEn: "Power Steering Motor Circuit Malfunction",
+    titleKm: "សៀគ្វី Motor EPS មានបញ្ហា (Toyota/Lexus)",
+    systems: ["steering"],
+    severity: "high",
+    commonOn: "ជាទូទៅជួបលើ Toyota/Lexus",
+    descriptionKm:
+      "សៀគ្វី Motor ជំនួយបត់ចង្កូតអគ្គិសនី (EPS) មានបញ្ហា — ចង្កូតបាត់កម្លាំងជំនួយភ្លាមៗ ធ្ងន់ដូចរថយន្តគ្មាន Power Steering។",
+    possibleCauses: ["Motor EPS ខូចខាងក្នុង", "Connector Motor រលុង ឬច្រេះ", "EPS ECU ខូច"],
+    inspectionFlow: [
+      "ពិនិត្យ Connector Motor EPS",
+      "វាស់ Resistance ខ្សែ Motor",
+      "ស្កេនរក Freeze Frame មើលលក្ខខណ្ឌពេលកើត",
+    ],
+    commonMistakes: ["ប្ដូរ EPS Rack ថ្លៃដោយមិនពិនិត្យ Connector/Wiring ជាមុន"],
   },
   {
     code: "U0146",
