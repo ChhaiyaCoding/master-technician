@@ -3154,6 +3154,54 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     ],
   },
   {
+    code: "P0351",
+    titleEn: "Ignition Coil 'A' Primary/Secondary Circuit Malfunction",
+    titleKm: "សៀគ្វី Ignition Coil A (ស៊ីឡាំង ១) មានបញ្ហាខូច",
+    systems: ["engine", "ignition"],
+    severity: "high",
+    commonOn: "ជួបលើគ្រប់ម៉ាក",
+    descriptionKm: "សៀគ្វី Coil A មានបញ្ហា — ស៊ីឡាំង ១ គ្មានភ្លើងឆេះ។",
+    possibleCauses: ["Coil A ខូច", "Connector រលុង"],
+    inspectionFlow: ["Swap Coil A ទៅកន្លែងផ្សេងតេស្ត"],
+    commonMistakes: ["មិន Swap Test មុនប្ដូរគ្រឿង"],
+  },
+  {
+    code: "P0352",
+    titleEn: "Ignition Coil 'B' Primary/Secondary Circuit Malfunction",
+    titleKm: "សៀគ្វី Ignition Coil B (ស៊ីឡាំង ២) មានបញ្ហាខូច",
+    systems: ["engine", "ignition"],
+    severity: "high",
+    commonOn: "ជួបលើគ្រប់ម៉ាក",
+    descriptionKm: "សៀគ្វី Coil B មានបញ្ហា — ស៊ីឡាំង ២ គ្មានភ្លើងឆេះ។",
+    possibleCauses: ["Coil B ខូច", "Connector រលុង"],
+    inspectionFlow: ["Swap Coil B ទៅកន្លែងផ្សេងតេស្ត"],
+    commonMistakes: ["មិន Swap Test មុនប្ដូរគ្រឿង"],
+  },
+  {
+    code: "P0353",
+    titleEn: "Ignition Coil 'C' Primary/Secondary Circuit Malfunction",
+    titleKm: "សៀគ្វី Ignition Coil C (ស៊ីឡាំង ៣) មានបញ្ហាខូច",
+    systems: ["engine", "ignition"],
+    severity: "high",
+    commonOn: "ជួបលើគ្រប់ម៉ាក",
+    descriptionKm: "សៀគ្វី Coil C មានបញ្ហា — ស៊ីឡាំង ៣ គ្មានភ្លើងឆេះ។",
+    possibleCauses: ["Coil C ខូច", "Connector រលុង"],
+    inspectionFlow: ["Swap Coil C ទៅកន្លែងផ្សេងតេស្ត"],
+    commonMistakes: ["មិន Swap Test មុនប្ដូរគ្រឿង"],
+  },
+  {
+    code: "P0354",
+    titleEn: "Ignition Coil 'D' Primary/Secondary Circuit Malfunction",
+    titleKm: "សៀគ្វី Ignition Coil D (ស៊ីឡាំង ៤) មានបញ្ហាខូច",
+    systems: ["engine", "ignition"],
+    severity: "high",
+    commonOn: "ជួបលើគ្រប់ម៉ាក",
+    descriptionKm: "សៀគ្វី Coil D មានបញ្ហា — ស៊ីឡាំង ៤ គ្មានភ្លើងឆេះ។",
+    possibleCauses: ["Coil D ខូច", "Connector រលុង"],
+    inspectionFlow: ["Swap Coil D ទៅកន្លែងផ្សេងតេស្ត"],
+    commonMistakes: ["មិន Swap Test មុនប្ដូរគ្រឿង"],
+  },
+  {
     code: "P0355",
     titleEn: "Ignition Coil 'E' Primary/Secondary Circuit Malfunction",
     titleKm: "សៀគ្វី Ignition Coil E (ស៊ីឡាំង ៥) មានបញ្ហាខូច",
@@ -3962,6 +4010,32 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
 
   /* ---------------------- P048x-P053x — Cooling Fan, Idle, Starter, Oil/AC Pressure ---------------------- */
   {
+    code: "P0480",
+    titleEn: "Cooling Fan 1 Control Circuit Malfunction",
+    titleKm: "សៀគ្វី Cooling Fan 1 (Fan មេ) មានបញ្ហា",
+    systems: ["cooling"],
+    severity: "high",
+    commonOn: "ជួបលើគ្រប់ម៉ាក",
+    descriptionKm:
+      "ECU រកឃើញសញ្ញាខុសពីធម្មតានៅសៀគ្វី Cooling Fan 1 — Fan មិនដើរដូចបញ្ជា អាចធ្វើឲ្យម៉ាស៊ីនក្ដៅ " +
+      "ជាពិសេសពេលចត/ជាប់ traffic។",
+    possibleCauses: ["Fan Motor ខូច", "Relay Fan ខូច", "Fuse ដាច់", "Wiring/Connector"],
+    inspectionFlow: ["ពិនិត្យ Fuse/Relay Fan ជាមុនគេ", "តេស្ត Fan Motor ដោយ Power ផ្ទាល់", "វាស់ Signal ពី ECU ទៅ Relay"],
+    commonMistakes: ["ប្ដូរ Fan Motor ថ្លៃដោយមិនពិនិត្យ Relay/Fuse ជាមុន"],
+  },
+  {
+    code: "P0481",
+    titleEn: "Cooling Fan 2 Control Circuit Malfunction",
+    titleKm: "សៀគ្វី Cooling Fan 2 មានបញ្ហា",
+    systems: ["cooling"],
+    severity: "medium",
+    commonOn: "ជាទូទៅជួបលើរថយន្តមាន Cooling Fan ច្រើន",
+    descriptionKm: "ECU រកឃើញសញ្ញាខុសពីធម្មតានៅសៀគ្វី Cooling Fan 2 (Fan ទី ២ ជាទូទៅសម្រាប់ A/C ឬល្បឿនខ្ពស់)។",
+    possibleCauses: ["Fan Motor ខូច", "Relay Fan ខូច", "Fuse ដាច់"],
+    inspectionFlow: ["ពិនិត្យ Fuse/Relay Fan 2", "តេស្ត Fan Motor ដោយ Power ផ្ទាល់"],
+    commonMistakes: ["ច្រឡំ Fan 1/Fan 2 ពេលពិនិត្យ Relay"],
+  },
+  {
     code: "P0482",
     titleEn: "Cooling Fan 3 Control Circuit Malfunction",
     titleKm: "សៀគ្វីបញ្ជា Cooling Fan ទី ៣ មានបញ្ហាខូច",
@@ -4265,6 +4339,18 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     possibleCauses: ["Sensor ខូច", "Connector រលុង"],
     inspectionFlow: ["វាស់ Reference Voltage Sensor"],
     commonMistakes: ["ប្ដូរ Pump ទាំងមូលដោយមិនពិនិត្យ Sensor ជាមុន"],
+  },
+  {
+    code: "P0551",
+    titleEn: "Power Steering Pressure Sensor Circuit Range/Performance",
+    titleKm: "Sensor វាស់សម្ពាធ Power Steering ដំណើរការមិនប្រក្រតី",
+    systems: ["steering", "engine"],
+    severity: "low",
+    commonOn: "ជាទូទៅជួបលើរថយន្តមាន Hydraulic Power Steering",
+    descriptionKm: "តម្លៃពី Sensor វាស់សម្ពាធចង្កូតប៊ូម មិនស្របទៅនឹងលក្ខខណ្ឌបើកបរបច្ចុប្បន្ន។",
+    possibleCauses: ["Sensor ខូចផ្នែកខាងក្នុង", "Hose/Fluid Power Steering មានបញ្ហា"],
+    inspectionFlow: ["ពិនិត្យកម្រិត Power Steering Fluid", "វាស់ Signal Live Data ពេលបត់ចង្កូត"],
+    commonMistakes: ["ប្ដូរ Sensor ដោយមិនពិនិត្យកម្រិត Fluid ជាមុន"],
   },
   {
     code: "P0552",
@@ -9615,5 +9701,83 @@ export const DTC_CODES_EXTENDED: DtcCode[] = [
     commonMistakes: [
       "តំឡើងកញ្ចក់មុខថ្មីរួច គិតថាកាមេរ៉ាដដែល មិនចាំបាច់ calibrate — តាមពិត ត្រូវ Calibrate ជានិច្ចក្រោយប្ដូរកញ្ចក់",
     ],
+  },
+
+  /* -------------------------------------------------------------------------
+   * Manufacturer-specific P1xxx codes — Honda/Ford, verified individually.
+   * Unlike the rest of this file (generic-only per the file docstring), these
+   * three are added deliberately because they are extremely common real-world
+   * codes with a single, well-corroborated meaning (not the ambiguous kind
+   * that varies by brand) — a loose gas cap (Honda) and an incomplete OBD
+   * readiness cycle after a battery disconnect (Ford) are two of the most
+   * frequent reasons a mechanic sees these exact codes.
+   * ------------------------------------------------------------------------- */
+  {
+    code: "P1000",
+    titleEn: "OBD System Readiness Test Not Complete",
+    titleKm: "OBD Readiness Monitor មិនទាន់ធ្វើតេស្តពេញលេញ (Ford)",
+    systems: ["engine"],
+    severity: "low",
+    commonOn: "កូដឯកជនរបស់ Ford",
+    descriptionKm:
+      "ECU មិនទាន់ដំណើរការ Readiness Monitor ទាំងអស់ពេញលេញ — ជាទូទៅកើតឡើងភ្លាមៗក្រោមប្ដូរ/ដក Battery, " +
+      "ដក ECU, ឬលុប Code ដោយ Scan Tool។ មិនមែនកូដបញ្ហាទេ គ្រាន់តែប្រាប់ថាត្រូវបើកបរបន្ថែមទៀត។",
+    possibleCauses: [
+      "ទើបដក/ប្ដូរ Battery ថ្មីៗ",
+      "ទើបលុប Code ដោយ Scan Tool",
+      "ទើបប្ដូរ/Reprogram ECU",
+    ],
+    inspectionFlow: [
+      "ធ្វើ Drive Cycle តាមនីតិវិធីត្រឹមត្រូវ (Idle → បើកបរល្បឿនប្រែប្រួល → Highway → ឈប់)",
+      "ស្កេនម្ដងទៀតក្រោយ Drive Cycle ពេញលេញ — Code គួរបាត់ដោយខ្លួនឯង",
+      "បើនៅតែមាន Code ដទៃទៀត បន្ថែមពី P1000 — ត្រូវពិនិត្យ Code ទាំងនោះដាច់ដោយឡែក",
+    ],
+    commonMistakes: [
+      "ព្យាយាមជួសជុល/ប្ដូរគ្រឿងព្រោះឃើញ P1000 — កូដនេះមិនមែនបញ្ហាទេ គ្រាន់តែត្រូវការពេលបើកបរបន្ថែម",
+    ],
+  },
+  {
+    code: "P1456",
+    titleEn: "Evaporative Emissions Control System Leakage - Fuel Tank",
+    titleKm: "EVAP Leak ខាង Fuel Tank (Honda)",
+    systems: ["fuel"],
+    severity: "low",
+    commonOn: "កូដឯកជនរបស់ Honda/Acura",
+    descriptionKm:
+      "ប្រព័ន្ធ EVAP រកឃើញការលេចខ្យល់ខាង Fuel Tank — ភាគច្រើនណាស់គ្រាន់តែគម្របប្រេង (Gas Cap) បិទមិនជិត ឬ " +
+      "ខូច/បាត់។ ជា code ស្រាលបំផុតមួយប៉ុន្តែជួបញឹកញាប់បំផុតមួយ។",
+    possibleCauses: [
+      "គម្របប្រេង (Gas Cap) បិទមិនជិត ឬបាត់",
+      "គម្របប្រេងខូច ឬប្រើគម្របខុសម៉ូដែល",
+      "Fuel Tank/Hose ខាងក្នុងលេច (កម្រជាង)",
+    ],
+    inspectionFlow: [
+      "ពិនិត្យ Gas Cap ជាមុនគេ — បិទឲ្យជិត ស្តាប់សូរ 'click'",
+      "ពិនិត្យ Gas Cap ថាមិនស្រុះ/ខូច O-ring",
+      "បើ Cap ធម្មតា ប្រើ Smoke Machine រក Leak ក្នុង Fuel Tank/Hose",
+    ],
+    commonMistakes: ["ប្ដូរ Gas Cap ថ្មីភ្លាមដោយមិនសាកល្បងបិទឲ្យជិតជាមុន — ជាញឹកញាប់គ្រាន់តែភ្លេចបិទ"],
+  },
+  {
+    code: "P1457",
+    titleEn: "Evaporative Emissions Control System Leakage - Canister System",
+    titleKm: "EVAP Leak ខាង Canister System (Honda)",
+    systems: ["fuel"],
+    severity: "low",
+    commonOn: "កូដឯកជនរបស់ Honda/Acura",
+    descriptionKm:
+      "ប្រព័ន្ធ EVAP រកឃើញការលេចខ្យល់ខាង Charcoal Canister (ក្រោមរថយន្ត ឬក្នុង Engine Bay) — ខុសពី P1456 " +
+      "ដែលនៅខាង Fuel Tank។",
+    possibleCauses: [
+      "Canister Vent Solenoid (CVS) ជាប់ ឬខូច",
+      "Vent Shut Valve ខូច",
+      "Hose EVAP ប្រេះ ឬដាច់",
+    ],
+    inspectionFlow: [
+      "ពិនិត្យ Hose EVAP ជុំវិញ Canister",
+      "តេស្ត Canister Vent Solenoid ថាបើក/បិទបាន",
+      "ប្រើ Smoke Machine រក Leak ជុំវិញ Canister",
+    ],
+    commonMistakes: ["ប្ដូរ Canister ទាំងមូលភ្លាមដោយមិនពិនិត្យ CVS/Hose ជាមុន"],
   },
 ];
